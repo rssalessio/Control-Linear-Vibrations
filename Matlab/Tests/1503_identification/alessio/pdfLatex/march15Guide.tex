@@ -51,6 +51,16 @@ Quindi:
 \item Far andare la scheda, calcolare $x_2$ e prendere il rapporto
 \end{enumerate}
 \newpage
+\section{Stimare la massa}
+Consideriamo la funzione di trasferimento fra $F(s)$ e $X(s)$:
+$$X(s)= \frac{1}{M}\frac{1}{s^2+\frac{K}{M}}F(s)$$
+Dove $F(s) = \frac{N}{D}(s)$. Supponiamo $F$ quasi costante, quindi approssimabile a $\frac{1}{s}$. Per i fratti semplici otteniamo:
+$$(x) = \frac{As+B}{s^2+\frac{K}{M}}+\cdots$$
+Dove $\cdots$ intende fratti dipendenti $F(s)$. Sappiamo che il primo fratto è il termine del transitorio, mentre $\cdots$  indica i termini a regime che dovrebbe essere approssimabile a $\frac{C}{s}$. \\ \\
+Quindi nel transitorio abbiamo una sinusoide (smorzata perchè comunque lo smorzamento c'è anche se non modellato, ma non influisce sulla frequenza di oscillazione) con pulsazione $\omega = \sqrt{\frac{K}{M}}$. Quindi esegui il test1 con $V=3.6$ costante, guarda l'encoder e misura il periodo fra le due sinusoidi:
+$$\frac{2\pi}{T}= \sqrt{\frac{K}{M}} \Rightarrow M = \frac{KT^2}{4\pi^2}$$
+Dovrebbe venire $M > 0.5kg$.
+\newpage
 \section{Ricavare $K_e$ e stimare $\gamma$}
 Conoscendo ora la forza, e sapendo $R_d$, sappiamo che il torque è dato da:
 
@@ -72,8 +82,10 @@ $$i(t) = \frac{3.6}{2R}(1-e^{-\frac{R}{L}t})$$
 Di conseguenza esegui il test1, controlla la corrente e fanne un plot. Se ha la forma del tipo $1-e^{-t}$ allora è un passabasso.
 
 $R_d$ è dato dal manuale, in pollici. Inoltre sappiamo che $M > 0.5Kg$
-Di conseguenza dobbiamo vedere quando:
+Dobbiamo vedere quando:
 $$\gamma \ll 1 \approx \gamma < 0.1$$
+
+Se sei riuscito a calcolare $M$ allora puoi calcolare $\gamma$, senno continua a leggere.
 
 Sia $ x= \frac{4K_e^2}{R_d^2}$, quindi maggiorando:
 $$ \frac{x}{M} < \frac{x}{0.5}$$
@@ -89,15 +101,16 @@ Considerando la back-emf la funzione di trasferimento è data da:
 $$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma }$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Per $V=V_0$ (nota che nello schema $V_0=3.6$) costante otteniamo:
-$$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{1}{s} = \frac{3.6}{2R}$$
+$$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{3.6}{s} = \frac{3.6}{2R+\gamma}$$
 Quindi prendiamo l'ultimo campione della corrente (che chiamo $i_N$), e di conseguenza:
-$$R = \frac{3.6}{2i_N}$$
-Quindi esegui le seguenti istruzioni:
+$$R = \frac{3.6-\gamma i_N}{2i_N}$$
+Nota bene: se non hai ricavato $\gamma$, puoi trascurarlo.\\
+Quindi esegui le seguenti istruzioni (devi aver ricavato gamma):
 \begin{enumerate}
 \item Esegui il test 1
 \item $i=i.Data;$
 \item $N=length(i);$
-\item $ R = 3.6/(2*i(N));$
+\item $ R = (3.6-gamma*i(N)/(2*i(N));$
 \end{enumerate}
 \section{Ricavare l'induttanza del motore e la costante di tempo}
 Come al solito:
@@ -147,13 +160,5 @@ Quindi devi fare:
 \item $g = tfest(dat, 3)$
 \end{enumerate}
 Ho messo $3$ perchè $\gamma \gg 0$ quindi abbiamo $3$ poli.
-\section{Stimare la massa}
-Consideriamo la funzione di trasferimento fra $F(s)$ e $X(s)$:
-$$X(s)= \frac{1}{M}\frac{1}{s^2+\frac{K}{M}}F(s)$$
-Dove $F(s) = \frac{N}{D}(s)$. Supponiamo $F$ quasi costante, quindi approssimabile a $\frac{1}{s}$. Per i fratti semplici otteniamo:
-$$(x) = \frac{As+B}{s^2+\frac{K}{M}}+\cdots$$
-Dove $\cdots$ intende fratti dipendenti $F(s)$. Sappiamo che il primo fratto è il termine del transitorio, mentre $\cdots$  indica i termini a regime che dovrebbe essere approssimabile a $\frac{C}{s}$. \\ \\
-Quindi nel transitorio abbiamo una sinusoide (smorzata perchè comunque lo smorzamento c'è anche se non modellato, ma non influisce sulla frequenza di oscillazione) con pulsazione $\omega = \sqrt{\frac{K}{M}}$. Quindi esegui il test1 con $V=3.6$ costante, guarda l'encoder e misura il periodo fra le due sinusoidi:
-$$\frac{2\pi}{T}= \sqrt{\frac{K}{M}} \Rightarrow M = \frac{KT^2}{4\pi^2}$$
-Dovrebbe venire $M > 0.5kg$.
+
 \end{document}
