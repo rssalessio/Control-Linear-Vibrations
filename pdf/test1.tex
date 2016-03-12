@@ -29,6 +29,7 @@ $$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Per $\gamma \ll 1$:
 $$\frac{I}{V} \approx \frac{1}{2R+2sL}$$
+NB: $\gamma > 0$.
 \newpage
 \section{Ricavare $k$}
 Per ricavare le $k$ delle molle l'idea generale è di guardare il displacement $x$ del carretto applicando la stessa forza $F(t)$. \\ \\
@@ -42,7 +43,7 @@ $$\frac{x_1}{x_2} = \frac{k_2}{k_1}$$
 Se $x_2 < x_1$ allora $k_2 > k_1$, e viceversa.  Da questa formula possiamo ricavare il rapporto fra le due $k$ e verificare con quelle scritte nel manuale. \\ \\
 Quindi:
 \begin{enumerate}
-\item Aprire il file simulink test1 nella cartella tests/15March.
+\item Aprire il file simulink test nella cartella tests/15March.
 \item Caricare lo schema sulla scheda
 \item Attaccare la prima molla
 \item Far andare la scheda, calcolare $x_1$ quando il carretto è fermo
@@ -56,13 +57,17 @@ Conoscendo ora la forza, e sapendo $R_d$, sappiamo che il torque è dato da:
 $$T = FR_d = 2K_e i$$
 Possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink.
 
-Rieseguiamo l'esperimento test1, e salviamo l'output della corrente in una variabile di matlab $i$.
+Rieseguiamo l'esperimento test, e salviamo l'output della corrente in una variabile di matlab $i$.
 
 A regime $F=F_0$. Prendiamo l'ultimo sample della corrente, che sarà $i(N)$. Quindi:
 $$K_e = \frac{FR_d}{2i_N}$$
 
 Per stimare $\gamma$ sappiamo che vale:
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
+
+Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso, quindi per ingresso costante a 1 otteniamo una risposta del tipo:
+$$i(t) = \frac{1}{2R}(1-e^{-\frac{R}{L}t})$$
+Di conseguenza esegui il test, controlla la corrente e fanne un plot. Se ha la forma del tipo $1-e^(-t)$ allora è un passabasso.
 
 $R_d$ è dato dal manuale, in pollici. Inoltre sappiamo che $M > 0.5Kg$
 Di conseguenza dobbiamo vedere quando:
@@ -76,8 +81,8 @@ $$\frac{x}{0.5}<0.1 \Rightarrow x < 0.05$$
 Quindi calcola $ x= \frac{4K_e^2}{R_d^2}$ e vedi se vale meno di $0.05$.
 
 \newpage
-\section{Ricavare i parametri del motore}
-Per ricavare i parametri del motore conviene sfruttare il fatto che possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink. \\ \\
+\section{Ricavare la resistenza del motore}
+Per ricavare il guadagno del motore conviene sfruttare il fatto che possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink. \\ \\
 Considerando la back-emf la funzione di trasferimento è data da:
 $$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
@@ -85,4 +90,54 @@ Per $V=1$ costante otteniamo:
 $$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{1}{s} = \frac{1}{2R}$$
 Quindi prendiamo l'ultimo campione della corrente (che chiamo $i_N$), e di conseguenza:
 $$R = \frac{1}{2i_N}$$
+\section{Ricavare l'induttanza del motore e la costante di tempo}
+Come al solito:
+$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
+$$\gamma = \frac{4K_e^2}{R_d^2M}$$
+Della funzione di trasferimento ancora non sappiamo $M,L$. Rieseguiamo il file test nella cartella. Abbiamo due casi:
+\begin{enumerate}
+\item $\gamma \ll 1 \Rightarrow$ possiamo fare l'approssimazione del sistema a un passabasso come indicato nella prima pagina di questo pdf.
+\item $\gamma \gg 0$ Non possiamo fare l'approssimazione del sistema a un passabasso.
+\end{enumerate}
+Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso, quindi per ingresso costante a 1 otteniamo una risposta del tipo:
+$$i(t) = \frac{1}{2R}(1-e^{-\frac{R}{L}t})$$
+Di conseguenza esegui il test, controlla la corrente e fanne un plot. Se ha la forma del tipo $1-e^(-t)$ allora è un passabasso. \\ \\
+
+Inoltre prima abbiamo stimato $K_e$. Se abbiamo sia $\gamma \ll 1 $ e la corrente che sembra abbia la forma del tipo $1-e^(-t)$ allora puoi continuare con la sottosezione 1, senno vai alla sottosezione 2.
+\subsection{Procedura 1}
+Questo è il caso in cui la funzione di trasferimento è approssimabile a un passabasso. Se sei a questo punto dovresti aver verificato che $\gamma \ll 1$ e che la corrente per $V=1$ ha un andamento del tipo $1-e^(-t)$. \\  \\
+Di conseguenza per $V=V_0$ otteniamo che la corrente è:
+$$i(t) = \frac{V_0}{2R}(1-e^{-\frac{R}{L}t})$$
+Sappiamo che per:
+$$\frac{R}{L}t > 6 \Rightarrow e^{-\frac{R}{L}t} < \frac{1}{400}$$
+Quindi :
+$$\frac{V_0}{2R} - i(t) = \frac{V_0}{2R}e^{-\frac{R}{L}t}$$
+Bisogna vedere quadno:
+$$\frac{V_0}{2R}e^{-\frac{R}{L}t}= \frac{V_0}{2R} - i(t) < \frac{V_0}{2R}e^{-6}$$
+Che equivale alla condizione:
+$$1- \frac{i(t)2R}{V0} < e^{-6}$$
+Una volta ricavato per quale primo valore di $t$ vale, allora chiamato $t_0$ questo valore abbiamo:
+$$\frac{R}{L}t_0 \approx 6 \Rightarrow L = \frac{R}{6}t_0$$
+Una volta ricavato questo, per sicurezza, esegui i seguenti comandi:
+\begin{enumerate}
+\item $dat = iddata(out,in, ts)$ dove out è la corrente, in è la tensione in ingresso, ts è il sampling time.
+\item $g = fest(dat, 1)$ dovresti ottenere una funzione passabasso con polo in $\frac{R}{L}$ (e guadagno sballato forse).
+\end{enumerate}
+
+\subsection{Procedura 2}
+Per stimare dai dati la funzione di trasferimento esegui:
+\begin{enumerate}
+\item $dat = iddata(out,in, ts)$ dove out è la corrente, in è la tensione in ingresso, ts è il sampling time.
+\item $g = fest(dat, 3)$
+\end{enumerate}
+Ho messo $3$ perchè $\gamma \gg 0$ quindi abbiamo $3$ poli.
+\section{Stimare la massa}
+Consideriamo la funzione di trasferimento fra $F(s)$ e $X(s)$:
+$$X(s)= \frac{1}{M}\frac{1}{s^2+\frac{K}{M}}F(s)$$
+Dove $F(s) = \frac{N}{D}(s)$. Supponiamo $F$ quasi costante, quindi approssimabile a $\frac{1}{s}$. Per i fratti semplici otteniamo:
+$$(x) = \frac{As+B}{s^2+\frac{K}{M}}+\cdots$$
+Dove $\cdots$ intende fratti dipendenti $F(s)$. Sappiamo che il primo fratto è il termine del transitorio, mentre $\cdots$  indica i termini a regime che dovrebbe essere approssimabile a $\frac{C}{s}$. \\ \\
+Quindi nel transitorio abbiamo una sinusoide (smorzata perchè comunque lo smorzamento c'è anche se non modellato, ma non influisce sulla frequenza di oscillazione) con pulsazione $\omega = \sqrt{\frac{K}{M}}$. Quindi esegui il test con $V$ costante, guarda l'encoder e misura il periodo fra le due sinusoidi:
+$$\frac{2\pi}{T}= \sqrt{\frac{K}{M}} \Rightarrow M = \frac{KT^2}{4\pi^2}$$
+Dovrebbe venire $M > 0.5kg$.
 \end{document}
