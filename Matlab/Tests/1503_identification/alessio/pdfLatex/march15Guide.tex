@@ -19,13 +19,13 @@ Massa carretto+peso: $M$ \\
 Costante torque/backemf: $K_e$
 
 Essendo il gearbox fissato al carretto abbiamo:
-$$\theta_m = \frac{x}{R_d} \Rightarrow \dot{\theta}_m = \frac{\ddot{x}}{R_d}$$
+$$\dot{\theta}_m = \frac{x}{R_d} $$
 
 Funzione di trasferimento tra forza erogata e posizione del carretto:
 $$\frac{X}{F}(s) = \frac{1}{M} \frac{1}{s^2+\frac{K}{M}}$$
 
 Funzione di trasferimento tra Tensione e corrente:
-$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
+$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma }$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Per $\gamma \ll 1$:
 $$\frac{I}{V} \approx \frac{1}{2R+2sL}$$
@@ -86,7 +86,7 @@ Quindi calcola $ x= \frac{4K_e^2}{R_d^2}$ e vedi se vale meno di $0.05$.
 \section{Ricavare la resistenza del motore}
 Per ricavare il guadagno del motore conviene sfruttare il fatto che possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink. \\ \\
 Considerando la back-emf la funzione di trasferimento è data da:
-$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
+$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma }$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Per $V=V_0$ (nota che nello schema $V_0=3.6$) costante otteniamo:
 $$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{1}{s} = \frac{3.6}{2R}$$
@@ -101,7 +101,7 @@ Quindi esegui le seguenti istruzioni:
 \end{enumerate}
 \section{Ricavare l'induttanza del motore e la costante di tempo}
 Come al solito:
-$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
+$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma }$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Della funzione di trasferimento ancora non sappiamo $M,L$. Rieseguiamo il file test nella cartella. Abbiamo due casi:
 \begin{enumerate}
