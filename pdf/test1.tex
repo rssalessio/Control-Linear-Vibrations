@@ -42,7 +42,7 @@ $$\frac{x_1}{x_2} = \frac{k_2}{k_1}$$
 Se $x_2 < x_1$ allora $k_2 > k_1$, e viceversa.  Da questa formula possiamo ricavare il rapporto fra le due $k$ e verificare con quelle scritte nel manuale. \\ \\
 Quindi:
 \begin{enumerate}
-\item Aprire il file simulink testK nella cartella tests/15March.
+\item Aprire il file simulink test1 nella cartella tests/15March.
 \item Caricare lo schema sulla scheda
 \item Attaccare la prima molla
 \item Far andare la scheda, calcolare $x_1$ quando il carretto è fermo
@@ -50,5 +50,39 @@ Quindi:
 \item Far andare la scheda, calcolare $x_2$ e prendere il rapporto
 \end{enumerate}
 \newpage
+\section{Ricavare $K_e$ e stimare $\gamma$}
+Conoscendo ora la forza, e sapendo $R_d$, sappiamo che il torque è dato da:
+
+$$T = FR_d = 2K_e i$$
+Possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink.
+
+Rieseguiamo l'esperimento test1, e salviamo l'output della corrente in una variabile di matlab $i$.
+
+A regime $F=F_0$. Prendiamo l'ultimo sample della corrente, che sarà $i(N)$. Quindi:
+$$K_e = \frac{FR_d}{2i_N}$$
+
+Per stimare $\gamma$ sappiamo che vale:
+$$\gamma = \frac{4K_e^2}{R_d^2M}$$
+
+$R_d$ è dato dal manuale, in pollici. Inoltre sappiamo che $M > 0.5Kg$
+Di conseguenza dobbiamo vedere quando:
+$$\gamma \ll 1 \approx \gamma < 0.1$$
+
+Sia $ x= \frac{4K_e^2}{R_d^2}$, quindi maggiorando:
+$$ \frac{x}{M} < \frac{x}{0.5}$$
+e imponiamo ora la condizione
+$$\frac{x}{0.5}<0.1 \Rightarrow x < 0.05$$
+
+Quindi calcola $ x= \frac{4K_e^2}{R_d^2}$ e vedi se vale meno di $0.05$.
+
+\newpage
 \section{Ricavare i parametri del motore}
+Per ricavare i parametri del motore conviene sfruttare il fatto che possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink. \\ \\
+Considerando la back-emf la funzione di trasferimento è data da:
+$$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
+$$\gamma = \frac{4K_e^2}{R_d^2M}$$
+Per $V=1$ costante otteniamo:
+$$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{1}{s} = \frac{1}{2R}$$
+Quindi prendiamo l'ultimo campione della corrente (che chiamo $i_N$), e di conseguenza:
+$$R = \frac{1}{2i_N}$$
 \end{document}
