@@ -1,0 +1,3 @@
+Arancione: 3 encoder
+Blu: 2 encoder 
+Giallo: 1 encoder

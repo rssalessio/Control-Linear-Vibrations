@@ -1,0 +1,9 @@
+R = 4; %[ohm]
+L = 2.75*10^-2; %induttnaza
+Ke = 0.0274; %parametro dle motore
+Rd = 0.3; %D/2
+M = 1;  %massa del carretto + peso da 500g
+Kh = 800; %Stiffness high
+Km = 450; %Stiffness Med
+Kl = 150; %Stifness low
+gamma = 4*Ke^2/(Rd^2*M);
