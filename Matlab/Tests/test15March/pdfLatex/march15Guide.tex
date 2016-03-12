@@ -134,7 +134,7 @@ Una volta ricavato questo, per sicurezza,  esegui i seguenti comandi per vedere 
 \item $in=v.Data$
 \item $out = i.Data$
 \item $dat = iddata(out,in, 0.0001)$ dove out è la corrente, in è la tensione in ingresso, ts è il sampling time.
-\item $g = fest(dat, 1)$ dovresti ottenere una funzione passabasso con polo in $\frac{R}{L}$ (e guadagno sballato forse).
+\item $g = tfest(dat, 1)$ dovresti ottenere una funzione passabasso con polo in $\frac{R}{L}$ (e guadagno sballato forse).
 \end{enumerate}
 
 \subsection{Procedura 2: Grey box identification}
@@ -144,7 +144,7 @@ Quindi devi fare:
 \item Carica test2 sulla scheda
 \item Quando sei pronto aziona sia la levetta 2 che la levetta 3 della scheda. Aspetta che il carretto torni in 0.
 \item $dat = iddata(out,in, 0.0001)$ dove out è la corrente, in è la tensione in ingresso, ts è il sampling time.
-\item $g = fest(dat, 3)$
+\item $g = tfest(dat, 3)$
 \end{enumerate}
 Ho messo $3$ perchè $\gamma \gg 0$ quindi abbiamo $3$ poli.
 \section{Stimare la massa}
