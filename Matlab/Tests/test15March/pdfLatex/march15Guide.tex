@@ -67,8 +67,8 @@ $$K_e = \frac{FR_d}{2i_N}$$
 Per stimare $\gamma$ sappiamo che vale:
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 
-Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso, quindi per ingresso costante a 1 otteniamo una risposta del tipo:
-$$i(t) = \frac{1}{2R}(1-e^{-\frac{R}{L}t})$$
+Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso, quindi per ingresso costante $V_0=3.6$ otteniamo una risposta del tipo:
+$$i(t) = \frac{3.6}{2R}(1-e^{-\frac{R}{L}t})$$
 Di conseguenza esegui il test1, controlla la corrente e fanne un plot. Se ha la forma del tipo $1-e^{-t}$ allora è un passabasso.
 
 $R_d$ è dato dal manuale, in pollici. Inoltre sappiamo che $M > 0.5Kg$
@@ -108,13 +108,13 @@ Della funzione di trasferimento ancora non sappiamo $M,L$. Rieseguiamo il file t
 \item $\gamma \ll 1 \Rightarrow$ possiamo fare l'approssimazione del sistema a un passabasso come indicato nella prima pagina di questo pdf.
 \item $\gamma \gg 0$ Non possiamo fare l'approssimazione del sistema a un passabasso.
 \end{enumerate}
-Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso, quindi per ingresso costante $V_0$ otteniamo una risposta del tipo:
+Sappiamo che se fosse $\gamma \ll 1$ allora il sistema sarebbe un passabasso con 1 polo, quindi per ingresso costante $V_0$ otteniamo una risposta del tipo:
 $$i(t) = \frac{V_0}{2R}(1-e^{-\frac{R}{L}t})$$
 Di conseguenza esegui il test, controlla la corrente e fanne un plot. Se ha la forma del tipo $1-e^(-t)$ allora è un passabasso. \\ \\
 
 Inoltre prima abbiamo stimato $K_e$. Se abbiamo sia $\gamma \ll 1 $ e la corrente che sembra abbia la forma del tipo $1-e^(-t)$ allora puoi continuare con la sottosezione 1, senno vai alla sottosezione 2.
 \subsection{Procedura 1:white box identification}
-Questo è il caso in cui la funzione di trasferimento è approssimabile a un passabasso. Se sei a questo punto dovresti aver verificato che $\gamma \ll 1$ e che la corrente per $V=V_0$ ha un andamento del tipo $1-e^(-t)$. \\  \\
+Questo è il caso in cui la funzione di trasferimento è approssimabile a un passabasso con 1 polo. Se sei a questo punto dovresti aver verificato che $\gamma \ll 1$ e che la corrente per $V=V_0$ ha un andamento del tipo $1-e^(-t)$. \\  \\
 Di conseguenza per $V=V_0$ (ricorda che $V_0=3.6$ otteniamo che la corrente è:
 $$i(t) = \frac{V_0}{2R}(1-e^{-\frac{R}{L}t})$$
 Sappiamo che per:
@@ -126,8 +126,9 @@ $$\frac{V_0}{2R}e^{-\frac{R}{L}t}= \frac{V_0}{2R} - i(t) < \frac{V_0}{2R}e^{-6}$
 Che equivale alla condizione:
 $$1- \frac{i(t)2R}{V0} < e^{-6}$$
 Una volta ricavato per quale primo valore di $t$ vale, allora chiamato $t_0$ questo valore abbiamo:
-$$\frac{R}{L}t_0 \approx 6 \Rightarrow L = \frac{R}{6}t_0$$
-Una volta ricavato questo, per sicurezza, esegui i seguenti comandi:
+$$\frac{R}{L}t_0 \approx 6 \Rightarrow L = \frac{R}{6}t_0$$\\ \\
+
+Una volta ricavato questo, per sicurezza,  esegui i seguenti comandi per vedere se ottieni lo stesso risultato:
 \begin{enumerate}
 \item Esegui test1
 \item $in=v.Data$

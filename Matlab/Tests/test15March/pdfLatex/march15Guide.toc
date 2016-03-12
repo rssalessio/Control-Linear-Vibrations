@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Introduzione}{1}
+\contentsline {section}{\numberline {2}Ricavare $k$}{2}
+\contentsline {section}{\numberline {3}Ricavare $K_e$ e stimare $\gamma $}{3}
+\contentsline {section}{\numberline {4}Ricavare la resistenza del motore}{4}
+\contentsline {section}{\numberline {5}Ricavare l'induttanza del motore e la costante di tempo}{4}
+\contentsline {subsection}{\numberline {5.1}Procedura 1:white box identification}{5}
+\contentsline {subsection}{\numberline {5.2}Procedura 2: Grey box identification}{6}
+\contentsline {section}{\numberline {6}Stimare la massa}{6}
