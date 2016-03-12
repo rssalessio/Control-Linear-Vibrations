@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{book}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -6,6 +6,9 @@
 \author{Alessio Russo}
 \title{Test1}
 \begin{document}
+\tableofcontents
+
+\section{Introduzione}
 Rotazione del disco attaccato al motore: $\theta_m$. \\
 Raggio del disco attaccato al motore: $R_d$. \\
 Posizione del carretto : $x$. \\
@@ -26,11 +29,26 @@ $$\frac{I}{V}(s) = \frac{s^2+\frac{K}{M}}{(s^2+\frac{K}{M})(2R+2sL)+\gamma s}$$
 $$\gamma = \frac{4K_e^2}{R_d^2M}$$
 Per $\gamma \ll 1$:
 $$\frac{I}{V} \approx \frac{1}{2R+2sL}$$
-\\ \\
-Test da effettuare:
-\begin{enumerate}
-\item {Ricavare K}.
-\item {
-\end{enumerate}
+\newpage
+\section{Ricavare $k$}
+Per ricavare le $k$ delle molle l'idea generale è di guardare il displacement $x$ del carretto applicando la stessa forza $F(t)$. \\ \\
+Per $F(t)=F_0$ abbiamo $x(t) \to kF_0$. \\
+Chiamiamo le due molle $k_1,k_2$. Noi non conosciamo $F_0$, ma è costante per entrambi e cambia solo il $k$. Quindi:
+$$F_0 = k_1 x_1$$
+$$F_0 = k_2 x_2$$
+Quindi prendendo il rapporto:
 
+$$\frac{x_1}{x_2} = \frac{k_2}{k_1}$$
+Se $x_2 < x_1$ allora $k_2 > k_1$, e viceversa.  Da questa formula possiamo ricavare il rapporto fra le due $k$ e verificare con quelle scritte nel manuale. \\ \\
+Quindi:
+\begin{enumerate}
+\item Aprire il file simulink testK nella cartella tests/15March.
+\item Caricare lo schema sulla scheda
+\item Attaccare la prima molla
+\item Far andare la scheda, calcolare $x_1$ quando il carretto è fermo
+\item Spegnere la scheda, staccare la molla e attaccare l'altra molla
+\item Far andare la scheda, calcolare $x_2$ e prendere il rapporto
+\end{enumerate}
+\newpage
+\section{Ricavare i parametri del motore}
 \end{document}
