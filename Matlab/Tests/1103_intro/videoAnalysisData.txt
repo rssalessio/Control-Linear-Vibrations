@@ -1,0 +1,45 @@
+ts=(3.032-3)/2
+x(ts)=-1
+peakMax1At t1=3.132, x(t1)=2.5
+PeakMin1At t2=3.265, x(t2)=-0.15
+PeakMax2At t3 = 3.398, x(t3)= 1.8
+PeakMin2at t4 = 3.531, x(t4) = 0.35
+PeakMax3At t5 = 3.665, x(t5)=1.5
+PeakMin3At t6 = 3.799, x(t6)=0.7
+PeakMax4at t7= 3.9, x(t7) = 1.15
+PeakMin4at t8=4.033 x(t8) = 0.85
+tend=4.165 x=1
+
+
+sum(y(t)-exp(-bt+a))
+
+ln(y)-(-bt+a)
+
+1+exp(bt+a)sin(wt)
+sigma = w0csi
+sigma = 5/T
+5/(4.165-t(1))
+
+
+sigma = w0csi
+
+omega = s *sqrt(1-csi^2)/csi
+(omega/sig)^2 = (1-csi^2)/csi^2 = 1/csi^2 -1
+(ome/ssig)^2+1 = 1/csi^2
+csi = 1/sqrt((ome/sig)^2+1)
+
+
+t0*omega = atan(sqrt(1-x^2)/x)
+tan(t0*omega) = sqrt(1-x^2)/x
+tan^2(t0*omega)+1 = 1/x^2 
+
+x = 1/sqrt(tan^2(t0+omega)+1)
+
+Ms^2+cs+k
+
+M/K s^2+c/K s+1
+
+exp(k)=1/(sqrt(1-x^2))
+
+exp(2k)(1-x^2)=1
+(exp(2k)-1)/(exp(2k)
