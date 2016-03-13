@@ -7,6 +7,6 @@ Ke = 0.02; %electric stiffness
 D = 0.0762; %diameter
 
 %carts
-m = 0.8; %mass
-c = 0.01; %damping
-k = 500; %spring
+M = 0.8; %mass
+C = 0.01; %damping
+K = 500; %spring
