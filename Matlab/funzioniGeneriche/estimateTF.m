@@ -1,5 +1,8 @@
-function [] = spectrumRatio(in,out,t)
-%   SPECTRUMRATIO - estimates TF given input and output signal
+function [] = estimateTF(out,in,t,np)
+%   SPECTRUMRATIO - estimates TF given input and output signal.
+%   out,in: output and input
+%   t: time vector
+%   np: number of poles estimated
     T= max(t)-min(t);
     Ts=t(2)-t(1);
     Fs=1/Ts;
@@ -13,6 +16,8 @@ function [] = spectrumRatio(in,out,t)
     phase = phaseOUT-phaseIN;
     
     bodePlotFromFourier(mod,phase,fIN,Fs);
-    
+    dat=iddata(out',in', Ts);
+    figure;
+    bode(tfest(dat, np));
 
 end

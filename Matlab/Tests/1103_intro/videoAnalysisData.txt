@@ -1,0 +1,11 @@
+ts=(3.032-3)/2
+x(ts)=-1
+peakMax1At t1=3.132, x(t1)=2.5
+PeakMin1At t2=3.265, x(t2)=-0.15
+PeakMax2At t3 = 3.398, x(t3)= 1.8
+PeakMin2at t4 = 3.531, x(t4) = 0.35
+PeakMax3At t5 = 3.665, x(t5)=1.5
+PeakMin3At t6 = 3.799, x(t6)=0.7
+PeakMax4at t7= 3.9, x(t7) = 1.15
+PeakMin4at t8=4.033 x(t8) = 0.85
+tend=4.165 x=1
