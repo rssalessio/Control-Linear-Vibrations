@@ -13,29 +13,48 @@
 \maketitle
 \tableofcontents
 \chapter{Model}
+Equations of motion:
+
+$$J\ddot{\theta}=c(t)-c_l(t) - f_m(\dot{\theta})$$
+$$M\ddot{x}+C\dot{x}+Kx = F(t) - f_c(\dot{x})$$
+$$\frac{D}{2}\theta = x$$
+$f_m$ describes the viscous friction of the motor, $f_c$ describes the friction of the cart. The gearbox is assumed ideal. \\ \\
+Therefore $F(t)$ is the transmitted linear force from the motor, thus:
+$$F(t)\frac{D}{2} = c_l(t) \Rightarrow F(t) = \frac{2}{D} \Big(c(t)-J\ddot{\theta}-f_m(\dot{\theta})\Big)$$
+In the end we obtain:
+$$\Big(M+\frac{4}{D^2} J\Big) \ddot{x}+C\dot{x}+Kx = \frac{2}{D}c(t) -\frac{2}{D}f_m(\dot{\theta}) - f_c(\dot{x})$$
+In case the gearbox is not assumed ideal, we have:
+$$J\ddot{\theta}= \begin{cases}
+c(t)-c_l(t) - f_m(\dot{\theta}) \quad \text{ in contact } \\
+c(t)-f_m(\dot{\theta}) \quad \text{ not in contact }
+\end{cases}
+$$
+And
+$$F(t) = \begin{cases}
+\frac{2}{D}c_l(t)\quad \text{ in contact } \\
+0 \quad \text{ otherwise }
+\end{cases}
+$$
+
 \section{Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}
 $$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}, \quad \theta = \frac{2}{D}x$$
 $$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} \mathcal{L}\{ v(t)\}$$
 
 \section{Model2 - no friction cart, no friction motor, no backlash}
-$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}  - 2\frac{J}{D}\ddot{x}, \quad \theta = \frac{2}{D}x$$
+$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}  - 4\frac{J}{D^2}\ddot{x}, \quad \theta = \frac{2}{D}x$$
 $$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
 
 
 \section{Model 3 - no friction motor, backlash}
-$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D} - 2\frac{J}{D}\ddot{x} - f_c(\dot{x}), \quad \theta = \frac{2}{D}x$$
+$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D} - 4\frac{J}{D^2}\ddot{x} - f_c(\dot{x}), \quad \theta = \frac{2}{D}x$$
 $$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
 
 
 
 \section{Model 4 }
-$$M\ddot{x} + C\dot{x}+Kx = F(t) - f_c(\dot{x})$$
+$$M\ddot{x} + C\dot{x}+Kx = F(t) - 4\frac{J}{D^2}\ddot{x}- f_c(\dot{x})$$
 $$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
-$$\ddot{\theta} = \begin{cases} 
-\frac{2\ddot{x}}{D}-f_m(\dot{\theta})-f_g(\dot{x}), \quad \text{gearbox in contact }\\
--f_m(\dot{\theta}), \quad \text{otherwise}
-\end{cases}$$
-$$F(t) = \frac{2}{D}(c(t)-J\ddot{x}) \quad \text{if in contact, otherwise 0}$$
+See introduction for gearbox modelling.
 \begin{enumerate}
 \item $\mathcal{L}\{\cdot \}$ Laplace transform.
 \item $J$ Disk inertia.
@@ -54,7 +73,22 @@ $$F(t) = \frac{2}{D}(c(t)-J\ddot{x}) \quad \text{if in contact, otherwise 0}$$
 
 \end{enumerate}
 
-\section{Encoder model}
-$$x = R\phi$$
-$$y =\phi$$
+\section{2 DOF - Model}
+To derive the equations of motion we can use the Lagrangian approach. Let $T,V,D$ be the kinetic, potential and dissipated energy. Then:
+\begin{align*}
+T  &= \frac{1}{2} \Big(M_1 + \frac{4}{D^2}J \Big) \dot{x_1}^2 + \frac{1}{2}M_2 \dot{x_2}^2 \\
+V &= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2 \\
+D &= \frac{1}{2}c_1\dot{x_1}^2 + \frac{1}{2}c_2(\dot{x_2}-\dot{x_1})^2
+\end{align*}
+Let $Q$ be the external forces acting on the systems:
+\begin{align*}
+Q_1 &= \frac{2}{D}c(t) - \frac{2}{D}f_m(\dot{\theta}) - f_c(\dot{x_1}) \\
+Q_2 &=  - f_c(\dot{x_2})
+\end{align*}
+The equations of motion are given by:
+$$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
+\begin{align*}
+\Big(M_1+\frac{4}{D^2}J \Big)\ddot{x}_1+(c_1+c_2)\dot{x}_1 +(k_1+k_2)x_1 &= k_2 x_2 +c_2 \dot{x}_2 + \frac{2}{D}(c(t)-f_m(\dot{\theta}))-f_c(\dot{x}_1) \\
+M_2 \ddot{x}_2 +c_2 \dot{x}_2 +k_2x_2 &= k_1x_1+c_1\dot{x}_1 -f_c(\dot{x}_2)
+\end{align*}
 \end{document}
