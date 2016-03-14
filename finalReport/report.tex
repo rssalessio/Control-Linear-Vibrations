@@ -13,22 +13,48 @@
 \maketitle
 \tableofcontents
 \chapter{Model}
-$$\Big(\frac{J}{R_d}+M\Big)\ddot{x} + C\dot{x}+Kx = \frac{r(t)}{Rd} - \mu \sign(\dot{x})$$
-$$\theta = \frac{x}{R_d}$$
-$$\mathcal{L}\{r(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
+\section{Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}
+$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}, \quad \theta = \frac{2}{D}x$$
+$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} \mathcal{L}\{ v(t)\}$$
+
+\section{Model2 - no friction cart, no friction motor, no backlash}
+$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}  - 2\frac{J}{D}\ddot{x}, \quad \theta = \frac{2}{D}x$$
+$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
+
+
+\section{Model 3 - no friction motor, backlash}
+$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D} - 2\frac{J}{D}\ddot{x} - f_c(\dot{x}), \quad \theta = \frac{2}{D}x$$
+$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
+
+
+
+\section{Model 4 }
+$$M\ddot{x} + C\dot{x}+Kx = F(t) - f_c(\dot{x})$$
+$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
+$$\ddot{\theta} = \begin{cases} 
+\frac{2\ddot{x}}{D}-f_m(\dot{\theta})-f_g(\dot{x}), \quad \text{gearbox in contact }\\
+-f_m(\dot{\theta}), \quad \text{otherwise}
+\end{cases}$$
+$$F(t) = \frac{2}{D}(c(t)-J\ddot{x}) \quad \text{if in contact, otherwise 0}$$
 \begin{enumerate}
 \item $\mathcal{L}\{\cdot \}$ Laplace transform.
 \item $J$ Disk inertia.
 \item $M$ Cart+load mass
 \item $C$ Spring damping.
 \item $K$ Spring stiffness.
-\item $r(t)$ Torque.
-\item $R_d$ Disk radius.
-\item $\mu$ Coloumb friction coefficient.
+\item $c(t)$ Torque.
+\item $D$ Disk diameter.
+\item $f_c(t)$ friction applied to the cart.
+\item $f_g(t)$ sliding friction applied to the teeth between the gearbox and the disk.
+\item $f_m$ friction of the motor
 \item $\theta$ angle of the disk.
 \item $v(t)$ tension applied to the motor.
 \item $R,L$ resistance and inductance of the motor
 \item $K_e$ backemf constant.
 
 \end{enumerate}
+
+\section{Encoder model}
+$$x = R\phi$$
+$$y =\phi$$
 \end{document}

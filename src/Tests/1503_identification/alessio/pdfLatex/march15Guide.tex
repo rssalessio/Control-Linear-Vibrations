@@ -1,0 +1,125 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Alessio Russo}
+\title{Test1}
+\begin{document}
+\tableofcontents
+
+\section{Introduzione}
+Rotazione del disco attaccato al motore: $\theta$. \\
+Raggio del disco attaccato al motore: $0.5D$. \\
+Posizione del carretto : $x$. \\
+Tensione in ingresso al motore: $v$ \\
+Stiffness,damping molla: $K,C$ \\
+Resistenza e induttanza del motore: $R,L$ \\
+Massa carretto+peso e inrzia disco: $M=M_1+ 2\frac{J}{D}$ \\
+Costante torque/backemf: $K_e$
+
+Essendo il gearbox fissato al carretto abbiamo:
+$$\theta= \frac{x}{R_d} $$
+
+Funzione di trasferimento tra forza erogata e posizione del carretto:
+$$\frac{X}{F}(s) =  \frac{1}{Ms^2+Cs +K}$$
+
+Funzione di trasferimento tra Tensione/Backemf e forza:
+$$F(s) = 4\frac{K_e}{D}\frac{1}{2R+2sL}(V(s)-4\frac{K_e}{D} sX(s))$$
+Tra torque ecorrente abbiamo:
+$$C(s) = 2K_e I(S)$$
+e $$F(s) = \frac{2}{D}C(s)$$
+Quindi fra tensione e corrente abbiamo:
+$$\frac{I}{V}(s) = \frac{Ms^2+Cs+K}{(Ms^2+Cs+K)(2R+2sL)+\gamma s } =M(s)$$
+$$\gamma = \Big(\frac{4K_e}{D}\Big)^2$$
+Sviluppando il termine al denominatore otteniamo:
+$$2MLs^3 + s^2(2MR+2CL) +s(2CR+2KL+\gamma ) + 2KR$$
+
+\newpage
+\section{Ricavare $k$}
+Per ricavare le $k$ delle molle l'idea generale è di guardare il displacement $x$ del carretto applicando la stessa forza $F(t)$. \\ \\
+Per $F(t)=F_0$ abbiamo $x(t) \to kF_0$. \\
+Chiamiamo le due molle $k_1,k_2$. Noi non conosciamo $F_0$, ma è costante per entrambi e cambia solo il $k$. Quindi:
+$$F_0 = k_1 x_1$$
+$$F_0 = k_2 x_2$$
+Quindi prendendo il rapporto:
+
+$$\frac{x_1}{x_2} = \frac{k_2}{k_1}$$
+Se $x_2 < x_1$ allora $k_2 > k_1$, e viceversa.  Da questa formula possiamo ricavare il rapporto fra le due $k$ e verificare con quelle scritte nel manuale. \\ \\
+Quindi:
+\begin{enumerate}
+\item Aprire il file simulink test1 nella cartella tests/15March.
+\item Caricare lo schema sulla scheda
+\item Attaccare la prima molla
+\item Far andare la scheda, calcolare $x_1$ quando il carretto è fermo
+\item Spegnere la scheda, staccare la molla e attaccare l'altra molla
+\item Far andare la scheda, calcolare $x_2$ e prendere il rapporto
+\end{enumerate}
+\newpage
+\section{Stimare la massa/Inerzia}
+Consideriamo la funzione di trasferimento fra $F(s)$ e $X(s)$:
+$$X(s)= \frac{1}{M}\frac{1}{s^2+\frac{K}{M}}F(s)$$
+Dove $F(s) = \frac{N}{D}(s)$. Supponiamo $F$ quasi costante, quindi approssimabile a $\frac{1}{s}$. Per i fratti semplici otteniamo:
+$$(x) = \frac{As+B}{s^2+\frac{K}{M}}+\cdots$$
+Dove $\cdots$ intende fratti dipendenti $F(s)$. Sappiamo che il primo fratto è il termine del transitorio, mentre $\cdots$  indica i termini a regime che dovrebbe essere approssimabile a $\frac{C}{s}$. \\ \\
+Quindi nel transitorio abbiamo una sinusoide (smorzata perchè comunque lo smorzamento c'è anche se non modellato, ma non influisce sulla frequenza di oscillazione) con pulsazione $\omega = \sqrt{\frac{K}{M}}$. Quindi esegui il test1 con $V=3.6$ costante, guarda l'encoder e misura il periodo fra le due sinusoidi:
+$$\frac{2\pi}{T}= \sqrt{\frac{K}{M}} \Rightarrow M = \frac{KT^2}{4\pi^2}$$
+Dovrebbe venire $M > 0.5kg$.
+Inoltre sapppiamo che $M$ è uguale alla massa del load + $2\frac{J}{D}$. Quindi sapendo la massa del carretto, la massa del load è $0.5$+ massa del carretto, sappiamo $D$ e ricaviamo $J$.
+\newpage
+\section{Ricavare $K_e$ e stimare $\gamma$}
+Quindi attacca ora una delle due molle, tipo $k_1$.Sai che eseguendo il test1 otterai che il carretto è a una posizione $x_1$. Quindi $F=k_1 x_1$.
+Conoscendo ora la forza, e sapendo $D$, sappiamo che il torque è dato da:
+
+$$T = F\frac{D}{2} = 2K_e i$$
+Possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink.
+
+Rieseguiamo l'esperimento test1, e salviamo l'output della corrente in una variabile di matlab $i$ (gia' fatto nello shcema).
+
+A regime $F=F_0$. Prendiamo l'ultimo sample della corrente, che sarà $i(N)$. Nota che su matlab la corrente viene salvata nella struttura $i$ . per accedere ai dati devi fare $i.Data$.
+
+ Quindi:
+$$K_e = \frac{FD}{4i_N}$$
+
+Per stimare $\gamma$ sappiamo che vale:
+$$\gamma = \Big(\frac{4K_e}{D}\Big)^2$$
+Sapendo $K_e$ puoi calcolarla.
+
+\newpage
+\section{Ricavare la resistenza del motore}
+Per ricavare il guadagno del motore conviene sfruttare il fatto che possiamo misurare la corrente del motore attraverso l'output current del blocco del motore su simulink. \\ \\
+Considerando la back-emf la funzione di trasferimento è data da:
+$$\frac{I}{V}(s) = M(s)$$
+Per $V=V_0$ (nota che nello schema $V_0=3.6$) costante otteniamo:
+$$\lim_{t \to \infty} i(t) = \lim_{s \to 0} sI(s)\frac{3.6}{s} = \frac{3.6}{2R}$$
+Quindi prendiamo l'ultimo campione della corrente (che chiamo $i_N$), e di conseguenza:
+$$R = \frac{3.6}{2i_N}$$
+Quindi esegui le seguenti istruzioni (devi aver ricavato gamma):
+\begin{enumerate}
+\item Esegui il test 1
+\item $i=i.Data;$
+\item $N=length(i);$
+\item $ R = (3.6/(2*i(N));$
+\end{enumerate}
+\section{Ricavare l'induttanza del motore e la costante di tempo, whitebox identification}
+$$\frac{I}{V}(s) = \frac{Ms^2+Cs+K}{(Ms^2+Cs+K)(2R+2sL)+\gamma s } =M(s)$$
+$$\gamma = \Big(\frac{4K_e}{D}\Big)^2$$
+Il sistema $\forall \gamma > 0$ è un passabasso. L'effetto di $\gamma$ è di spostare due poli lontano dai due zeri,con modulo $\to \infty$ Questi due poli rimangono complessi coniugati, stessa cosa per gli zeri. Facendo quindi un diagramma di bode al variare di $\gamma$ si nota che rimane passabasso il sistema in generale. Notiamo che il polo del motore, $\frac{R}{L} \gg 1$, quindi la risposta nel tempo è aprossimabile a:
+$$i(t) = \frac{V_0}{2R}(1-e^{-\frac{R}{L}t})$$
+Dove $V_0$ è la costante dello step in ingresso che è $V_0=3.6$
+Sappiamo che per:
+$$\frac{R}{L}t > 6 \Rightarrow e^{-\frac{R}{L}t} < \frac{1}{400}$$
+Quindi :
+$$\frac{V_0}{2R} - i(t) = \frac{V_0}{2R}e^{-\frac{R}{L}t}$$
+Bisogna vedere quadno:
+$$\frac{V_0}{2R}e^{-\frac{R}{L}t}= \frac{V_0}{2R} - i(t) < \frac{V_0}{2R}e^{-6}$$
+Che equivale alla condizione:
+$$1- \frac{i(t)2R}{V0} < e^{-6}$$
+Una volta ricavato per quale primo valore di $t$ vale, allora chiamato $t_0$ questo valore abbiamo:
+$$\frac{R}{L}t_0 \approx 6 \Rightarrow L = \frac{R}{6}t_0$$\\ \\
+
+Tutto questo lo fa uno script che è nella stessa cartella dove ho salvato test1. Esegui quindi test1, salva corrente e input in due variabili x,u. Salvati il tempo pure in t ed esegui lo script.
+
+Lo script eseguirà identificazione pure di un sistema G1 con 1 polo, G2 con 3 poli/2 zeri.
+
+\end{document}
