@@ -9,6 +9,12 @@
 \tableofcontents
 
 \section{Introduzione}
+Nota bene, in test1 la 2 levetta da lo step in ingresso, la 3 levetta (quella + a destra) accende il motore e l'encoder. Quindi aziona prima la 3 e poi la 2 nei test. ASSICURATI CHE IL CART SIA IN 0 OGNI VOLTA!
+Per ogni test salva output della corrente e input, e il vettore del tempo (o la frequenza di campionamento!).  \\
+\\ Ricordati di testare gli encoder.
+\\ \\
+SALVA PURE L'OUTPUT DEGLI ENCODER OLTRE CHE QUELLO DELLA CORRENTE! Quindi corrente, tensione in ingresso ed encoder e frequenza di campioanemtno e/o vettore del tempo.
+\\ \\
 Rotazione del disco attaccato al motore: $\theta$. \\
 Raggio del disco attaccato al motore: $0.5D$. \\
 Posizione del carretto : $x$. \\
@@ -20,7 +26,7 @@ Costante torque/backemf: $K_e$
 
 Essendo il gearbox fissato al carretto abbiamo:
 $$\theta= \frac{x}{R_d} $$
-
+\\
 Funzione di trasferimento tra forza erogata e posizione del carretto:
 $$\frac{X}{F}(s) =  \frac{1}{Ms^2+Cs +K}$$
 
