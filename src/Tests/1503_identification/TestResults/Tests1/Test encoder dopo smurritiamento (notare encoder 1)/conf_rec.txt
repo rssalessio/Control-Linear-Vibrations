@@ -1,0 +1,6 @@
+# Politecnico di Milano
+# PoliScope V1.1
+
++ # Signals: 6
++ Signals names: Voltage, Voltage amplified, Current, Enc1, Enc2, Enc3
++ Sampling frequency [Hz]: 100
