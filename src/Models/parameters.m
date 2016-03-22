@@ -32,3 +32,5 @@ Kl = 150; %Stifness low
 
 
 gamma = (4*Ke/D)^2;
+s=tf('s');
+G=170.9/(s^2+7.092*s+580.4);

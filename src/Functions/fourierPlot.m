@@ -5,4 +5,7 @@ function [] = fourierPlot(x,T)
     plot(f,m); grid; xlabel('Hz'); title('Module');
     subplot(212);
     plot(f,p); grid; xlabel('Hz');title('Phase');
+    
+    figure;
+    semilogx(f, 10*log10(m));grid;
 end
