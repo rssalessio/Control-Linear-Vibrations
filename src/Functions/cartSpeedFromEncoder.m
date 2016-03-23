@@ -6,7 +6,5 @@ function  [v1,v2] = cartSpeedFromEncoder(data,Ts)
     end
     v1 = diff(data)./(Ts);
     v1(end+1)=v1(end);
-    v2=lowPassFilter(v1, 50);
-    
-    
+    v2=lowPassFilter(v1, 50, 2, 0, Ts);
 end

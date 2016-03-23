@@ -2,7 +2,7 @@ function [t,v,i,x,xv] = readExp()
 
 [t,v,i,x]=reads();
 
-i = lowPassFilter(i,30);
+i = lowPassFilter(i,30,4,0,1/200);
 
 ts = (find(i>0.2,1)-2)*1/200;
 v(t<ts)=0;
