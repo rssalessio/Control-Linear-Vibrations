@@ -1,4 +1,4 @@
-function [y] = fourierSignal(mod, phase, f, t)
+function [y] = fourierSignalFromCoefficients(mod, phase, f, t)
 % FOURIERSIGNAL  Given the module,phase coefficients and the frequency
 % components, plots the signal over the period defined by the vector t
 %
@@ -8,6 +8,7 @@ function [y] = fourierSignal(mod, phase, f, t)
 % [mod,phase,f] = fourierCoefficients(x,10);
 % figure; plot(t,x); hold on; plot(t, fourierSignal(mod,phase,f,t));
 % legend(['Original signal', 'Reconstructed Signal']);
+
     y = zeros(length(t),1);
     for i = 1:length(mod)
         omega = 2*pi*f(i);
