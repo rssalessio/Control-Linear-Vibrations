@@ -2,8 +2,8 @@ function datacut = cutexp(data, t_start, t_end)
 
     ts = 1/200;
     
-    index_start = find(data.t == t_start);
-    index_end = find(data.t == t_end );
+    [~ ,index_start] = min(abs(data.t-t_start));
+    [~, index_end] = min(abs(data.t-t_end));
     
     datacut = struct;
     
