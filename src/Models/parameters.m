@@ -8,8 +8,8 @@ D = 0.0762; %diameter
 J = 0.07; %inertia
 
 %carts and load
-Ml = 0.5; %load mass
-Mc = 0.49; %cart mass w/o load
+Ml = 0.493; %load mass
+Mc = 0.7552; %cart mass w/o load
 
 N1 = 2; %# of loads for 1st cart
 M1 = N1*Ml+Mc; %mass 1 cart+load
@@ -23,14 +23,12 @@ M3 = N3*Ml+Mc;
 
 
 %spring
-Ch = 5.5492; %spring damping
-Cm = 5; 
-Cl = 0.1;
-Kh = 617.7286; %Stiffness high
-Km = 450; %Stiffness Med
-Kl = 150; %Stifness low
+Ch = 3.3641; %spring damping
+Cm = 2.9304; 
+Cl = 2.9153;
+Kh = 698.8326; %Stiffness high
+Km = 299.2155; %Stiffness Med
+Kl = 211.8954; %Stifness low
 
 
-gamma = (4*Ke/D)^2;
-s=tf('s');
-G=170.9/(s^2+7.092*s+580.4);
+gamma = (4*Ke/D);
