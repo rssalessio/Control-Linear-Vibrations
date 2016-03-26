@@ -1,29 +1,24 @@
 clear all; 
 close all;
 
-cd pulse_kbig_2mass/
-d = cutexp(readexp(), 4, 9); % CUTTING PARAMETERS TO BE SET
+cd steps_kbig_mass_compression/
+%cd pulse_kbig_nomass/
+d = cutexp(readexp(), 3, 9); % CUTTING PARAMETERS TO BE SET
 cd ..
 
-% scale data from 0 to 1
-is = (d.i + 2.5)/5;
-vs = (d.v + 3)/6;
-t = d.t;
-
-x0 = [1; 1];
+par0 = [1; 1]; %L, R
 options = optimoptions('lsqnonlin', 'Algorithm', 'levenberg-marquardt', ...
                         'MaxFunEvals', 2000, 'Display', 'iter');
 
-x_opt = lsqnonlin( @(x)cost_motor(x,vs,is,t), x0, [], [], options)
+par_opt = lsqnonlin( @(par)cost_motor(par,d), par0, [], [], options)
 
-L = x_opt(1);
-R = x_opt(2);
+L = par_opt(1);
+R = par_opt(2);
 
-
-motor = tf([1], [L R]);
-i_sim = lsim(motor, vs, t);
+motor = tf(1, [L R]);
+i_sim = lsim(motor, d.v, d.t);
 
 figure;
-plot(t, is, 'blue');
+plot(d.t, d.i, 'blue');
 hold on;
-plot(t, i_sim, 'red');
+plot(d.t, i_sim, 'red');

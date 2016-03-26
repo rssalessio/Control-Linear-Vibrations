@@ -12,5 +12,9 @@ function datacut = cutexp(data, t_start, t_end)
     datacut.i = data.i(index_start:index_end);
     datacut.x = data.x(index_start:index_end);
     datacut.xv = data.xv(index_start:index_end);
+    
+    if length(datacut.t) < length(datacut.v)
+        datacut.t = [datacut.t datacut.t(end)+ts];
+    end
 
 end
