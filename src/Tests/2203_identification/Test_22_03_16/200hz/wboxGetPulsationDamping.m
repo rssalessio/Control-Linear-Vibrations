@@ -36,7 +36,6 @@ function [wm, wvar, xim, xivar] = getPDR(x, Ts)
     x = x(index:end);
     
     [k,i] = findpeaks(x);
-    i=i-1;
     index = k>mean(x);
     k = k(index);
     i = i(index);

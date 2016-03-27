@@ -1,7 +1,7 @@
 clear all; 
 close all;
 
-cd steps_kbig_mass_compression/
+cd steps_kbig_2mass_compression/
 %cd pulse_kbig_nomass/
 d = cutexp(readexp(), 3, 9); % CUTTING PARAMETERS TO BE SET
 cd ..

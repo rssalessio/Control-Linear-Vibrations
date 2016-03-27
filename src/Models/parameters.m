@@ -23,7 +23,7 @@ M3 = N3*Ml+Mc;
 
 
 %spring
-Ch = 3.3641; %spring damping
+Ch = 5.0271; %spring damping
 Cm = 2.9304; 
 Cl = 2.9153;
 Kh = 698.8326; %Stiffness high

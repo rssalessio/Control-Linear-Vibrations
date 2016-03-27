@@ -1,5 +1,5 @@
 function [Mm,MVar] = wboxGetCartMass()
-    [Wm, ~,~,~] = wboxGetPulsationDamping();
+    [Wm, ~,Xim,~] = wboxGetPulsationDamping();
     Mload= 0.493*2;
     
     Wdiff = diff(Wm.^2,1);
