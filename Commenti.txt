@@ -1,0 +1,5 @@
+Khigh in estensione ha meno stifness rispetto alal compressione (0.6cm  V=3)
+Kmed circa ha stessa K in estensione e compressione (1.5cm V=3)
+Klow in estensione ha meno stifness rispetto a compression (1.6cm, -1.7cm con V=2)
+
+Kmed per frequenze basse e k decrescente mostra distorsione del seno (numero di poli del motore)
