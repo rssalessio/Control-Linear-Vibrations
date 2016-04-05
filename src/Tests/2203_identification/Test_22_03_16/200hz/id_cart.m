@@ -1,9 +1,9 @@
 clear all; 
 close all;
 
-cd steps_kbig_2mass_compression/
-%cd pulse_kbig_nomass/
-d = cutexp(readexp(), 3, 9); % CUTTING PARAMETERS TO BE SET
+cd steps_kmed_2mass/
+
+d = cutexp(readexp(), 9, 14); % CUTTING PARAMETERS TO BE SET
 cd ..
 
 par0 = [-100000; 1; 10; 900]; %Ke, M, C, K
@@ -32,7 +32,7 @@ legend('measured', 'simulated');
 
 %% USE SIMULATED CURRENT
 
-i_s = lsim(tf(1,[0.0221, 1.3033]), d.v, d.t);
+i_s = lsim(tf(1,[0.0221, 1.2203]), d.v, d.t);
 x_s = lsim(cart, i_s, d.t);
 
 figure;
