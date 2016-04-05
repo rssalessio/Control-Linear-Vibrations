@@ -47,10 +47,12 @@ function [wm, wvar, xim, xivar] = getPDR(x, Ts)
        Inew = [Inew; i(p);i(p+1)];
        prevp=i(p);
     end
+    
+
     temp = x(Inew);
     xiest=[];
     for (p=1:2:length(temp))
-        d = log(temp(p)/(temp(p+1)));
+        d = log(temp(p))/log(temp(p+1));
         xiest = [xiest; 1/sqrt(1+(2*pi/d)^2)]; 
     end
     T = diff(Inew) * 1/200;
