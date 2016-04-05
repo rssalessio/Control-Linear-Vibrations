@@ -4,6 +4,7 @@ close all;
 cd steps_kmed_2mass/
 
 d = cutexp(readexp(), 9, 14); % CUTTING PARAMETERS TO BE SET
+
 cd ..
 
 par0 = [1; 1]; %L, R
