@@ -1,29 +1,26 @@
-function [t, s1,s2,s3,s4,s5,s6] = plots(n,Ts)
+function plots(data, n)
     
-    if nargin == 0
-        n = 3;
-        Ts=1/200;
-    end
+    Ts = 1/200;
     
     if nargin == 1
-        Ts=1/200;
+        n = 3;
     end
-    
-    [t,s1,s2,s3,s4,s5,s6] = reads(Ts);
-    tmin = min(t);
-    tmax = max(t);
+   
+    tmin = min(data.t);
+    tmax = max(data.t);
     lim = [tmin,tmax];
     
     figure;
-    subplot 311; plot(t,s1); hold on; grid; hold on;
+    subplot 311; plot(data.t,data.v); hold on; grid; hold on;
     ylabel('Voltage [V]');
-    xlabel('Seconds [s]'); xlim(lim);
+    xlabel('Seconds [s]'); 
+    xlim(lim); ylim([min(data.v)-0.5, max(data.v)+0.5]);
     
-    subplot 312; plot(t,s2); hold on; grid; hold on;
+    subplot 312; plot(data.t,data.i); hold on; grid; hold on;
     ylabel('Current [A]');
     xlabel('Seconds [s]'); xlim(lim);
     
-    subplot 313; plot(t,s3); hold on; grid; hold on;
+    subplot 313; plot(data.t,data.x); hold on; grid; hold on;
     ylabel('Cart pos. [cm]');
     xlabel('Seconds [s]'); xlim(lim);
     
