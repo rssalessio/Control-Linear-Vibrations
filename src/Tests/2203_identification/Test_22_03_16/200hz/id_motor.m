@@ -1,17 +1,19 @@
 clear all; 
 close all;
 
-cd steps_kmed_2mass/
+cd steps_kmed_2mass
 
-d = cutexp(readexp(), 9, 14); % CUTTING PARAMETERS TO BE SET
+t_start = 9;
+t_end = 14;
+d = cutexp(readexp(), t_start, t_end); % CUTTING PARAMETERS TO BE SET
 
 cd ..
 
-par0 = [1; 1]; %L, R
+par0 = [10; 10]; %L, R
 options = optimoptions('lsqnonlin', 'Algorithm', 'levenberg-marquardt', ...
                         'MaxFunEvals', 2000, 'Display', 'iter');
 
-par_opt = lsqnonlin( @(par)cost_motor(par,d), par0, [], [], options)
+par_opt = lsqnonlin( @(par)cost_motor(par,d), par0, [], [], options)'
 
 L = par_opt(1);
 R = par_opt(2);
