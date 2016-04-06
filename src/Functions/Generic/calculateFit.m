@@ -33,7 +33,8 @@ function [Percentage, Cost] = calculateFit(x,y,opt)
         y = y./max(y);
     end
     for i=1:K
-        Cost(i) =  sum((x(:,i)-y(:,i)).^2)/N;
+        Cost(i) =  sum((x(:,i)-y(:,i)).^2);
+        Cost(i) = Cost(i)/(sum(x(:,i).^2)+sum(y(:,i).^2));
     end
     Percentage = exp(-Cost);
 end
