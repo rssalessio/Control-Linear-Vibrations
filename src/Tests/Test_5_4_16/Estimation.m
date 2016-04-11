@@ -1,102 +1,58 @@
 
-Wm_nomass = zeros(3,3);
-WVar_nomass = zeros(3,3);
-
-Wm_2mass = zeros(3,3);
+clear all; close all; clc;
 WVar_2mass = zeros(3,3);
-
+mload=0.493*2;
 Wm=zeros(2,3);
-
-
-
-mload = 2*0.493;
+[wKhNom, wKh2m, wKmNom,wKm2m,wKlNom,wKl2m]= loadData();
 %%
-cd Khigh_hand_Nomass
-    [Wm_nomass(1,1), WVar_nomass(1,1)] = estimatePulsation();
-cd ..
+if (medianCondition(wKh2m) > 0.5)
+    Wm(1,1) = median(wKh2m);
+else
+    Wm(1,1) = mean(wKh2m);
+end
 
-cd Khigh_hand_Nomass2
-    [Wm_nomass(2,1), WVar_nomass(2,1)] = estimatePulsation();
-cd ..
+if (medianCondition(wKhNom) > 0.5)
+    Wm(2,1) = median(wKhNom);
+else
+    Wm(2,1) = mean(wKhNom);
+end
 
-cd Khigh_hand_Nomass3
-    [Wm_nomass(3,1), WVar_nomass(3,1)] = estimatePulsation();
-cd ..
+if (medianCondition(wKm2m) > 0.5)
+    Wm(1,2) = median(wKm2m);
+else
+    Wm(1,2) = mean(wKm2m);
+end
 
-cd Khigh_hand_2mass
-    [Wm_2mass(1,1), WVar_2mass(1,1)] = estimatePulsation();
-cd ..
-
-cd Khigh_hand_2mass2
-    [Wm_2mass(2,1), WVar_2mass(2,1)] = estimatePulsation();
-cd ..
-
-cd Khigh_hand_2mass3
-    [Wm_2mass(3,1), WVar_2mass(3,1)] = estimatePulsation();
-cd ..
-%%
-cd Kmed_hand_Nomass
-    [Wm_nomass(1,2), WVar_nomass(1,2)] = estimatePulsation();
-cd ..
-
-cd Kmed_hand_Nomass2
-    [Wm_nomass(2,2), WVar_nomass(2,2)] = estimatePulsation();
-cd ..
-
-cd Kmed_hand_Nomass3
-    [Wm_nomass(3,2), WVar_nomass(3,2)] = estimatePulsation();
-cd ..
-
-cd Kmed_hand_2mass
-    [Wm_2mass(1,2), WVar_2mass(1,2)] = estimatePulsation();
-cd ..
-
-cd Kmed_hand_2mass2
-    [Wm_2mass(2,2), WVar_2mass(2,2)] = estimatePulsation();
-cd ..
-
-cd Kmed_hand_2mass3
-    [Wm_2mass(3,2), WVar_2mass(3,2)] = estimatePulsation();
-cd ..
-%%
-cd Klow_hand_Nomass
-    [Wm_nomass(1,3), WVar_nomass(1,3)] = estimatePulsation();
-cd ..
-
-cd Klow_hand_Nomass2
-    [Wm_nomass(2,3), WVar_nomass(2,3)] = estimatePulsation();
-cd ..
-
-cd Klow_hand_Nomass3
-    [Wm_nomass(3,3), WVar_nomass(3,3)] = estimatePulsation();
-cd ..
-
-cd Klow_hand_2mass
-    [Wm_2mass(1,3), WVar_2mass(1,3)] = estimatePulsation();
-cd ..
-
-cd Klow_hand_2mass2
-    [Wm_2mass(2,3), WVar_2mass(2,3)] = estimatePulsation();
-cd ..
-
-cd Klow_hand_2mass3
-    [Wm_2mass(3,3), WVar_2mass(3,3)] = estimatePulsation();
-cd ..
+if (medianCondition(wKmNom) > 0.5)
+    Wm(2,2) = median(wKmNom);
+else
+    Wm(2,2) = mean(wKmNom);
+end
 
 
-%%
-Wm(1,1) = mean(Wm_2mass(:,1));
-Wm(2,1) = mean(Wm_nomass(:,1));
-Wm(1,2) = mean(Wm_2mass(:,2));
-Wm(2,2) = mean(Wm_nomass(:,2));
-Wm(1,3) = mean(Wm_2mass(:,3));
-Wm(2,3) = mean(Wm_nomass(:,3));
+if (medianCondition(wKl2m) > 0.5)
+    Wm(1,3) = median(wKl2m);
+else
+    Wm(1,3) = mean(wKl2m);
+end
 
-a = Wm(1,:).^2 ./ Wm(2,:).^2;
-mcart=ml*a./(1-a)
+if (medianCondition(wKlNom) > 0.5)
+    Wm(2,3) = median(wKlNom);
+else
+    Wm(2,3) = mean(wKlNom);
+end
+
 linsolve([1 -Wm(1,1)^2; 1 -Wm(2,1)^2], [mload*Wm(1,1)^2; 0])
 linsolve([1 -Wm(1,2)^2; 1 -Wm(2,2)^2], [mload*Wm(1,2)^2; 0])
 linsolve([1 -Wm(1,3)^2; 1 -Wm(2,3)^2], [mload*Wm(1,3)^2; 0])
+
+
+xi = 0.028;
+w=sqrt(712.5990/0.5848);
+c=2*xi*w;
+k=712.5990;
+m=0.5848;
+
 
 
 

@@ -1,6 +1,0 @@
-# Politecnico di Milano
-# PoliScope V1.1
-
-+ # Signals: 2
-+ Signals names: Current, pos
-+ Sampling frequency [Hz]: 100
