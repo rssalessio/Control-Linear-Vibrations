@@ -1,9 +1,9 @@
 %% Model Parameter
 
 %motor
-R = 0.63;%resistance 
-L = 1.05e-3; %inductance 
-Ke = 0.059/2; %electric stiffness and torque constant
+R = 0.6306;%resistance 
+L = 0.0111; %inductance 
+Ke =0.040122; %electric stiffness and torque constant
 D = 0.0762; %diameter
 J = 0.07; %inertia
 
@@ -23,12 +23,12 @@ M3 = N3*Ml+Mc;
 
 
 %spring
-Ch = 5.0271; %spring damping
-Cm = 2.9304; 
-Cl = 2.9153;
-Kh = 698.8326; %Stiffness high
-Km = 299.2155; %Stiffness Med
-Kl = 211.8954; %Stifness low
+Ch = 11.4882; %spring damping w/ 2 mass, otherwise 7.5728
+Cm = 7.5847; % otherwise 5.1534
+Cl = 6.4027;% otherwise 4.2662
+Kh = 706.2008; %Stiffness high
+Km = 302.3423; %Stiffness Med
+Kl = 207.4248; %Stifness low
 
 
-gamma = (4*Ke/D);
+gamma = -(4*Ke/D);

@@ -1,14 +1,14 @@
-[Mm, MVar] = wboxGetCartMass();
-[Cm] = wboxGetDamping();
-[Wm, WmVar, XIm, XIVar] = wboxGetPulsationDamping();
+[Mm, MVar, Km,Cm] = wboxGetCartMass();
+%[Cm] = wboxGetDamping();
+%[Wm, WmVar, XIm, XIVar] = wboxGetPulsationDamping();
 [Rm, RVar] = wboxGetResistance();
-[Km, KVar] = wboxGetStiffness();
+%[Km, KVar] = wboxGetStiffness();
 
 L=    0.0111;
 s=tf('s');
 G1 = 1/(2*Rm+2*s*L);
-ISim = lsim(G1,data.v,data.t);figure;
-subplot 211; plot(data.t,ISim);grid; hold on; plot(data.t, data.i);legend('sim','real');
+ISim = lsim(G1,v,t);figure;
+subplot 211; plot(t,ISim);grid; hold on; plot(t,i);legend('sim','real');
 
 G2 = -5.163e04/(s^2+5.027*s+417.9);%1/(Mm+0.493*2*s^2 + 5.0271*s+Km(1));
 XSim = lsim(G2, ISim, data.t)*927/678.6382;
