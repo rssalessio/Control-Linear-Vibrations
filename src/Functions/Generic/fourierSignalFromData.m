@@ -1,5 +1,5 @@
-function [y] = fourierSignalFromData(x,T,t)
-    [mod,phase,f] = fourierCoefficients(x,T);
+function [y] = fourierSignalFromData(x,Ts,t)
+    [mod,phase,f] = fourierCoefficients(x,Ts);
     y = zeros(length(t),1);
     for i = 1:length(mod)
         omega = 2*pi*f(i);

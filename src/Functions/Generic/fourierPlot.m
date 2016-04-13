@@ -1,5 +1,5 @@
-function [] = fourierPlot(x,T)
-    [m,p,f] = fourierCoefficients(x,T);
+function [] = fourierPlot(x,Ts)
+    [m,p,f] = fourierCoefficients(x,Ts);
     figure;
     subplot(211);
     bar(f,m); grid; xlabel('Hz'); title('Module');
