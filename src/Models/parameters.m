@@ -8,7 +8,7 @@ D = 0.0762; %diameter
 J = 0.07; %inertia
 
 %carts and load
-Ml = 0.493; %load mass
+Ml = 0.493; %load massx\
 Mc = 0.7552; %cart mass w/o load
 
 N1 = 2; %# of loads for 1st cart
