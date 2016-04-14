@@ -30,6 +30,7 @@ Kx=place(A,B,[-60, -50,-40]);
 
 newSys = ss(A-B*Kx, B,C,D);
 newSysTF = tf(newSys);
-integrator = tf([-0.19405],[1 0]); %designed using root locus
+Ki=-0.19405;
+integrator = tf(Ki,[1 0]); %designed using root locus, LQR is also an option
 CLSys = feedback(integrator*newSysTF,1);
 
