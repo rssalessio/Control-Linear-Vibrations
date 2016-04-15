@@ -35,13 +35,25 @@ CLSys = feedback(integrator*newSysTF,1);
 
 %% unknown parameters
 
-Theta = [10,10,10,10,10,10]; %constant parameters of the regression vector [x; x^3]
+Theta = [10,-10,-10,-10,10,-10]; %constant parameters of the regression vector [x; x^3]
 Gamma = 1+1e-01;
  
 
 
 %%
 
+A = [0, Cp; zeros(3,1), Ap];
+B = [Dp; Bp];
+C = [0, Cp];
+D = Dp;
+Bref = [-1; zeros(3,1)];
 
-Kx=place(A,B,[-60, -50,-40]);
-Aref = Ap-Bp*Kx;
+Aref = A-B*[Ki Kx]; % has same poels as CLSys
+Cref = C-D*[Ki Kx];
+
+%Ref model dot{x}=Aref*x +Bref *r is equal to CLSys. Original system
+%without nnlinearities+baseline controller
+Ku = 1-1/Gamma;
+
+Pref=lyap(Aref',eye(4)*0.1);
+Tau = 100;
