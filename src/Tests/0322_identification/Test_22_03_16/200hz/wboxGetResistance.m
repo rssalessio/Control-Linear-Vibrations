@@ -23,9 +23,10 @@ function [Rmean,Rvar] = wboxGetResistance()
          [RPosM(6), RNegM(6)]= getResistance();
     cd ..
     
-    RM = abs([RPosM; RNegM]);
+    RM = abs([RPosM, RNegM]);
     Rmean = mean(RM);
     Rvar = var(RM);
+    RM
 end
 
 
@@ -43,13 +44,11 @@ function [RPos, RNeg] = getResistance()
     inew=i(i1+i2:end);
 
     ipos = inew(inew>0.2);  
-    ifilt =lowPassFilter(ipos, 5, 4, 1, 1/200);
-    imean = mean(ifilt);
-    RPos = vmax/(2*imean);
+    [a,b,c]=fourierCoefficients(ipos, length(ipos)/200);
+    RPos = vmax/(2*a(1));
 
     inew = inew(i1+i2+i3:end);
     ineg = inew(inew<-0.2);
-    ifilt =lowPassFilter(ineg, 5, 4, 1, 1/200);
-    imean = mean(ifilt);
-    RNeg = vmax/(2*imean);
+    [a,b,c]=fourierCoefficients(ineg, length(ineg)/200);
+    RNeg = vmax/(2*a(1));
 end

@@ -32,6 +32,7 @@ function [wm, wvar, xim, xivar, gn, gp] = getPDR( Ts)
         Ts=1/200;
     end
     [t,in,i,x] = reads();
+    x=x./560;
     index = find(i<-0.2,1);
     i = i(index:end);
     x = x(index:end);
@@ -39,7 +40,7 @@ function [wm, wvar, xim, xivar, gn, gp] = getPDR( Ts)
     v = diff(x)/Ts;
     v(end+1)=v(end);
     xg = x(v==0);
-    xg = xg./560;
+
     xg=xg(abs(xg)>0);
     gn = xg(xg>0);
     gp = xg(xg<0);
