@@ -40,7 +40,7 @@ close all;
 zero1 = -3.5+22i;
 zero2 = -3.5-22i;
 pole1 = -100;
-gain = -0.02; 
+gain = -0.009; 
 controller = zpk([zero1 zero2],...
                  [0 pole1], gain)
 

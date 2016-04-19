@@ -40,7 +40,7 @@ close all;
 zero1 = -3.5+22i;
 zero2 = -3.5-22i;
 pole1 = -100;
-gain = -0.02; 
+gain = -0.009; 
 controller = zpk([zero1 zero2],...
                  [0 pole1], gain)
 
@@ -51,8 +51,8 @@ plant_cl = feedback(plant_ol,1);
 poles_cl = pole(plant_cl)
 %figure; pzmap(plant_cl); grid;
 
-% figure;     margin(plant); grid;
-% hold on;    margin(plant_ol);  legend('real','shaped');
+figure;     margin(plant); grid;
+hold on;    margin(plant_ol);  legend('real','shaped');
 
 % figure; bodeplot(plant_cl); grid;
 % hold on; bodeplot(feedback(controller,plant)); 
