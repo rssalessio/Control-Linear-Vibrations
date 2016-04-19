@@ -1,4 +1,4 @@
-function [Mm,MVar,Km, C] = wboxGetCartMass()
+function [Mm,MVar,Km, C,g] = wboxGetCartMass()
     [Wm, ~,XIm,~,g] = wboxGetPulsationDamping();
     Mload= 0.493*2;
 

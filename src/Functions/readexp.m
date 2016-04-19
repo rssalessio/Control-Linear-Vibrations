@@ -2,7 +2,7 @@ function [data] = readexp()
 
 [t,v,i,x]=reads();
 
-i = lowPassFilter(i,30,4,0,1/200);
+i = lowPassFilter(i,15,4,0,1/200);
 
 xv = cartSpeedFromEncoder(x);
 

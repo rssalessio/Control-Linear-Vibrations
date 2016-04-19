@@ -1,13 +1,14 @@
-function [mod,phase, f] = fourierCoefficients(x,T)
+function [mod,phase, f] = fourierCoefficients(x,Ts)
 % FOURIERCOEFFICIENTS calculates phase and module cofficients of a signal.
 %   INPUTS:
 %       x - signal to be analysed
-%       T - duration in seconds of the signal
+%       T - sampling time
 %   OUTPUTS:
 %       mod - module coefficients
 %       phase - phase coefficients
 %       f - frequency components
 %
+    T=length(x)*Ts;
     N = length(x);
     df=1/T;
     fmax=df*(N/2-1);

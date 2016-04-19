@@ -55,21 +55,21 @@ cd pulse_kbig_nomass/
     max(data.v)
 cd ..
 legend('2mass','nomass'); hold on; grid;
-% figure;
-% cd pulse_klow_2mass/ 
-%     data =readexp();
-%     plot(data.t, data.i,'blue'); hold on; grid;hold on;
-%     max(data.v)
-% cd ..
-% cd pulse_klow_nomass/
-%   data =readexp();
-%     plot(data.t, data.i,'red'); hold on; grid;hold on;
-%     max(data.v)
-% cd ..
-% figure;
+figure;
+cd pulse_klow_2mass/ 
+    data =readexp();
+    plot(data.t, data.i,'blue'); hold on; grid;hold on;
+    max(data.v)
+cd ..
+cd pulse_klow_nomass/
+  data =readexp();
+    plot(data.t, data.i,'red'); hold on; grid;hold on;
+    max(data.v)
+cd ..
+figure;
 cd pulse_kmed_2mass/
     data =readexp();
-    plot(data.t, data.i,'green'); hold on; grid;hold on;
+    plot(data.t, data.x,'green'); hold on; grid;hold on;
     max(data.v)
 cd ..
 cd pulse_kmed_nomass/
@@ -77,3 +77,105 @@ cd pulse_kmed_nomass/
     plot(data.t, data.i,'black'); hold on; grid;hold on;
     max(data.v)
 cd ..
+
+
+%%
+
+
+cd pulse_kbig_2mass/
+    [t,v,i,x]= reads();
+    i = lowPassFilter(i, 15, 4, 0, 1/200);
+    i1 = find(x>50,1)-1;
+    i2 = 0;%find(x(i1:end)<0, 1);
+    i(1:i1)=0;
+    v(1:i1)=0;
+    x(1:i1)=0;
+    ISim = lsim(G1,v,t);
+   compare(iddata(i, v, 1/200), G1);
+cd ..
+
+cd pulse_kbig_nomass/
+    [r,w,g2g,c,xi]= BBEst();
+   % RGBEst = [RGBEst;r];CEst(2,1)=c;
+    %XIEst(2,1)=xi; WEst(2,1) = w;
+    %G2GainEst(2,1)=g2g;
+cd ..
+cd pulse_klow_2mass/ 
+    [r,w,g2g,c,xi]= BBEst();
+   % RGBEst = [RGBEst;r];CEst(1,3)=c;
+    %XIEst(1,3)=xi; WEst(1,3) = w;
+    %G2GainEst(1,3)=g2g;
+cd ..
+cd pulse_klow_nomass/
+  [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(2,3)=c;
+    %XIEst(2,3)=xi; WEst(2,3) = w;
+    %G2GainEst(2,3)=g2g;
+cd ..
+cd pulse_kmed_2mass/
+    [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(1,2)=c;
+    %XIEst(1,2)=xi; WEst(1,2) = w;
+    %G2GainEst(1,2)=g2g;
+cd ..
+cd pulse_kmed_nomass/
+     [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(2,2)=c;
+    %XIEst(2,2)=xi; WEst(2,2) = w;
+    %G2GainEst(2,2)=g2g;
+cd ..
+
+
+
+
+subplot 211; plot(t,ISim);grid; hold on; plot(t,i);legend('sim','real');
+
+G2 = -5.163e04/(s^2+5.027*s+417.9);%1/(Mm+0.493*2*s^2 + 5.0271*s+Km(1));
+
+%%
+RGBEst =[];
+CEst = zeros(2,3);
+XIEst =zeros(2,3);
+WEst = zeros(2,3);
+G2GainEst = zeros(2,3);
+
+cd pulse_kbig_2mass/
+    [r,w,g2g,c,xi]= BBEst();
+%    RGBEst = [RGBEst;r];CEst(1,1)=c;
+ %   XIEst(1,1)=xi; WEst(1,1) = w;
+  %  G2GainEst(1,1)=g2g;
+cd ..
+
+cd pulse_kbig_nomass/
+    [r,w,g2g,c,xi]= BBEst();
+   % RGBEst = [RGBEst;r];CEst(2,1)=c;
+    %XIEst(2,1)=xi; WEst(2,1) = w;
+    %G2GainEst(2,1)=g2g;
+cd ..
+cd pulse_klow_2mass/ 
+    [r,w,g2g,c,xi]= BBEst();
+   % RGBEst = [RGBEst;r];CEst(1,3)=c;
+    %XIEst(1,3)=xi; WEst(1,3) = w;
+    %G2GainEst(1,3)=g2g;
+cd ..
+cd pulse_klow_nomass/
+  [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(2,3)=c;
+    %XIEst(2,3)=xi; WEst(2,3) = w;
+    %G2GainEst(2,3)=g2g;
+cd ..
+cd pulse_kmed_2mass/
+    [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(1,2)=c;
+    %XIEst(1,2)=xi; WEst(1,2) = w;
+    %G2GainEst(1,2)=g2g;
+cd ..
+cd pulse_kmed_nomass/
+     [r,w,g2g,c,xi]= BBEst();
+    %RGBEst = [RGBEst;r];CEst(2,2)=c;
+    %XIEst(2,2)=xi; WEst(2,2) = w;
+    %G2GainEst(2,2)=g2g;
+cd ..
+
+RGBM = mean(RGBEst);
+RGBVar = sum((RGBEst-RGBM).^2)/length(RGBEst);
