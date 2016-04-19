@@ -1,0 +1,122 @@
+%implements s0_b0_sfgxf_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+boolean_T rtb_SFunction_0;
+real_T rtb_Saturation;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 0)
+%assign tlcOutputsFcnOfS0B5 = OpaqueTLCBlockFcn("Outputs", 0, 5, 0, 0)
+%assign tlcOutputsFcnOfS0B6 = OpaqueTLCBlockFcn("Outputs", 0, 6, 0, 0)
+%assign tlcOutputsFcnOfS0B7 = OpaqueTLCBlockFcn("Outputs", 0, 7, 0, 0)
+%assign tlcOutputsFcnOfS0B8 = OpaqueTLCBlockFcn("Outputs", 0, 8, 0, 0)
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+%<tlcOutputsFcnOfS0B0>\
+    /* Logic: '<S1>/Logical Operator' incorporates:
+ *  Constant: '<S10>/Constant'
+ *  Constant: '<S11>/Constant'
+ *  Constant: '<S12>/Constant'
+ *  Constant: '<S9>/Constant'
+ *  Logic: '<S6>/Logical Operator'
+ *  Logic: '<S7>/Logical Operator'
+ *  Memory: '<S1>/Memory'
+ *  Memory: '<S1>/Memory1'
+ *  RelationalOperator: '<S10>/Compare'
+ *  RelationalOperator: '<S11>/Compare'
+ *  RelationalOperator: '<S12>/Compare'
+ *  RelationalOperator: '<S9>/Compare'
+ */
+    loopshaping_control_B.LogicalOperator = ((loopshaping_control_DW.Memory_PreviousInput >= loopshaping_control_P.UpperThreshold_const) || (loopshaping_control_DW.Memory_PreviousInput <= loopshaping_control_P.LowerThreshold_const) || ((loopshaping_control_DW.Memory1_PreviousInput >= loopshaping_control_P.UpperThreshold_const_b) || (loopshaping_control_DW.Memory1_PreviousInput <= loopshaping_control_P.LowerThreshold_const_i)));
+    /* DataTypeConversion: '<S5>/conversion3' */
+    loopshaping_control_B.conversion3 = false;
+    /* DataTypeConversion: '<S5>/conversion9' */
+    loopshaping_control_B.conversion9 = false;
+    /* DataTypeConversion: '<S5>/conversion10' */
+    loopshaping_control_B.conversion10 = false;
+    /* DiscretePulseGenerator: '<Root>/Pulse Generator' */
+    rtb_Saturation = (loopshaping_control_DW.clockTickCounter < loopshaping_control_P.PulseGenerator_Duty) && (loopshaping_control_DW.clockTickCounter >= 0) ? loopshaping_control_P.PulseGenerator_Amp : 0.0;
+    if (loopshaping_control_DW.clockTickCounter >= loopshaping_control_P.PulseGenerator_Period - 1.0) {
+        loopshaping_control_DW.clockTickCounter = 0;
+    } else {
+        loopshaping_control_DW.clockTickCounter++;
+    }
+    /* End of DiscretePulseGenerator: '<Root>/Pulse Generator' */
+
+    /* Saturate: '<S8>/Saturation' */
+    if (rtb_Saturation > loopshaping_control_P.Saturation_UpperSat) {
+        rtb_Saturation = loopshaping_control_P.Saturation_UpperSat;
+    } else {
+        if (rtb_Saturation < loopshaping_control_P.Saturation_LowerSat) {
+            rtb_Saturation = loopshaping_control_P.Saturation_LowerSat;
+        }
+    }
+    /* End of Saturate: '<S8>/Saturation' */
+
+    /* DataTypeConversion: '<S5>/conversion13' */
+    loopshaping_control_B.conversion13 = (real32_T)rtb_Saturation;
+    /* S-Function (arduinodigitalinput_sfcn): '<S17>/S-Function' */
+    loopshaping_control_B.SFunction_d = MW_digitalRead(loopshaping_control_P.SFunction_p1);
+%<tlcOutputsFcnOfS0B5>\
+    /* Sum: '<S4>/Sum' incorporates:
+ *  Gain: '<S4>/cm-to-encoder'
+ */
+    loopshaping_control_B.Sum = loopshaping_control_P.cmtoencoder_Gain * rtb_Saturation - (real_T)loopshaping_control_B.SFunction;
+}
+/* ZeroPole: '<S2>/loopshaping' */
+loopshaping_control_B.loopshaping = 0.0;
+loopshaping_control_B.loopshaping += loopshaping_control_P.loopshaping_C[0] * loopshaping_control_X.loopshaping_CSTATE[0];
+loopshaping_control_B.loopshaping += loopshaping_control_P.loopshaping_C[1] * loopshaping_control_X.loopshaping_CSTATE[1];
+loopshaping_control_B.loopshaping += loopshaping_control_P.loopshaping_D * loopshaping_control_B.Sum;
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+    /* DataTypeConversion: '<S5>/conversion2' */
+    loopshaping_control_B.conversion2 = (real32_T)loopshaping_control_B.loopshaping;
+}
+/* DataTypeConversion: '<S20>/conversion8' */
+loopshaping_control_B.conversion8 = (real32_T)loopshaping_control_B.loopshaping;
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+    /* S-Function (arduinodigitalinput_sfcn): '<S19>/S-Function' */
+    rtb_SFunction_0 = MW_digitalRead(loopshaping_control_P.SFunction_p1_l);
+    /* Logic: '<S20>/Logical Operator' incorporates:
+ *  Logic: '<Root>/Logical Operator'
+ *  Logic: '<S16>/Logical Operator'
+ *  S-Function (arduinodigitalinput_sfcn): '<S19>/S-Function'
+ */
+    loopshaping_control_B.LogicalOperator_p = (rtb_SFunction_0 && (!loopshaping_control_B.LogicalOperator) && loopshaping_control_B.SFunction2_o1);
+}
+%<tlcOutputsFcnOfS0B6>\
+/* DataTypeConversion: '<S16>/Data Type Conversion1' */
+loopshaping_control_B.DataTypeConversion1 = loopshaping_control_B.SFunction1_o1;
+if (%<(SLibCGIRIsSampleHit(1, 0))>) {
+    /* DataTypeConversion: '<S5>/conversion4' */
+    loopshaping_control_B.conversion4 = (real32_T)loopshaping_control_B.DataTypeConversion1;
+    /* DataTypeConversion: '<S5>/conversion5' */
+    loopshaping_control_B.conversion5 = (real32_T)loopshaping_control_B.SFunction;
+    /* DataTypeConversion: '<S5>/conversion6' */
+    loopshaping_control_B.conversion6 = 0.0F;
+    /* DataTypeConversion: '<S5>/conversion7' */
+    loopshaping_control_B.conversion7 = 0.0F;
+%<tlcOutputsFcnOfS0B7>\
+    /* S-Function (arduinodigitaloutput_sfcn): '<S13>/Digital Output' incorporates:
+ *  DataTypeConversion: '<S13>/Data Type Conversion'
+ */
+    MW_digitalWrite(loopshaping_control_P.DigitalOutput_pinNumber, (uint8_T)loopshaping_control_B.SFunction2_o1);
+    /* S-Function (arduinodigitaloutput_sfcn): '<S14>/Digital Output' incorporates:
+ *  DataTypeConversion: '<S14>/Data Type Conversion'
+ */
+    MW_digitalWrite(loopshaping_control_P.DigitalOutput_pinNumber_f, (uint8_T)loopshaping_control_B.SFunction2_o2);
+%<tlcOutputsFcnOfS0B8>\
+}
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

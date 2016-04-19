@@ -1,0 +1,26 @@
+%implements s0_b0_sfgxf_Derivatives "C"
+
+%function Derivatives(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+XDot_loopshaping_control_T *_rtXdot;
+%closefile localVarDecl
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+/* Derivatives for ZeroPole: '<S2>/loopshaping' */
+_rtXdot->loopshaping_CSTATE[0] = 0.0;
+_rtXdot->loopshaping_CSTATE[1] = 0.0;
+_rtXdot->loopshaping_CSTATE[0] += loopshaping_control_P.loopshaping_A[0] * loopshaping_control_X.loopshaping_CSTATE[0];
+_rtXdot->loopshaping_CSTATE[1] += loopshaping_control_P.loopshaping_A[1] * loopshaping_control_X.loopshaping_CSTATE[0];
+_rtXdot->loopshaping_CSTATE[0] += loopshaping_control_P.loopshaping_B * loopshaping_control_B.Sum;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Derivatives(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%<LibSetSystemField(system, "CachedDerivativeLocalVars", localVarDecl)>
+%endfunction
