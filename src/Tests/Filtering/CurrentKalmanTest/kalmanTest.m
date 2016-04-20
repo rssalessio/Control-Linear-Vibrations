@@ -11,11 +11,11 @@ sysd2= ss(sysd.a,[sysd.b, sysd.b],sysd.c,sysd.d,1/200,'inputname',{'u'},'outputn
 Q=0.00001;
 R=0.001;
 
-[kalmf,L,P,M,Z]=kalman(sysd2,Q,R);
+[kalmf,L,P,M]=kalman(sysd2,Q,R);
 kalmf=kalmf(1,:)
 
-[kalman_dis,L,P,M]=kalmd(sys,Q,R,1/200);
-%kalman_dis=kalman_dis(1,:);
+
+
 
 
 t = [0:1/200:100]';
