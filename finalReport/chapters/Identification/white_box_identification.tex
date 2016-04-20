@@ -1,1 +1,113 @@
 \section{White box identification}
+\subsection{Cart and springs identification}
+To accurately identify the mass of the cart and the stiffness and damping of the spring the motor was detached from the cart in order to reduce influence of friction due to the pinion and rack. \\ \\
+So we obtain a system like the one considered in figure \ref{fig:cart_detached_motor}.
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[every node/.style={draw,outer sep=0pt,thick}]
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+\tikzstyle{damper}=[thick,decoration={markings,  
+  mark connection node=dmp,
+  mark=at position 0.5 with 
+  {
+    \node (dmp) [thick,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+    \draw [thick] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$);
+    \draw [thick] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);
+  }
+}, decorate]
+\tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=0.75cm,minimum height=0.3cm]
+
+ 
+\begin{scope}[xshift=7cm]
+\node (M) [minimum width=1cm, minimum height=2.5cm] {$m_c$};
+
+\node (ground) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M.south) {};
+\draw (ground.north east) -- (ground.north west);
+\draw [thick] (M.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (M.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+\node (wall) [ground, rotate=-90, minimum width=3cm,yshift=-3cm] {};
+\draw (wall.north east) -- (wall.north west);
+
+\draw [spring] (wall.170) -- ($(M.north west)!(wall.170)!(M.south west)$) node [draw=none,midway,above=0.3cm] {$k$};
+\draw [damper] (wall.10) -- ($(M.north west)!(wall.10)!(M.south west)$) node [draw=none,midway,above=0.3cm] {$c$};
+
+\draw [-latex,ultra thick] (M.east) ++ (0.2cm,0) -- +(1cm,0) node [draw=none, midway,above=0.3cm] {$x$};
+\end{scope}
+\end{tikzpicture}
+\caption{Cart detached from the motor diagram.}
+\label{fig:cart_detached_motor}
+\end{figure}
+
+The differential equation governing this system is given by:
+$$m_c\ddot{x}+c\dot{x}+kx = f(t)$$
+where $m_c$ (\SI{}{\kilo \gram}) is the mass of the cart in , $c$ (\SI{}{\newton \second \per \meter }) comprehends the damping of the spring and the viscous damping of the sliding guide. Finally $k$ (\SI{}{\newton \per \meter}) is the stiffness of the spring, and $f(t)$ represents external forces acting on the system (such as non-linear friction components).\\ \\
+\\ \\
+\subsubsection{Experiment description}
+For each spring we conducted 2 experiments, one without any load and one with a load of $0.986$ \si{\kg}, each repeated 3 times. \\
+For each experiment the  cart was released from an initial condition $x(0) =x_0 \neq 0$ and $0$ velocity,  such that the force that the spring was exerting on the cart was sufficient enough to  make negligible the very small component of the static friction acting on the cart. \\ Notice that the initial condition differs for each spring since the stiffness is very different for each spring. \\\\
+If we neglect the external forces acting on the cart, which are negligible since they are small non-linear components, then the system considered is:
+\begin{equation} \label{eq:cart_detached_motor}
+\begin{cases}
+M\ddot{x}+c_i\dot{x}+k_i x = 0 \\
+x(0) \in [1,3] \SI{}{\cm} \\
+\dot{x}(0)=0
+\end{cases}
+\end{equation}
+where the subscript $i$ represents the $i$-eth spring, and $M$ is the total mass. \\ \\
+Then data regarding the position of the cart is collected, and from that data the pulsation, damping ratio, mass and stiffness are retrieved.
+
+
+\subsubsection{Experiment analysis}
+Using \ref{eq:cart_detached_motor} the response in time can be obtained by using the Laplace transform. Let $X(s)$ be the Laplace transform of $x(t)$, then:
+$$mX(s)(s^2-x(0)s) +c X(s) (s-x(0)) +kX(s)=0$$
+and:
+$$X(s) = x(0) \frac{(ms+c)}{ms^2+cs+k}$$
+If we solve in $X(s)$ and then apply the inverse Laplace transform, we obtain the response in time:
+$$x(t) = e^{-\xi \omega_0 t}(A\cos(\omega t)+B\sin(\omega t))$$
+where $\xi = \frac{c}{2\sqrt{Mk}}, \omega_0 = \sqrt{\frac{k}{M}}, \omega = \omega_0 \sqrt{1-\xi^2}$, and $A,B$ depend on $x(0), \xi$. \\ \\
+Since the pulsation is the same for both sinusoidal components we have:
+$$x(t) = C e^{-\xi \omega_0 t} \sin(\omega t+ \phi)$$
+Where  $C= \sqrt{A^2+B^2}, \phi = \arctan(A/B)$.
+\\ \\
+\begin{itemize}
+
+\item {To measure $\omega$ we can just extract the period $T$:  the difference in time between the first and second peak is taken, and that difference is the period. Then $\omega$ is just $\frac{2\pi}{T}$. We consider only the first and second peak because  at the beginning non-linearities such as static friction are negligible. }
+
+\item {To measure $\xi$ also the first and second peak are considered. Let $t_0, t_1$ be the times at which there is the first and second peak. Notice that $t_0=0, t_1=T$, and $x(T)= Ae^{-\xi \omega_0 T}$.\\
+Then, consider:
+$$\log \Big(\frac{x(0)}{x(T)}\Big) =  \log(e^{\xi \omega_0 T}) = \xi \omega_0 T = \frac{\xi}{\sqrt{1-\xi^2}} 2\pi$$
+Then $$\xi = \sqrt{\frac{a}{a^2+1}}, \quad a = \frac{1}{2\pi}\log \Big(\frac{x(0)}{x(T)}\Big)$$
+Once $M,k$ are known we can calculate the damping from $c= 2\xi \sqrt{Mk}$.
+}
+
+\item {Finally, to identify each springs and the mass of the cart we made use of the fact that the we have two type of experiments for each spring: one without any load, and one with a load of  $0.986$ \SI{}{\kilo\gram}. We obtain a system of linear equations:
+$$
+\begin{cases}
+\frac{k_i}{m_c+m_l} = \omega_l^2 \\
+\frac{k_i}{m_c} = \omega_{nl}^2 \\
+\end{cases}
+$$
+Where $m_c$ is the mass of the cart, $m_l$ the mass of the load, $\omega_l$ the pulsation of the system with the load, $\omega_{nl}$ the pulsation of the system without the load. It's a system with two unknowns ($k_i, m_c$) and two equations, so we can solve it. We can rewrite it in matrix form:
+$$\begin{bmatrix}
+1  && - \omega_l^2 \\
+1 && -\omega_{nl}^2
+\end{bmatrix}  
+\begin{bmatrix}
+k_i \\ m_c
+\end{bmatrix}  
+=\begin{bmatrix}
+w_l^2 m_l \\
+0
+\end{bmatrix}  
+$$
+and solve for ($k_i, m_c$).
+}
+
+
+
+
+\end{itemize}
+\subsubsection{Experiment results}
+\section{Motor identification}
+
