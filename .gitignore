@@ -6,3 +6,15 @@
 *.out
 
 *.gz
+
+*.aux
+
+*.aux
+
+*.log
+
+*.out
+
+src/Tests/Identification/0405_identification_cartDetached/Estimation.m~
+
+*.m~

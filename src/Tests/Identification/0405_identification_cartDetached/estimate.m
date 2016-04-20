@@ -1,16 +1,15 @@
 function [data] = estimate()
     [~,x] = reads(1);
     [k,a]=findpeaks(x);
-    Wm = 2*pi*200./diff(a(2:end-2));
+    Wm = 2*pi*200./diff(a(2:3));
     
     
     
     
     
     [k,a]=findpeaks(-x);
-    a = 2*pi*200./diff(a(2:end-2));
+    a = 2*pi*200./diff(a(2:3));
     Wm = [Wm; a];
-    
     
     
     xi=estimateDampingRatio(x);

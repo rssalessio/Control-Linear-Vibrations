@@ -127,5 +127,5 @@ cd Klow_hand_2mass3
     xi(6,3) = data.xi;
     xKlow2mass=[xKlow2mass; data.Wm];
 cd ..
-xi
+%xi
 end

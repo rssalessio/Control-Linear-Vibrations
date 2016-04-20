@@ -1,6 +1,6 @@
 \section{White box identification}
 \subsection{Cart and springs identification}
-To accurately identify the mass of the cart and the stiffness and damping of the spring the motor was detached from the cart in order to reduce influence of friction due to the pinion and rack. \\ \\
+To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
 So we obtain a system like the one considered in figure \ref{fig:cart_detached_motor}.
 
 \begin{figure}[!h]
@@ -20,7 +20,7 @@ So we obtain a system like the one considered in figure \ref{fig:cart_detached_m
 
  
 \begin{scope}[xshift=7cm]
-\node (M) [minimum width=1cm, minimum height=2.5cm] {$m_c$};
+\node (M) [minimum width=1cm, minimum height=2.5cm] {$M$};
 
 \node (ground) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M.south) {};
 \draw (ground.north east) -- (ground.north west);
@@ -40,8 +40,8 @@ So we obtain a system like the one considered in figure \ref{fig:cart_detached_m
 \end{figure}
 
 The differential equation governing this system is given by:
-$$m_c\ddot{x}+c\dot{x}+kx = f(t)$$
-where $m_c$ (\SI{}{\kilo \gram}) is the mass of the cart in , $c$ (\SI{}{\newton \second \per \meter }) comprehends the damping of the spring and the viscous damping of the sliding guide. Finally $k$ (\SI{}{\newton \per \meter}) is the stiffness of the spring, and $f(t)$ represents external forces acting on the system (such as non-linear friction components).\\ \\
+$$M\ddot{x}+c_i\dot{x}+k_i x = f(t)$$
+where $M$ (\SI{}{\kilo \gram}) is the total mass of the system  , $c_i$ (\SI{}{\newton \second \per \meter }) comprehends the damping of the $i$-eth spring and the viscous damping of the sliding guide. Finally $k_i$ (\SI{}{\newton \per \meter}) is the stiffness of the $i$-eth spring, and $f(t)$ represents external forces acting on the system (such as non-linear friction components). 
 \\ \\
 \subsubsection{Experiment description}
 For each spring we conducted 2 experiments, one without any load and one with a load of $0.986$ \si{\kg}, each repeated 3 times. \\
@@ -53,8 +53,7 @@ M\ddot{x}+c_i\dot{x}+k_i x = 0 \\
 x(0) \in [1,3] \SI{}{\cm} \\
 \dot{x}(0)=0
 \end{cases}
-\end{equation}
-where the subscript $i$ represents the $i$-eth spring, and $M$ is the total mass. \\ \\
+\end{equation} \\ \\
 Then data regarding the position of the cart is collected, and from that data the pulsation, damping ratio, mass and stiffness are retrieved.
 
 
@@ -81,7 +80,7 @@ Then $$\xi = \sqrt{\frac{a}{a^2+1}}, \quad a = \frac{1}{2\pi}\log \Big(\frac{x(0
 Once $M,k$ are known we can calculate the damping from $c= 2\xi \sqrt{Mk}$.
 }
 
-\item {Finally, to identify each springs and the mass of the cart we made use of the fact that the we have two type of experiments for each spring: one without any load, and one with a load of  $0.986$ \SI{}{\kilo\gram}. We obtain a system of linear equations:
+\item {Finally, to identify each spring and the mass of the cart we made use of the fact that the we have two type of experiments for each spring: one without any load, and one with a load of  $0.986$ \SI{}{\kilo\gram}. We obtain a system of linear equations:
 $$
 \begin{cases}
 \frac{k_i}{m_c+m_l} = \omega_l^2 \\
@@ -103,11 +102,43 @@ w_l^2 m_l \\
 $$
 and solve for ($k_i, m_c$).
 }
-
-
-
-
 \end{itemize}
 \subsubsection{Experiment results}
+Since there are $3$ springs let's denote the set of springs as $K=\{k_l, k_m, k_h\}$ where \emph{l} stands for low, \emph{m} for medium and \emph{h} for high. In a similar manner we define the various pulsation: for example $\omega_{m-nl}$ is the pulsation for the system with spring $k_m$ and no load.
+\\ \\ 
+In the table below are shown the various mean of the pulsation and their relative variance:
+\begin{table}[!h]
+\centering
+
+\label{table: cart_detached_omega}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textit{(\textbf{$\omega_{mean}$}, $\omega_{variance})$} & \textbf{$K_h$} & \textbf{$K_m$}   & \textbf{$K_l$}   \\ \hline
+\textbf{with load}         & (21.2989 \SI{}{\radian \per \second},0)    & (14.2800 \SI{}{\radian \per  \second},0.0045) & (10.6495 \SI{}{\radian \per \second},0)      \\ \hline
+\textbf{with no load}      & (34.9066 \SI{}{\radian \per \second},0)    & (23.7101 \SI{}{\radian \per \second},0.0321) & (17.6991\SI{}{\radian \per \second},0.0101) \\ \hline
+\end{tabular}
+\caption{Pulsation of the cart detached from the motor. Various configuration are shown (with a load of $0.986$ \SI{}{\kilo \gram} and no load) for the various springs. }
+\end{table} \\ \\
+It's interesting to note that even if we considered to average all the periods by considering the various peaks of the signal, and not only the first two peaks, we would have obtained the same results. This is an hint of the fact that the principal non-linearity, i.e. static friction, is negligible.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/cart_detached_1.png}
+    \caption{Displacement of the cart with spring $k_h$ and load $0.986$ \SI{}{\kilo \gram}.}
+    \label{fig:cart_detached_figure}
+\end{figure}
+If we use the mean pulsation, the resultant average mass of the cart $m_c$ is $0.5685$ \SI{}{\kilo\gram} with variance $1.9988 \cdot 10^{-4}$. Results also for the springs are shown in table \ref{table: cart_springs_mass}.
+\begin{table}[!h]
+\centering
+\label{table: cart_springs_mass}
+\begin{tabular}{|l|l|l|}
+\hline
+\textit{\textbf{$(k_h, m_c)$}} & \textbf{$(k_m, m_c)$} & \textbf{$(k_l, m_c)$} \\ \hline
+(712.5990 \SI{}{\newton \per \metre},0.5848\SI{}{\kilo \gram})              & (315.5074 \SI{}{\newton \per \metre},0.5612 \SI{}{\kilo \gram})     & (175.2819\SI{}{\newton \per \metre},0.5595 \SI{}{\kilo \gram})     \\ \hline
+\end{tabular}
+\caption{Identified springs and cart mass}
+\end{table}
+
+
 \section{Motor identification}
 
