@@ -1,5 +1,12 @@
 \chapter{System Identification}
-
+The system considered can be easily modelled and identified without the need to use black-box identification to identify the system. \\ For completeness both \emph{white-box} and \emph{grey-box} identification were used.\\ \\
+First of all the problem of whether to consider a \emph{closed} or \emph{open} loop system is considered. In fact \emph{back-emf} can be seen as a gain acting on the closed loop.\\ \\
+Then, using both \emph{white-box} and \emph{grey-box} identification we identified the main parameters of the system: 
+\begin{enumerate}
+\item Resistance and inductance for the motor.
+\item Mass, stiffness and damping for the cart and the springs.
+\end{enumerate}
+Next identification of non-linearities are considered.
 \subimport{common}{ol_vs_cl_identification}
 \subimport{common}{white_box_identification}
 \subimport{common}{black_box_identification}

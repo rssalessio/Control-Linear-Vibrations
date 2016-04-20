@@ -1,0 +1,17 @@
+\contentsline {chapter}{\numberline {1}Team introduction}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Experience introduction}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Models}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}Model2 - no friction cart, no friction motor, no backlash}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Model 3 - no friction motor, backlash}{5}{section.3.3}
+\contentsline {section}{\numberline {3.4}Model 4 }{5}{section.3.4}
+\contentsline {section}{\numberline {3.5}2 DOF - Model}{6}{section.3.5}
+\contentsline {chapter}{\numberline {4}System Identification}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Open vs Closed loop identification}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}White box identification}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Black box identification}{9}{section.4.3}
+\contentsline {chapter}{\numberline {5}Control of 1 Degree of Freedom}{10}{chapter.5}
+\contentsline {chapter}{\numberline {6}Control of 2 Degree of Freedom}{11}{chapter.6}
+\contentsline {chapter}{\numberline {7}Control of 3 Degree of Freedom}{12}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{13}{chapter.8}
+\contentsline {chapter}{\numberline {9}Appendix}{14}{chapter.9}
