@@ -4,7 +4,7 @@ WVar_2mass = zeros(3,3);
 mload=0.493*2;
 Wm=zeros(2,3);
 WVar = var(2,3);
-[wKhNom, wKh2m, wKmNom,wKm2m,wKlNom,wKl2m]= loadData();
+[wKhNom, wKh2m, wKmNom,wKm2m,wKlNom,wKl2m,xi1,xi2,xi3]= loadData();
 %%
 if (medianCondition(wKh2m) > 0.5)
     Wm(1,1) = median(wKh2m);
@@ -58,6 +58,15 @@ c=linsolve([1 -Wm(1,3)^2; 1 -Wm(2,3)^2], [mload*Wm(1,3)^2; 0])
 
 mc = mean([a(2),b(2),c(2)]);
 
+kh=a(1);
+km=b(1)
+kl=c(1)
+M=mc+0.493*2;
 
+xi=[0.0179, 0.0301, 0.0379; 0.0128, 0.0238, 0.0346]
+
+C=2*xi;
+C(1,:) = C(1,:)*sqrt(mc).*sqrt([kh,km,kl]);
+C(2,:) = C(2,:)*sqrt(M).*sqrt([kh,km,kl]);
 
 
