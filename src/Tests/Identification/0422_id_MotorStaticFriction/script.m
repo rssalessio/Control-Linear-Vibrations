@@ -4,7 +4,7 @@ Ke = -1.0000e+05; %electric stiffness and torque constant
 
 s = tf('s');
 
-%carts and load
+%carts and load     
 M = 1.35;
 
 %spring
