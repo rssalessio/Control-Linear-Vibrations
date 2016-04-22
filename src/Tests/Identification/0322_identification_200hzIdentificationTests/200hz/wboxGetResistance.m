@@ -34,7 +34,7 @@ end
 
 function [RPos, RNeg] = getResistance()
     [t,v,i,x]=reads();
-
+% i = lowPassFilter(i, 10/(2*pi), 4,1,1/200);
     vmax=max(v);
 
     i1 = find(i>0.2,1);
@@ -44,11 +44,12 @@ function [RPos, RNeg] = getResistance()
     inew=i(i1+i2:end);
 
     ipos = inew(inew>0.2);  
+    
     [a,b,c]=fourierCoefficients(ipos, length(ipos)/200);
     RPos = vmax/(2*a(1));
-
     inew = inew(i1+i2+i3:end);
     ineg = inew(inew<-0.2);
     [a,b,c]=fourierCoefficients(ineg, length(ineg)/200);
     RNeg = vmax/(2*a(1));
+    
 end

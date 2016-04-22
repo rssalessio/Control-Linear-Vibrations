@@ -14,8 +14,13 @@ function [Mm,MVar,Km, C,g] = wboxGetCartMass()
     Mm = mean(Mm);
     
     Mtotal = Mload+Mm;
+    XIm(1,1)=0.1330;
     C=Wm.*XIm*2;
     C(1,:) = C(1,:) *Mtotal;
     C(2,:) = C(2,:) *Mm;
-    g
+    
+    
+
+
+
 end

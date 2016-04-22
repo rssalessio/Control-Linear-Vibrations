@@ -1,12 +1,16 @@
 [t,i,v,x]=reads();
 
-L=2*0.0111,
+L=2*0.0111;
 R = 2*0.63;
 G = tf([1],[L R]);
 G = ss(G);
-G = c2d(G,1/200);
-kalman(G,0,0.035,0);
+G.b=[ 8 8];
+[kest,l,p]=kalman(G,0.00001,5);
 
+
+y= lsim(kest,[v i],t);
+figure;
+plot(t, y(:,1)); hold on; plot(t,i); hold on; plot(t,v);
 
 close all;
 figure;
