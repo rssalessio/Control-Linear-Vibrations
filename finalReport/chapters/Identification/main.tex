@@ -1,12 +1,17 @@
 \chapter{System Identification}
-The system considered can be easily modelled and identified without the need to use black-box identification to identify the system. \\ For completeness both \emph{white-box} and \emph{grey-box} identification were used.\\ \\
-First of all the problem of whether to consider a \emph{closed} or \emph{open} loop system is considered. In fact \emph{back-emf} can be seen as a gain acting on the closed loop.\\ \\
+The system considered can be easily modelled and identified without the need to use black-box identification to identify the system. \\ For completeness both \emph{white-box} and \emph{grey-box} identification are used.\\ \\
+First of all the problem of whether to consider a \emph{closed} or \emph{open} loop system is considered. In fact \emph{back-emf} can be seen as a gain acting on the velocity of the cart, thus it's a gain on the closed loop.\\ \\
 Then, using both \emph{white-box} and \emph{grey-box} identification we identified the main parameters of the system: 
 \begin{enumerate}
 \item Resistance and inductance for the motor.
 \item Mass, stiffness and damping for the cart and the springs.
 \end{enumerate}
-Next identification of non-linearities are considered.
+Last, identification of non-linearities are considered.
+\subsection{Validation cost function}
+
+Parlare della cost function usata (NMSE), confrontare con L2 e NRMSE.
+Dettagli su  https://rem.jrc.ec.europa.eu/RemWeb/atmes2/20b.htm
+Comando:goodnessOfFit(y,x,'NMSE');
 \subimport{common}{ol_vs_cl_identification}
 \newpage
 \subimport{common}{white_box_identification}
