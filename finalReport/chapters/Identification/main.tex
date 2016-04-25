@@ -1,12 +1,31 @@
 \chapter{System Identification}
-The system considered can be easily modelled and identified without the need to use black-box identification to identify the system. \\ For completeness both \emph{white-box} and \emph{grey-box} identification were used.\\ \\
-First of all the problem of whether to consider a \emph{closed} or \emph{open} loop system is considered. In fact \emph{back-emf} can be seen as a gain acting on the closed loop.\\ \\
+The system considered can be easily modelled and identified without the need to use black-box identification to identify the system. \\ For completeness both \emph{white-box} and \emph{grey-box} identification are used.\\ \\
+First of all the problem of whether to consider a \emph{closed} or \emph{open} loop system is considered. In fact \emph{back-emf} can be seen as a gain acting on the velocity of the cart, thus it's a gain on the closed loop.\\ \\
 Then, using both \emph{white-box} and \emph{grey-box} identification we identified the main parameters of the system: 
 \begin{enumerate}
 \item Resistance and inductance for the motor.
 \item Mass, stiffness and damping for the cart and the springs.
 \end{enumerate}
-Next identification of non-linearities are considered.
+Last, identification of non-linearities are considered.
+\subsection{Validation cost function}
+An important aspect of the identification process is validation of results and this can be done in many ways. \\ \\
+We will mainly compare two signals, thus effectiveness in capturing the shape of  a signal is essential for the type of validation function that we will use. \\  \\
+For this purpose we can make use of a distance function $d(x,y): \mathbb{R}^n \times \mathbb{R}^n]\to [0,1]$ induced by a generic norm $n(x) : \mathbb{R}^n \to [0,\infty)$. In this case we can construct $d$ in the following way:
+$$d(x,y) = \frac{1}{1+n(x-y)}$$
+ The problem, then, is to find a norm capable of capturing the essential information of a signal. \\ \\Usually the $L_2$ norm is used, since it's related to the signal energy, and from a statistical point of view it corresponds to the variance of the difference of two signals. If normalised it's called \emph{MSE}-\emph{Mean Square Error}: an estimator of the overall deviations between prediction and measurements. Mathematically:
+$$\text{MSE} =  \frac{\mathbb{E}[(x-y)^2]}{n}$$
+Where $n$ is the dimension of $x,y$.
+
+Why does it corresponds to the $L_2$ norm? First of all, notice that $\mathbb{E}[vw]$, where $v,w$ are random variables, corresponds to a non-scaled projection of $v$ on $w$. Any projection can be written in terms of a generic scalar product $<\cdot,\cdot>$, because of the Projection Theorem,  thus:
+$$\mathbb{E}[(v-w)^2] = <v-w,v-w>$$
+The last term corresponds to a norm $||\cdot||$, which can be proven to be the $L_2$ norm.
+\\ \\ 
+In matlab we can compare two signals using this norm with the command \emph{goodnessOfFit}.
+\\ \\ 
+Notice that, \emph{MSE} as defined before, is a norm. Thus:
+$$n(x-y) = \frac{\mathbb{E}[(x-y)^2]}{n}$$
+And the validation cost function is:
+$$d(x,y)= \frac{1}{1+n(x-y)}$$.
 \subimport{common}{ol_vs_cl_identification}
 \newpage
 \subimport{common}{white_box_identification}

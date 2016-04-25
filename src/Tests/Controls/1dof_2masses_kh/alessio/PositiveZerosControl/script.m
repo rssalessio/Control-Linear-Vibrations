@@ -1,6 +1,7 @@
+close all;
 R = 1.3;%resistance 
 L = 0.0220; %inductance 
-Ke = -1.0000e+05; %electric stiffness and torque constant
+Ke = -1.0000e+05/560; %electric stiffness and torque constant
 
 s = tf('s');
 
@@ -21,4 +22,16 @@ Kl = 162; %Stifness low
 motor = tf([1],[L R]);
 cart = tf([Ke],[M, Ch, Kh]);
 
-L = motor*cart;
+
+controller = zpk([9.52+3.16i,9.52-3.16i],[0,-100],-0.016498*560);
+
+
+OL = series(controller,motor);
+OL = series(OL, cart);
+figure;
+bode(OL); grid;
+
+plant = feedback(OL,1);
+figure;
+bode(plant); grid;
+figure; step(plant);

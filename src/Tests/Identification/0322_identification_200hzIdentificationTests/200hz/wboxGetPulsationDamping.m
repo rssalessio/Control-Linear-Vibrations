@@ -32,8 +32,8 @@ function [wm, wvar, xim, xivar, gn, gp] = getPDR( Ts)
         Ts=1/200;
     end
     [t,in,i,x] = reads();
-    x=x./560;
-    index = find(i<-0.2,1);
+    x=x./56000;
+    index = find(i<-0.2,1)-1;
     i = i(index:end);
     x = x(index:end);
     
@@ -64,10 +64,10 @@ function [wm, wvar, xim, xivar, gn, gp] = getPDR( Ts)
     temp = x(Inew);
     xiest=[];
     for (p=1:2:length(temp))
-        d = log(temp(p))/log(temp(p+1));
+        d = log(temp(p)/temp(p+1));
         xiest = [xiest; 1/sqrt(1+(2*pi/d)^2)]; 
     end
-    T = diff(Inew) * 1/200;
+    T = diff(Inew)/200;
     T = T(T<2.2);
     w = 2*pi./T;
     wm = mean(w);

@@ -1,7 +1,7 @@
 %% Model Parameter
 
 %motor
-R = 0.6306;%resistance 
+R = 0.6305;%resistance 
 L = 0.0111; %inductance 
 Ke =0.040122; %electric stiffness and torque constant
 D = 0.0762; %diameter
