@@ -195,5 +195,15 @@ mean 0.8990 std  0.1187
 talk about friction in Kh
 
 \subsection{Motor identification}
+The motor can be modelled as a first order low pass filter, and the main parameters are:
+\begin{itemize}
+\item Resistance of the motor, $R$ [\SI{}{\ohm}].
+\item Indutance of the motor, $L$ [\SI{}{\henry}].
+\item Torque constant, $K_e$ [\SI{}{\newton \metre \per \ampere}].
+\end{itemize}
+From motor specifications the nominal values, which will be identified with \emph{n} a subscript, are:
+$$R_n = 0.7 [\Omega], L_n = 0.00105 [H], K_{en} =0.059 [\SI{}{\newton\metre \per\ampere}]$$
+
+The nominal cut-off frequency of the motor then is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the sampling frequency of the system, therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only indutance may have a biased value. \\ \\
 
 \subsection{Overall system identification}

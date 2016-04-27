@@ -18,12 +18,11 @@ Where $n$ is the dimension of $x,y$.
 
 Why does it corresponds to the $L_2$ norm? First of all, notice that $\mathbb{E}[vw]$, where $v,w$ are random variables, corresponds to a non-scaled projection of $v$ on $w$. Any projection can be written in terms of a generic scalar product $<\cdot,\cdot>$, because of the Projection Theorem,  thus:
 $$\mathbb{E}[(v-w)^2] = <v-w,v-w>$$
-The last term corresponds to a norm $||\cdot||$, which can be proven to be the $L_2$ norm.
-\\ \\ 
-In matlab we can compare two signals using this norm with the command \emph{goodnessOfFit}.
-\\ \\ 
-Notice that, \emph{MSE} as defined before, is a norm. Thus:
-$$n(x-y) = \frac{\mathbb{E}[(x-y)^2]}{n}$$
+The last term corresponds to the square of a norm $||\cdot||^2$, which can be proven to be the $L_2$ norm.
+\\ \\
+Therefore, \emph{MSE} as defined before, is the square of a norm. Thus:
+$$n(x-y) = \frac{\sqrt{\mathbb{E}[(x-y)^2]}}{n}$$
+is a norm.
 And the validation cost function is:
 $$d(x,y)= \frac{1}{1+n(x-y)}$$.
 \subimport{common}{ol_vs_cl_identification}
