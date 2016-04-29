@@ -4,8 +4,8 @@ cd steps_kbig_nomass_compression
 
 [t,v,i,x]=reads();
 
-fourierPlot(i,t(end)-t(1));
-
+fourierPlot(i,1/200);
+%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 n = 12; %filter order
 wn=0.1;
@@ -20,7 +20,7 @@ d.v = v;
 d.x = x;
 d.xv = x;
 
-fourierPlot(d.i,d.t(end)-d.t(1));
+fourierPlot(d.i,1/200);
 
 figure; 
 plot(t,i); hold on;
@@ -35,7 +35,7 @@ figure; plot(dc.t, dc.i);
 
 fourierPlot(dc.i,T);
 
-[mod, ph, f] = fourierCoefficients(dc.i, T);
+[mod, ph, f] = fourierCoefficients(dc.i, 1/200);
 mod(6) = 0;
 ph(6) = 0;
 

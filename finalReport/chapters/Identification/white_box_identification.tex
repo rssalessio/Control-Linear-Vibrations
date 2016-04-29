@@ -201,9 +201,60 @@ The motor can be modelled as a first order low pass filter, and the main paramet
 \item Indutance of the motor, $L$ [\SI{}{\henry}].
 \item Torque constant, $K_e$ [\SI{}{\newton \metre \per \ampere}].
 \end{itemize}
-From motor specifications the nominal values, which will be identified with \emph{n} a subscript, are:
-$$R_n = 0.7 [\Omega], L_n = 0.00105 [H], K_{en} =0.059 [\SI{}{\newton\metre \per\ampere}]$$
+From motor specifications the nominal values, which are identified with \emph{n} as subscript, are:
+$$R_n = 1.4 [\Omega], L_n = 0.0021 [H], K_{en} =0.118 [\SI{}{\newton\metre \per\ampere}]$$
 
-The nominal cut-off frequency of the motor then is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the sampling frequency of the system, therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only indutance may have a biased value. \\ \\
+The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the Nyquist frequency of the system $100$ [\SI{}{\hertz}], therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only inductance may have a biased value. \\ \\
+
+\subsubsection{Experiment description}
+For each spring $K_i$, two experiments were done, with the motor attached to the cart,  one with a load of $0.986$ \SI{}{\kilo\gram}, and one without any load (just the cart itself). \\ \\
+Since we can measure the current and because of our assumption that back-emf can be ignored (hence the system is open-loop), we can directly identify the motor from the input voltage and the output current. Moreover, back-emf doesn't influence the steady state value of the current (since it acts on the velocity of the cart, which is $0$ at steady state), therefore resistance of the motor can be accurately identified. Regarding the inductance, we can not accurately identify it, since because of our sampling time the motor can almost considered like a gain system. Therefore rising time and the use of estimation techniques will be used. \\ \\ 
+The input voltage  is a square wave with period $10$:
+$$v(t) = \begin{cases}
+a, \quad t \in [t_0, t_0+5] \\
+-a, \quad t \in [t_0+5,t_0+10]
+\end{cases}
+$$
+where $t_0$ is the beginning time of the square wave, and $a=3$ for $K_h, K_m$ and $a=2$ for $K_l$. In fact the current is proportional to the output torque of the motor, which ultimately acts on the cart which is attached with a spring to a wall, therefore less voltage is needed for springs with low stiffness to move the cart. \\ \\ The system to be considered is:
+$$L\dot{i}(t)+Ri(t) = v(t)$$
+Where $i(t)$ is the current measured from the motor. \\ \\
+Finally, each experiment was run for a period of time of about $\approx 40$ [\SI{}{\sec}].
+\subsubsection{Experiment analysis}
+The system considered is a stable system, therefore at steady state $\dot{i}(t) = 0$ and $R = \frac{v(t)}{i(t)}$. \\ \\
+Because of noise sensor the mean value was taken as steady state value, after the transient due to back-emf. Since we know the input voltage we can then calculate $R$. \\ \\
+Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^(-\tau t))$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \sec}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
+Ultimately we can use the function \emph{tfest} in matlab to identify a system of the first order given the input and output data.
+\subsubsection{Experiment results}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/motor_id_1.png}
+    \caption{Input voltage and output current of the motor}
+    \label{fig:motor_id_1}
+\end{figure}
+From experiments steady state value of the current seems to change a little, based on the fact whether $v$ is positive or negative.
+Thus let $R_1$ represent mean value of resistance when $v$ is positive, and $R_2$ when $v$ is negative.\\ \\
+From data  mean values are: $R_1 =1.3069	$ [\SI{}{\ohm}], $R_2=1.2330$[\SI{}{\ohm}], with standard deviation $\sigma_1= 0.0984 \Omega, \sigma_2=0.0460 \Omega
+$. \\ \\
+$R$ then can be computed using a weighted average:
+$$R = \frac{\sigma_2^2 R_1 + \sigma_1^2 R_2}{\sigma_1^2+\sigma_2^2} = 1.2462 \Omega$$
+And standard deviation:
+$$R_{std} = \sqrt{\frac{\sigma_1^2+\sigma_2^2}{2} }=0.0059 \Omega$$
+\\ \\
+Using the \emph{tfest} command the average and standard deviation values for $R,L$ are:
+$$
+R = 1.2689 \Omega, R_{std} = 0.0562 \Omega$$
+$$
+L = 0.0024 \SI{}{\henry}, L_{std} = 0.0002 \SI{}{\henry}$$
+Using again a weighted average the mean value of $R$ is $R=1.2464 \Omega$ with standard deviation $0.04 \Omega$. \\ \\
+Regarding the inductance, the estimated value fits the nominal value. This can also be seen from figure \ref{fig:motor_id_2} that  steady state is approached in about $2$ steps of the sampling time.\\
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/motor_id_2.png}
+    \caption{Rising time of the current, it can be seen that steady state is approached very quickly.}
+    \label{fig:motor_id_2}
+\end{figure}
 
 \subsection{Overall system identification}
+\subsubsection{Experiment description}
+\subsubsection{Experiment analysis}
+\subsubsection{Experiment results}

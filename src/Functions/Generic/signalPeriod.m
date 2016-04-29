@@ -7,6 +7,7 @@ function [T,err] = signalPeriod(x,Ts)
     T = mean(diff(index))*Ts;
     
     [p,f]=periodogram(x,[],[],1/Ts);
+    figure; plot(f,p); grid;
     [~,index2]=max(p);
     
     T2=1/f(index2);
