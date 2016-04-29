@@ -12,7 +12,8 @@
 \usepackage[]{mcode} %for matlab code, uses local package 
 \usepackage{tikz}%drawings and diagrams
 \usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
-
+\usepackage{chngcntr}
+\counterwithin*{chapter}{part}
 \usepackage{siunitx}%phyisical quantities typesettings
 	
 \usepackage{pgfplots} %plots
@@ -41,24 +42,24 @@
 \tableofcontents
 
 \clearpage
-\subimport*{chapters/Team/}{main.tex}
+\subimport*{parts/Team/}{main.tex}
 \newpage
-\subimport*{chapters/Experience/}{main.tex}
+\subimport*{parts/Experience/}{main.tex}
 \newpage
-\subimport*{chapters/Models/}{main.tex}
+\subimport*{parts/Models/}{main.tex}
 \newpage
-\subimport*{chapters/Identification/}{main.tex}
+\subimport*{parts/Identification/}{main.tex}
 \newpage
-
-\subimport*{chapters/Control1dof/}{main.tex}
+\part{System control}
+\subimport*{parts/Control1dof/}{main.tex}
 \newpage
-\subimport*{chapters/Control2dof/}{main.tex}
+\subimport*{parts/Control2dof/}{main.tex}
 \newpage
-\subimport*{chapters/Control3dof/}{main.tex}
+\subimport*{parts/Control3dof/}{main.tex}
 \newpage
-\subimport*{chapters/Conclusions/}{main.tex}
+\subimport*{parts/Conclusions/}{main.tex}
 \newpage
-\subimport*{chapters/Appendix/}{main.tex}
+\subimport*{parts/Appendix/}{main.tex}
 
 
 

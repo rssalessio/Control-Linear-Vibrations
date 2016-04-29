@@ -79,7 +79,8 @@ cd ..
 cd Klow_hand_2mass3
     costs(18)=validate(Mc+Mload, K(3), C(1,3));
 cd ..
-
+    mean(costs)
+    std(costs)
 
 end
 
@@ -88,25 +89,14 @@ function a = validate(M,K,C)
     [a,b]=findpeaks(x);
     t=t(b:end);
     t=t-t(1);
-   % t=t(1:2*200);
     x=x(b:end);
- %   x=x(1:2*200);
 
    
 
 
-
     G=tf(1,[M C K]);
     G=ss(G);
-   % figure;
-    y=initial(G,[0,max(x)],t); hold on;
-%     plot(t,x*max(y)/max(x)); hold on; plot(t,y);
-%     xlabel('Time [s]');
-%     ylabel('Displacement [Cm]');
-%     title(['Full - Cart detached from motor: validation - M: ', num2str(M), ' - K: ', num2str(K), ' - C: ', num2str(C)]);
-%     grid
-
-
-    a=goodnessOfFit(y,x*max(y)/max(x),'NMSE');
+    y=initial(G,[0,max(x)],t);
+    a=costFunction(y,x*max(y)/max(x));
 
 end

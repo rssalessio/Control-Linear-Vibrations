@@ -1,13 +1,9 @@
-function [ cost, cumCost] = l2cost(x,y)
-% l2cost(x,y) - calculates   1/(1+||x-y||_2)
+function [ cost, cumCost] = costFunction(x,y)
+% l2cost(x,y) - calculates   d(x,y) = 1/(1+n(x-y)), n = E[(x-y)^2]
 %
-%   
 %   x,y: rows are time samples, columns may have more signals.
-%   opt: 'scale' used to verify if y fits x in the shape
-%        'noscale' without scaling
-%
-%   RETURN: 
-%   - Cost: calculated cost, it's a percentage (from 0 to 1)
+
+
 
     if (nargin < 2)
         disp('At least 2 parameters are needed');
@@ -21,7 +17,7 @@ function [ cost, cumCost] = l2cost(x,y)
     
     
     N = length(x);
-    l2 = sqrt(cumsum((x-y).^2));
+    l2 = sqrt(cumsum((x-y).^2)./N);
     
     cumCost = 1./(1+l2);
     cost=cumCost(end);

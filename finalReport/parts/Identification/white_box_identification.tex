@@ -1,5 +1,5 @@
-\section{White box identification}
-\subsection{Detached system: cart and springs identification}
+\chapter{White box identification}
+\section{Detached system: cart and springs identification}
 To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
 So we obtain a system like the one considered in figure \ref{fig:cart_detached_motor}.
 
@@ -43,7 +43,7 @@ The differential equation governing this system is given by:
 $$M\ddot{x}+c_i\dot{x}+k_i x = f(t)$$
 where $M$ [\SI{}{\kilo \gram}] is the total mass of the system  , $c_i$ [\SI{}{\newton \second \per \meter }] comprehends the damping of the $i$-eth spring and the viscous damping of the sliding guide. Finally $k_i$ [\SI{}{\newton \per \meter}] is the stiffness of the $i$-eth spring, and $f(t)$ represents external forces acting on the system (such as non-linear friction components). 
 \\ \\
-\subsubsection{Experiment description}
+\subsection{Experiment description}
 For each spring we conducted 2 experiments, one without any load and one with a load of $0.986$ [\si{\kg}], each repeated 3 times. To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\\\
 For each experiment the  cart was released from an initial condition $x(0) =x_0 \neq 0$ and $0$ velocity,  such that the force that the spring was exerting on the cart was sufficient enough to  make negligible the very small component of the static friction acting on the cart. \\ Notice that the initial condition differs for each spring since the stiffness is very different for each spring. \\\\
 If we neglect the external forces acting on the cart, which are negligible since they are small non-linear components, then the system considered is:
@@ -57,7 +57,7 @@ x(0) \in [1,3] \SI{}{\cm} \\
 Then data regarding the position of the cart is collected, and from that data the pulsation, damping ratio, mass and stiffness are retrieved.
 
 
-\subsubsection{Experiment analysis}
+\subsection{Experiment analysis}
 Using \ref{eq:cart_detached_motor} the response in time can be obtained by using the Laplace transform. Let $X(s)$ be the Laplace transform of $x(t)$, then:
 $$mX(s)(s^2-x(0)s) +c X(s) (s-x(0)) +kX(s)=0$$
 and:
@@ -106,7 +106,7 @@ and solve for ($k_i, m_c$).
 
 
 \end{itemize}
-\subsubsection{Experiment results}
+\subsection{Experiment results}
 Since there are $3$ springs let's denote the set of springs as $K=\{k_l, k_m, k_h\}$ where \emph{l} stands for low, \emph{m} for medium and \emph{h} for high. In a similar manner we define the various pulsation: for example $\omega_{m-nl}$ is the pulsation for the system with spring $k_m$ and no load.
 \\ \\ 
 \paragraph{Pulsation}
@@ -132,7 +132,7 @@ It's interesting to note that even if we considered to average all the periods b
     \label{fig:cart_detached_figure}
 \end{figure}
 \paragraph{Cart mass and springs stiffness}
-By using  the mean pulsation the resultant average mass of the cart $m_c$ is $0.5685$ [\SI{}{\kilo\gram}] with standard deviation $  0.0141$ [\SI{}{\kilo \gram}]. Results also for the springs are shown in table \ref{table: cart_springs_mass}.
+By using   mean pulsation the resultant average mass of the cart $m_c$ is $0.5685$ [\SI{}{\kilo\gram}] with standard deviation $  0.0141$ [\SI{}{\kilo \gram}]. Results also for the springs are shown in table \ref{table: cart_springs_mass}.
 \begin{table}[!h]
 \centering
 \label{table: cart_springs_mass}
@@ -190,11 +190,46 @@ $\frac{C_{l}-C_{nl}}{m_{l}}$ [\SI{}{\newton \second \per \metre \per \kilo\gram}
 \end{table}
 
 
-\subsubsection{Validation}
-mean 0.8990 std  0.1187
-talk about friction in Kh
+\subsection{Validation}
+Validation was done in a similar fashion as the experiments conducted to identify the system parameters. The cart was released from a random initial condition $x_0$  and then released. \\ \\ 
+Measurements  were compared with the output smulation of a model constructed from the identified parameters, and results were compared with the cost function defined in \ref{sec:validation_cost_function}.
 
-\subsection{Motor identification}
+
+\begin{figure} [!h]
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/validation_m_kh_full.png}
+\caption{Validation test without load and $K_h$.}
+\label{fig:val1_1}
+\end{minipage}
+\hspace{\fill}
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/validation_ml_kl_partial.png}
+\caption{Validation test without load and $K_l$.}
+\label{fig:val1_2}
+\end{minipage}
+
+\vspace*{0.5cm} % (or whatever vertical separation you prefer)
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/validation_ml_km_full.png}
+\caption{Validation test with  load and $K_m$.}
+\label{fig:val1_3}
+\end{minipage}
+\hspace{\fill}
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/validation_ml_kh_full.png}
+\caption{Validation test with  load and $K_h$.}
+\label{fig:val1_4}
+\end{minipage}
+\caption{Validation tests of the cart detached from the motor. In orange the simulated ouput, in blue the measurement of the validation test. Effect of friction is clearly visible, such as in \ref{fig:val1_3}, where the cart stops after $6$ seconds.}
+\label{fig:val1}
+\end{figure}
+
+On average, the cost function, on a scale from $0$ to $1$, gave a fit of $ 0.9449$ with standard deviation $0.0263$.
+The minimum was $0.8778$, and maximum $ 0.9716$. \\ \\ 
+In figure \ref{fig:val1} it is visible that due to unmodelld effects, such as friction and stiffness not being exactly linear, there is a loss of accuracy on the long run, but accuracy is very high in the beginning, where non-linearities are not relevant yet. Thus it is safe to assume that the parameters of the cart are the ones identified by this experiment.
+\newpage
+
+\section{Motor identification}
 The motor can be modelled as a first order low pass filter, and the main parameters are:
 \begin{itemize}
 \item Resistance of the motor, $R$ [\SI{}{\ohm}].
@@ -206,7 +241,7 @@ $$R_n = 1.4 [\Omega], L_n = 0.0021 [H], K_{en} =0.118 [\SI{}{\newton\metre \per\
 
 The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the Nyquist frequency of the system $100$ [\SI{}{\hertz}], therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only inductance may have a biased value. \\ \\
 
-\subsubsection{Experiment description}
+\subsection{Experiment description}
 For each spring $K_i$, two experiments were done, with the motor attached to the cart,  one with a load of $0.986$ \SI{}{\kilo\gram}, and one without any load (just the cart itself). \\ \\
 Since we can measure the current and because of our assumption that back-emf can be ignored (hence the system is open-loop), we can directly identify the motor from the input voltage and the output current. Moreover, back-emf doesn't influence the steady state value of the current (since it acts on the velocity of the cart, which is $0$ at steady state), therefore resistance of the motor can be accurately identified. Regarding the inductance, we can not accurately identify it, since because of our sampling time the motor can almost considered like a gain system. Therefore rising time and the use of estimation techniques will be used. \\ \\ 
 The input voltage  is a square wave with period $10$:
@@ -218,13 +253,13 @@ $$
 where $t_0$ is the beginning time of the square wave, and $a=3$ for $K_h, K_m$ and $a=2$ for $K_l$. In fact the current is proportional to the output torque of the motor, which ultimately acts on the cart which is attached with a spring to a wall, therefore less voltage is needed for springs with low stiffness to move the cart. \\ \\ The system to be considered is:
 $$L\dot{i}(t)+Ri(t) = v(t)$$
 Where $i(t)$ is the current measured from the motor. \\ \\
-Finally, each experiment was run for a period of time of about $\approx 40$ [\SI{}{\sec}].
-\subsubsection{Experiment analysis}
+Finally, each experiment was run for a period of time of about $\approx 40$ [\SI{}{\second }].
+\subsection{Experiment analysis}
 The system considered is a stable system, therefore at steady state $\dot{i}(t) = 0$ and $R = \frac{v(t)}{i(t)}$. \\ \\
 Because of noise sensor the mean value was taken as steady state value, after the transient due to back-emf. Since we know the input voltage we can then calculate $R$. \\ \\
-Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^(-\tau t))$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \sec}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
+Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^(-\tau t))$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \second}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
 Ultimately we can use the function \emph{tfest} in matlab to identify a system of the first order given the input and output data.
-\subsubsection{Experiment results}
+\subsection{Experiment results}
 \begin{figure}[!h]
     \centering
     \includegraphics[width=1\textwidth]{img/motor_id_1.png}
@@ -253,8 +288,9 @@ Regarding the inductance, the estimated value fits the nominal value. This can a
     \caption{Rising time of the current, it can be seen that steady state is approached very quickly.}
     \label{fig:motor_id_2}
 \end{figure}
+\subsection{Validation}
 
-\subsection{Overall system identification}
-\subsubsection{Experiment description}
-\subsubsection{Experiment analysis}
-\subsubsection{Experiment results}
+\section{Overall system identification}
+\subsection{Experiment description}
+\subsection{Experiment analysis}
+\subsection{Experiment results}
