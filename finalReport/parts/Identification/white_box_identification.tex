@@ -257,7 +257,7 @@ Finally, each experiment was run for a period of time of about $\approx 40$ [\SI
 \subsection{Experiment analysis}
 The system considered is a stable system, therefore at steady state $\dot{i}(t) = 0$ and $R = \frac{v(t)}{i(t)}$. \\ \\
 Because of noise sensor the mean value was taken as steady state value, after the transient due to back-emf. Since we know the input voltage we can then calculate $R$. \\ \\
-Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^(-\tau t))$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \second}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
+Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^{-\tau t})$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \second}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
 Ultimately we can use the function \emph{tfest} in matlab to identify a system of the first order given the input and output data.
 \subsection{Experiment results}
 \begin{figure}[!h]
@@ -291,6 +291,11 @@ Regarding the inductance, the estimated value fits the nominal value. This can a
 \subsection{Validation}
 
 \section{Overall system identification}
+The system was modelled as an open loop system as specified in section \ref{sec:validation_cost_function}.
+We have mainly  a series connection of two systems: the motor and the cart, which are identified by the following transfer functions:
+
+$$G_1(s) = \frac{1}{Ls+R}, G_2(s) = \frac{1}{Ms^2+Cs+K}$$
+
 \subsection{Experiment description}
 \subsection{Experiment analysis}
 \subsection{Experiment results}

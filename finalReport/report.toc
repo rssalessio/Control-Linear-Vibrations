@@ -7,11 +7,29 @@
 \contentsline {section}{\numberline {3.4}Model 4 }{5}{section.3.4}
 \contentsline {section}{\numberline {3.5}2 DOF - Model}{6}{section.3.5}
 \contentsline {chapter}{\numberline {4}System Identification}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Open vs Closed loop identification}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}White box identification}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Black box identification}{9}{section.4.3}
-\contentsline {chapter}{\numberline {5}Control of 1 Degree of Freedom}{10}{chapter.5}
-\contentsline {chapter}{\numberline {6}Control of 2 Degree of Freedom}{11}{chapter.6}
-\contentsline {chapter}{\numberline {7}Control of 3 Degree of Freedom}{12}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{13}{chapter.8}
-\contentsline {chapter}{\numberline {9}Appendix}{14}{chapter.9}
+\contentsline {subsection}{\numberline {4.0.1}Validation cost function}{7}{subsection.4.0.1}
+\contentsline {section}{\numberline {4.1}Open vs Closed loop identification}{8}{section.4.1}
+\contentsline {section}{\numberline {4.2}White box identification}{11}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detached system: cart and springs identification}{11}{subsection.4.2.1}
+\contentsline {subsubsection}{Experiment description}{11}{section*.2}
+\contentsline {subsubsection}{Experiment analysis}{12}{section*.3}
+\contentsline {subsubsection}{Experiment results}{13}{section*.4}
+\contentsline {paragraph}{Pulsation}{13}{section*.5}
+\contentsline {paragraph}{Cart mass and springs stiffness}{13}{section*.6}
+\contentsline {paragraph}{Damping and damping ratio}{14}{section*.7}
+\contentsline {subsubsection}{Validation}{15}{section*.8}
+\contentsline {subsection}{\numberline {4.2.2}Motor identification}{15}{subsection.4.2.2}
+\contentsline {subsubsection}{Experiment description}{15}{section*.9}
+\contentsline {subsubsection}{Experiment analysis}{16}{section*.10}
+\contentsline {subsubsection}{Experiment results}{16}{section*.11}
+\contentsline {subsection}{\numberline {4.2.3}Overall system identification}{17}{subsection.4.2.3}
+\contentsline {subsubsection}{Experiment description}{17}{section*.12}
+\contentsline {subsubsection}{Experiment analysis}{17}{section*.13}
+\contentsline {subsubsection}{Experiment results}{17}{section*.14}
+\contentsline {section}{\numberline {4.3}Gray box identification}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Non-linearities identification}{19}{section.4.4}
+\contentsline {chapter}{\numberline {5}Control of 1 Degree of Freedom}{20}{chapter.5}
+\contentsline {chapter}{\numberline {6}Control of 2 Degree of Freedom}{21}{chapter.6}
+\contentsline {chapter}{\numberline {7}Control of 3 Degree of Freedom}{22}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{23}{chapter.8}
+\contentsline {chapter}{\numberline {9}Appendix}{24}{chapter.9}
