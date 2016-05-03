@@ -1,0 +1,1122 @@
+%implements s1_b0_sd7mg_TLCInterface "C"
+
+%function getOutputAddr_1_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutput_1_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutputAddr_1_0_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getOutput_1_0_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getDWorkAddr_1_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getDWork_1_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getInputAddr_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getInput_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getOutputAddr_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction"
+%endfunction
+
+%function getOutput_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction"
+%endfunction
+
+%function getDWorkAddr_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getDWork_1_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getParamAddr_1_3_0_0_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParam_1_3_0_0_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParamAddr_1_3_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getParam_1_3_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getInputAddr_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInput_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInputAddr_1_5_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getInput_1_5_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getOutputAddr_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutput_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutputAddr_1_5_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutput_1_5_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutputAddr_1_5_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getOutput_1_5_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getDWorkAddr_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getDWork_1_5_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getParamAddr_1_5_0_0_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParam_1_5_0_0_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParamAddr_1_5_0_0_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParam_1_5_0_0_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParamAddr_1_5_0_0_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getParam_1_5_0_0_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getInputAddr_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getInput_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getOutputAddr_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getOutput_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getDWorkAddr_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getDWork_1_6_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getParamAddr_1_6_0_0_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParam_1_6_0_0_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParamAddr_1_6_0_0_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getParam_1_6_0_0_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getInputAddr_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInput_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInputAddr_1_7_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInput_1_7_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInputAddr_1_7_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInput_1_7_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInputAddr_1_7_0_0_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInput_1_7_0_0_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInputAddr_1_7_0_0_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInput_1_7_0_0_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInputAddr_1_7_0_0_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInput_1_7_0_0_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInputAddr_1_7_0_0_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInput_1_7_0_0_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInputAddr_1_7_0_0_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInput_1_7_0_0_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInputAddr_1_7_0_0_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInput_1_7_0_0_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInputAddr_1_7_0_0_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInput_1_7_0_0_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInputAddr_1_7_0_0_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion7"
+%endfunction
+
+%function getInput_1_7_0_0_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion7"
+%endfunction
+
+%function getDWorkAddr_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getDWork_1_7_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getParamAddr_1_7_0_0_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParam_1_7_0_0_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParamAddr_1_7_0_0_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getParam_1_7_0_0_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getOutputAddr_1_8_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.startTime"
+%endfunction
+
+%function getOutput_1_8_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.startTime"
+%endfunction
+
+%function getDWorkAddr_1_9_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+
+%function getDWork_1_9_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+
+%function getOutputAddr_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutput_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutputAddr_1_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getOutput_1_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getDWorkAddr_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getDWork_1_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getInputAddr_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getInput_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getOutputAddr_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction"
+%endfunction
+
+%function getOutput_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction"
+%endfunction
+
+%function getDWorkAddr_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getDWork_1_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getParamAddr_1_3_0_1_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParam_1_3_0_1_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParamAddr_1_3_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getParam_1_3_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getInputAddr_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInput_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInputAddr_1_5_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getInput_1_5_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getOutputAddr_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutput_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutputAddr_1_5_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutput_1_5_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutputAddr_1_5_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getOutput_1_5_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getDWorkAddr_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getDWork_1_5_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getParamAddr_1_5_0_1_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParam_1_5_0_1_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParamAddr_1_5_0_1_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParam_1_5_0_1_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParamAddr_1_5_0_1_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getParam_1_5_0_1_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getInputAddr_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getInput_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getOutputAddr_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getOutput_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getDWorkAddr_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getDWork_1_6_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getParamAddr_1_6_0_1_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParam_1_6_0_1_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParamAddr_1_6_0_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getParam_1_6_0_1_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getInputAddr_1_7_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInput_1_7_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInputAddr_1_7_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInput_1_7_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInputAddr_1_7_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInput_1_7_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInputAddr_1_7_0_1_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInput_1_7_0_1_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInputAddr_1_7_0_1_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInput_1_7_0_1_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInputAddr_1_7_0_1_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInput_1_7_0_1_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInputAddr_1_7_0_1_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInput_1_7_0_1_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInputAddr_1_7_0_1_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInput_1_7_0_1_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInputAddr_1_7_0_1_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInput_1_7_0_1_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInputAddr_1_7_0_1_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInput_1_7_0_1_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInputAddr_1_7_0_1_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion7"
+%endfunction
+
+%function getInput_1_7_0_1_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion7"
+%endfunction
+
+%function getDWorkAddr_1_7_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getDWork_1_7_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getParamAddr_1_7_0_1_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParam_1_7_0_1_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParamAddr_1_7_0_1_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getParam_1_7_0_1_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getDWorkAddr_1_9_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+
+%function getDWork_1_9_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+
+%function getOutputAddr_1_0_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutput_1_0_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getOutputAddr_1_0_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getOutput_1_0_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o2"
+%endfunction
+
+%function getDWorkAddr_1_0_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getDWork_1_0_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction2_DSTATE"
+%endfunction
+
+%function getInputAddr_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getInput_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator"
+%endfunction
+
+%function getOutputAddr_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction"
+%endfunction
+
+%function getOutput_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction"
+%endfunction
+
+%function getDWorkAddr_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getDWork_1_3_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE"
+%endfunction
+
+%function getParamAddr_1_3_0_4_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParam_1_3_0_4_1_35(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_d"
+%endfunction
+
+%function getParamAddr_1_3_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getParam_1_3_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc"
+%endfunction
+
+%function getInputAddr_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInput_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion8"
+%endfunction
+
+%function getInputAddr_1_5_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getInput_1_5_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_n"
+%endfunction
+
+%function getOutputAddr_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutput_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o1"
+%endfunction
+
+%function getOutputAddr_1_5_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutput_1_5_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o2"
+%endfunction
+
+%function getOutputAddr_1_5_0_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getOutput_1_5_0_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction1_o3"
+%endfunction
+
+%function getDWorkAddr_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getDWork_1_5_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE"
+%endfunction
+
+%function getParamAddr_1_5_0_4_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParam_1_5_0_4_1_36(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P1"
+%endfunction
+
+%function getParamAddr_1_5_0_4_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParam_1_5_0_4_1_26(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P2"
+%endfunction
+
+%function getParamAddr_1_5_0_4_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getParam_1_5_0_4_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction1_P3"
+%endfunction
+
+%function getInputAddr_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getInput_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.LogicalOperator_f"
+%endfunction
+
+%function getOutputAddr_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getOutput_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction_p"
+%endfunction
+
+%function getDWorkAddr_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getDWork_1_6_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_k"
+%endfunction
+
+%function getParamAddr_1_6_0_4_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParam_1_6_0_4_1_37(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1_k"
+%endfunction
+
+%function getParamAddr_1_6_0_4_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getParam_1_6_0_4_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.Encoder_dt_enc_l"
+%endfunction
+
+%function getInputAddr_1_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInput_1_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.SFunction2_o1"
+%endfunction
+
+%function getInputAddr_1_7_0_4_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInput_1_7_0_4_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion1"
+%endfunction
+
+%function getInputAddr_1_7_0_4_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInput_1_7_0_4_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion3"
+%endfunction
+
+%function getInputAddr_1_7_0_4_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInput_1_7_0_4_6_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion9"
+%endfunction
+
+%function getInputAddr_1_7_0_4_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInput_1_7_0_4_7_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion10"
+%endfunction
+
+%function getInputAddr_1_7_0_4_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInput_1_7_0_4_8_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion13"
+%endfunction
+
+%function getInputAddr_1_7_0_4_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInput_1_7_0_4_9_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion2"
+%endfunction
+
+%function getInputAddr_1_7_0_4_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInput_1_7_0_4_10_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion4"
+%endfunction
+
+%function getInputAddr_1_7_0_4_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInput_1_7_0_4_11_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion5"
+%endfunction
+
+%function getInputAddr_1_7_0_4_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInput_1_7_0_4_12_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion6"
+%endfunction
+
+%function getInputAddr_1_7_0_4_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_B.conversion7"
+%endfunction
+
+%function getInput_1_7_0_4_13_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_B.conversion7"
+%endfunction
+
+%function getDWorkAddr_1_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getDWork_1_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction_DSTATE_l"
+%endfunction
+
+%function getParamAddr_1_7_0_4_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParam_1_7_0_4_1_24(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P1"
+%endfunction
+
+%function getParamAddr_1_7_0_4_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getParam_1_7_0_4_1_38(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_P.SFunction_P2"
+%endfunction
+
+%function getDWorkAddr_1_9_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+
+%function getDWork_1_9_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "hinf_sssss_DW.SFunction1_DSTATE_b"
+%endfunction
+

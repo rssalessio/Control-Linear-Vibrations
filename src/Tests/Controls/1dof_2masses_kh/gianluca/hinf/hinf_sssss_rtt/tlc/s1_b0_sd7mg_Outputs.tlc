@@ -1,0 +1,224 @@
+%implements s1_b0_sd7mg_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+int_T ci;
+boolean_T rtb_LogicalOperator;
+boolean_T rtb_FixPtRelationalOperator;
+int64m_T rtb_encodertocm1;
+real_T HINFINITY;
+real_T Saturation;
+real_T Product;
+uint32_T tmp;
+uint32_T tmp_0;
+int64m_T tmp_1;
+int64m_T tmp_2;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS1B0 = OpaqueTLCBlockFcn("Outputs", 1, 0, 0, 0)
+%assign tlcOutputsFcnOfS1B3 = OpaqueTLCBlockFcn("Outputs", 1, 3, 0, 0)
+%assign tlcOutputsFcnOfS1B5 = OpaqueTLCBlockFcn("Outputs", 1, 5, 0, 0)
+%assign tlcOutputsFcnOfS1B6 = OpaqueTLCBlockFcn("Outputs", 1, 6, 0, 0)
+%assign tlcOutputsFcnOfS1B7 = OpaqueTLCBlockFcn("Outputs", 1, 7, 0, 0)
+%assign tlcOutputsFcnOfS1B8 = OpaqueTLCBlockFcn("Outputs", 1, 8, 0, 0)
+%assign tlcOutputsFcnOfS1B9 = OpaqueTLCBlockFcn("Outputs", 1, 9, 0, 0)
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+%<tlcOutputsFcnOfS1B0>\
+    /* Gain: '<S10>/encoder-to-cm' incorporates:
+ *  Memory: '<S1>/Memory2'
+ */
+    tmp = (uint32_T)hinf_sssss_P.encodertocm_Gain;
+    tmp_0 = (uint32_T)hinf_sssss_DW.Memory2_PreviousInput;
+    sMultiWordMul(&tmp, 1, &tmp_0, 1, &rtb_encodertocm1.chunks[0U], 2);
+    /* Logic: '<S10>/Logical Operator' incorporates:
+ *  Constant: '<S13>/Constant'
+ *  Constant: '<S14>/Constant'
+ *  RelationalOperator: '<S13>/Compare'
+ *  RelationalOperator: '<S14>/Compare'
+ */
+    rtb_LogicalOperator = (sMultiWordGe(&rtb_encodertocm1.chunks[0U], &hinf_sssss_P.UpperThreshold_const.chunks[0U], 2) || sMultiWordLe(&rtb_encodertocm1.chunks[0U], &hinf_sssss_P.LowerThreshold_const.chunks[0U], 2));
+    /* S-Function (arduinodigitalinput_sfcn): '<S21>/S-Function' */
+    rtb_FixPtRelationalOperator = MW_digitalRead(hinf_sssss_P.SFunction_p1);
+    /* Logic: '<S19>/Logical Operator' incorporates:
+ *  S-Function (arduinodigitalinput_sfcn): '<S21>/S-Function'
+ */
+    hinf_sssss_B.LogicalOperator = rtb_FixPtRelationalOperator;
+%<tlcOutputsFcnOfS1B3>\
+    /* RelationalOperator: '<S9>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S9>/Delay Input1'
+ */
+    rtb_FixPtRelationalOperator = (hinf_sssss_B.SFunction != hinf_sssss_DW.DelayInput1_DSTATE);
+}
+/* StateSpace: '<S2>/H INFINITY' */
+HINFINITY = 0.0;
+for (ci = 0; ci < 6; ci++) {
+    HINFINITY += hinf_sssss_P.HINFINITY_C[ci] * hinf_sssss_X.HINFINITY_CSTATE[ci];
+}
+/* End of StateSpace: '<S2>/H INFINITY' */
+
+/* Saturate: '<S12>/Saturation' */
+if (HINFINITY > hinf_sssss_P.Saturation_UpperSat) {
+    Saturation = hinf_sssss_P.Saturation_UpperSat;
+} else if (HINFINITY < hinf_sssss_P.Saturation_LowerSat) {
+    Saturation = hinf_sssss_P.Saturation_LowerSat;
+} else {
+    Saturation = HINFINITY;
+}
+/* End of Saturate: '<S12>/Saturation' */
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* Chart: '<S1>/Chart' */
+    /* Gateway: Condom/Chart */
+    /* During: Condom/Chart */
+    if (hinf_sssss_DW.is_active_c3_hinf_sssss == 0U) {
+        /* Entry: Condom/Chart */
+        hinf_sssss_DW.is_active_c3_hinf_sssss = 1U;
+        /* Entry Internal: Condom/Chart */
+        /* Transition: '<S8>:4' */
+        hinf_sssss_DW.is_c3_hinf_sssss = hinf_sssss_IN_OK;
+        /* Entry 'OK': '<S8>:1' */
+        hinf_sssss_B.MD = 0.0;
+    } else {
+        switch (hinf_sssss_DW.is_c3_hinf_sssss) {
+          case hinf_sssss_IN_ALERT:
+            /* During 'ALERT': '<S8>:2' */
+            if (!rtb_FixPtRelationalOperator) {
+                /* Transition: '<S8>:11' */
+                hinf_sssss_DW.is_c3_hinf_sssss = hinf_sssss_IN_RESTORE;
+                /* Entry 'RESTORE': '<S8>:10' */
+                hinf_sssss_B.MD = 1.0;
+            }
+            break;
+          case hinf_sssss_IN_OK:
+            /* During 'OK': '<S8>:1' */
+            if (rtb_LogicalOperator) {
+                /* Transition: '<S8>:3' */
+                hinf_sssss_DW.is_c3_hinf_sssss = hinf_sssss_IN_ALERT;
+                /* Entry 'ALERT': '<S8>:2' */
+                hinf_sssss_B.MD = 1.0;
+            }
+            break;
+          default:
+            /* During 'RESTORE': '<S8>:10' */
+            if (Saturation == 0.0) {
+                /* Transition: '<S8>:12' */
+                hinf_sssss_DW.is_c3_hinf_sssss = hinf_sssss_IN_OK;
+                /* Entry 'OK': '<S8>:1' */
+                hinf_sssss_B.MD = 0.0;
+            }
+            break;
+        }
+    }
+    /* End of Chart: '<S1>/Chart' */
+
+    /* DataTypeConversion: '<S7>/conversion1' */
+    hinf_sssss_B.conversion1 = (hinf_sssss_B.MD != 0.0);
+    /* DataTypeConversion: '<S7>/conversion3' */
+    hinf_sssss_B.conversion3 = false;
+    /* DataTypeConversion: '<S7>/conversion9' */
+    hinf_sssss_B.conversion9 = false;
+    /* DataTypeConversion: '<S7>/conversion10' */
+    hinf_sssss_B.conversion10 = false;
+    /* DiscretePulseGenerator: '<Root>/Pulse Generator' */
+    hinf_sssss_B.PulseGenerator = (hinf_sssss_DW.clockTickCounter < hinf_sssss_P.PulseGenerator_Duty) && (hinf_sssss_DW.clockTickCounter >= 0) ? hinf_sssss_P.PulseGenerator_Amp : 0.0;
+    if (hinf_sssss_DW.clockTickCounter >= hinf_sssss_P.PulseGenerator_Period - 1.0) {
+        hinf_sssss_DW.clockTickCounter = 0;
+    } else {
+        hinf_sssss_DW.clockTickCounter++;
+    }
+    /* End of DiscretePulseGenerator: '<Root>/Pulse Generator' */
+
+    /* Logic: '<S1>/Motor Enabler' incorporates:
+ *  Memory: '<S1>/Memory1'
+ */
+    hinf_sssss_B.MotorEnabler = !(hinf_sssss_DW.Memory1_PreviousInput != 0.0);
+}
+/* Sum: '<Root>/Sum' incorporates:
+ *  Sin: '<Root>/Sine Wave'
+ */
+Product = hinf_sssss_B.PulseGenerator - (sin(hinf_sssss_P.SineWave_Freq * %<(SLibCG_SE(LibGetTaskTime(0)))> + hinf_sssss_P.SineWave_Phase) * hinf_sssss_P.SineWave_Amp + hinf_sssss_P.SineWave_Bias);
+/* Saturate: '<S11>/Saturation' */
+if (Product > hinf_sssss_P.Saturation_UpperSat_p) {
+    Product = hinf_sssss_P.Saturation_UpperSat_p;
+} else {
+    if (Product < hinf_sssss_P.Saturation_LowerSat_f) {
+        Product = hinf_sssss_P.Saturation_LowerSat_f;
+    }
+}
+/* Product: '<S1>/Product' incorporates:
+ *  Saturate: '<S11>/Saturation'
+ */
+Product *= (real_T)hinf_sssss_B.MotorEnabler;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DataTypeConversion: '<S7>/conversion13' */
+    hinf_sssss_B.conversion13 = (real32_T)Product;
+    /* DataTypeConversion: '<S7>/conversion2' */
+    hinf_sssss_B.conversion2 = (real32_T)HINFINITY;
+}
+/* DataTypeConversion: '<S24>/conversion8' */
+hinf_sssss_B.conversion8 = (real32_T)Saturation;
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* S-Function (arduinodigitalinput_sfcn): '<S23>/S-Function' */
+    rtb_FixPtRelationalOperator = MW_digitalRead(hinf_sssss_P.SFunction_p1_d);
+    /* Logic: '<S24>/Logical Operator' incorporates:
+ *  Logic: '<Root>/Logical Operator'
+ *  Logic: '<S20>/Logical Operator'
+ *  S-Function (arduinodigitalinput_sfcn): '<S23>/S-Function'
+ */
+    hinf_sssss_B.LogicalOperator_n = (rtb_FixPtRelationalOperator && (!(hinf_sssss_B.MD != 0.0)) && hinf_sssss_B.SFunction2_o1);
+}
+%<tlcOutputsFcnOfS1B5>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* DataTypeConversion: '<S7>/conversion4' incorporates:
+ *  DataTypeConversion: '<S20>/Data Type Conversion1'
+ */
+    hinf_sssss_B.conversion4 = hinf_sssss_B.SFunction1_o1;
+    /* Gain: '<Root>/encoder-to-cm' */
+    tmp = (uint32_T)hinf_sssss_P.encodertocm_Gain_j;
+    tmp_0 = (uint32_T)hinf_sssss_B.SFunction;
+    sMultiWordMul(&tmp, 1, &tmp_0, 1, &tmp_1.chunks[0U], 2);
+    /* DataTypeConversion: '<S7>/conversion5' */
+    hinf_sssss_B.conversion5 = sMultiWord2Single(&tmp_1.chunks[0U], 2, 0) * 9.09494702E-13F;
+    /* Logic: '<S3>/Logical Operator' incorporates:
+ *  S-Function (arduinodigitalinput_sfcn): '<S15>/S-Function'
+ */
+    hinf_sssss_B.LogicalOperator_f = MW_digitalRead(hinf_sssss_P.SFunction_p1_h);
+%<tlcOutputsFcnOfS1B6>\
+    /* Gain: '<Root>/encoder-to-cm1' */
+    tmp = (uint32_T)hinf_sssss_P.encodertocm1_Gain;
+    tmp_0 = (uint32_T)hinf_sssss_B.SFunction_p;
+    sMultiWordMul(&tmp, 1, &tmp_0, 1, &tmp_2.chunks[0U], 2);
+    /* DataTypeConversion: '<S7>/conversion6' */
+    hinf_sssss_B.conversion6 = sMultiWord2Single(&tmp_2.chunks[0U], 2, 0) * 9.09494702E-13F;
+    /* DataTypeConversion: '<S7>/conversion7' */
+    hinf_sssss_B.conversion7 = 0.0F;
+%<tlcOutputsFcnOfS1B7>\
+}
+/* Sum: '<S6>/Sum' incorporates:
+ *  Gain: '<S6>/cm-to-encoder'
+ */
+hinf_sssss_B.Sum = hinf_sssss_P.cmtoencoder_Gain * Product - (real_T)hinf_sssss_B.SFunction;
+%<tlcOutputsFcnOfS1B8>\
+if (%<(SLibCGIRIsSampleHit(1, 1))>) {
+    /* S-Function (arduinodigitaloutput_sfcn): '<S17>/Digital Output' incorporates:
+ *  DataTypeConversion: '<S17>/Data Type Conversion'
+ */
+    MW_digitalWrite(hinf_sssss_P.DigitalOutput_pinNumber, (uint8_T)hinf_sssss_B.SFunction2_o1);
+    /* S-Function (arduinodigitaloutput_sfcn): '<S18>/Digital Output' incorporates:
+ *  DataTypeConversion: '<S18>/Data Type Conversion'
+ */
+    MW_digitalWrite(hinf_sssss_P.DigitalOutput_pinNumber_l, (uint8_T)hinf_sssss_B.SFunction2_o2);
+%<tlcOutputsFcnOfS1B9>\
+}
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

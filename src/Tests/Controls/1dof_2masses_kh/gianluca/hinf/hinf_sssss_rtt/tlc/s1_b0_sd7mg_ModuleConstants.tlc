@@ -1,0 +1,11 @@
+%implements s1_b0_sd7mg_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for Chart: '<S1>/Chart' */
+#define hinf_sssss_IN_ALERT ((uint8_T)1U)
+#define hinf_sssss_IN_NO_ACTIVE_CHILD ((uint8_T)0U)
+#define hinf_sssss_IN_OK ((uint8_T)2U)
+#define hinf_sssss_IN_RESTORE ((uint8_T)3U)
+%endfunction

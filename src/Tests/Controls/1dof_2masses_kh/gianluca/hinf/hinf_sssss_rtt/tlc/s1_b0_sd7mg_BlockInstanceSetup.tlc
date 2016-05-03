@@ -1,0 +1,17 @@
+%implements s1_b0_sd7mg_BlockInstanceSetup "C"
+
+%function BlockInstanceSetup(block, system) Output
+%% Subsystems with iterators in IR:
+%% TLC Block Registration buffer:
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitalinput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitaloutput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitaloutput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitaloutput_lct.h")>
+%<LibAddToCommonIncludes("arduino_digitaloutput_lct.h")>
+%% END  Block Registration buffer
+%endfunction
