@@ -35,9 +35,9 @@ w_motor = damp(motor)/2/pi
 w_cart = damp(cart)/2/pi
 
 %% position loop design
-Ws = tf(makeweight(100, 2*pi*3, 0.9));
-Wt = tf(makeweight(0.9, 2*pi*3, 10));
-Wk = tf(makeweight(0.9, 2*pi*3, 100));
+Ws = tf(makeweight(10, 2*pi*1, 0.9));
+Wt = tf(makeweight(0.9, 2*pi*1, 10));
+Wk = tf(makeweight(0.9, 2*pi*1, 10));
 
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
