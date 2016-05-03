@@ -1,5 +1,6 @@
 \chapter{White box identification}
 \section{Detached system: cart and springs identification}
+\label{sec:cart_detached_id}
 To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
 So we obtain a system like the one considered in figure \ref{fig:cart_detached_motor}.
 
@@ -230,6 +231,7 @@ In figure \ref{fig:val1} it is visible that due to unmodelld effects, such as fr
 \newpage
 
 \section{Motor identification}
+\label{sec:motor_id}
 The motor can be modelled as a first order low pass filter, and the main parameters are:
 \begin{itemize}
 \item Resistance of the motor, $R$ [\SI{}{\ohm}].
@@ -289,6 +291,8 @@ Regarding the inductance, the estimated value fits the nominal value. This can a
     \label{fig:motor_id_2}
 \end{figure}
 \subsection{Validation}
+Validation was done using a random input with normal distribution $N(0,1)$.
+
 
 \section{Overall system identification}
 The system was modelled as an open loop system as specified in section \ref{sec:validation_cost_function}.
@@ -296,6 +300,6 @@ We have mainly  a series connection of two systems: the motor and the cart, whic
 
 $$G_1(s) = \frac{1}{Ls+R}, G_2(s) = \frac{1}{Ms^2+Cs+K}$$
 
-\subsection{Experiment description}
-\subsection{Experiment analysis}
+Since we are using the same tests used to identify the motor (section \ref{sec:motor_id}), and the same techniques used to identify the cart detached from the motor (section \ref{sec:cart_detached_id}), those two sections are not presented.
 \subsection{Experiment results}
+\subsection{Validation}
