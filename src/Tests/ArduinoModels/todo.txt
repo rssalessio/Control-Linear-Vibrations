@@ -1,3 +1,8 @@
-1) MSF per riavviare la roba
-2) cambiare threshold tensione
-3) controllo travel
+1) ritardo reference in accensione
+2) quando riavvia, la V deve scendere piu velocemente
+
+NB: la simulazione su Arduino parte quando la prima levetta 
+viene tirata su. ultima levetta puo essere free, 
+il motore viene disabilitato solo in modo automatico
+
+enable subsystem
