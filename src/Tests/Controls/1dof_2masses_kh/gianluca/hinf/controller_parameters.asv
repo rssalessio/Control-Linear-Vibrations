@@ -41,14 +41,10 @@ Wk = tf(makeweight(0.9, 2*pi*1, 10));
 
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
-figure; margin(series(Hinf,plant)); grid;
-figure; pzplot(Hinf); grid;
-figure; bodemag(1/(1+series(Hinf,plant))); grid;
-figure; bodemag(Hinf/(1+series(Hinf,plant))); grid;
-
+figure; margin(series(Hinf,
 
 % Hinf_zpk = zpk(Hinf);
-% 
+% %Hinf_zpk.p{1}(6) = 0;
 % Hinf_zpk.p{1} = Hinf_zpk.p{1}(2:5);
 % Hinf_zpk.p{1} = Hinf_zpk.z{1}(1:3);
 % 
