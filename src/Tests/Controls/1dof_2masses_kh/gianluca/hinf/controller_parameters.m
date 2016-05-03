@@ -35,10 +35,14 @@ w_motor = damp(motor)/2/pi
 w_cart = damp(cart)/2/pi
 
 %% position loop design
-Ws = tf(makeweight(10, 2*pi*1, 0.9));
+Ws = tf(makeweight(100, 2*pi*1, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*1, 10));
-Wk = tf(makeweight(0.9, 2*pi*1, 10));
+Wk = tf(makeweight(0.9, 2*pi*1, 100));
 
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
-%figure; margin(Hinf*plant); grid;
+Hinf = zpk(Hinf);
+Hinf.p{1}(6) = 0;
+
+Hinf = reduce(Hinf, 3);
+
