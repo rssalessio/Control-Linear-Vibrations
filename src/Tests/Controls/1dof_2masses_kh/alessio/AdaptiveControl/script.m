@@ -32,17 +32,19 @@ Aref = [0,1,0;
 Bref = [0;0;a0];
 
 %%
-theta = [10,10];
+close all;
+theta = [50,60];
 GammaX = theta(1)*eye(3);
-P=lyap(Aref, theta(2)*eye(3));
-
+P=lyap(Aref',theta(2)*eye(3));
 B=[0; gamma/(R*M);0];
 
 
-%%REAL SYSTEM
-sys = series(tf([1],[L R]), tf([-1.0000e+05], [M Ch Kh]));
 
-%%
+% %%
 
 sim('modelNew')
+figure;
+plot(XRef); grid;
+figure;
+plot(X);grid;
 

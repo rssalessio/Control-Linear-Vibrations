@@ -37,14 +37,14 @@ w_cart = damp(cart)/2/pi
 %% position loop design
 Ws = tf(makeweight(10, 2*pi*1, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*1, 10));
-Wk = tf(makeweight(0.9, 2*pi*1, 10));
+Wk = 100*tf(makeweight(0.9, 2*pi*1, 10));
 
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
 figure; margin(series(Hinf,plant)); grid;
 figure; pzplot(Hinf); grid;
-figure; bodemag(1/(1+series(Hinf,plant))); grid;
-figure; bodemag(Hinf/(1+series(Hinf,plant))); grid;
+figure; bodemag(1/(1+series(Hinf,plant))); title('S'), grid;
+figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
 
 
 % Hinf_zpk = zpk(Hinf);
