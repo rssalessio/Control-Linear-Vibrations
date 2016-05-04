@@ -3,8 +3,8 @@
 %motor
 R = 0.6305;%resistance 
 L = 0.0111; %inductance 
-Ke =0.059; %electric stiffness and torque constant
-D = 0.0762; %diameter
+Ke =0.059/2; %electric stiffness and torque constant
+D = 0.0762/2; %diameter
 J = 0.07; %inertia
 
 %carts and load
@@ -31,4 +31,8 @@ Km = 302.3423; %Stiffness Med
 Kl = 207.4248; %Stifness low
 
 
-gamma = -(4*Ke/D);
+gamma = -(4*Ke/D)
+
+Ke/D
+
+N/A

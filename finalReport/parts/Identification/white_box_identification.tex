@@ -119,8 +119,8 @@ In the table below are shown the various mean of the pulsation and their relativ
 \begin{tabular}{|l|l|l|l|}
 \hline
 {(\textbf{$\omega_{avg}$} [\SI{}{\radian \per \second}],$\omega_{std}$ [\SI{}{\radian \per \second}])} & \textbf{$k_h$} & \textbf{$k_m$}   & \textbf{$k_l$}   \\ \hline
-\textbf{with load}         & (21.2989,0 )    & (14.2800 ,    0.0671) & (10.6495 ,0 )      \\ \hline
-\textbf{with no load}      & (34.9066 ,0 )    & (23.7101,0.1792) & (17.6991,0.1005) \\ \hline
+\textbf{with load}         & (21.2989, 0)    & (14.2800, 0.0671) & (10.6495, 0)      \\ \hline
+\textbf{with no load}      & (34.9066, 0)    & (23.7101, 0.1792) & (17.6991, 0.1005) \\ \hline
 \end{tabular}
 \caption{Pulsation of the cart detached from the motor. Various configuration are shown (with a load of $0.986$ [\SI{}{\kilo \gram}] and no load) for the various springs. }
 \end{table} \\ \\
@@ -140,7 +140,7 @@ By using   mean pulsation the resultant average mass of the cart $m_c$ is $0.568
 \begin{tabular}{|l|l|l|}
 \hline
 {\textbf{($k_h$ [\SI{}{\newton \per \metre}], $m_c$ [\SI{}{\kilo \gram}])}} & \textbf{($k_m$ [\SI{}{\newton \per \metre}], $m_c$ [\SI{}{\kilo \gram}])} & \textbf{($k_l$ [\SI{}{\newton \per \metre}], $m_c$ [\SI{}{\kilo \gram}])} \\ \hline
-(712.5990 ,0.5848)              & (315.5074 ,0.5612 )     & (175.2819,0.5595 )     \\ \hline
+(712.5990, 0.5848)              & (315.5074, 0.5612 )     & (175.2819, 0.5595 )     \\ \hline
 \end{tabular}
 \caption{Identified springs and cart mass}
 \end{table}
@@ -309,8 +309,44 @@ In case we consider a pulse input then the fit value obviously increase over $0.
 The system was modelled as an open loop system as specified in section \ref{sec:validation_cost_function}.
 We have mainly  a series connection of two systems: the motor and the cart, which are identified by the following transfer functions:
 
-$$G_1(s) = \frac{1}{Ls+R}, G_2(s) = \frac{1}{Ms^2+Cs+K}$$
+$$G_1(s) = \frac{1}{Ls+R} \quad G_2(s) = \frac{\gamma}{Ms^2+Cs+K}$$
 
 Since we are using the same tests used to identify the motor (section \ref{sec:motor_id}), and the same techniques used to identify the cart detached from the motor (section \ref{sec:cart_detached_id}), those two sections are not presented.
 \subsection{Experiment results}
+Results are summarized in a similar fashion to section \ref{sec:cart_detached_id}:
+\paragraph{Pulsation}
+In the table below are shown the various mean of the pulsation of the cart and their relative standard deviation:
+\begin{table}[!h]
+\centering
+
+\label{table: cart_attached_omega}
+\begin{tabular}{|l|l|l|l|}
+\hline
+{(\textbf{$\omega_{avg}$} [\SI{}{\radian \per \second}],$\omega_{std}$ [\SI{}{\radian \per \second}])} & \textbf{$k_h$} & \textbf{$k_m$}   & \textbf{$k_l$}   \\ \hline
+\textbf{with load}         & (20.0753, 0.1762 )    & (13.1359, 0.0796) & (10.9848, 0.0525 )      \\ \hline
+\textbf{with no load}      & (30.3578, 0.3997  )    & (19.1376, 0.1691) & (15.9604, 0.2574) \\ \hline
+\end{tabular}
+\caption{Pulsation of the cart  attached to the motor. Various configuration are shown (with a load of $0.986$ [\SI{}{\kilo \gram}] and no load) for the various springs. }
+\end{table} \\ \\
+
+
+\paragraph{System mass and  stiffness}
+By using   mean pulsation the resultant average mass of the system, including the cart, is $ 0.8440$ [\SI{}{\kilo\gram}] with standard deviation $  0.0675$ [\SI{}{\kilo \gram}]. Results also for the stiffness  are shown in table \ref{table: cart_springs_mass}.
+\begin{table}[!h]
+\centering
+\label{table: cart_attached_springs_mass}
+\begin{tabular}{|l|l|l|}
+\hline
+{\textbf{($k_h$ [\SI{}{\newton \per \metre}], $m$ [\SI{}{\kilo \gram}])}} & \textbf{($k_m$ [\SI{}{\newton \per \metre}], $m$ [\SI{}{\kilo \gram}])} & \textbf{($k_l$ [\SI{}{\newton \per \metre}], $m$ [\SI{}{\kilo \gram}])} \\ \hline
+(706.19992, 0.7663)              & (321.7001, 0.8784)     & (226.0565, 0.8874)     \\ \hline
+\end{tabular}
+\caption{Identified stiffness and mass of the overall system}
+\end{table}
+Therefore it results that the mass contribution of the motor is:
+$$M_{motor} = 0.8840 -0.5685=0.3155 \text{Kg}$$.
+
+The identified gain of the motor, based on the fact that at steady state we have:
+$$x(\infty) = \frac{\gamma}{k} i(\infty)$$
+gives an average value of $\gamma=  -2.0680$ \SI{}{\newton \per \ampere} and standard deviation $\gamma_{std}= 0.2935$ \SI{}{\newton \per \ampere}. Notice that $x(\infty), i(\infty)$ refers to the corresponding value at steady state.
+
 \subsection{Validation}
