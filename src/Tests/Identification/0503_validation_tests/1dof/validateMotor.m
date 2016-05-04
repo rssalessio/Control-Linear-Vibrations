@@ -1,13 +1,19 @@
 %%validation tests motor
 function [] = validateMotor()
 
+%valori alessio
+disp(['R: 1.2689 - L: 0.0024']);
 R=1.2689;
 L = 0.0024;
 
+
+%valori gian
+% disp(['R: 1.3 - L: 0.0220']);
+% R = 1.3;
+% L = 0.0220; 
+
 G = tf([1],[L R]);
 c=zeros(6,1);
-% pole(G)
-% dcgain(G)
 
 cd KmNoM
     c(1)=testDirectory(G);
@@ -34,8 +40,8 @@ cd ..
 cd Kh2M
     c(6)=testDirectory(G);
 cd ..
-    mean(c)
-    std(c)
+
+disp(['Mean: ', num2str(mean(c)), ' - STD: ', num2str(std(c))]);
 
 
 end
@@ -49,9 +55,4 @@ function c = testDirectory(sys1)
     grid; xlabel('Time [s]'); ylabel('Current [A]');
     title('Current validation');
     legend('Real current', 'Simulated current');
-    
-    dat= iddata(i,v,1/200);
-    g = tfest(dat, 3);
-    y2 = lsim(g,v,t);
-    c=costFunction(y2,i);
 end
