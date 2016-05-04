@@ -291,9 +291,20 @@ Regarding the inductance, the estimated value fits the nominal value. This can a
     \label{fig:motor_id_2}
 \end{figure}
 \subsection{Validation}
-Validation was done using a random input with normal distribution $N(0,1)$.
+Validation was done using a random input with normal distribution $N(0,\frac{9}{4})$ (Check figure \ref{fig:motor_validation} ). Notice that we couldn't have used that input as source for identification because we already know a model of the system, and so we are not interested in black box modeling. 
 
-
+On average, using the cost function defined in \ref{sec:validation_cost_function}, with a first order system of the type:
+$$G(s) = \frac{1}{Ls+R}$$
+where $R=1.2689 \Omega, L=0.0024 H$, there is an average fit value $d(i_{real},i_{sim})=0.8142$ with standard deviation $0.0364$.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/motor_validation.png}
+    \caption{Validation of the motor with a random input signal $v(t) \sim N(0,\frac{9}{4})$.}
+    \label{fig:motor_validation}
+\end{figure}
+In case black box identification is used, with a $3$rd order system we would obtain an average fit value of $0.8527$ with standard deviation $0.0424$. \\ \\
+In case we consider a pulse input then the fit value obviously increase over $0.9$, thus the results obtained are acceptable.
+\newpage
 \section{Overall system identification}
 The system was modelled as an open loop system as specified in section \ref{sec:validation_cost_function}.
 We have mainly  a series connection of two systems: the motor and the cart, which are identified by the following transfer functions:
