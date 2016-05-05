@@ -330,7 +330,7 @@ In the table below are shown the various mean of the pulsation of the cart and t
 \end{table} \\ \\
 
 
-\paragraph{System mass and  stiffness}
+\paragraph{System gain, mass and  stiffness}
 By using   mean pulsation the resultant average mass of the system, including the cart, is $ 0.8440$ [\SI{}{\kilo\gram}] with standard deviation $  0.0675$ [\SI{}{\kilo \gram}]. Results also for the stiffness  are shown in table \ref{table: cart_springs_mass}.
 \begin{table}[!h]
 \centering
@@ -348,5 +348,51 @@ $$M_{motor} = 0.8840 -0.5685=0.3155 \text{Kg}$$.
 The identified gain of the motor, based on the fact that at steady state we have:
 $$x(\infty) = \frac{\gamma}{k} i(\infty)$$
 gives an average value of $\gamma=  -2.0680$ \SI{}{\newton \per \ampere} and standard deviation $\gamma_{std}= 0.2935$ \SI{}{\newton \per \ampere}. Notice that $x(\infty), i(\infty)$ refers to the corresponding value at steady state.
+
+
+\paragraph{Damping and damping ratio}
+The mean values for the damping ratio, including their standard deviation, are shown in table \ref{table: cart_attached_dampingratio} for the various springs, with and without a load.
+\begin{table}[!h]
+\centering
+
+\label{table: cart_attached_dampingratio}
+\begin{tabular}{|l|l|l|l|}
+\hline
+{(\textbf{$\xi_{avg}$},$\xi_{std}$)} & \textbf{$k_h$} & \textbf{$k_m$}   & \textbf{$k_l$}   \\ \hline
+\textbf{with load}         & (0.1349,  0.0009 )    & (0.1996, 0.0502) & (0.2482, 0.0014) \\ \hline
+\textbf{with no load}      & ( 0.1517,   0.0066 )    & ( 0.2223, 0.0058) & (0.3443, 0.0216)      \\ \hline
+\end{tabular}
+\caption{Damping ratio. Various configuration are shown (with a load of $0.986$ [\SI{}{\kilo \gram}] and no load) for the various springs. }
+\end{table}
+
+
+From the values shown in table \ref{table: cart_attached_dampingratio} it seems that the damping $C$ is function of the mass, like in \ref{table: cart_detached_dampingratio}. The various damping values are shown in table 
+\ref{table: cart_detached_damping}.
+\begin{table}[!h]
+\centering
+\label{table: cart_attached_damping}
+\begin{tabular}{|l|l|l|l|}
+\hline
+{$C$ [\SI{}{\newton \second \per \metre}]} & \textbf{$k_h$} & \textbf{$k_m$}   & \textbf{$k_l$}   \\ \hline
+\textbf{with load}         & 9.9120    & 9.5963  & 9.9788 \\ \hline
+\textbf{with no load}      & 7.7739&    7.2040 &   9.2761      \\ \hline
+\end{tabular}
+\caption{Damping values. Various configuration are shown (with a load of $0.986$ [\SI{}{\kilo \gram}] and no load) for the various springs. }
+\end{table}
+
+We can therefore linearly characterize the damping value as function of the mass centered in $m_c$, for each spring:
+$$C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c}) = C_{nl} +\alpha (m-m_{c})$$
+The different values of $\alpha$, the difference quotient, are shown in table \ref{table: cart_detached_damping_quotient}
+
+\begin{table}[!h]
+\centering
+\label{table: cart_attached_damping_quotient}
+\begin{tabular}{|l|l|l|l|}
+\hline
+ & \textbf{$k_h$} & \textbf{$k_m$}   & \textbf{$k_l$}   \\ \hline
+$\frac{C_{l}-C_{nl}}{m_{l}}$ [\SI{}{\newton \second \per \metre \per \kilo\gram}]       &2.1685   & 2.4263& 0.7127\\ \hline
+\end{tabular}
+\caption{Damping difference quotient. Due to friction damping changes for different weights, we can therefore characterize the damping in a linear way with the formula: $C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c})= C_{nl} +\alpha (m-m_{c})$. Values of the difference quotient are shown for the different springs.}
+\end{table}
 
 \subsection{Validation}

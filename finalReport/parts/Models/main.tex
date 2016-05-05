@@ -76,7 +76,23 @@ The equations of motion are given by:
 $$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
 \begin{align*}
 \Big(M_1+\frac{4}{D^2}J \Big)\ddot{x}_1+(c_1+c_2)\dot{x}_1 +(k_1+k_2)x_1 &= k_2 x_2 +c_2 \dot{x}_2 + \frac{2}{D}(c(t)-f_m(\dot{\theta}))-f_c(\dot{x}_1) \\
-M_2 \ddot{x}_2 +c_2 \dot{x}_2 +k_2x_2 &= k_1x_1+c_1\dot{x}_1 -f_c(\dot{x}_2)
+M_2 \ddot{x}_2 +c_2 \dot{x}_2 +k_2x_2 &= k_2x_1+c_2\dot{x}_1 -f_c(\dot{x}_2)
 \end{align*}
-
+Thus we can write:
+$$
+\begin{bmatrix}
+\hat{M}_1 & 0 \\
+0 & M_2
+\end{bmatrix}
+\ddot{x} + 
+\begin{bmatrix}
+c_1+c_2 & 0 \\
+0 & c_2
+\end{bmatrix}
+\dot{x}+
+\begin{bmatrix}
+k_1+k_2 & 0 \\
+0 &k_2
+\end{bmatrix}
+x = \underline{Q}(t)$$
 
