@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'hinf_arduino'.
  *
- * Model version                  : 1.18
+ * Model version                  : 1.61
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 20 2015)
- * C/C++ source code generated on : Fri May 06 09:25:11 2016
+ * C/C++ source code generated on : Fri May 06 12:09:03 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -64,45 +64,55 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T Sum;                          /* '<S6>/Sum' */
-  real_T startTime;                    /* '<S5>/startTime' */
-  real_T MD;                           /* '<S1>/Chart' */
-  real32_T conversion13;               /* '<S7>/conversion13' */
-  real32_T conversion2;                /* '<S7>/conversion2' */
-  real32_T conversion8;                /* '<S24>/conversion8' */
-  real32_T SFunction1_o1;              /* '<S24>/S-Function1' */
-  real32_T SFunction1_o2;              /* '<S24>/S-Function1' */
-  real32_T SFunction1_o3;              /* '<S24>/S-Function1' */
-  real32_T conversion4;                /* '<S7>/conversion4' */
-  real32_T conversion5;                /* '<S7>/conversion5' */
-  real32_T conversion6;                /* '<S7>/conversion6' */
-  real32_T conversion7;                /* '<S7>/conversion7' */
-  int32_T SFunction;                   /* '<S22>/S-Function' */
-  int32_T SFunction_e;                 /* '<S16>/S-Function' */
-  boolean_T SFunction2_o1;             /* '<S4>/S-Function2' */
-  boolean_T SFunction2_o2;             /* '<S4>/S-Function2' */
-  boolean_T conversion1;               /* '<S7>/conversion1' */
-  boolean_T conversion3;               /* '<S7>/conversion3' */
-  boolean_T conversion9;               /* '<S7>/conversion9' */
-  boolean_T conversion10;              /* '<S7>/conversion10' */
-  boolean_T LogicalOperator;           /* '<S24>/Logical Operator' */
-  boolean_T LogicalOperator_g;         /* '<S19>/Logical Operator' */
-  boolean_T LogicalOperator_i;         /* '<S3>/Logical Operator' */
+  real_T HINFINITY;                    /* '<S2>/H INFINITY' */
+  real_T Saturation;                   /* '<S10>/Saturation' */
+  real_T Sum;                          /* '<S2>/Sum' */
+  real_T startTime;                    /* '<S4>/startTime' */
+  real_T MD;                           /* '<S7>/Init Manager' */
+  real_T ER;                           /* '<S7>/Init Manager' */
+  real_T MD_d;                         /* '<S7>/Alert Manager' */
+  real_T ER_h;                         /* '<S7>/Alert Manager' */
+  real32_T conversion13;               /* '<S6>/conversion13' */
+  real32_T conversion2;                /* '<S6>/conversion2' */
+  real32_T conversion8;                /* '<S21>/conversion8' */
+  real32_T SFunction1_o1;              /* '<S21>/S-Function1' */
+  real32_T SFunction1_o2;              /* '<S21>/S-Function1' */
+  real32_T SFunction1_o3;              /* '<S21>/S-Function1' */
+  real32_T conversion4;                /* '<S6>/conversion4' */
+  real32_T conversion5;                /* '<S6>/conversion5' */
+  real32_T conversion6;                /* '<S6>/conversion6' */
+  real32_T conversion7;                /* '<S6>/conversion7' */
+  int32_T SFunction;                   /* '<S20>/S-Function' */
+  boolean_T SFunction2_o1;             /* '<S3>/S-Function2' */
+  boolean_T SFunction2_o2;             /* '<S3>/S-Function2' */
+  boolean_T MotorDetector;             /* '<S7>/Motor Detector' */
+  boolean_T EncoderDetector;           /* '<S7>/Encoder Detector' */
+  boolean_T conversion9;               /* '<S6>/conversion9' */
+  boolean_T conversion10;              /* '<S6>/conversion10' */
+  boolean_T LogicalOperator;           /* '<S21>/Logical Operator' */
+  boolean_T LogicalOperator_h;         /* '<S8>/Logical Operator' */
 } B_hinf_arduino_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T SFunction2_DSTATE;            /* '<S4>/S-Function2' */
-  real_T SFunction1_DSTATE;            /* '<S24>/S-Function1' */
-  real_T SFunction_DSTATE;             /* '<S22>/S-Function' */
-  real_T SFunction_DSTATE_j;           /* '<S16>/S-Function' */
-  real_T SFunction_DSTATE_a;           /* '<S7>/S-Function' */
-  real_T SFunction1_DSTATE_b;          /* '<S4>/S-Function1' */
-  real_T Memory1_PreviousInput;        /* '<S1>/Memory1' */
-  int32_T Memory2_PreviousInput;       /* '<S1>/Memory2' */
+  real_T SFunction2_DSTATE;            /* '<S3>/S-Function2' */
+  real_T SFunction1_DSTATE;            /* '<S21>/S-Function1' */
+  real_T SFunction_DSTATE;             /* '<S20>/S-Function' */
+  real_T SFunction_DSTATE_l;           /* '<S6>/S-Function' */
+  real_T SFunction1_DSTATE_b;          /* '<S3>/S-Function1' */
+  real_T Memory2_PreviousInput;        /* '<S7>/Memory2' */
+  real_T Memory3_PreviousInput;        /* '<S7>/Memory3' */
+  real_T Memory1_PreviousInput;        /* '<S7>/Memory1' */
+  real_T Memory1_PreviousInput_m;      /* '<S9>/Memory1' */
+  real_T Memory_PreviousInput;         /* '<S10>/Memory' */
   int32_T clockTickCounter;            /* '<Root>/Pulse Generator' */
-  uint8_T is_active_c3_hinf_arduino;   /* '<S1>/Chart' */
-  uint8_T is_c3_hinf_arduino;          /* '<S1>/Chart' */
+  int32_T Memory_PreviousInput_f;      /* '<S8>/Memory' */
+  uint16_T temporalCounter_i1;         /* '<S7>/Init Manager' */
+  uint8_T is_active_c1_hinf_arduino;   /* '<S7>/Init Manager' */
+  uint8_T is_c1_hinf_arduino;          /* '<S7>/Init Manager' */
+  uint8_T is_active_c3_hinf_arduino;   /* '<S7>/Alert Manager' */
+  uint8_T is_c3_hinf_arduino;          /* '<S7>/Alert Manager' */
+  boolean_T Memory_PreviousInput_c;    /* '<S7>/Memory' */
 } DW_hinf_arduino_T;
 
 /* Continuous states (auto storage) */
@@ -134,22 +144,49 @@ typedef struct {
 /* Parameters (auto storage) */
 struct P_hinf_arduino_T_ {
   real_T Encoder_dt_enc;               /* Mask Parameter: Encoder_dt_enc
-                                        * Referenced by: '<S22>/S-Function'
-                                        */
-  real_T Encoder_dt_enc_d;             /* Mask Parameter: Encoder_dt_enc_d
-                                        * Referenced by: '<S16>/S-Function'
+                                        * Referenced by: '<S20>/S-Function'
                                         */
   int64m_T UpperThreshold_const;       /* Mask Parameter: UpperThreshold_const
-                                        * Referenced by: '<S13>/Constant'
+                                        * Referenced by: '<S15>/Constant'
                                         */
   int64m_T LowerThreshold_const;       /* Mask Parameter: LowerThreshold_const
-                                        * Referenced by: '<S12>/Constant'
+                                        * Referenced by: '<S14>/Constant'
                                         */
   uint32_T DigitalOutput_pinNumber;    /* Mask Parameter: DigitalOutput_pinNumber
+                                        * Referenced by: '<S16>/Digital Output'
+                                        */
+  uint32_T DigitalOutput_pinNumber_l;  /* Mask Parameter: DigitalOutput_pinNumber_l
                                         * Referenced by: '<S17>/Digital Output'
                                         */
-  uint32_T DigitalOutput_pinNumber_e;  /* Mask Parameter: DigitalOutput_pinNumber_e
-                                        * Referenced by: '<S18>/Digital Output'
+  real_T Memory2_X0;                   /* Expression: 0
+                                        * Referenced by: '<S7>/Memory2'
+                                        */
+  real_T Memory3_X0;                   /* Expression: 0
+                                        * Referenced by: '<S7>/Memory3'
+                                        */
+  real_T Memory1_X0;                   /* Expression: 0
+                                        * Referenced by: '<S7>/Memory1'
+                                        */
+  real_T PulseGenerator_Amp;           /* Expression: 1
+                                        * Referenced by: '<Root>/Pulse Generator'
+                                        */
+  real_T PulseGenerator_Period;        /* Computed Parameter: PulseGenerator_Period
+                                        * Referenced by: '<Root>/Pulse Generator'
+                                        */
+  real_T PulseGenerator_Duty;          /* Computed Parameter: PulseGenerator_Duty
+                                        * Referenced by: '<Root>/Pulse Generator'
+                                        */
+  real_T PulseGenerator_PhaseDelay;    /* Expression: 0
+                                        * Referenced by: '<Root>/Pulse Generator'
+                                        */
+  real_T Saturation_UpperSat;          /* Expression: 3
+                                        * Referenced by: '<S9>/Saturation'
+                                        */
+  real_T Saturation_LowerSat;          /* Expression: -3
+                                        * Referenced by: '<S9>/Saturation'
+                                        */
+  real_T Memory1_X0_p;                 /* Expression: 0
+                                        * Referenced by: '<S9>/Memory1'
                                         */
   real_T HINFINITY_A[9];               /* Computed Parameter: HINFINITY_A
                                         * Referenced by: '<S2>/H INFINITY'
@@ -163,80 +200,53 @@ struct P_hinf_arduino_T_ {
   real_T HINFINITY_X0;                 /* Expression: 0
                                         * Referenced by: '<S2>/H INFINITY'
                                         */
-  real_T Saturation_UpperSat;          /* Expression: 5
-                                        * Referenced by: '<S11>/Saturation'
+  real_T Memory_X0;                    /* Expression: 0
+                                        * Referenced by: '<S10>/Memory'
                                         */
-  real_T Saturation_LowerSat;          /* Expression: -5
-                                        * Referenced by: '<S11>/Saturation'
-                                        */
-  real_T PulseGenerator_Amp;           /* Expression: 1
-                                        * Referenced by: '<Root>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_Period;        /* Computed Parameter: PulseGenerator_Period
-                                        * Referenced by: '<Root>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_Duty;          /* Computed Parameter: PulseGenerator_Duty
-                                        * Referenced by: '<Root>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_PhaseDelay;    /* Expression: 5
-                                        * Referenced by: '<Root>/Pulse Generator'
-                                        */
-  real_T Saturation_UpperSat_b;        /* Expression: 3
+  real_T Saturation_UpperSat_b;        /* Expression: 5
                                         * Referenced by: '<S10>/Saturation'
                                         */
-  real_T Saturation_LowerSat_c;        /* Expression: -3
+  real_T Saturation_LowerSat_i;        /* Expression: -5
                                         * Referenced by: '<S10>/Saturation'
-                                        */
-  real_T Memory1_X0;                   /* Expression: 0
-                                        * Referenced by: '<S1>/Memory1'
                                         */
   real_T SFunction_P1;                 /* Expression: sample_time
-                                        * Referenced by: '<S7>/S-Function'
+                                        * Referenced by: '<S6>/S-Function'
+                                        */
+  real_T Constant_Value;               /* Expression: 0
+                                        * Referenced by: '<S2>/Constant'
                                         */
   real_T cmtoencoder_Gain;             /* Expression: 560
-                                        * Referenced by: '<S6>/cm-to-encoder'
+                                        * Referenced by: '<S5>/cm-to-encoder'
                                         */
   real32_T SFunction1_P2;              /* Expression: single(DC_bus_mask)
-                                        * Referenced by: '<S24>/S-Function1'
+                                        * Referenced by: '<S21>/S-Function1'
                                         */
   real32_T SFunction1_P3;              /* Expression: single(dt_mot)
-                                        * Referenced by: '<S24>/S-Function1'
+                                        * Referenced by: '<S21>/S-Function1'
                                         */
-  int32_T Memory2_X0;                  /* Computed Parameter: Memory2_X0
-                                        * Referenced by: '<S1>/Memory2'
+  int32_T Memory_X0_k;                 /* Computed Parameter: Memory_X0_k
+                                        * Referenced by: '<S8>/Memory'
                                         */
   uint32_T SFunction_p1;               /* Computed Parameter: SFunction_p1
-                                        * Referenced by: '<S23>/S-Function'
-                                        */
-  uint32_T SFunction_p1_c;             /* Computed Parameter: SFunction_p1_c
-                                        * Referenced by: '<S21>/S-Function'
-                                        */
-  uint32_T SFunction_p1_k;             /* Computed Parameter: SFunction_p1_k
-                                        * Referenced by: '<S15>/S-Function'
-                                        */
-  uint32_T SFunction_p1_i;             /* Computed Parameter: SFunction_p1_i
-                                        * Referenced by: '<S14>/S-Function'
+                                        * Referenced by: '<S13>/S-Function'
                                         */
   int32_T encodertocm_Gain;            /* Computed Parameter: encodertocm_Gain
-                                        * Referenced by: '<S9>/encoder-to-cm'
-                                        */
-  int32_T encodertocm_Gain_n;          /* Computed Parameter: encodertocm_Gain_n
                                         * Referenced by: '<Root>/encoder-to-cm'
                                         */
-  int32_T encodertocm1_Gain;           /* Computed Parameter: encodertocm1_Gain
-                                        * Referenced by: '<Root>/encoder-to-cm1'
+  int32_T encodertocm_Gain_g;          /* Computed Parameter: encodertocm_Gain_g
+                                        * Referenced by: '<S8>/encoder-to-cm'
                                         */
   uint8_T SFunction1_P1;               /* Expression: uint8(MotorID)
-                                        * Referenced by: '<S24>/S-Function1'
+                                        * Referenced by: '<S21>/S-Function1'
                                         */
-  uint8_T SFunction_P1_h;              /* Expression: uint8(EncoderID)
-                                        * Referenced by: '<S22>/S-Function'
-                                        */
-  uint8_T SFunction_P1_g;              /* Expression: uint8(EncoderID)
-                                        * Referenced by: '<S16>/S-Function'
+  uint8_T SFunction_P1_d;              /* Expression: uint8(EncoderID)
+                                        * Referenced by: '<S20>/S-Function'
                                         */
   uint8_T SFunction_P2;                /* Expression: uint8(sig_to_send)
-                                        * Referenced by: '<S7>/S-Function'
+                                        * Referenced by: '<S6>/S-Function'
+                                        */
+  boolean_T Memory_X0_g;               /* Computed Parameter: Memory_X0_g
+                                        * Referenced by: '<S7>/Memory'
                                         */
 };
 
@@ -333,28 +343,25 @@ extern RT_MODEL_hinf_arduino_T *const hinf_arduino_M;
  * '<Root>' : 'hinf_arduino'
  * '<S1>'   : 'hinf_arduino/Condom'
  * '<S2>'   : 'hinf_arduino/Controller'
- * '<S3>'   : 'hinf_arduino/Encoder '
- * '<S4>'   : 'hinf_arduino/PoliArd Init'
- * '<S5>'   : 'hinf_arduino/Repeating Sequence'
- * '<S6>'   : 'hinf_arduino/System '
- * '<S7>'   : 'hinf_arduino/Transmission'
- * '<S8>'   : 'hinf_arduino/Condom/Chart'
- * '<S9>'   : 'hinf_arduino/Condom/Ovrshoot Travel Protection'
- * '<S10>'  : 'hinf_arduino/Condom/Reference Overshoot'
- * '<S11>'  : 'hinf_arduino/Condom/Voltage Protection'
- * '<S12>'  : 'hinf_arduino/Condom/Ovrshoot Travel Protection/Lower Threshold'
- * '<S13>'  : 'hinf_arduino/Condom/Ovrshoot Travel Protection/Upper Threshold'
- * '<S14>'  : 'hinf_arduino/Condom/Reference Overshoot/Digital Input1'
- * '<S15>'  : 'hinf_arduino/Encoder /Digital Input'
- * '<S16>'  : 'hinf_arduino/Encoder /Encoder'
- * '<S17>'  : 'hinf_arduino/PoliArd Init/Digital Output1'
- * '<S18>'  : 'hinf_arduino/PoliArd Init/Digital Output3'
- * '<S19>'  : 'hinf_arduino/System /Encoder 1 '
- * '<S20>'  : 'hinf_arduino/System /Motor'
- * '<S21>'  : 'hinf_arduino/System /Encoder 1 /Digital Input'
- * '<S22>'  : 'hinf_arduino/System /Encoder 1 /Encoder'
- * '<S23>'  : 'hinf_arduino/System /Motor/Digital Input1'
- * '<S24>'  : 'hinf_arduino/System /Motor/Motor'
+ * '<S3>'   : 'hinf_arduino/PoliArd Init'
+ * '<S4>'   : 'hinf_arduino/Repeating Sequence'
+ * '<S5>'   : 'hinf_arduino/System '
+ * '<S6>'   : 'hinf_arduino/Transmission'
+ * '<S7>'   : 'hinf_arduino/Condom/Manager'
+ * '<S8>'   : 'hinf_arduino/Condom/Overshoot Travel Protection'
+ * '<S9>'   : 'hinf_arduino/Condom/Reference  Protection'
+ * '<S10>'  : 'hinf_arduino/Condom/Voltage Protection'
+ * '<S11>'  : 'hinf_arduino/Condom/Manager/Alert Manager'
+ * '<S12>'  : 'hinf_arduino/Condom/Manager/Init Manager'
+ * '<S13>'  : 'hinf_arduino/Condom/Manager/Second Switch'
+ * '<S14>'  : 'hinf_arduino/Condom/Overshoot Travel Protection/Lower Threshold'
+ * '<S15>'  : 'hinf_arduino/Condom/Overshoot Travel Protection/Upper Threshold'
+ * '<S16>'  : 'hinf_arduino/PoliArd Init/Digital Output1'
+ * '<S17>'  : 'hinf_arduino/PoliArd Init/Digital Output3'
+ * '<S18>'  : 'hinf_arduino/System /Encoder '
+ * '<S19>'  : 'hinf_arduino/System /Motor'
+ * '<S20>'  : 'hinf_arduino/System /Encoder /Encoder'
+ * '<S21>'  : 'hinf_arduino/System /Motor/Motor'
  */
 #endif                                 /* RTW_HEADER_hinf_arduino_h_ */
 
