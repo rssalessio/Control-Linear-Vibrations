@@ -22,7 +22,7 @@ Km = 281; %Stiffness Med
 Kl = 162; %Stifness low
 
 motor = tf(1, [L R]);
-cart = tf(Ke,[M,Ch,Kh]);
+cart = tf(Ke,[M,Cm,Km]);
 
 %figure; margin(motor); grid;
 
@@ -54,4 +54,4 @@ figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
 % 
 % Hinf_red = reduce(Hinf, 3);
 % figure; pzplot(Hinf_red); grid;
-
+ Hinf = reduce(Hinf, 3);
