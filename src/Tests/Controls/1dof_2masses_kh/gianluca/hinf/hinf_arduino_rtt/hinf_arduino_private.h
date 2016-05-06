@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'hinf_arduino'.
  *
- * Model version                  : 1.18
+ * Model version                  : 1.61
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 20 2015)
- * C/C++ source code generated on : Fri May 06 09:25:11 2016
+ * C/C++ source code generated on : Fri May 06 12:09:03 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -158,6 +158,7 @@ extern void SerialTx_Update_wrapper(const boolean_T *C1,
   const uint16_T *Samples, const int_T p_width1);
 extern void data_struct_init_Outputs_wrapper(const real_T *xD);
 extern void data_struct_init_Update_wrapper(real_T *xD);
+extern real32_T sMultiWord2Single(const uint32_T u1[], int32_T n1, int32_T e1);
 extern void sMultiWordMul(const uint32_T u1[], int32_T n1, const uint32_T u2[],
   int32_T n2, uint32_T y[], int32_T n);
 extern boolean_T sMultiWordGe(const uint32_T u1[], const uint32_T u2[], int32_T
@@ -165,7 +166,6 @@ extern boolean_T sMultiWordGe(const uint32_T u1[], const uint32_T u2[], int32_T
 extern int32_T sMultiWordCmp(const uint32_T u1[], const uint32_T u2[], int32_T n);
 extern boolean_T sMultiWordLe(const uint32_T u1[], const uint32_T u2[], int32_T
   n);
-extern real32_T sMultiWord2Single(const uint32_T u1[], int32_T n1, int32_T e1);
 
 /* private model entry point functions */
 extern void hinf_arduino_derivatives(void);

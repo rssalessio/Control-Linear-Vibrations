@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'hinf_arduino'.
  *
- * Model version                  : 1.18
+ * Model version                  : 1.61
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 20 2015)
- * C/C++ source code generated on : Fri May 06 09:25:11 2016
+ * C/C++ source code generated on : Fri May 06 12:09:03 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex

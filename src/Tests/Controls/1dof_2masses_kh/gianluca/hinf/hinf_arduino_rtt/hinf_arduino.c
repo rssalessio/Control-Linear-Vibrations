@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'hinf_arduino'.
  *
- * Model version                  : 1.18
+ * Model version                  : 1.61
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 20 2015)
- * C/C++ source code generated on : Fri May 06 09:25:11 2016
+ * C/C++ source code generated on : Fri May 06 12:09:03 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -21,10 +21,15 @@
 #include "hinf_arduino.h"
 #include "hinf_arduino_private.h"
 
-/* Named constants for Chart: '<S1>/Chart' */
+/* Named constants for Chart: '<S7>/Alert Manager' */
 #define hinf_arduino_IN_ALERT          ((uint8_T)1U)
 #define hinf_arduino_IN_NO_ACTIVE_CHILD ((uint8_T)0U)
 #define hinf_arduino_IN_OK             ((uint8_T)2U)
+
+/* Named constants for Chart: '<S7>/Init Manager' */
+#define hinf_arduino_IN_INIT           ((uint8_T)1U)
+#define hinf_arduino_IN_OPERATIVE      ((uint8_T)2U)
+#define hinf_arduino_IN_STOP           ((uint8_T)3U)
 
 const boolean_T hinf_arduino_BGND = false;/* boolean_T ground */
 
@@ -40,6 +45,34 @@ DW_hinf_arduino_T hinf_arduino_DW;
 /* Real-time model */
 RT_MODEL_hinf_arduino_T hinf_arduino_M_;
 RT_MODEL_hinf_arduino_T *const hinf_arduino_M = &hinf_arduino_M_;
+real32_T sMultiWord2Single(const uint32_T u1[], int32_T n1, int32_T e1)
+{
+  real32_T y;
+  int32_T i;
+  int32_T exp_0;
+  uint32_T u1i;
+  uint32_T cb;
+  y = 0.0F;
+  exp_0 = e1;
+  if ((u1[n1 - 1] & 2147483648U) != 0U) {
+    cb = 1U;
+    for (i = 0; i < n1; i++) {
+      u1i = ~u1[i];
+      cb += u1i;
+      y -= (real32_T)ldexp((real32_T)cb, exp_0);
+      cb = (uint32_T)(cb < u1i);
+      exp_0 += 32;
+    }
+  } else {
+    for (i = 0; i < n1; i++) {
+      y += (real32_T)ldexp((real32_T)u1[i], exp_0);
+      exp_0 += 32;
+    }
+  }
+
+  return y;
+}
+
 void sMultiWordMul(const uint32_T u1[], int32_T n1, const uint32_T u2[], int32_T
                    n2, uint32_T y[], int32_T n)
 {
@@ -164,34 +197,6 @@ boolean_T sMultiWordLe(const uint32_T u1[], const uint32_T u2[], int32_T n)
   return sMultiWordCmp(u1, u2, n) <= 0 ? (int32_T)true : (int32_T)false;
 }
 
-real32_T sMultiWord2Single(const uint32_T u1[], int32_T n1, int32_T e1)
-{
-  real32_T y;
-  int32_T i;
-  int32_T exp_0;
-  uint32_T u1i;
-  uint32_T cb;
-  y = 0.0F;
-  exp_0 = e1;
-  if ((u1[n1 - 1] & 2147483648U) != 0U) {
-    cb = 1U;
-    for (i = 0; i < n1; i++) {
-      u1i = ~u1[i];
-      cb += u1i;
-      y -= (real32_T)ldexp((real32_T)cb, exp_0);
-      cb = (uint32_T)(cb < u1i);
-      exp_0 += 32;
-    }
-  } else {
-    for (i = 0; i < n1; i++) {
-      y += (real32_T)ldexp((real32_T)u1[i], exp_0);
-      exp_0 += 32;
-    }
-  }
-
-  return y;
-}
-
 /*
  * This function updates continuous states using the ODE3 fixed-step
  * solver algorithm
@@ -276,15 +281,12 @@ static void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si )
 /* Model output function */
 void hinf_arduino_output(void)
 {
-  boolean_T rtb_LogicalOperator;
-  real_T rtb_Saturation;
-  int64m_T rtb_encodertocm1;
-  real_T HINFINITY;
-  real_T Saturation;
-  uint32_T tmp;
+  boolean_T rtb_SFunction_0;
+  real_T rtb_DataTypeConversion1;
+  int64m_T rtb_encodertocm;
+  int64m_T tmp;
   uint32_T tmp_0;
-  int64m_T tmp_1;
-  int64m_T tmp_2;
+  uint32_T tmp_1;
   if (rtmIsMajorTimeStep(hinf_arduino_M)) {
     /* set solver stop time */
     rtsiSetSolverStopTime(&hinf_arduino_M->solverInfo,
@@ -298,98 +300,146 @@ void hinf_arduino_output(void)
   }
 
   if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* S-Function (signals): '<S4>/S-Function2' */
+    /* S-Function (signals): '<S3>/S-Function2' */
     signals_Outputs_wrapper( &hinf_arduino_B.SFunction2_o1,
       &hinf_arduino_B.SFunction2_o2, &hinf_arduino_DW.SFunction2_DSTATE);
 
-    /* Gain: '<S9>/encoder-to-cm' incorporates:
-     *  Memory: '<S1>/Memory2'
+    /* Logic: '<S7>/Motor Detector' incorporates:
+     *  Memory: '<S7>/Memory2'
+     *  Memory: '<S7>/Memory3'
      */
-    tmp = (uint32_T)hinf_arduino_P.encodertocm_Gain;
-    tmp_0 = (uint32_T)hinf_arduino_DW.Memory2_PreviousInput;
-    sMultiWordMul(&tmp, 1, &tmp_0, 1, &rtb_encodertocm1.chunks[0U], 2);
+    hinf_arduino_B.MotorDetector = ((hinf_arduino_DW.Memory2_PreviousInput !=
+      0.0) || (hinf_arduino_DW.Memory3_PreviousInput != 0.0));
 
-    /* Logic: '<S9>/Logical Operator' incorporates:
-     *  Constant: '<S12>/Constant'
-     *  Constant: '<S13>/Constant'
-     *  RelationalOperator: '<S12>/Compare'
-     *  RelationalOperator: '<S13>/Compare'
+    /* S-Function (arduinodigitalinput_sfcn): '<S13>/S-Function' */
+    rtb_SFunction_0 = MW_digitalRead(hinf_arduino_P.SFunction_p1);
+
+    /* Chart: '<S7>/Init Manager' incorporates:
+     *  S-Function (arduinodigitalinput_sfcn): '<S13>/S-Function'
      */
-    rtb_LogicalOperator = (sMultiWordGe(&rtb_encodertocm1.chunks[0U],
-      &hinf_arduino_P.UpperThreshold_const.chunks[0U], 2) || sMultiWordLe
-      (&rtb_encodertocm1.chunks[0U],
-       &hinf_arduino_P.LowerThreshold_const.chunks[0U], 2));
-  }
+    if (hinf_arduino_DW.temporalCounter_i1 < 1023U) {
+      hinf_arduino_DW.temporalCounter_i1++;
+    }
 
-  /* StateSpace: '<S2>/H INFINITY' */
-  HINFINITY = (hinf_arduino_P.HINFINITY_C[0] * hinf_arduino_X.HINFINITY_CSTATE[0]
-               + hinf_arduino_P.HINFINITY_C[1] *
-               hinf_arduino_X.HINFINITY_CSTATE[1]) + hinf_arduino_P.HINFINITY_C
-    [2] * hinf_arduino_X.HINFINITY_CSTATE[2];
+    /* Gateway: Condom/Manager/Init
+       Manager */
+    /* During: Condom/Manager/Init
+       Manager */
+    if (hinf_arduino_DW.is_active_c1_hinf_arduino == 0U) {
+      /* Entry: Condom/Manager/Init
+         Manager */
+      hinf_arduino_DW.is_active_c1_hinf_arduino = 1U;
 
-  /* Saturate: '<S11>/Saturation' */
-  if (HINFINITY > hinf_arduino_P.Saturation_UpperSat) {
-    Saturation = hinf_arduino_P.Saturation_UpperSat;
-  } else if (HINFINITY < hinf_arduino_P.Saturation_LowerSat) {
-    Saturation = hinf_arduino_P.Saturation_LowerSat;
-  } else {
-    Saturation = HINFINITY;
-  }
+      /* Entry Internal: Condom/Manager/Init
+         Manager */
+      /* Transition: '<S12>:7' */
+      hinf_arduino_DW.is_c1_hinf_arduino = hinf_arduino_IN_STOP;
 
-  /* End of Saturate: '<S11>/Saturation' */
-  if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* Chart: '<S1>/Chart' */
-    /* Gateway: Condom/Chart */
-    /* During: Condom/Chart */
-    if (hinf_arduino_DW.is_active_c3_hinf_arduino == 0U) {
-      /* Entry: Condom/Chart */
-      hinf_arduino_DW.is_active_c3_hinf_arduino = 1U;
-
-      /* Entry Internal: Condom/Chart */
-      /* Transition: '<S8>:2' */
-      hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_OK;
-
-      /* Entry 'OK': '<S8>:5' */
-      hinf_arduino_B.MD = 0.0;
-    } else if (hinf_arduino_DW.is_c3_hinf_arduino == hinf_arduino_IN_ALERT) {
-      /* During 'ALERT': '<S8>:4' */
-      if (fabs(Saturation) < 0.3) {
-        /* Transition: '<S8>:3' */
-        hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_OK;
-
-        /* Entry 'OK': '<S8>:5' */
-        hinf_arduino_B.MD = 0.0;
-      }
+      /* Entry 'STOP': '<S12>:1' */
+      hinf_arduino_B.MD = 1.0;
+      hinf_arduino_B.ER = 1.0;
     } else {
-      /* During 'OK': '<S8>:5' */
-      if (rtb_LogicalOperator) {
-        /* Transition: '<S8>:1' */
-        hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_ALERT;
+      switch (hinf_arduino_DW.is_c1_hinf_arduino) {
+       case hinf_arduino_IN_INIT:
+        /* During 'INIT': '<S12>:2' */
+        if (hinf_arduino_DW.temporalCounter_i1 >= 600U) {
+          /* Transition: '<S12>:9' */
+          hinf_arduino_DW.is_c1_hinf_arduino = hinf_arduino_IN_OPERATIVE;
 
-        /* Entry 'ALERT': '<S8>:4' */
-        hinf_arduino_B.MD = 1.0;
+          /* Entry 'OPERATIVE': '<S12>:4' */
+          hinf_arduino_B.MD = 0.0;
+          hinf_arduino_B.ER = 0.0;
+        }
+        break;
+
+       case hinf_arduino_IN_OPERATIVE:
+        /* During 'OPERATIVE': '<S12>:4' */
+        if (!rtb_SFunction_0) {
+          /* Transition: '<S12>:10' */
+          hinf_arduino_DW.is_c1_hinf_arduino = hinf_arduino_IN_STOP;
+
+          /* Entry 'STOP': '<S12>:1' */
+          hinf_arduino_B.MD = 1.0;
+          hinf_arduino_B.ER = 1.0;
+        }
+        break;
+
+       default:
+        /* During 'STOP': '<S12>:1' */
+        if (rtb_SFunction_0) {
+          /* Transition: '<S12>:8' */
+          hinf_arduino_DW.is_c1_hinf_arduino = hinf_arduino_IN_INIT;
+          hinf_arduino_DW.temporalCounter_i1 = 0U;
+
+          /* Entry 'INIT': '<S12>:2' */
+          hinf_arduino_B.MD = 1.0;
+          hinf_arduino_B.ER = 1.0;
+        }
+        break;
       }
     }
 
-    /* End of Chart: '<S1>/Chart' */
+    /* End of Chart: '<S7>/Init Manager' */
 
-    /* DataTypeConversion: '<S7>/conversion1' */
-    hinf_arduino_B.conversion1 = (hinf_arduino_B.MD != 0.0);
+    /* Chart: '<S7>/Alert Manager' incorporates:
+     *  Memory: '<S7>/Memory'
+     *  Memory: '<S7>/Memory1'
+     */
+    /* Gateway: Condom/Manager/Alert
+       Manager */
+    /* During: Condom/Manager/Alert
+       Manager */
+    if (hinf_arduino_DW.is_active_c3_hinf_arduino == 0U) {
+      /* Entry: Condom/Manager/Alert
+         Manager */
+      hinf_arduino_DW.is_active_c3_hinf_arduino = 1U;
 
-    /* DataTypeConversion: '<S7>/conversion3' */
-    hinf_arduino_B.conversion3 = false;
+      /* Entry Internal: Condom/Manager/Alert
+         Manager */
+      /* Transition: '<S11>:2' */
+      hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_OK;
 
-    /* DataTypeConversion: '<S7>/conversion9' */
+      /* Entry 'OK': '<S11>:5' */
+      hinf_arduino_B.MD_d = 0.0;
+      hinf_arduino_B.ER_h = 0.0;
+    } else if (hinf_arduino_DW.is_c3_hinf_arduino == hinf_arduino_IN_ALERT) {
+      /* During 'ALERT': '<S11>:4' */
+      if (fabs(hinf_arduino_DW.Memory1_PreviousInput) < 0.3) {
+        /* Transition: '<S11>:3' */
+        hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_OK;
+
+        /* Entry 'OK': '<S11>:5' */
+        hinf_arduino_B.MD_d = 0.0;
+        hinf_arduino_B.ER_h = 0.0;
+      }
+    } else {
+      /* During 'OK': '<S11>:5' */
+      if (hinf_arduino_DW.Memory_PreviousInput_c) {
+        /* Transition: '<S11>:1' */
+        hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_ALERT;
+
+        /* Entry 'ALERT': '<S11>:4' */
+        hinf_arduino_B.MD_d = 1.0;
+        hinf_arduino_B.ER_h = 1.0;
+      }
+    }
+
+    /* End of Chart: '<S7>/Alert Manager' */
+
+    /* Logic: '<S7>/Encoder Detector' */
+    hinf_arduino_B.EncoderDetector = ((hinf_arduino_B.ER != 0.0) ||
+      (hinf_arduino_B.ER_h != 0.0));
+
+    /* DataTypeConversion: '<S6>/conversion9' */
     hinf_arduino_B.conversion9 = false;
 
-    /* DataTypeConversion: '<S7>/conversion10' */
+    /* DataTypeConversion: '<S6>/conversion10' */
     hinf_arduino_B.conversion10 = false;
 
     /* DiscretePulseGenerator: '<Root>/Pulse Generator' */
-    rtb_Saturation = (hinf_arduino_DW.clockTickCounter <
-                      hinf_arduino_P.PulseGenerator_Duty) &&
-      (hinf_arduino_DW.clockTickCounter >= 0) ?
-      hinf_arduino_P.PulseGenerator_Amp : 0.0;
+    rtb_DataTypeConversion1 = (hinf_arduino_DW.clockTickCounter <
+      hinf_arduino_P.PulseGenerator_Duty) && (hinf_arduino_DW.clockTickCounter >=
+      0) ? hinf_arduino_P.PulseGenerator_Amp : 0.0;
     if (hinf_arduino_DW.clockTickCounter >= hinf_arduino_P.PulseGenerator_Period
         - 1.0) {
       hinf_arduino_DW.clockTickCounter = 0;
@@ -399,139 +449,151 @@ void hinf_arduino_output(void)
 
     /* End of DiscretePulseGenerator: '<Root>/Pulse Generator' */
 
-    /* Saturate: '<S10>/Saturation' */
-    if (rtb_Saturation > hinf_arduino_P.Saturation_UpperSat_b) {
-      rtb_Saturation = hinf_arduino_P.Saturation_UpperSat_b;
+    /* Saturate: '<S9>/Saturation' */
+    if (rtb_DataTypeConversion1 > hinf_arduino_P.Saturation_UpperSat) {
+      rtb_DataTypeConversion1 = hinf_arduino_P.Saturation_UpperSat;
     } else {
-      if (rtb_Saturation < hinf_arduino_P.Saturation_LowerSat_c) {
-        rtb_Saturation = hinf_arduino_P.Saturation_LowerSat_c;
+      if (rtb_DataTypeConversion1 < hinf_arduino_P.Saturation_LowerSat) {
+        rtb_DataTypeConversion1 = hinf_arduino_P.Saturation_LowerSat;
       }
+    }
+
+    /* End of Saturate: '<S9>/Saturation' */
+
+    /* Product: '<S9>/Product' incorporates:
+     *  Logic: '<S9>/Motor Enabler'
+     *  Memory: '<S9>/Memory1'
+     */
+    rtb_DataTypeConversion1 *= (real_T)!(hinf_arduino_DW.Memory1_PreviousInput_m
+      != 0.0);
+
+    /* DataTypeConversion: '<S6>/conversion13' */
+    hinf_arduino_B.conversion13 = (real32_T)rtb_DataTypeConversion1;
+  }
+
+  /* StateSpace: '<S2>/H INFINITY' */
+  hinf_arduino_B.HINFINITY = 0.0;
+  hinf_arduino_B.HINFINITY += hinf_arduino_P.HINFINITY_C[0] *
+    hinf_arduino_X.HINFINITY_CSTATE[0];
+  hinf_arduino_B.HINFINITY += hinf_arduino_P.HINFINITY_C[1] *
+    hinf_arduino_X.HINFINITY_CSTATE[1];
+  hinf_arduino_B.HINFINITY += hinf_arduino_P.HINFINITY_C[2] *
+    hinf_arduino_X.HINFINITY_CSTATE[2];
+  if (rtmIsMajorTimeStep(hinf_arduino_M)) {
+    /* DataTypeConversion: '<S6>/conversion2' */
+    hinf_arduino_B.conversion2 = (real32_T)hinf_arduino_B.HINFINITY;
+
+    /* Saturate: '<S10>/Saturation' incorporates:
+     *  Memory: '<S10>/Memory'
+     */
+    if (hinf_arduino_DW.Memory_PreviousInput >
+        hinf_arduino_P.Saturation_UpperSat_b) {
+      hinf_arduino_B.Saturation = hinf_arduino_P.Saturation_UpperSat_b;
+    } else if (hinf_arduino_DW.Memory_PreviousInput <
+               hinf_arduino_P.Saturation_LowerSat_i) {
+      hinf_arduino_B.Saturation = hinf_arduino_P.Saturation_LowerSat_i;
+    } else {
+      hinf_arduino_B.Saturation = hinf_arduino_DW.Memory_PreviousInput;
     }
 
     /* End of Saturate: '<S10>/Saturation' */
 
-    /* Product: '<S1>/Product' incorporates:
-     *  Logic: '<S1>/Motor Enabler'
-     *  Memory: '<S1>/Memory1'
-     */
-    rtb_Saturation *= (real_T)!(hinf_arduino_DW.Memory1_PreviousInput != 0.0);
+    /* DataTypeConversion: '<S21>/conversion8' */
+    hinf_arduino_B.conversion8 = (real32_T)hinf_arduino_B.Saturation;
 
-    /* DataTypeConversion: '<S7>/conversion13' */
-    hinf_arduino_B.conversion13 = (real32_T)rtb_Saturation;
+    /* Logic: '<S21>/Logical Operator' */
+    hinf_arduino_B.LogicalOperator = hinf_arduino_B.SFunction2_o1;
 
-    /* DataTypeConversion: '<S7>/conversion2' */
-    hinf_arduino_B.conversion2 = (real32_T)HINFINITY;
-  }
+    /* S-Function (sfcn_motor_new): '<S21>/S-Function1' */
+    sfcn_motor_new_Outputs_wrapper(&hinf_arduino_B.conversion8,
+      &hinf_arduino_B.LogicalOperator, &hinf_arduino_B.SFunction1_o1,
+      &hinf_arduino_B.SFunction1_o2, &hinf_arduino_B.SFunction1_o3,
+      &hinf_arduino_DW.SFunction1_DSTATE, &hinf_arduino_P.SFunction1_P1, 1,
+      &hinf_arduino_P.SFunction1_P2, 1, &hinf_arduino_P.SFunction1_P3, 1);
 
-  /* DataTypeConversion: '<S24>/conversion8' */
-  hinf_arduino_B.conversion8 = (real32_T)Saturation;
-  if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* S-Function (arduinodigitalinput_sfcn): '<S23>/S-Function' */
-    rtb_LogicalOperator = MW_digitalRead(hinf_arduino_P.SFunction_p1);
-
-    /* Logic: '<S24>/Logical Operator' incorporates:
-     *  Logic: '<Root>/Logical Operator'
-     *  Logic: '<S20>/Logical Operator'
-     *  S-Function (arduinodigitalinput_sfcn): '<S23>/S-Function'
-     */
-    hinf_arduino_B.LogicalOperator = (rtb_LogicalOperator &&
-      (!(hinf_arduino_B.MD != 0.0)) && hinf_arduino_B.SFunction2_o1);
-  }
-
-  /* S-Function (sfcn_motor_new): '<S24>/S-Function1' */
-  sfcn_motor_new_Outputs_wrapper(&hinf_arduino_B.conversion8,
-    &hinf_arduino_B.LogicalOperator, &hinf_arduino_B.SFunction1_o1,
-    &hinf_arduino_B.SFunction1_o2, &hinf_arduino_B.SFunction1_o3,
-    &hinf_arduino_DW.SFunction1_DSTATE, &hinf_arduino_P.SFunction1_P1, 1,
-    &hinf_arduino_P.SFunction1_P2, 1, &hinf_arduino_P.SFunction1_P3, 1);
-  if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* DataTypeConversion: '<S7>/conversion4' incorporates:
-     *  DataTypeConversion: '<S20>/Data Type Conversion1'
+    /* DataTypeConversion: '<S6>/conversion4' incorporates:
+     *  DataTypeConversion: '<S19>/Data Type Conversion1'
      */
     hinf_arduino_B.conversion4 = hinf_arduino_B.SFunction1_o1;
 
-    /* Logic: '<S19>/Logical Operator' incorporates:
-     *  S-Function (arduinodigitalinput_sfcn): '<S21>/S-Function'
-     */
-    hinf_arduino_B.LogicalOperator_g = MW_digitalRead
-      (hinf_arduino_P.SFunction_p1_c);
-
-    /* S-Function (sfcn_encoder): '<S22>/S-Function' */
-    sfcn_encoder_Outputs_wrapper(&hinf_arduino_B.LogicalOperator_g,
+    /* S-Function (sfcn_encoder): '<S20>/S-Function' */
+    sfcn_encoder_Outputs_wrapper((boolean_T*)&hinf_arduino_BGND,
       &hinf_arduino_B.SFunction, &hinf_arduino_DW.SFunction_DSTATE,
-      &hinf_arduino_P.SFunction_P1_h, 1, &hinf_arduino_P.Encoder_dt_enc, 1);
+      &hinf_arduino_P.SFunction_P1_d, 1, &hinf_arduino_P.Encoder_dt_enc, 1);
 
     /* Gain: '<Root>/encoder-to-cm' */
-    tmp = (uint32_T)hinf_arduino_P.encodertocm_Gain_n;
-    tmp_0 = (uint32_T)hinf_arduino_B.SFunction;
-    sMultiWordMul(&tmp, 1, &tmp_0, 1, &tmp_1.chunks[0U], 2);
+    tmp_0 = (uint32_T)hinf_arduino_P.encodertocm_Gain;
+    tmp_1 = (uint32_T)hinf_arduino_B.SFunction;
+    sMultiWordMul(&tmp_0, 1, &tmp_1, 1, &tmp.chunks[0U], 2);
 
-    /* DataTypeConversion: '<S7>/conversion5' */
-    hinf_arduino_B.conversion5 = sMultiWord2Single(&tmp_1.chunks[0U], 2, 0) *
+    /* DataTypeConversion: '<S6>/conversion5' */
+    hinf_arduino_B.conversion5 = sMultiWord2Single(&tmp.chunks[0U], 2, 0) *
       9.09494702E-13F;
 
-    /* Logic: '<S3>/Logical Operator' incorporates:
-     *  S-Function (arduinodigitalinput_sfcn): '<S15>/S-Function'
-     */
-    hinf_arduino_B.LogicalOperator_i = MW_digitalRead
-      (hinf_arduino_P.SFunction_p1_k);
+    /* DataTypeConversion: '<S6>/conversion6' */
+    hinf_arduino_B.conversion6 = 0.0F;
 
-    /* S-Function (sfcn_encoder): '<S16>/S-Function' */
-    sfcn_encoder_Outputs_wrapper(&hinf_arduino_B.LogicalOperator_i,
-      &hinf_arduino_B.SFunction_e, &hinf_arduino_DW.SFunction_DSTATE_j,
-      &hinf_arduino_P.SFunction_P1_g, 1, &hinf_arduino_P.Encoder_dt_enc_d, 1);
-
-    /* Gain: '<Root>/encoder-to-cm1' */
-    tmp = (uint32_T)hinf_arduino_P.encodertocm1_Gain;
-    tmp_0 = (uint32_T)hinf_arduino_B.SFunction_e;
-    sMultiWordMul(&tmp, 1, &tmp_0, 1, &tmp_2.chunks[0U], 2);
-
-    /* DataTypeConversion: '<S7>/conversion6' */
-    hinf_arduino_B.conversion6 = sMultiWord2Single(&tmp_2.chunks[0U], 2, 0) *
-      9.09494702E-13F;
-
-    /* DataTypeConversion: '<S7>/conversion7' */
+    /* DataTypeConversion: '<S6>/conversion7' */
     hinf_arduino_B.conversion7 = 0.0F;
 
-    /* S-Function (SerialTx): '<S7>/S-Function' */
+    /* S-Function (SerialTx): '<S6>/S-Function' */
     SerialTx_Outputs_wrapper(&hinf_arduino_B.SFunction2_o1, (boolean_T*)
       &hinf_arduino_BGND, (boolean_T*)&hinf_arduino_BGND, (boolean_T*)
-      &hinf_arduino_BGND, &hinf_arduino_B.conversion1,
-      &hinf_arduino_B.conversion3, &hinf_arduino_B.conversion9,
+      &hinf_arduino_BGND, &hinf_arduino_B.MotorDetector,
+      &hinf_arduino_B.EncoderDetector, &hinf_arduino_B.conversion9,
       &hinf_arduino_B.conversion10, &hinf_arduino_B.conversion13,
       &hinf_arduino_B.conversion2, &hinf_arduino_B.conversion4,
       &hinf_arduino_B.conversion5, &hinf_arduino_B.conversion6,
-      &hinf_arduino_B.conversion7, &hinf_arduino_DW.SFunction_DSTATE_a,
+      &hinf_arduino_B.conversion7, &hinf_arduino_DW.SFunction_DSTATE_l,
       &hinf_arduino_P.SFunction_P1, 1, &hinf_arduino_P.SFunction_P2, 1);
 
-    /* S-Function (arduinodigitalinput_sfcn): '<S14>/S-Function' */
-    MW_digitalRead(hinf_arduino_P.SFunction_p1_i);
-
-    /* Sum: '<S6>/Sum' incorporates:
-     *  Gain: '<S6>/cm-to-encoder'
+    /* Gain: '<S8>/encoder-to-cm' incorporates:
+     *  Memory: '<S8>/Memory'
      */
-    hinf_arduino_B.Sum = hinf_arduino_P.cmtoencoder_Gain * rtb_Saturation -
-      (real_T)hinf_arduino_B.SFunction;
+    tmp_0 = (uint32_T)hinf_arduino_P.encodertocm_Gain_g;
+    tmp_1 = (uint32_T)hinf_arduino_DW.Memory_PreviousInput_f;
+    sMultiWordMul(&tmp_0, 1, &tmp_1, 1, &rtb_encodertocm.chunks[0U], 2);
+
+    /* Logic: '<S8>/Logical Operator' incorporates:
+     *  Constant: '<S14>/Constant'
+     *  Constant: '<S15>/Constant'
+     *  RelationalOperator: '<S14>/Compare'
+     *  RelationalOperator: '<S15>/Compare'
+     */
+    hinf_arduino_B.LogicalOperator_h = (sMultiWordGe(&rtb_encodertocm.chunks[0U],
+      &hinf_arduino_P.UpperThreshold_const.chunks[0U], 2) || sMultiWordLe
+      (&rtb_encodertocm.chunks[0U], &hinf_arduino_P.LowerThreshold_const.chunks
+       [0U], 2));
+
+    /* Sum: '<S2>/Sum' incorporates:
+     *  Constant: '<S2>/Constant'
+     *  Gain: '<S5>/cm-to-encoder'
+     *  Sum: '<S5>/Sum'
+     */
+    hinf_arduino_B.Sum = (hinf_arduino_P.cmtoencoder_Gain *
+                          rtb_DataTypeConversion1 - (real_T)
+                          hinf_arduino_B.SFunction) -
+      hinf_arduino_P.Constant_Value;
   }
 
-  /* S-Function (sfun_tstart): '<S5>/startTime' */
+  /* S-Function (sfun_tstart): '<S4>/startTime' */
 
-  /* S-Function Block (sfun_tstart): <S5>/startTime */
+  /* S-Function Block (sfun_tstart): <S4>/startTime */
   hinf_arduino_B.startTime = (0.0);
   if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* S-Function (arduinodigitaloutput_sfcn): '<S17>/Digital Output' incorporates:
-     *  DataTypeConversion: '<S17>/Data Type Conversion'
+    /* S-Function (arduinodigitaloutput_sfcn): '<S16>/Digital Output' incorporates:
+     *  DataTypeConversion: '<S16>/Data Type Conversion'
      */
     MW_digitalWrite(hinf_arduino_P.DigitalOutput_pinNumber, (uint8_T)
                     hinf_arduino_B.SFunction2_o1);
 
-    /* S-Function (arduinodigitaloutput_sfcn): '<S18>/Digital Output' incorporates:
-     *  DataTypeConversion: '<S18>/Data Type Conversion'
+    /* S-Function (arduinodigitaloutput_sfcn): '<S17>/Digital Output' incorporates:
+     *  DataTypeConversion: '<S17>/Data Type Conversion'
      */
-    MW_digitalWrite(hinf_arduino_P.DigitalOutput_pinNumber_e, (uint8_T)
+    MW_digitalWrite(hinf_arduino_P.DigitalOutput_pinNumber_l, (uint8_T)
                     hinf_arduino_B.SFunction2_o2);
 
-    /* S-Function (data_struct_init): '<S4>/S-Function1' */
+    /* S-Function (data_struct_init): '<S3>/S-Function1' */
     data_struct_init_Outputs_wrapper( &hinf_arduino_DW.SFunction1_DSTATE_b);
   }
 }
@@ -540,46 +602,55 @@ void hinf_arduino_output(void)
 void hinf_arduino_update(void)
 {
   if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* S-Function "signals_wrapper" Block: <S4>/S-Function2 */
+    /* S-Function "signals_wrapper" Block: <S3>/S-Function2 */
     signals_Update_wrapper( &hinf_arduino_B.SFunction2_o1,
       &hinf_arduino_B.SFunction2_o2, &hinf_arduino_DW.SFunction2_DSTATE);
 
-    /* Update for Memory: '<S1>/Memory2' */
-    hinf_arduino_DW.Memory2_PreviousInput = hinf_arduino_B.SFunction;
+    /* Update for Memory: '<S7>/Memory2' */
+    hinf_arduino_DW.Memory2_PreviousInput = hinf_arduino_B.MD;
 
-    /* Update for Memory: '<S1>/Memory1' */
-    hinf_arduino_DW.Memory1_PreviousInput = hinf_arduino_B.MD;
-  }
+    /* Update for Memory: '<S7>/Memory3' */
+    hinf_arduino_DW.Memory3_PreviousInput = hinf_arduino_B.MD_d;
 
-  /* S-Function "sfcn_motor_new_wrapper" Block: <S24>/S-Function1 */
-  sfcn_motor_new_Update_wrapper(&hinf_arduino_B.conversion8,
-    &hinf_arduino_B.LogicalOperator, &hinf_arduino_B.SFunction1_o1,
-    &hinf_arduino_B.SFunction1_o2, &hinf_arduino_B.SFunction1_o3,
-    &hinf_arduino_DW.SFunction1_DSTATE, &hinf_arduino_P.SFunction1_P1, 1,
-    &hinf_arduino_P.SFunction1_P2, 1, &hinf_arduino_P.SFunction1_P3, 1);
-  if (rtmIsMajorTimeStep(hinf_arduino_M)) {
-    /* S-Function "sfcn_encoder_wrapper" Block: <S22>/S-Function */
-    sfcn_encoder_Update_wrapper(&hinf_arduino_B.LogicalOperator_g,
+    /* Update for Memory: '<S7>/Memory' */
+    hinf_arduino_DW.Memory_PreviousInput_c = hinf_arduino_B.LogicalOperator_h;
+
+    /* Update for Memory: '<S7>/Memory1' */
+    hinf_arduino_DW.Memory1_PreviousInput = hinf_arduino_B.Saturation;
+
+    /* Update for Memory: '<S9>/Memory1' */
+    hinf_arduino_DW.Memory1_PreviousInput_m = 0.0;
+
+    /* Update for Memory: '<S10>/Memory' */
+    hinf_arduino_DW.Memory_PreviousInput = hinf_arduino_B.HINFINITY;
+
+    /* S-Function "sfcn_motor_new_wrapper" Block: <S21>/S-Function1 */
+    sfcn_motor_new_Update_wrapper(&hinf_arduino_B.conversion8,
+      &hinf_arduino_B.LogicalOperator, &hinf_arduino_B.SFunction1_o1,
+      &hinf_arduino_B.SFunction1_o2, &hinf_arduino_B.SFunction1_o3,
+      &hinf_arduino_DW.SFunction1_DSTATE, &hinf_arduino_P.SFunction1_P1, 1,
+      &hinf_arduino_P.SFunction1_P2, 1, &hinf_arduino_P.SFunction1_P3, 1);
+
+    /* S-Function "sfcn_encoder_wrapper" Block: <S20>/S-Function */
+    sfcn_encoder_Update_wrapper((boolean_T*)&hinf_arduino_BGND,
       &hinf_arduino_B.SFunction, &hinf_arduino_DW.SFunction_DSTATE,
-      &hinf_arduino_P.SFunction_P1_h, 1, &hinf_arduino_P.Encoder_dt_enc, 1);
+      &hinf_arduino_P.SFunction_P1_d, 1, &hinf_arduino_P.Encoder_dt_enc, 1);
 
-    /* S-Function "sfcn_encoder_wrapper" Block: <S16>/S-Function */
-    sfcn_encoder_Update_wrapper(&hinf_arduino_B.LogicalOperator_i,
-      &hinf_arduino_B.SFunction_e, &hinf_arduino_DW.SFunction_DSTATE_j,
-      &hinf_arduino_P.SFunction_P1_g, 1, &hinf_arduino_P.Encoder_dt_enc_d, 1);
-
-    /* S-Function "SerialTx_wrapper" Block: <S7>/S-Function */
+    /* S-Function "SerialTx_wrapper" Block: <S6>/S-Function */
     SerialTx_Update_wrapper(&hinf_arduino_B.SFunction2_o1, (boolean_T*)
       &hinf_arduino_BGND, (boolean_T*)&hinf_arduino_BGND, (boolean_T*)
-      &hinf_arduino_BGND, &hinf_arduino_B.conversion1,
-      &hinf_arduino_B.conversion3, &hinf_arduino_B.conversion9,
+      &hinf_arduino_BGND, &hinf_arduino_B.MotorDetector,
+      &hinf_arduino_B.EncoderDetector, &hinf_arduino_B.conversion9,
       &hinf_arduino_B.conversion10, &hinf_arduino_B.conversion13,
       &hinf_arduino_B.conversion2, &hinf_arduino_B.conversion4,
       &hinf_arduino_B.conversion5, &hinf_arduino_B.conversion6,
-      &hinf_arduino_B.conversion7, &hinf_arduino_DW.SFunction_DSTATE_a,
+      &hinf_arduino_B.conversion7, &hinf_arduino_DW.SFunction_DSTATE_l,
       &hinf_arduino_P.SFunction_P1, 1, &hinf_arduino_P.SFunction_P2, 1);
 
-    /* S-Function "data_struct_init_wrapper" Block: <S4>/S-Function1 */
+    /* Update for Memory: '<S8>/Memory' */
+    hinf_arduino_DW.Memory_PreviousInput_f = hinf_arduino_B.SFunction;
+
+    /* S-Function "data_struct_init_wrapper" Block: <S3>/S-Function1 */
     data_struct_init_Update_wrapper(&hinf_arduino_DW.SFunction1_DSTATE_b);
   }
 
@@ -696,28 +767,19 @@ void hinf_arduino_initialize(void)
   (void) memset((void *)&hinf_arduino_DW, 0,
                 sizeof(DW_hinf_arduino_T));
 
-  /* Start for DiscretePulseGenerator: '<Root>/Pulse Generator' */
-  hinf_arduino_DW.clockTickCounter = -1000;
-
-  /* Start for S-Function (arduinodigitalinput_sfcn): '<S23>/S-Function' */
+  /* Start for S-Function (arduinodigitalinput_sfcn): '<S13>/S-Function' */
   MW_pinModeInput(hinf_arduino_P.SFunction_p1);
 
-  /* Start for S-Function (arduinodigitalinput_sfcn): '<S21>/S-Function' */
-  MW_pinModeInput(hinf_arduino_P.SFunction_p1_c);
+  /* Start for DiscretePulseGenerator: '<Root>/Pulse Generator' */
+  hinf_arduino_DW.clockTickCounter = 0;
 
-  /* Start for S-Function (arduinodigitalinput_sfcn): '<S15>/S-Function' */
-  MW_pinModeInput(hinf_arduino_P.SFunction_p1_k);
-
-  /* Start for S-Function (arduinodigitalinput_sfcn): '<S14>/S-Function' */
-  MW_pinModeInput(hinf_arduino_P.SFunction_p1_i);
-
-  /* Start for S-Function (arduinodigitaloutput_sfcn): '<S17>/Digital Output' */
+  /* Start for S-Function (arduinodigitaloutput_sfcn): '<S16>/Digital Output' */
   MW_pinModeOutput(hinf_arduino_P.DigitalOutput_pinNumber);
 
-  /* Start for S-Function (arduinodigitaloutput_sfcn): '<S18>/Digital Output' */
-  MW_pinModeOutput(hinf_arduino_P.DigitalOutput_pinNumber_e);
+  /* Start for S-Function (arduinodigitaloutput_sfcn): '<S17>/Digital Output' */
+  MW_pinModeOutput(hinf_arduino_P.DigitalOutput_pinNumber_l);
 
-  /* S-Function Block: <S4>/S-Function2 */
+  /* S-Function Block: <S3>/S-Function2 */
   {
     real_T initVector[1] = { 0 };
 
@@ -729,22 +791,39 @@ void hinf_arduino_initialize(void)
     }
   }
 
-  /* InitializeConditions for Memory: '<S1>/Memory2' */
+  /* InitializeConditions for Memory: '<S7>/Memory2' */
   hinf_arduino_DW.Memory2_PreviousInput = hinf_arduino_P.Memory2_X0;
+
+  /* InitializeConditions for Memory: '<S7>/Memory3' */
+  hinf_arduino_DW.Memory3_PreviousInput = hinf_arduino_P.Memory3_X0;
+
+  /* InitializeConditions for Chart: '<S7>/Init Manager' */
+  hinf_arduino_DW.temporalCounter_i1 = 0U;
+  hinf_arduino_DW.is_active_c1_hinf_arduino = 0U;
+  hinf_arduino_DW.is_c1_hinf_arduino = hinf_arduino_IN_NO_ACTIVE_CHILD;
+
+  /* InitializeConditions for Memory: '<S7>/Memory' */
+  hinf_arduino_DW.Memory_PreviousInput_c = hinf_arduino_P.Memory_X0_g;
+
+  /* InitializeConditions for Memory: '<S7>/Memory1' */
+  hinf_arduino_DW.Memory1_PreviousInput = hinf_arduino_P.Memory1_X0;
+
+  /* InitializeConditions for Chart: '<S7>/Alert Manager' */
+  hinf_arduino_DW.is_active_c3_hinf_arduino = 0U;
+  hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_NO_ACTIVE_CHILD;
+
+  /* InitializeConditions for Memory: '<S9>/Memory1' */
+  hinf_arduino_DW.Memory1_PreviousInput_m = hinf_arduino_P.Memory1_X0_p;
 
   /* InitializeConditions for StateSpace: '<S2>/H INFINITY' */
   hinf_arduino_X.HINFINITY_CSTATE[0] = hinf_arduino_P.HINFINITY_X0;
   hinf_arduino_X.HINFINITY_CSTATE[1] = hinf_arduino_P.HINFINITY_X0;
   hinf_arduino_X.HINFINITY_CSTATE[2] = hinf_arduino_P.HINFINITY_X0;
 
-  /* InitializeConditions for Chart: '<S1>/Chart' */
-  hinf_arduino_DW.is_active_c3_hinf_arduino = 0U;
-  hinf_arduino_DW.is_c3_hinf_arduino = hinf_arduino_IN_NO_ACTIVE_CHILD;
+  /* InitializeConditions for Memory: '<S10>/Memory' */
+  hinf_arduino_DW.Memory_PreviousInput = hinf_arduino_P.Memory_X0;
 
-  /* InitializeConditions for Memory: '<S1>/Memory1' */
-  hinf_arduino_DW.Memory1_PreviousInput = hinf_arduino_P.Memory1_X0;
-
-  /* S-Function Block: <S24>/S-Function1 */
+  /* S-Function Block: <S21>/S-Function1 */
   {
     real_T initVector[1] = { 0 };
 
@@ -756,7 +835,7 @@ void hinf_arduino_initialize(void)
     }
   }
 
-  /* S-Function Block: <S22>/S-Function */
+  /* S-Function Block: <S20>/S-Function */
   {
     real_T initVector[1] = { 0 };
 
@@ -768,31 +847,22 @@ void hinf_arduino_initialize(void)
     }
   }
 
-  /* S-Function Block: <S16>/S-Function */
+  /* S-Function Block: <S6>/S-Function */
   {
     real_T initVector[1] = { 0 };
 
     {
       int_T i1;
       for (i1=0; i1 < 1; i1++) {
-        hinf_arduino_DW.SFunction_DSTATE_j = initVector[0];
+        hinf_arduino_DW.SFunction_DSTATE_l = initVector[0];
       }
     }
   }
 
-  /* S-Function Block: <S7>/S-Function */
-  {
-    real_T initVector[1] = { 0 };
+  /* InitializeConditions for Memory: '<S8>/Memory' */
+  hinf_arduino_DW.Memory_PreviousInput_f = hinf_arduino_P.Memory_X0_k;
 
-    {
-      int_T i1;
-      for (i1=0; i1 < 1; i1++) {
-        hinf_arduino_DW.SFunction_DSTATE_a = initVector[0];
-      }
-    }
-  }
-
-  /* S-Function Block: <S4>/S-Function1 */
+  /* S-Function Block: <S3>/S-Function1 */
   {
     real_T initVector[1] = { 0 };
 

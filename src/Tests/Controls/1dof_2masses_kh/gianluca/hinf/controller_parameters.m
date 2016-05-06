@@ -22,7 +22,7 @@ Km = 281; %Stiffness Med
 Kl = 162; %Stifness low
 
 motor = tf(1, [L R]);
-cart = tf(Ke,[M,Cm,Km]);
+cart = tf(Ke,[M,Ch,Kh]);
 
 %figure; margin(motor); grid;
 
@@ -35,6 +35,7 @@ w_motor = damp(motor)/2/pi
 w_cart = damp(cart)/2/pi
 
 %% position loop design
+% High
 Ws = tf(makeweight(10, 2*pi*1, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*1, 10));
 Wk = 100*tf(makeweight(0.9, 2*pi*1, 10));
@@ -55,3 +56,4 @@ figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
 % Hinf_red = reduce(Hinf, 3);
 % figure; pzplot(Hinf_red); grid;
  Hinf = reduce(Hinf, 3);
+
