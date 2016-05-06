@@ -1,0 +1,7 @@
+\section{RHP-Zeros Control}
+During the development of the project it was apparent that using an integrator was necessary to eliminate steady state-error and reduce the effect of non-linearities due to the high-gain linearization effect induced by the integrator. Though, this led to some drawbacks, such as low cut-off frequency. This was induced by the fact that we have 2 complex poles near the imaginary axis, which are the cart natural frequencies. One of the best way to design a controller was to introduce two complex zero in order to cancel the effect of those complex poles. Another way was to use positive zeros in our controller.\\ \\
+It is well known from the root locus technique that zeros \emph{attract} poles for increasing gain. Then it was observed that, if we place zeros sufficiently near to the real axis, and not too far from the complex poles in aforementioned, those poles with a sufficient gain would fall in a zone where the output signal response of the system would have low overshoot. \\ \\
+Let $G(s)$ be our system considered and $C(s)$ our controller. Then:
+$$C(s) = \hat{k}\frac{(s+a)(s+\overline{a})}{s(s+p)}, a \in \mathbb{C}, p \in \mathbb{R}$$
+where $\overline{a}$ is the complex conjugate of $a$, and $\hat{k}=\frac{kp}{|a|^2}$.The closed loop transfer function is:
+$$T(s) = \frac{CG(s)}{1+CG(s)} = \frac{\hat{k}(s+a)(s+\overline{a})\gamma}{s(s+p)(Ls+R)(Ms^2+Cs+K)+\hat{k}(s+a)(s+\overline{a})\gamma}$$
