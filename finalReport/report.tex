@@ -17,7 +17,8 @@
 \usepackage{siunitx}%phyisical quantities typesettings
 	
 \usepackage{pgfplots} %plots
-
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{biblio.bib}
 \DeclareMathOperator{\sign}{sign}
 
   
@@ -51,7 +52,7 @@
 \subimport*{parts/Identification/}{main.tex}
 \newpage
 \part{System control}
-\subimport*{parts/Control1dof/}{main.tex}
+\subimport*{parts/Control1dof/}	{main.tex}
 \newpage
 \subimport*{parts/Control2dof/}{main.tex}
 \newpage
@@ -61,8 +62,7 @@
 \newpage
 \subimport*{parts/Appendix/}{main.tex}
 
-
-
-
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
 
 \end{document}
