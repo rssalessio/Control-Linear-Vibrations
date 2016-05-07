@@ -18,3 +18,21 @@
 src/Tests/Identification/0405_identification_cartDetached/Estimation.m~
 
 *.m~
+
+*.bbl
+
+*.blg
+
+*.out
+
+*.log
+
+*.xml
+
+*.toc
+
+*.gz
+
+*.out
+
+*.log
