@@ -36,3 +36,4 @@ src/Tests/Identification/0405_identification_cartDetached/Estimation.m~
 *.out
 
 *.log
+src/Tests/Controls/1dof_2masses_kh/alessio/LQG/script.asv
