@@ -43,7 +43,7 @@ Qn = 1e-5* eye(3);
 %QWV = blkdiag(Qn,Rn);
 % klqg = lqg(sys,QXU,QWV,1);
 
-klq = lqr(sys,50*eye(3), 1, zeros(3,1));
+klq = lqr(sys,0.5*eye(3), 1, zeros(3,1));
 
 gain = Cy*inv( -(A-B*klq))*B;
 
