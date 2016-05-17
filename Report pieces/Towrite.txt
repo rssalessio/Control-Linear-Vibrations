@@ -1,0 +1,3 @@
+- Macchina astati piu dettagli
+- Grafici varianza corrente
+- ingresso quantizzato dei potenziometri
