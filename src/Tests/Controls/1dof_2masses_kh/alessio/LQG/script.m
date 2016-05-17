@@ -1,3 +1,6 @@
+clear
+close all;
+
 R = 1.2689;
 L = 0.0024;
 Gamma=-206.8;
@@ -19,7 +22,7 @@ K=Km;
 C=CmL;
 M=Mc+Ml;
 
-tsim=20;
+tsim=300;
 
 numM = 1;
 denM = [L R];
@@ -59,7 +62,7 @@ klqi = lqi(sys, 0.1*eye(4),1,zeros(4,1));
 
 
 %%
-sim('modelIntegrator');
+sim('modelIntegrator',tsim);
 figure; 
 plot(x); 
 grid;
