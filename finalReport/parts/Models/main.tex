@@ -1,85 +1,57 @@
 
 \part{System modelling}
 
-\chapter{Motor, Pinion and Rack modelling} 
-A DC Brushless motor can be modelled with a simple low-pass filter transfer function. Because of that, only a resistance $R$ and an inductance $L$ are needed to model it. Thus, let $D$ be the diameter of the disk attached to the motor, $\theta$ the the angular position of the disk, $J$ the inertia of the motor, and $c_{l}(t)$ the load torque. We can also assume nonlinearities based on the angle and its rate $\dot{\theta}$:  we will denote such nonlinearities with $f_{m}(\theta,\dot{\theta})$.\\ \\
+\section{Motor, Pinion and Rack modelling} 
+A DC Brushless motor can be modelled with a simple low-pass filter transfer function. Because of that, only a resistance $R$ and an inductance $L$ are needed to model it. Thus, let $D$ be the diameter of the disk attached to the motor, $\theta$ the the angular position of the disk, $J$ the inertia of the motor, and $c_{l}(t)$ the load torque. We can also assume non-linearities based on the angle and its rate $\dot{\theta}$:  we will denote such non-linearities with $f_{m}(\theta,\dot{\theta})$.\\ \\
  The output torque of the motor, then, is  given by:
 $$c(s) = \frac{K_{e}}{Ls+R} (v(s)-K_{e}s \theta(s))$$
-where $v(s)$ is the Laplace transform of $v(t)$, the input voltage to the motor.\\ \\
+where $v(s)$ is the Laplace transform of $v(t)$, the input voltage to the motor.\\Notice that the term $K_{e}s \theta(s)$ describes the back-emf effect, though, from experimental results as described \ref{olvscl}, it's not included in our models. Therefore the output current of the motor, is :
+$$i(s) = \frac{1}{Ls+R} v(s)$$
+which can be described with a state space model:
+$$\begin{cases} \dot{x} =-\frac{R}{L}x + v(t)\\ i = \frac{1}{L}x\end{cases}$$
 The differential equation describing the motion of the disk is:
 $$J\ddot{\theta}=c(t)-c_{l}(t) -f_{m}(\theta,\dot{\theta})$$
-In our case, since it's not possible to detach the pinion and the rack from the motor, $J$ includes the inertia of that sytem.
+In our case, since it's not possible to detach the pinion and the rack from the motor, $J$ includes the inertia of that system, and $c_{l}(t)$ is the torque load attached to the rack. 
+\\ \\
+The rack position is given by $x$, which is equal to $0$ when the rack is at the center. Since the rack is attached to the disk, and by neglecting non-lineart effects such as back-lash, we can say that $x=\frac{D}{2}\theta $. Moreover,  the total force transmitted from the motor is:
+$$F(t) =c_l (t) =  \frac{2}{D} (c(t)-J\ddot{\theta}) = \gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
+Where $\gamma = \frac{2K_e}{D}$.
 
-\chapter{Pinion and Rack}
-
-
-\chapter{1 DOF Modelling}
-
-\chapter{2 DOF Modelling}
-
-\chapter{3 DOF Modelling}
-Equations of motion:
-
-$$J\ddot{\theta}=c(t)-c_l(t) - f_m(\dot{\theta})$$
-$$M\ddot{x}+C\dot{x}+Kx = F(t) - f_c(\dot{x})$$
-$$\frac{D}{2}\theta = x$$
-$f_m$ describes the viscous friction of the motor, $f_c$ describes the friction of the cart. The gearbox is assumed ideal. \\ \\
-Therefore $F(t)$ is the transmitted linear force from the motor, thus:
-$$F(t)\frac{D}{2} = c_l(t) \Rightarrow F(t) = \frac{2}{D} \Big(c(t)-J\ddot{\theta}-f_m(\dot{\theta})\Big)$$
-In the end we obtain:
-$$\Big(M+\frac{4}{D^2} J\Big) \ddot{x}+C\dot{x}+Kx = \frac{2}{D}c(t) -\frac{2}{D}f_m(\dot{\theta}) - f_c(\dot{x})$$
-In case the gearbox is not assumed ideal, we have:
-$$J\ddot{\theta}= \begin{cases}
-c(t)-c_l(t) - f_m(\dot{\theta}) \quad \text{ in contact } \\
-c(t)-f_m(\dot{\theta}) \quad \text{ not in contact }
+\section{Carts, Springs and Dampers Modelling}
+Each cart has the same shape and mass $M_{c}$. Let $M_{i}$ denote the total mass of the $i$-eth cart including the load, $i \in {1,2,3}$. \\
+Let $x_{i}$ be the position of each cart, in \SI{}{\cm}. The small friction coefficient of the sliding guide can be approximated with a viscous friction $C_{s}(M)$ which depends on the mass of the cart plus the load. \\ \\
+Finally, each spring is modeled as linear spring. Since we have 3 springs, we have labeled their stiffness as $K_l, K_m, K_h$ where $l,m,h$ stand for low, medium and high. The damping contribute given by each spring is labeled as $C_l, C_m, C_h$. Therefore let $C_{i}$ denote the total damping contribution for the $i$-eth cart.\\ \\
+Therefore, because of Newton's First Law, each cart has equation:
+$$M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)$$
+Thus, for each cart 2 states are needed to describe its behaviour.\\ \\
+\section{1 DOF State Space Model}
+Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. The measurable state are the first one and the third one, but the first one needs to be divided by the inductance $L$ as described in the previous section. Therefore the equations to consider are:
+\begin{equation}
+\begin{cases}
+\dot{x}_1 = -\frac{R}{L}x_{1}+v(t), \quad i(t) = \frac{1}{L}x_1 \\
+\dot{x}_2 = x_3 \\
+M\dot{x}_3 = -Cx_3 -K x_2 + F(t)
 \end{cases}
-$$
-And
-$$F(t) = \begin{cases}
-\frac{2}{D}c_l(t)\quad \text{ in contact } \\
-0 \quad \text{ otherwise }
+\end{equation}
+Since:
+$$F(t)=\gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
+By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
+
+\begin{equation}
+\begin{cases}
+\dot{x}=\begin{bmatrix}
+-\frac{R}{L} &0 & 0 \\
+0 & 0 & 1 \\ 
+ \frac{\gamma}{ML} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
+\end{bmatrix}
++
+\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix} v(t) \\
+y = \begin{bmatrix} \frac{1}{L} & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}x
 \end{cases}
-$$
-
-\section{Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}
-$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}, \quad \theta = \frac{2}{D}x$$
-$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} \mathcal{L}\{ v(t)\}$$
-
-\section{Model2 - no friction cart, no friction motor, no backlash}
-$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D}  - 4\frac{J}{D^2}\ddot{x}, \quad \theta = \frac{2}{D}x$$
-$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
-
-
-\section{Model 3 - no friction motor, backlash}
-$$M\ddot{x} + C\dot{x}+Kx = 2\frac{c(t)}{D} - 4\frac{J}{D^2}\ddot{x} - f_c(\dot{x}), \quad \theta = \frac{2}{D}x$$
-$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
-
-
-
-\section{Model 4 }
-$$M\ddot{x} + C\dot{x}+Kx = F(t) - 4\frac{J}{D^2}\ddot{x}- f_c(\dot{x})$$
-$$\mathcal{L}\{c(t)\} = 2K_e \frac{1}{2R+2sL} (\mathcal{L}\{ v(t)\}-2K_e s \mathcal{L}\{\theta \})$$
-See introduction for gearbox modelling.
-\begin{enumerate}
-\item $\mathcal{L}\{\cdot \}$ Laplace transform.
-\item $J$ Disk inertia.
-\item $M$ Cart+load mass
-\item $C$ Spring damping.
-\item $K$ Spring stiffness.
-\item $c(t)$ Torque.
-\item $D$ Disk diameter.
-\item $f_c(t)$ friction applied to the cart.
-\item $f_g(t)$ sliding friction applied to the teeth between the gearbox and the disk.
-\item $f_m$ friction of the motor
-\item $\theta$ angle of the disk.
-\item $v(t)$ tension applied to the motor.
-\item $R,L$ resistance and inductance of the motor
-\item $K_e$ backemf constant.
-
-\end{enumerate}
-
-\section{2 DOF - Model}
-To derive the equations of motion we can use the Lagrangian approach. Let $T,V,D$ be the kinetic, potential and dissipated energy. Then:
+\end{equation}
+where $v(t)$ is the external control input.
+\section{2 DOF State Space Model}
+To derive the equations of motion for the carts we can use the Lagrangian approach.\\ Let $T,V,D$ be the kinetic, potential and dissipated energy. Then:
 \begin{align*}
 T  &= \frac{1}{2} \Big(M_1 + \frac{4}{D^2}J \Big) \dot{x_1}^2 + \frac{1}{2}M_2 \dot{x_2}^2 \\
 V &= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2 \\
@@ -87,15 +59,10 @@ D &= \frac{1}{2}c_1\dot{x_1}^2 + \frac{1}{2}c_2(\dot{x_2}-\dot{x_1})^2
 \end{align*}
 Let $Q$ be the external forces acting on the systems:
 \begin{align*}
-Q_1 &= \frac{2}{D}c(t) - \frac{2}{D}f_m(\dot{\theta}) - f_c(\dot{x_1}) \\
-Q_2 &=  - f_c(\dot{x_2})
+Q =\begin{bmatrix} 1 \\ 0 \end{bmatrix} \gamma i(t)
 \end{align*}
 The equations of motion are given by:
 $$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
-\begin{align*}
-\Big(M_1+\frac{4}{D^2}J \Big)\ddot{x}_1+(c_1+c_2)\dot{x}_1 +(k_1+k_2)x_1 &= k_2 x_2 +c_2 \dot{x}_2 + \frac{2}{D}(c(t)-f_m(\dot{\theta}))-f_c(\dot{x}_1) \\
-M_2 \ddot{x}_2 +c_2 \dot{x}_2 +k_2x_2 &= k_2x_1+c_2\dot{x}_1 -f_c(\dot{x}_2)
-\end{align*}
 Thus we can write:
 $$
 \begin{bmatrix}
@@ -110,10 +77,136 @@ c_1+c_2 & -c_2 \\
 \dot{x}+
 \begin{bmatrix}
 k_1+k_2 & -k_2 \\
--k_2 &k_2
+-k_2 & k_2
 \end{bmatrix}
-x =Q(t)$$
-Where:
-$$Q(t)=\begin{bmatrix}1 \\ 0 \end{bmatrix} F(t)$$
-Thus:
-$$\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}BF(t)$$
+x = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\gamma i(t)$$
+Then:
+$$\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)$$
+where:
+$$M=\begin{bmatrix}
+\hat{M}_1 & 0 \\
+0 && M_2
+\end{bmatrix}, C=\begin{bmatrix}
+c_1+c_2 & -c_2 \\
+-c_2 & c_2
+\end{bmatrix}, K=\begin{bmatrix}
+k_1+k_2 & -k_2 \\
+-k_2 & k_2
+\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \end{bmatrix}$$
+Finally, let $x_1$ be the state of the motor, $x_2$ and $x_3$ the position of the first and second cart, and $x_4$, $x_5$ their velocities, then the stace space model, is:
+
+\begin{equation}
+\begin{cases}
+\dot{x}=
+\left[ \begin{array} { c|c|c  } 
+                \begin{array}{c} 
+               -\frac{R}{L} \\ 
+                0 \\
+                0 
+                \end{array} &
+                \begin{array}{cc} 
+               0 & 0 \\ 
+                0 & 0 \\
+                0  & 0 
+                \end{array}&
+                \begin{array}{cc} 
+               0 & 0 \\ 
+                1 & 0 \\
+                0  & 1 
+                \end{array} \\
+                \hline 
+                M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
+\end{array} \right] 
+x+\begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0\end{bmatrix}v(t)\\
+y(t) = \begin{bmatrix} \frac{1}{L} & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \end{bmatrix}x
+\end{cases}
+\end{equation}
+where $x \in \mathbb{R}^5$.
+
+\section{3 DOF State Space Model}
+As for 2 degree of freedom we can make use again of the Lagrangian Approach:
+\begin{align*}
+T &= \frac{1}{2} (M_1 + \frac{4}{D^2}J)\dot{x}_1^2+\frac{1}{2}M_2\dot{x}_2^2 + \frac{1}{2}M_3 \dot{x}_3^2 \\
+V &= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2 +\frac{1}{2}k_3 (x_3-x_2)^2\\
+D &= \frac{1}{2}c_1\dot{x_1}^2 + \frac{1}{2}c_2(\dot{x_2}-\dot{x_1})^2 +\frac{1}{2}c_3(\dot{x}_3-\dot{x}_2)^2
+\end{align*}
+
+Let $Q$ be the external forces acting on the systems:
+\begin{align*}
+Q =\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \gamma i(t)
+\end{align*}
+The equations of motion are given by:
+$$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
+Thus we can write:
+$$
+\begin{bmatrix}
+\hat{M}_1 & 0 & 0 \\
+0 & M_2 & 0 \\
+0 & 0 & M_3
+\end{bmatrix}
+\ddot{x} + 
+\begin{bmatrix}
+c_1+c_2 & -c_2 &0 \\
+-c_2 & c_2+c_3 & -c_3 \\
+0 & -c_3 & c_3
+\end{bmatrix}
+\dot{x}+
+\begin{bmatrix}
+k_1+k_2 & -k_2  &0\\
+-k_2 & k_2+k_3 & -k_3 \\
+0 & -k_3 & k_3
+\end{bmatrix}
+x = \begin{bmatrix} 1 \\ 0 \\ 0\end{bmatrix}\gamma i(t)$$
+Then:
+$$\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)$$
+where:
+$$M=\begin{bmatrix}
+\hat{M}_1 & 0 & 0 \\
+0 & M_2 & 0 \\
+0 & 0 & M_3
+\end{bmatrix}, C=\begin{bmatrix}
+c_1+c_2 & -c_2 &0 \\
+-c_2 & c_2+c_3 & -c_3 \\
+0 & -c_3 & c_3
+\end{bmatrix}, K=\begin{bmatrix}
+k_1+k_2 & -k_2  &0\\
+-k_2 & k_2+k_3 & -k_3 \\
+0 & -k_3 & k_3
+\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \\0 \end{bmatrix}$$
+Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the first, second cart and third cart, and $x_5$, $x_6$, $x_7$ their velocities, then the stace space model, is:
+
+\begin{equation}
+\begin{cases}
+\dot{x}=
+\left[ \begin{array} { c|c|c  } 
+                \begin{array}{c} 
+               -\frac{R}{L} \\ 
+                0 \\
+                0 \\
+                0
+                \end{array} &
+                \begin{array}{ccc} 
+               0 & 0 & 0\\ 
+                0 & 0  &0 \\
+                0  & 0  & 0\\
+                0 & 0 &0
+                \end{array}&
+                \begin{array}{ccc} 
+               0 & 0 &0\\ 
+                1 & 0 &0 \\
+                0  & 1  &0 \\
+                0 & 0 & 1
+                \end{array} \\
+                \hline 
+                M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
+\end{array} \right] 
+x+\begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0\end{bmatrix}v(t)\\
+y(t) = \begin{bmatrix} \frac{1}{L} & 0 & 0 & 0 & 0 & 0 &0\\
+0 & 1 & 0 & 0 & 0 & 0 &0 \\
+0 & 0 & 1 & 0 & 0 &0  &0 \\
+0 & 0 & 0 & 1 & 0 & 0 &0 \end{bmatrix}x
+\end{cases}
+\end{equation}
+where $x \in \mathbb{R}^7$.
