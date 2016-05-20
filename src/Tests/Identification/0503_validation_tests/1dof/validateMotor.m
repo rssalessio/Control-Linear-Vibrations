@@ -49,9 +49,10 @@ end
 function c = testDirectory(sys1)
     [t,i,x,v]=reads();
     y1 = lsim(sys1, v, t);
-    c = costFunction(y1,i);
+ %   c = costFunction(y1,i);
+ c=0;
     figure;
-    plot(t,i);hold on; plot(t,y1);
+    plot(t,i);hold on; plot(t,y1); hold on; plot (t,v);
     grid; xlabel('Time [s]'); ylabel('Current [A]');
     title('Current validation');
     legend('Real current', 'Simulated current');

@@ -18,11 +18,11 @@ ClL = 9.9788;
 ClNL = 9.2761;
 
 
-K=Km;
-C=CmL;
+K=Kl;
+C=ClL;
 M=Mc+Ml;
 
-tsim=300;
+tsim=30;
 
 numM = 1;
 denM = [L R];
@@ -35,7 +35,7 @@ A= [-R/L,0,0;
     Gamma/M, -K/M, -C/M];
 B = [1/L; 0; 0];
 Cy =[ 0,1,0];
-D=0;        
+D=[0];        
 sys=ss(A,B,Cy,D);
 
 syscd = c2d(sys,1/200);
@@ -46,8 +46,13 @@ Qn = 1e-5* eye(3);
 %QWV = blkdiag(Qn,Rn);
 % klqg = lqg(sys,QXU,QWV,1);
 
-klq = lqr(sys,0.5*eye(3), 1, zeros(3,1));
-
+klq = lqr(sys,0.1*diag([1,1,1]), 2, zeros(3,1));
+A= [-R/L,0,0;
+    0,0,1;
+    Gamma/M, -K/M, -C/M];
+B = [1/L; 0; 0];
+Cy =[ 0,1,0];
+D=[0];        
 gain = Cy*inv( -(A-B*klq))*B;
 
 
@@ -57,12 +62,12 @@ gain = Cy*inv( -(A-B*klq))*B;
 %     0,-1,0 ,0];
 % Bn = [B;0];
 % Cn = [Cy,0; 0,0,0,1];
-klqi = lqi(sys, 0.1*eye(4),1,zeros(4,1));
+%klqi = lqi(sys, diag([1,1,1,1]),1,zeros(4,1));
 
 
 
 %%
-sim('modelIntegrator',tsim);
+sim('modelLQR',tsim);
 figure; 
 plot(x); 
 grid;
