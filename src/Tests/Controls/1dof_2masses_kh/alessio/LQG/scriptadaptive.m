@@ -50,4 +50,13 @@ Aref= A-B*klq;
 Bref= [1/(L*gain);0;0];
 
 refSys = ss(Aref,Bref, Cy, D);
+P = lyap(Aref', eye(3));
+tsim=30;
+sim('LQRAdaptive',tsim);
+figure; 
+plot(x); 
+grid;
+legend('Position');
+
+
 
