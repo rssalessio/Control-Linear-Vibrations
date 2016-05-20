@@ -5,7 +5,7 @@ R = 1.2689;
 L = 0.0024;
 Gamma=-206.8;
 Mc = 0.8840;
-Ml = 0.493*2;
+Ml = 0.493;
 Km=321.7;
 Kh=706.2;
 Kl=226;
@@ -20,7 +20,7 @@ ClNL = 9.2761;
 
 K=Kl;
 C=ClL;
-M=Mc+Ml;
+M=Mc+Ml*2;
 
 tsim=30;
 
@@ -42,33 +42,12 @@ syscd = c2d(sys,1/200);
 
 Rn=1e-5;
 Qn = 1e-5* eye(3);
-%QXU = blkdiag(diag([1,1000,1]),eye(1));
-%QWV = blkdiag(Qn,Rn);
-% klqg = lqg(sys,QXU,QWV,1);
-
 klq = lqr(sys,0.1*diag([1,1,1]), 1.5, zeros(3,1));
-A= [-R/L,0,0;
-    0,0,1;
-    Gamma/M, -K/M, -C/M];
-B = [1/L; 0; 0];
-Cy =[ 0,1,0];
-D=[0];        
+
 gain = Cy*inv( -(A-B*klq))*B;
 
+Aref= A-B*klq;
+Bref= [1/(L*gain);0;0];
 
-% An= [-R/L,0,0,0;
-%     0,0,1,0;
-%     Gamma/M, -K/M, -C/M,0;
-%     0,-1,0 ,0];
-% Bn = [B;0];
-% Cn = [Cy,0; 0,0,0,1];
-%klqi = lqi(sys, diag([1,1,1,1]),1,zeros(4,1));
+refSys = ss(Aref,Bref, Cy, D);
 
-
-
-%%
-sim('modelLQR',tsim);
-figure; 
-plot(x); 
-grid;
-legend('Position');
