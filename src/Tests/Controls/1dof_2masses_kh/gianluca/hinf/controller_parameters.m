@@ -39,6 +39,11 @@ w_cart = damp(cart)/2/pi
 Ws = tf(makeweight(10, 2*pi*1, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*1, 10));
 Wk = 100*tf(makeweight(0.9, 2*pi*1, 10));
+% Med
+% Ws = tf(makeweight(10, 2*pi*1, 0.9));
+% Wt = tf(makeweight(0.9, 2*pi*1, 10));
+% Wk = 0.01*tf(makeweight(0.9, 2*pi*1, 10));
+% 
 
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
