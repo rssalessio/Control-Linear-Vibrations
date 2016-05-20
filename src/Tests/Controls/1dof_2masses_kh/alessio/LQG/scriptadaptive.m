@@ -1,4 +1,4 @@
-clear
+        clear
 close all;
 
 R = 1.2689;
@@ -18,8 +18,8 @@ ClL = 9.9788;
 ClNL = 9.2761;
 
 
-K=Kl;
-C=ClL;
+K=Km;
+C=CmL;
 M=Mc+Ml*2;
 
 tsim=30;
@@ -44,19 +44,19 @@ Rn=1e-5;
 Qn = 1e-5* eye(3);
 klq = lqr(sys,0.1*diag([1,1,1]), 1.5, zeros(3,1));
 
-gain = Cy*inv( -(A-B*klq))*B;
-
-Aref= A-B*klq;
-Bref= [1/(L*gain);0;0];
-
-refSys = ss(Aref,Bref, Cy, D);
-P = lyap(Aref', eye(3));
-tsim=30;
-sim('LQRAdaptive',tsim);
-figure; 
-plot(x); 
-grid;
-legend('Position');
-
+ gain = Cy*inv( -(A-B*klq))*B;
+% 
+% Aref= A-B*klq;
+% Bref= [1/(L*gain);0;0];
+% 
+% refSys = ss(Aref,Bref, Cy, D);
+% P = lyap(Aref', eye(3));
+% tsim=30;
+% sim('LQRAdaptive',tsim);
+% figure; 
+% plot(x); 
+% grid;
+% legend('Position');
+% 
 
 

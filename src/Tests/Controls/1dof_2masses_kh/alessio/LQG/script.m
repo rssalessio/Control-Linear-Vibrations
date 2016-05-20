@@ -5,7 +5,7 @@ R = 1.2689;
 L = 0.0024;
 Gamma=-206.8;
 Mc = 0.8840;
-Ml = 0.493*2;
+Ml = 0.493;
 Km=321.7;
 Kh=706.2;
 Kl=226;
@@ -18,9 +18,9 @@ ClL = 9.9788;
 ClNL = 9.2761;
 
 
-K=Kl;
-C=ClL;
-M=Mc+Ml;
+K=Km;
+C=CmL;
+M=Mc+2*Ml;
 
 tsim=30;
 
@@ -46,7 +46,7 @@ Qn = 1e-5* eye(3);
 %QWV = blkdiag(Qn,Rn);
 % klqg = lqg(sys,QXU,QWV,1);
 
-klq = lqr(sys,0.1*diag([1,1,1]), 1.5, zeros(3,1));
+klq = lqr(sys,1*diag([1,1,1]), 1, zeros(3,1));
 A= [-R/L,0,0;
     0,0,1;
     Gamma/M, -K/M, -C/M];
