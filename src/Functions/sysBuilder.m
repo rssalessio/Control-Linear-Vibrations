@@ -1,7 +1,7 @@
 function [sysSS] = sysBuilder( nLoad, springType)
 
     %motor
-    R = 1.2689;
+    R = 1.3;
     L = 0.0024;
     Gamma=-206.8;
     
@@ -12,7 +12,7 @@ function [sysSS] = sysBuilder( nLoad, springType)
     
     %stiffness
     Km=340.14;
-    Kh=720.55;
+    Kh=720.56;
     Kl=216.38;
     
     %damping

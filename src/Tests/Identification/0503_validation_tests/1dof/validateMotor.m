@@ -3,7 +3,7 @@ function [] = validateMotor()
 
 %valori alessio
 disp(['R: 1.2689 - L: 0.0024']);
-R=1.2689;
+R=1.3;
 L = 0.0024;
 
 
@@ -49,8 +49,8 @@ end
 function c = testDirectory(sys1)
     [t,i,x,v]=reads();
     y1 = lsim(sys1, v, t);
- %   c = costFunction(y1,i);
- c=0;
+    c = costFunction(y1(:,2),x);
+
     figure;
     plot(t,i);hold on; plot(t,y1); hold on; plot (t,v);
     grid; xlabel('Time [s]'); ylabel('Current [A]');

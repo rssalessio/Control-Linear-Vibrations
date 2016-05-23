@@ -1,32 +1,31 @@
 %%validation tests motor
 function [] = validateSystem()
 clc; clear all; close all;
-
- 
+c=[];
   cd KhKm-1M-1M
-     c(1)=testDirectory(sysBuilder([1,1],['h','m']));
+     c=[c;testDirectory(sysBuilder([1,1],['h','m']))];
  cd ..
 
 
 cd KhKm-noM-2M
-    c(2)=testDirectory(sysBuilder([0,2],['h','m']));
+    c=[c;testDirectory(sysBuilder([0,2],['h','m']))];
 cd ..
 
 cd KhKm-noM-noM
-    c(3)=testDirectory(sysBuilder([0,0],['h','m']));
+    c=[c;testDirectory(sysBuilder([0,0],['h','m']))];
 cd ..
     
  cd KlKh-1M-2M
-     c(4)=testDirectory(sysBuilder([1,2],['l','h']));
+    c=[c;testDirectory(sysBuilder([1,2],['l','h']))];
  
  cd ..
 
 cd KlKh-noM-2M
-   c(5)=testDirectory(sysBuilder([0,2],['l','h']));
+   c=[c;testDirectory(sysBuilder([0,2],['l','h']))];
 cd ..
 
 cd KlKh-noM-noM
-    c(6)=testDirectory(sysBuilder([0,0],['l','h']));
+    c=[c;testDirectory(sysBuilder([0,0],['l','h']))];
 cd ..
     mean(c)
     std(c)
@@ -34,14 +33,13 @@ cd ..
 
 end
 
-function c = testDirectory(sys)
+function [c] = testDirectory(sys)
 format long
      [t,i,x1,x2,v]=reads();
      y1 = lsim(sys, v, t);
-     %c1 = costFunction(y1(:,2),x1)
+     c1 = costFunction(y1(:,2),x1)
      c2 = costFunction(y1(:,3),x2)
-     t1=tf(sys);
-     t1=t1(3);
+
     % disp('sys')
      %pole(t1)
      %zero(t1)
@@ -65,7 +63,7 @@ format long
     plot(t,x2);hold on; plot(t,y1(:,3));
     grid; xlabel('Time [s]'); ylabel('Displacement [cm]');
     title('System validation');
-    legend('Real displacement', 'Simulated Displacement','tfest');
-     c=c2;%=mean([c1,c2]);
+    legend('Real displacement', 'Simulated Displacement');
+c=[c1,c2];
      
 end
