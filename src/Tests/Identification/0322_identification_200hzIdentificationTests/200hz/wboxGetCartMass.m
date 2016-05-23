@@ -2,8 +2,8 @@ function [Mm,MVar,Km, C,g] = wboxGetCartMass()
     [Wm, ~,XIm,~,g] = wboxGetPulsationDamping();
     Mload= 0.493*2;
 
-   Wm = [20.0753, 13.1359, 10.9848;
-          30.3578, 19.1376, 15.9605];
+   Wm = [20.21, 13.0633, 10.75;
+          30.43, 18.3767, 15.624];
     
     [a1]=linsolve([1 -Wm(1,1)^2; 1 -Wm(2,1)^2], [Mload*Wm(1,1)^2; 0]);
     [a2]=linsolve([1 -Wm(1,2)^2; 1 -Wm(2,2)^2], [Mload*Wm(1,2)^2; 0]);
@@ -13,8 +13,8 @@ function [Mm,MVar,Km, C,g] = wboxGetCartMass()
     MVar = var(Mm);
     Mm = mean(Mm);
     
-    XIm = [0.1349,0.1996,0.2482;
-            0.1517,0.223,0.3443];
+    XIm = [0.1356,0.1949,0.2230;
+            0.1670,0.2569,0.2973];
     Mtotal = Mload+Mm;
     C=Wm.*XIm*2;
     C(1,:) = C(1,:) *Mtotal;

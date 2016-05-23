@@ -6,22 +6,22 @@ function [sysSS] = sysBuilder( nLoad, springType)
     Gamma=-206.8;
     
     %mass
-    Mmotor = 0.3155;
+    Mmotor = 0.85059-0.5865;
     Mcart = 0.5685;
     Mload = 0.493;
     
     %stiffness
-    Km=321.7;
-    Kh=706.2;
-    Kl=226;
+    Km=340.14;
+    Kh=720.55;
+    Kl=216.38;
     
     %damping
-    ChL =9.912;
-    ChNL = 7.7739;
-    CmL = 9.5963;
-    CmNL = 8.040;
-    ClL = 9.9788;
-    ClNL = 9.2761;
+    ChL = 10.2855;
+    ChNL = 9.0517;
+    CmL = 9.5558;
+    CmNL = 8.4089;
+    ClL = 8.9973;
+    ClNL = 8.2736;
     
     if (length(nLoad)~= length(springType) && length(nLoad) > 3)
         disp('Error, nLoad and springType should be vectors of the same size specified by nDOF'); 
@@ -46,22 +46,22 @@ function [sysSS] = sysBuilder( nLoad, springType)
     
     %% for the first cart we need to consider damping with motor attached
     
-    if (springType(i) == 'l')
-        c(1) =  ClNL+ 0.7127 * (M(1,1)- (Mcart+Mmotor));
-    elseif (springType(i) == 'm')
-        c(1) =  CmNL+ 2.4263 * (M(1,1)- (Mcart+Mmotor));
+    if (springType(1) == 'l')
+        c(1) =  ClNL+ (ClL-ClNL) * (M(1,1)- (Mcart+Mmotor))/(0.493*2);
+    elseif (springType(1) == 'm')
+        c(1) =  CmNL+ (CmL-CmNL) * (M(1,1)- (Mcart+Mmotor))/(0.493*2);
     else 
-        c(1) = ChNL +2.1685 *(M(1,1)-(Mcart+Mmotor));
+        c(1) = ChNL +(ChL-ChNL) *(M(1,1)-(Mcart+Mmotor))/(0.493*2);
     end
     
     
     for i=2:nDOF
         if (springType(i) == 'l')
-            c(i)= ClNL+ 0.3911 * (M(i,i)- (Mcart));
+            c(i)= ClNL+ (ClL-ClNL) * (M(i,i)- (Mcart))/(0.493*2);
         elseif (springType(i) == 'm')
-            c(i)= CmNL+ 0.2514 * (M(i,i)- (Mcart));
+            c(i)= CmNL+(CmL-CmNL) * (M(i,i)- (Mcart))/(0.493*2);
         else
-            c(i)= ChNL+ 0.1334 * (M(i,i)- (Mcart));
+            c(i)= ChNL+ (ChL-ChNL) * (M(i,i)- (Mcart))/(0.493*2);
         end
     end    
     

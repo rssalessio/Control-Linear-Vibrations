@@ -1,1 +1,41 @@
-\section{Non-linearities identification}
+\chapter{Non-linearities identification}
+
+\section{Motor cogging identification}
+It was found that for low voltage the motor acts as if the voltage is $0$, therefore the current and consequently the torque is $0$.\\
+This is  a type of static friction, though it's not a mechanical one. In fact, if it was a mechanical one we would see the current increase but the shaft of the motor don't rotate until the torque is big enough to counteract the static friction effect. In this case is more an electrical type of static friction, called \emph{cogging} effect. \\ \\
+COPIATO DA WIKI \\
+Cogging torque of electrical motors is the torque due to the interaction between the permanent magnets of the rotor and the stator slots of a Permanent Magnet (PM) machine. This torque is position dependent and its periodicity per revolution depends on the number of magnetic poles and the number of teeth on the stator.Cogging torque results in torque as well as speed ripple; however, at high speed the motor moment of inertia filters out the effect of cogging torque.
+\\ \\
+In figure \ref{fig:curposvolt} such effect is shown. On the left plot it's visible that when the input voltage $v(t)$ for $|v(t)|< c$, the output current is $0$. Since the torque is proportional to the current, also the torque is $0$. On the right plot is visible the effect on the cart: when the cart starts to move, after having overcome the static friction, it stops because the torque goes to $0$ because the current is $0$. But this effect does not happen because of mechanical static friction, otherwise we would not see a flat current curve.  \\ \\
+How can we model such effect? it's some kind of deadzone effect, and we can model it such that the real voltage entering the motor is:
+\begin{equation}
+v_{real}(t) = \begin{cases}
+0 \quad |v(t)| < c \\
+v(t) \quad |v(t)| \geq c
+\end{cases}
+\end{equation}
+Where $c \in \mathbb{R}$ needs to be identified. For this purpose, notice that inside the deadzone the current is a white noise signal. Therefore we should find a constant $\alpha$ such that the signal $|i(t)| < \alpha$ is a white noise signal. For this purpose the following identification procedure was used:
+\begin{enumerate}
+\item Use as voltage input a sinusoid with frequency pulsation $\omega = 1.25$ \SI{}{\radian \per \second}. 
+\item  Low pass filter the current with a Butterworth filter of the $4$-th order with a cut-off pulsation $\omega_c = 31$ \SI{}{\radian \per \second}.
+\item Choose $\alpha \in [0, \text{max}(v(t))]$, where $v(t)$ is the input voltage. Consider only the voltage that satisfies $|v(t)| < v$.
+\item Run the Anderson Whiteness Test, with all elements and margin of tolerance of $1$\%.
+\item {If the signal is not white, run again the test with $\alpha_{new}=\alpha-\Delta$,  where $0<\Delta < \alpha$. Otherwise, stop. Notice that the bisection method cannot be used.}
+\end{enumerate}
+  \begin{figure}[!tbh]
+  \centering
+  \subfloat[Current vs Voltage plot]{\includegraphics[width=0.5\textwidth]{img/deadzone1.png}}
+  \hfill
+  \subfloat[Current vs Position plot]{\includegraphics[width=0.5\textwidth]{img/deadzone2.png}}
+  \caption{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right  we can see the effect on the position of the cart.}
+    \label{fig:curposvolt}
+\end{figure}
+Running this test gives an approximate value of $c \approx 0.35$ \SI{}{\volt}. The simulated current, using the parameters identified for the motor, is shown in figure \ref{fig:deadzone_sim}. Moreover, using the cost function  mentioned at the beginning of this chapter, we obtain a fit value of $0.89$.
+  \begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/deadzone3.png}
+  \caption{Identified model vs real current.}
+    \label{fig:deadzone_sim}
+\end{figure}
+\section{Motor mechanical static friction}
+

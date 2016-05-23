@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{report}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.7in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{import} 
@@ -17,13 +17,15 @@
 \usepackage{siunitx}%phyisical quantities typesettings
 	\usepackage{blkarray}
 \usepackage{multirow}
+\usepackage[section]{placeins}
+\usepackage{subfig}
 \usepackage{pgfplots} %plots
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{biblio.bib}
 \DeclareMathOperator{\sign}{sign}
 
   
-\titlepic{\includegraphics[width=0.5\textwidth]{img/logo.png}}
+\titlepic{\vspace{4cm} \includegraphics[width=0.3\textwidth]{img/logo.png}}
 
 
 \author{Alessio Russo, Gianluca Savaia, Alberto Ficicchia}
@@ -40,13 +42,13 @@
 
 
 \begin{document}
+\pagenumbering{roman}
 \maketitle
 \tableofcontents
 
-\clearpage
 \subimport*{parts/Team/}{main.tex}
-\newpage
 \subimport*{parts/Experience/}{main.tex}
+\pagenumbering{arabic}
 \newpage
 \subimport*{parts/Models/}{main.tex}
 \newpage
