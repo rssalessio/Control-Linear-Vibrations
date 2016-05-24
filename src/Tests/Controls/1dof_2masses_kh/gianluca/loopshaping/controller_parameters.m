@@ -22,7 +22,7 @@ Km = 281; %Stiffness Med
 Kl = 162; %Stifness low
 
 motor = tf(1, [L R]);
-cart = tf(Ke,[M,Ch,Kh]);
+cart = tf(Ke,[M,Cl,Kl]);
 
 figure; margin(motor); grid;
 
@@ -36,13 +36,22 @@ w_cart = damp(cart)/2/pi
 disp(pole(plant))
 
 %% position loop design
-zero1 = -3.5+22i;
-zero2 = -3.5-22i;
+% K HIGH
+% zero1 = -3.5+22i;
+% zero2 = -3.5-22i;
+% pole1 = -100;
+% gain = -0.02; 
+
+%K LOW
+zero1 = -2.5+10i;
+zero2 = -2.5-10i;
 pole1 = -100;
-gain = -0.02; 
+gain = -0.01; % TO BE FINE TUNED: LOOKOUT FOR OSCILLATIONS
+
+%Controller
 controller = zpk([zero1 zero2],...
                  [0 pole1], gain)
-
+             
 plant_ol = controller*plant
 plant_cl = feedback(plant_ol,1);
 
