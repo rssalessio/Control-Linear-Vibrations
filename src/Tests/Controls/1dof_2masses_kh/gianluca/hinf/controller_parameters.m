@@ -5,7 +5,7 @@ close all;
 %motor
 R = 1.3;%resistance 
 L = 0.0220; %inductance 
-Ke = -1.0000e+05; %electric stiffness and torque constant
+Ke = -1.0000e+05/560; %electric stiffness and torque constant
 
 s = tf('s');
 
