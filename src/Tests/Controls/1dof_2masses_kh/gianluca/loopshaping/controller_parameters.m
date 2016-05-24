@@ -33,10 +33,9 @@ plant = motor*cart;
 figure; margin(plant); grid;
 w_motor = damp(motor)/2/pi
 w_cart = damp(cart)/2/pi
+disp(pole(plant))
 
 %% position loop design
-close all;
-
 zero1 = -3.5+22i;
 zero2 = -3.5-22i;
 pole1 = -100;
@@ -51,11 +50,11 @@ plant_cl = feedback(plant_ol,1);
 poles_cl = pole(plant_cl)
 %figure; pzmap(plant_cl); grid;
 
-% figure;     margin(plant); grid;
-% hold on;    margin(plant_ol);  legend('real','shaped');
+figure;     margin(plant); grid;
+hold on;    margin(plant_ol);  legend('real','shaped');
 
-% figure; bodeplot(plant_cl); grid;
-% hold on; bodeplot(feedback(controller,plant)); 
-% legend('T','K');
+figure; bodeplot(plant_cl); grid;
+hold on; bodeplot(feedback(controller,plant)); 
+legend('T','K');
 
 
