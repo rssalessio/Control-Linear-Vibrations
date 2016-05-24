@@ -1,27 +1,28 @@
 function [sysSS] = sysBuilder( nLoad, springType)
 
-    %motor
-    R = 1.3;
-    L = 0.0024;
-    Gamma=-206.8;
+  
+    
+    R = ureal('R',1.3,'PlusMinus',0.1);
+    L = ureal('L', 0.0024, 'Percentage', [-5,5]);
+    Gamma=ureal('Gamma',-206.8, 'Percentage', [-10,10]);
     
     %mass
-    Mmotor = 0.85059-0.5865;
-    Mcart = 0.5685;
-    Mload = 0.493;
+    Mcart = ureal('Mcart', 0.5685, 'PlusMinus',[-3*0.0141,+3*0.0141]);
+    Mload = ureal('Mload', 0.493, 'PlusMinus', 0.005);
+    Mmotor = ureal('Mtotal',0.8906,'PlusMinus', [-3*0.1146,3*0.1145])-Mcart;
     
     %stiffness
-    Km=340.14;
-    Kh=720.56;
-    Kl=216.38;
+    Km=ureal('Km', 340.14, 'PlusMinus', 20);
+    Kh=ureal('Kh',720.56, 'PlusMinus', 20);
+    Kl=ureal('Kl', 216.38, 'PlusMinus', 20);
     
     %damping
-    ChL = 10.2855;
-    ChNL = 9.0517;
-    CmL = 9.5558;
-    CmNL = 8.4089;
-    ClL = 8.9973;
-    ClNL = 8.2736;
+    ChL = ureal('ChL', 10.2855, 'PlusMinus',0.5);
+    ChNL =ureal('ChNL', 9.0517, 'PlusMinus',0.5);
+    CmL =ureal('CmL', 9.5558, 'PlusMinus',0.5);
+    CmNL = ureal('CmNL', 8.4089, 'PlusMinus',0.5);
+    ClL = ureal('ClL', 8.9973, 'PlusMinus',0.5);
+    ClNL = ureal('ClNL', 8.2736, 'PlusMinus',0.5);
     
     if (length(nLoad)~= length(springType) && length(nLoad) > 3)
         disp('Error, nLoad and springType should be vectors of the same size specified by nDOF'); 
@@ -31,10 +32,7 @@ function [sysSS] = sysBuilder( nLoad, springType)
     
     %% Mass, Damping and Stiffness matrix
     
-    M = zeros(nDOF, nDOF);
-    C = zeros(nDOF, nDOF);
-    K = zeros(nDOF, nDOF);
-    
+   
     
     for i=1:nDOF
         M(i,i) = Mcart+Mload*nLoad(i);
@@ -42,7 +40,6 @@ function [sysSS] = sysBuilder( nLoad, springType)
     M(1,1)= M(1,1)+Mmotor;
     
     
-    c = zeros(nDOF,1);
     
     %% for the first cart we need to consider damping with motor attached
     
@@ -90,15 +87,21 @@ function [sysSS] = sysBuilder( nLoad, springType)
     
     
     %% State space initialization
-    A = zeros(1+nDOF*2, 1+nDOF*2);
     B = zeros(1+nDOF*2,1);
-    Cy = zeros(1+nDOF, 1+nDOF*2);
-    D = zeros(1+nDOF,1);
-    
+    %D= zeros(1+2*nDOF,1);
+    D=zeros(nDOF,1);
     %% C Matrix
-    Cy(1,1) = 1/L;
+%     Cy(1,1) = 1/L;
+%     for i=1:nDOF
+%        Cy(i+1,i+1)=1; 
+%     end
+%     for i=nDOF+2:1+2*nDOF
+%         Cy(i,i)=0;
+%     end
+
     for i=1:nDOF
-       Cy(i+1,i+1)=1; 
+        Cy(i,1:1+2*nDOF)=0;
+        Cy(i,i+1)=1;
     end
     
     %% B Matrix
@@ -113,7 +116,11 @@ function [sysSS] = sysBuilder( nLoad, springType)
     end
     Bg = zeros(nDOF, 1);
     Bg(1)=1;
-    A(1+nDOF+1:end, 1:end) = [inv(M)*Bg*Gamma/L, -inv(M)*K, -inv(M)*C];
+    temp =[inv(M)*Bg*Gamma/L, -inv(M)*K, -inv(M)*C];
+    for i=1+nDOF+1:1+2*nDOF
+        A(i, :) = temp(i-1-nDOF,:);
+    end
+    
     
     %%
     
