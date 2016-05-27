@@ -36,7 +36,7 @@ end
 function c = testDirectory(sys)
     [t,i,x,v]=reads();
     y1 = lsim(sys, v, t);
-    y1=y1(:,2);
+    y1=y1(:,1);
     c = costFunction(y1,x)
 
      figure;

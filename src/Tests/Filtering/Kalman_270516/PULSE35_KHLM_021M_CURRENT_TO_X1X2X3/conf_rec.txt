@@ -1,0 +1,6 @@
+# Politecnico di Milano
+# PoliScope V1.1
+
++ # Signals: 6
++ Signals names: i_real, i_kalman, x1_kalman, x1_reale, x2_kalman, x2_reale
++ Sampling frequency [Hz]: 200

@@ -1,10 +1,10 @@
-R=1.3;
 L=0.0024;
 
 
-sys = sysBuilder(2,'l');
+sys = sysBuilder([0,2,1],['h','l','m']);
 sys=sys.NominalValue;
-sys.c=[1/L,0,0;0,1,0];
+%sys.c=[1/L,0,0;0,1,0];
+sys.c=[0,1,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0];
 systemc2d=  (c2d(sys,1/200));
 sysd = ss(c2d(sys,1/200));
 
