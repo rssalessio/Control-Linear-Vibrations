@@ -48,9 +48,10 @@ Wk = 100*tf(makeweight(0.9, 2*pi*1, 10));
 [Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
 
 figure; margin(series(Hinf,plant)); grid;
-figure; pzplot(Hinf); grid;
-figure; bodemag(1/(1+series(Hinf,plant))); title('S'), grid;
-figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
+% figure; pzplot(Hinf); grid;
+% figure; bodemag(1/(1+series(Hinf,plant))); title('S'), grid;
+% figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
+% figure; bodemag(series(Hinf,plant)/(1+series(Hinf,plant))); title('T'), grid;
 
 
 % Hinf_zpk = zpk(Hinf);
@@ -60,5 +61,12 @@ figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
 % 
 % Hinf_red = reduce(Hinf, 3);
 % figure; pzplot(Hinf_red); grid;
- Hinf = reduce(Hinf, 3);
+
+figure; 
+bodemag(Hinf); grid; hold on;
+
+tf(Hinf)
+Hinf = reduce(Hinf, 3);
+bodemag(Hinf);
+tf(Hinf)
 

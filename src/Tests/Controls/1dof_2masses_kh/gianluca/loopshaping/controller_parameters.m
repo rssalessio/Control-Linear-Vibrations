@@ -37,10 +37,10 @@ disp(pole(plant))
 
 %% position loop design
 % K HIGH
-% zero1 = -3.5+22i;
-% zero2 = -3.5-22i;
-% pole1 = -100;
-% gain = -0.02; 
+zero1 = -3.5+22i;
+zero2 = -3.5-22i;
+pole1 = -100;
+gain = -0.02; 
 
 %K LOW
 zero1 = -2.5+10i;
