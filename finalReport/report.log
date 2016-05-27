@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.27)  27 MAY 2016 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.27)  27 MAY 2016 20:11
 entering extended mode
 **./report.tex
 (report.tex
@@ -542,26 +542,2833 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: mcode 2015/11/11 2.7
  - settings optimized for display (colour formating)
 
-! LaTeX Error: File `xcolor.sty' not found.
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.sty"
+\lst@mode=\count114
+\lst@gtempboxa=\box28
+\lst@token=\toks23
+\lst@length=\count115
+\lst@currlwidth=\dimen126
+\lst@column=\count116
+\lst@pos=\count117
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count118
+\lst@lineno=\count119
+\lst@maxwidth=\dimen129
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.156 \fi
-         
-*** (cannot \read from terminal in nonstop modes)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
+.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count120
+\lst@skipnumbers=\count121
+\lst@framebox=\box29
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
- 
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlaye
+r\tikz.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gf.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+frcs.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common.tex"
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen130
+\pgfutil@tempdimb=\dimen131
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-latex.def"
+\pgfutil@abb=\box30
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfrcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gfcore.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\
+pgfsys.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys.code.tex"
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen132
+\pgf@y=\dimen133
+\pgf@xa=\dimen134
+\pgf@ya=\dimen135
+\pgf@xb=\dimen136
+\pgf@yb=\dimen137
+\pgf@xc=\dimen138
+\pgf@yc=\dimen139
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count122
+\c@pgf@countb=\count123
+\c@pgf@countc=\count124
+\c@pgf@countd=\count125
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count126
+\pgfsyssoftpath@bigbuffer@items=\count127
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thcalc.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thutil.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thparser.code.tex"
+\pgfmath@dimen=\dimen140
+\pgfmath@count=\count128
+\pgfmath@box=\box31
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count129
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen141
+\pgf@picmaxx=\dimen142
+\pgf@picminy=\dimen143
+\pgf@picmaxy=\dimen144
+\pgf@pathminx=\dimen145
+\pgf@pathmaxx=\dimen146
+\pgf@pathminy=\dimen147
+\pgf@pathmaxy=\dimen148
+\pgf@xx=\dimen149
+\pgf@xy=\dimen150
+\pgf@yx=\dimen151
+\pgf@yy=\dimen152
+\pgf@zx=\dimen153
+\pgf@zy=\dimen154
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen155
+\pgf@path@lasty=\dimen156
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen157
+\pgf@shorten@start@additional=\dimen158
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count130
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen159
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen160
+\pgf@pt@y=\dimen161
+\pgf@pt@temp=\dimen162
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen163
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen164
+\pgf@sys@shading@range@num=\count131
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box35
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box36
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen165
+\pgf@nodesepend=\dimen166
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+ffor.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+fkeys.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgfmath
+.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex")
+\pgffor@iter=\dimen167
+\pgffor@skip=\dimen168
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\tikz.code.tex"
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count132
+\pgfplotmarksize=\dimen169
+)
+\tikz@lastx=\dimen170
+\tikz@lasty=\dimen171
+\tikz@lastxsaved=\dimen172
+\tikz@lastysaved=\dimen173
+\tikzleveldistance=\dimen174
+\tikzsiblingdistance=\dimen175
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count133
+\tikznumberofchildren=\count134
+\tikznumberofcurrentchild=\count135
+\tikz@fig@count=\count136
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count137
+\pgfmatrixcurrentcolumn=\count138
+\pgf@matrix@numberofcolumns=\count139
+)
+\tikz@expandcount=\count140
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarypatterns.code.tex"
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibrarypatterns.code.tex"
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen176
+\pgfdecoratedremainingdistance=\dimen177
+\pgfdecoratedinputsegmentcompleteddistance=\dimen178
+\pgfdecoratedinputsegmentremainingdistance=\dimen179
+\pgf@decorate@distancetomove=\dimen180
+\pgf@decorate@repeatstate=\count141
+\pgfdecorationsegmentamplitude=\dimen181
+\pgfdecorationsegmentlength=\dimen182
+)
+\tikz@lib@dec@box=\box41
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+decorations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarydecorations.markings.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+decorations\pgflibrarydecorations.markings.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\chngcntr\chngcnt
+r.sty"
+Package: chngcntr 2009/09/02 v1.0a change counter resetting
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\siunitx\siunitx.
+sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3.s
+ty"
+Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\expl3-c
+ode.tex"
+Package: expl3 2016/05/18 v6512 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
+L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
+L3 Module: l3str 2016/03/24 v6441 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/03/24 v6441 L3 Integers
+\c_max_int=\count142
+\l_tmpa_int=\count143
+\l_tmpb_int=\count144
+\g_tmpa_int=\count145
+\g_tmpb_int=\count146
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count147
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2016/03/26 v6464 L3 Messages
+L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
+\l_iow_line_count_int=\count148
+\l__iow_target_count_int=\count149
+\l__iow_current_line_int=\count150
+\l__iow_current_word_int=\count151
+\l__iow_current_indentation_int=\count152
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
+\c_zero_dim=\dimen183
+\c_max_dim=\dimen184
+\l_tmpa_dim=\dimen185
+\l_tmpb_dim=\dimen186
+\g_tmpa_dim=\dimen187
+\g_tmpb_dim=\dimen188
+\c_zero_skip=\skip47
+\c_max_skip=\skip48
+\l_tmpa_skip=\skip49
+\l_tmpb_skip=\skip50
+\g_tmpa_skip=\skip51
+\g_tmpb_skip=\skip52
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
+\g__keyval_level_int=\count153
+\l_keys_choice_int=\count154
+L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
+\c__fp_leading_shift_int=\count155
+\c__fp_middle_shift_int=\count156
+\c__fp_trailing_shift_int=\count157
+\c__fp_big_leading_shift_int=\count158
+\c__fp_big_middle_shift_int=\count159
+\c__fp_big_trailing_shift_int=\count160
+\c__fp_Bigg_leading_shift_int=\count161
+\c__fp_Bigg_middle_shift_int=\count162
+\c__fp_Bigg_trailing_shift_int=\count163
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box42
+\l_tmpa_box=\box43
+\l_tmpb_box=\box44
+\g_tmpa_box=\box45
+\g_tmpb_box=\box46
+L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
+\l__coffin_internal_box=\box47
+\l__coffin_internal_dim=\dimen189
+\l__coffin_offset_x_dim=\dimen190
+\l__coffin_offset_y_dim=\dimen191
+\l__coffin_x_dim=\dimen192
+\l__coffin_y_dim=\dimen193
+\l__coffin_x_prime_dim=\dimen194
+\l__coffin_y_prime_dim=\dimen195
+\c_empty_coffin=\box48
+\l__coffin_aligned_coffin=\box49
+\l__coffin_aligned_internal_coffin=\box50
+\l_tmpa_coffin=\box51
+\l_tmpb_coffin=\box52
+\l__coffin_display_coffin=\box53
+\l__coffin_display_coord_coffin=\box54
+\l__coffin_display_pole_coffin=\box55
+\l__coffin_display_offset_dim=\dimen196
+\l__coffin_display_x_dim=\dimen197
+\l__coffin_display_y_dim=\dimen198
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen199
+\l__box_bottom_dim=\dimen256
+\l__box_left_dim=\dimen257
+\l__box_right_dim=\dimen258
+\l__box_top_new_dim=\dimen259
+\l__box_bottom_new_dim=\dimen260
+\l__box_left_new_dim=\dimen261
+\l__box_right_new_dim=\dimen262
+\l__box_internal_box=\box56
+\l__coffin_bounding_shift_dim=\dimen263
+\l__coffin_left_corner_dim=\dimen264
+\l__coffin_right_corner_dim=\dimen265
+\l__coffin_bottom_corner_dim=\dimen266
+\l__coffin_top_corner_dim=\dimen267
+\l__coffin_scaled_total_height_dim=\dimen268
+\l__coffin_scaled_width_dim=\dimen269
+L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmo
+de.def"
+File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count164
+\l__driver_tmp_box=\box57
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\xpars
+e\xparse.sty"
+Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count165
+\l__xparse_m_args_int=\count166
+\l__xparse_mandatory_args_int=\count167
+\l__xparse_processor_int=\count168
+\l__xparse_v_nesting_int=\count169
+)
+Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen270
+\extrarowheight=\dimen271
+\NC@list=\toks36
+\extratabsurround=\skip53
+\backup@length=\skip54
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3packages\l3key
+s2e\l3keys2e.sty"
+Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box58
+\l__siunitx_tmp_dim=\dimen272
+\l__siunitx_tmp_int=\count170
+\l__siunitx_number_mantissa_length_int=\count171
+\l__siunitx_number_uncert_length_int=\count172
+\l__siunitx_round_int=\count173
+\l__siunitx_process_decimal_int=\count174
+\l__siunitx_process_uncertainty_int=\count175
+\l__siunitx_process_fixed_int=\count176
+\l__siunitx_process_integer_min_int=\count177
+\l__siunitx_process_precision_int=\count178
+\l__siunitx_group_min_int=\count179
+\l__siunitx_angle_marker_box=\box59
+\l__siunitx_angle_unit_box=\box60
+\l__siunitx_angle_marker_dim=\dimen273
+\l__siunitx_angle_unit_dim=\dimen274
+\l__siunitx_unit_int=\count180
+\l__siunitx_unit_denominator_int=\count181
+\l__siunitx_unit_numerator_int=\count182
+\l__siunitx_unit_prefix_int=\count183
+\l__siunitx_unit_prefix_base_int=\count184
+\l__siunitx_unit_prefix_gram_int=\count185
+\l__siunitx_number_product_int=\count186
+\c__siunitx_one_fill_skip=\skip55
+\l__siunitx_table_unit_align_skip=\skip56
+\l__siunitx_table_exponent_dim=\dimen275
+\l__siunitx_table_integer_dim=\dimen276
+\l__siunitx_table_mantissa_dim=\dimen277
+\l__siunitx_table_marker_dim=\dimen278
+\l__siunitx_table_result_dim=\dimen279
+\l__siunitx_table_uncert_dim=\dimen280
+\l__siunitx_table_fill_pre_dim=\dimen281
+\l__siunitx_table_fill_post_dim=\dimen282
+\l__siunitx_table_fill_mid_dim=\dimen283
+\l__siunitx_table_pre_box=\box61
+\l__siunitx_table_post_box=\box62
+\l__siunitx_table_mantissa_box=\box63
+\l__siunitx_table_result_box=\box64
+\l__siunitx_table_number_align_skip=\skip57
+\l__siunitx_table_text_align_skip=\skip58
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7218.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPostPower with sig. 'mm' on line 7221.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7224.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrePower with sig. 'mm' on line 7227.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIQualifier with sig. 'mm' on line 7230.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7233.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7236.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7251.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \num with sig. 'om' on line 7260.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7269.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numrange with sig. 'omm' on line 7278.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7290.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIrange with sig. 'ommm' on line 7302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SI with sig. 'omom' on line 7314.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \sisetup with sig. 'm' on line 7317.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \tablenum with sig. 'om' on line 7332.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \si with sig. 'om' on line 7344.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_num:w with sig. 'om' on line 7391.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_numrange:w with sig. 'omm' on line
+. 7393.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SI:w with sig. 'omom' on line 7395.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIlist:w with sig. 'omm' on line 7397.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIrange:w with sig. 'ommm' on line
+. 7399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_si:w with sig. 'om' on line 7400.
+.................................................
+\g__file_internal_ior=\read2
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\translator.sty"
+Package: translator 2010/06/12 ver 1.10
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\translator-language-mappings.tex")))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\blkarray\blkarra
+y.sty"
+Package: blkarray 2015/02/27 v0.07 Block array (dpc)
+\c@BAenumi=\count187
+\BA@col=\count188
+\BA@block@cnt=\count189
+\BA@final@box=\box65
+\BA@first@box=\box66
+\BA@colsep=\dimen284
+\BA@ftn=\toks37
+\BAextrarowheight=\dimen285
+\BAextraheightafterhline=\dimen286
+\BAarrayrulewidth=\dimen287
+\BAdoublerulesep=\dimen288
+\BAfootskip=\dimen289
+\BA@dashbox=\box67
+\BA@ddashbox=\box68
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multiro
+w.sty"
+\bigstrutjot=\dimen290
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\placeins\placein
+s.sty"
+Package: placeins 2005/04/18  v 2.2
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfig\subfig.st
+y"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.
+sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3
+.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen291
+\captionmargin@=\dimen292
+\captionwidth=\dimen293
+\caption@tempdima=\dimen294
+\caption@indent=\dimen295
+\caption@parindent=\dimen296
+\caption@hangindent=\dimen297
+)
+\c@ContinuedFloat=\count190
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@KVtest=\count191
+\sf@farskip=\skip59
+\sf@captopadj=\dimen298
+\sf@capskip=\skip60
+\sf@nearskip=\skip61
+\c@subfigure=\count192
+\c@subfigure@save=\count193
+\c@lofdepth=\count194
+\c@subtable=\count195
+\c@subtable@save=\count196
+\c@lotdepth=\count197
+\sf@top=\skip62
+\sf@bottom=\skip63
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplot
+s.sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.revision.tex")
+Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otscore.code.tex"
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
+\pgfplots@tmpa=\dimen299
+\c@pgfplots@coordindex=\count198
+\c@pgfplots@scanlineindex=\count199
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\p
+gfplotssysgeneric.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\
+pgfplotslibrary.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpg
+fcompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryfpu.code.tex")
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpg
+fcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpg
+fcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count266
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotsutil.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\lists
+tructure\pgfplotsliststructure.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\lists
+tructure\pgfplotsliststructureext.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\lists
+tructure\pgfplotsarray.code.tex"
+\c@pgfplotsarray@tmp=\count267
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\lists
+tructure\pgfplotsmatrix.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numta
+ble\pgfplotstableshared.code.tex"
+\c@pgfplotstable@counta=\count268
+\t@pgfplotstable@a=\toks41
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\lists
+tructure\pgfplotsdeque.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotsbinary.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotsbinary.data.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotsutil.verb.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\
+pgflibrarypgfplots.surfshading.code.tex"
+\c@pgfplotslibrarysurf@no=\count269
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\p
+gflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotscolormap.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\
+pgfplotscolor.code.tex"))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otsstackedplots.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otsplothandlers.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otsmeshplothandler.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otsmeshplotimage.code.tex")))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.scaling.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otscoordprocessing.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.errorbars.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.markers.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+otsticks.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfpl
+ots.paths.code.tex")
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+decorations\pgflibrarydecorations.pathreplacing.code.tex"))
+\pgfplots@numplots=\count270
+\pgfplots@xmin@reg=\dimen300
+\pgfplots@xmax@reg=\dimen301
+\pgfplots@ymin@reg=\dimen302
+\pgfplots@ymax@reg=\dimen303
+\pgfplots@zmin@reg=\dimen304
+\pgfplots@zmax@reg=\dimen305
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryplotmarks.code.tex"
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+)))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblate
+x.sty"
+Package: biblatex 2016/05/14 v3.4 programmable bibliographies (PK/JW/AB)
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\iftex\iftex.sty"
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
+x.sty"
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count271
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.st
+y"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count272
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.de
+f"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xstring\xstring.
+sty"
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xstring\xstrin
+g.tex"
+\@xs@message=\write4
+\integerpart=\count273
+\decimalpart=\count274
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count275
+\c@listtotal=\count276
+\c@listcount=\count277
+\c@liststart=\count278
+\c@liststop=\count279
+\c@citecount=\count280
+\c@citetotal=\count281
+\c@multicitecount=\count282
+\c@multicitetotal=\count283
+\c@instcount=\count284
+\c@maxnames=\count285
+\c@minnames=\count286
+\c@maxitems=\count287
+\c@minitems=\count288
+\c@citecounter=\count289
+\c@savedcitecounter=\count290
+\c@uniquelist=\count291
+\c@uniquename=\count292
+\c@refsection=\count293
+\c@refsegment=\count294
+\c@maxextratitle=\count295
+\c@maxextratitleyear=\count296
+\c@maxextrayear=\count297
+\c@maxextraalpha=\count298
+\c@abbrvpenalty=\count299
+\c@highnamepenalty=\count300
+\c@lownamepenalty=\count301
+\c@maxparens=\count302
+\c@parenlevel=\count303
+\blx@tempcnta=\count304
+\blx@tempcntb=\count305
+\blx@tempcntc=\count306
+\blx@maxsection=\count307
+\blx@maxsegment@0=\count308
+\blx@notetype=\count309
+\blx@parenlevel@text=\count310
+\blx@parenlevel@foot=\count311
+\blx@sectionciteorder@0=\count312
+\labelnumberwidth=\skip64
+\labelalphawidth=\skip65
+\biblabelsep=\skip66
+\bibitemsep=\skip67
+\bibnamesep=\skip68
+\bibinitsep=\skip69
+\bibparsep=\skip70
+\bibhang=\skip71
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\c@mincomprange=\count313
+\c@maxcomprange=\count314
+\c@mincompwidth=\count315
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-dm.
+def")
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count316
+\c@savedafterword=\count317
+\c@annotator=\count318
+\c@savedannotator=\count319
+\c@author=\count320
+\c@savedauthor=\count321
+\c@bookauthor=\count322
+\c@savedbookauthor=\count323
+\c@commentator=\count324
+\c@savedcommentator=\count325
+\c@editor=\count326
+\c@savededitor=\count327
+\c@editora=\count328
+\c@savededitora=\count329
+\c@editorb=\count330
+\c@savededitorb=\count331
+\c@editorc=\count332
+\c@savededitorc=\count333
+\c@foreword=\count334
+\c@savedforeword=\count335
+\c@holder=\count336
+\c@savedholder=\count337
+\c@introduction=\count338
+\c@savedintroduction=\count339
+\c@namea=\count340
+\c@savednamea=\count341
+\c@nameb=\count342
+\c@savednameb=\count343
+\c@namec=\count344
+\c@savednamec=\count345
+\c@translator=\count346
+\c@savedtranslator=\count347
+\c@shortauthor=\count348
+\c@savedshortauthor=\count349
+\c@shorteditor=\count350
+\c@savedshorteditor=\count351
+\c@labelname=\count352
+\c@savedlabelname=\count353
+\c@institution=\count354
+\c@savedinstitution=\count355
+\c@lista=\count356
+\c@savedlista=\count357
+\c@listb=\count358
+\c@savedlistb=\count359
+\c@listc=\count360
+\c@savedlistc=\count361
+\c@listd=\count362
+\c@savedlistd=\count363
+\c@liste=\count364
+\c@savedliste=\count365
+\c@listf=\count366
+\c@savedlistf=\count367
+\c@location=\count368
+\c@savedlocation=\count369
+\c@organization=\count370
+\c@savedorganization=\count371
+\c@origlocation=\count372
+\c@savedoriglocation=\count373
+\c@origpublisher=\count374
+\c@savedorigpublisher=\count375
+\c@publisher=\count376
+\c@savedpublisher=\count377
+\c@language=\count378
+\c@savedlanguage=\count379
+\c@pageref=\count380
+\c@savedpageref=\count381
+\shorthandwidth=\skip72
+\shortjournalwidth=\skip73
+\shortserieswidth=\skip74
+\shorttitlewidth=\skip75
+\shortauthorwidth=\skip76
+\shorteditorwidth=\skip77
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-com
+pat.def"
+File: blx-compat.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-bib
+tex.def"
+File: blx-bibtex.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblate
+x.def"
+File: biblatex.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+\c@textcitecount=\count382
+\c@textcitetotal=\count383
+\c@textcitemaxnames=\count384
+\c@biburlnumpenalty=\count385
+\c@biburlucpenalty=\count386
+\c@biburllcpenalty=\count387
+\c@smartand=\count388
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\num
+eric.bbx"
+File: numeric.bbx 2016/05/14 v3.4 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\sta
+ndard.bbx"
+File: standard.bbx 2016/05/14 v3.4 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count389
+\c@bbx:relatedtotal=\count390
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\num
+eric.cbx"
+File: numeric.cbx 2016/05/14 v3.4 biblatex citation style (PK/JW/AB)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblate
+x.cfg"
+File: biblatex.cfg 
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\eng
+lish.lbx"
+File: english.lbx 2016/05/14 v3.4 biblatex localization (PK/JW/AB)
+)
+\@quotelevel=\count391
+\@quotereset=\count392
+ (report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 44.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(50.58878pt, 496.33032pt, 50.58878pt)
+* v-part:(T,H,B)=(50.58878pt, 743.8693pt, 50.58878pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=496.33032pt
+* \textheight=743.8693pt
+* \oddsidemargin=-21.68121pt
+* \evensidemargin=-21.68121pt
+* \topmargin=-58.68121pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count393
+\scratchdimen=\dimen306
+\scratchbox=\box69
+\nofMPsegments=\count394
+\nofMParguments=\count395
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count396
+\MPscratchDim=\dimen307
+\MPnumerator=\count397
+\makeMPintoPDFobject=\count398
+\everyMPtoPDFconversion=\toks43
+)
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring OFF on input line 44.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count399
+)
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+ (report.out) (report.out)
+\@outlinefile=\write6
+\openout6 = `report.out'.
+
+\c@lstlisting=\count400
+
+ABD: EveryShipout initializing macros
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-basic-dictionary\translator-basic-dictionary-English.di
+ct"
+Dictionary: translator-basic-dictionary, Language: English 
+)
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\siunitx\siunitx-
+abbreviations.cfg"
+File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
+your preamble.
+ on input line 44.
+
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout5 = `report-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'report.bbl' not found.
+No file report.bbl.
+Package biblatex Info: Reference section=0 on input line 44.
+Package biblatex Info: Reference segment=0 on input line 44.
+\c__siunitx_mathsf_int=\count401
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+
+("C:\Users\GSavaia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+\c__siunitx_mathtt_int=\count402
+ <img/logo.png, id=173, 301.125pt x 301.125pt>
+File: img/logo.png Graphic file (type png)
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 47.
+(pdftex.def)             Requested size: 148.9006pt x 148.9034pt.
+ [1
+
+{C:/Users/GSavaia/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/log
+o.png>]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
+\tf@toc=\write7
+\openout7 = `report.toc'.
+
+(parts/Team/main.texpdfTeX warning (ext4): destination with the same identifier
+ (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            *{Team introduction} [1
+
+]) (parts/Experience/main.tex [2
+
+]) [1
+
+]
+(parts/Models/main.tex [2
+
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 4.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+
+LaTeX Warning: Reference `olvscl' on page 3 undefined on input line 8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+[3] [4]) [5] (parts/Identification/main.tex [6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 10.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--27
+
+ []
+
+(parts/Identification/ol_vs_cl_identification.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+
+LaTeX Warning: Reference `fig:theta_comparison' on page 8 undefined on input li
+ne 36.
+
+
+LaTeX Warning: Reference `fig:theta_comparison' on page 8 undefined on input li
+ne 39.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+) [8] (parts/Identification/white_box_identification.tex [9]
+Chapter 1.
+
+LaTeX Warning: Reference `fig:cart_detached_motor' on page 10 undefined on inpu
+t line 5.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
+
+ []
+
+
+LaTeX Warning: Reference `eq:cart_detached_motor' on page 10 undefined on input
+ line 62.
+
+[10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--128
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<parts/Identification/img/cart_detached_1.png, id=259, 1057.9525pt x 712.6625pt
+>
+File: parts/Identification/img/cart_detached_1.png Graphic file (type png)
+ <use parts/Identification/img/cart_detached_1.png>
+Package pdftex.def Info: parts/Identification/img/cart_detached_1.png used on i
+nput line 131.
+(pdftex.def)             Requested size: 496.33032pt x 334.34245pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `table: cart_springs_mass' on page 11 undefined on inp
+ut line 136.
+
+[11]
+
+LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 12 undefin
+ed on input line 149.
+
+
+LaTeX Warning: Reference `table: cart_detached_damping' on page 12 undefined on
+ input line 164.
+
+
+LaTeX Warning: Reference `table: cart_detached_damping' on page 12 undefined on
+ input line 165.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <./parts/Identification/img/cart_detached_1.png (PNG copy)>]
+
+LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 13 und
+efined on input line 180.
+
+
+LaTeX Warning: Reference `sec:validation_cost_function' on page 13 undefined on
+ input line 196.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
+ []
+
+
+<parts/Identification/img/validation_m_kh_full.png, id=276, 562.1pt x 421.575pt
+>
+File: parts/Identification/img/validation_m_kh_full.png Graphic file (type png)
+
+ <use parts/Identification/img/validation_m_kh_full.png>
+Package pdftex.def Info: parts/Identification/img/validation_m_kh_full.png used
+ on input line 201.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_ml_kl_partial.png, id=277, 562.1pt x 421.5
+75pt>
+File: parts/Identification/img/validation_ml_kl_partial.png Graphic file (type 
+png)
+ <use parts/Identification/img/validation_ml_kl_partial.png>
+Package pdftex.def Info: parts/Identification/img/validation_ml_kl_partial.png 
+used on input line 207.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_ml_km_full.png, id=278, 562.1pt x 421.575p
+t>
+File: parts/Identification/img/validation_ml_km_full.png Graphic file (type png
+)
+ <use parts/Identification/img/validation_ml_km_full.png>
+Package pdftex.def Info: parts/Identification/img/validation_ml_km_full.png use
+d on input line 214.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_ml_kh_full.png, id=279, 562.1pt x 421.575p
+t>
+File: parts/Identification/img/validation_ml_kh_full.png Graphic file (type png
+)
+ <use parts/Identification/img/validation_ml_kh_full.png>
+Package pdftex.def Info: parts/Identification/img/validation_ml_kh_full.png use
+d on input line 220.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+
+LaTeX Warning: Reference `fig:val1_3' on page 13 undefined on input line 224.
+
+
+LaTeX Warning: Reference `fig:val1_3' on page 13 undefined on input line 224.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:val1' on page 13 undefined on input line 230.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
+
+ []
+
+[14 <./parts/Identification/img/validation_m_kh_full.png (PNG copy)> <./parts/I
+dentification/img/validation_ml_kl_partial.png (PNG copy)> <./parts/Identificat
+ion/img/validation_ml_km_full.png (PNG copy)> <./parts/Identification/img/valid
+ation_ml_kh_full.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--259
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--264
+
+ []
+
+<parts/Identification/img/motor_id_1.png, id=291, 1028.34187pt x 490.08093pt>
+File: parts/Identification/img/motor_id_1.png Graphic file (type png)
+
+<use parts/Identification/img/motor_id_1.png>
+Package pdftex.def Info: parts/Identification/img/motor_id_1.png used on input 
+line 267.
+(pdftex.def)             Requested size: 496.33032pt x 236.53735pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
+
+ []
+
+
+LaTeX Warning: Reference `fig:motor_id_2' on page 15 undefined on input line 28
+6.
+
+<parts/Identification/img/motor_id_2.png, id=292, 1028.34187pt x 490.08093pt>
+File: parts/Identification/img/motor_id_2.png Graphic file (type png)
+
+<use parts/Identification/img/motor_id_2.png>
+Package pdftex.def Info: parts/Identification/img/motor_id_2.png used on input 
+line 289.
+(pdftex.def)             Requested size: 496.33032pt x 236.53735pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--293
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:motor_validation' on page 15 undefined on input l
+ine 295.
+
+[15]
+
+LaTeX Warning: Reference `sec:validation_cost_function' on page 16 undefined on
+ input line 297.
+
+
+<parts/Identification/img/motor_validation.png, id=297, 948.54375pt x 780.9175p
+t>
+File: parts/Identification/img/motor_validation.png Graphic file (type png)
+ <use parts/Identification/img/motor_validation.png>
+Package pdftex.def Info: parts/Identification/img/motor_validation.png used on 
+input line 302.
+(pdftex.def)             Requested size: 496.33032pt x 408.61751pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--308
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16 <./parts/Identification/img/motor_id_1.png (PNG copy)> <./parts/Identificat
+ion/img/motor_id_2.png (PNG copy)>]
+
+LaTeX Warning: Reference `sec:validation_cost_function' on page 17 undefined on
+ input line 310.
+
+
+LaTeX Warning: Reference `sec:motor_id' on page 17 undefined on input line 315.
+
+
+
+LaTeX Warning: Reference `sec:cart_detached_id' on page 17 undefined on input l
+ine 315.
+
+
+LaTeX Warning: Reference `sec:cart_detached_id' on page 17 undefined on input l
+ine 317.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--332
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--332
+
+ []
+
+[17 <./parts/Identification/img/motor_validation.png (PNG copy)>]
+
+LaTeX Warning: Reference `table: cart_springs_mass' on page 18 undefined on inp
+ut line 335.
+
+
+LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 18 undefin
+ed on input line 355.
+
+
+LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 18 undefin
+ed on input line 370.
+
+
+LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 18 undefin
+ed on input line 370.
+
+
+LaTeX Warning: Reference `table: cart_detached_damping' on page 18 undefined on
+ input line 371.
+
+
+LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 18 und
+efined on input line 386.
+
+
+LaTeX Warning: Reference `sec:validation' on page 18 undefined on input line 40
+0.
+
+
+LaTeX Warning: Reference `fig:val_overall' on page 18 undefined on input line 4
+03.
+
+
+<parts/Identification/img/validation_overall_km_nomass.png, id=312, 562.1pt x 4
+21.575pt>
+File: parts/Identification/img/validation_overall_km_nomass.png Graphic file (t
+ype png)
+ <use parts/Identification/img/validation_overall_km_nomass.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_km_nomass.
+png used on input line 406.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_kl_2mass.png, id=313, 562.1pt x 42
+1.575pt>
+File: parts/Identification/img/validation_overall_kl_2mass.png Graphic file (ty
+pe png)
+ <use parts/Identification/img/validation_overall_kl_2mass.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_kl_2mass.p
+ng used on input line 412.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_kh_2mass.png, id=314, 562.1pt x 42
+1.575pt>
+File: parts/Identification/img/validation_overall_kh_2mass.png Graphic file (ty
+pe png)
+ <use parts/Identification/img/validation_overall_kh_2mass.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_kh_2mass.p
+ng used on input line 419.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_kl_nomass.png, id=315, 562.1pt x 4
+21.575pt>
+File: parts/Identification/img/validation_overall_kl_nomass.png Graphic file (t
+ype png)
+ <use parts/Identification/img/validation_overall_kl_nomass.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_kl_nomass.
+png used on input line 425.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+[18]
+
+LaTeX Warning: Reference `fig:val2dof' on page 19 undefined on input line 434.
+
+
+<parts/Identification/img/validation_overall_2dof_khkm_0m2m.png, id=326, 562.1p
+t x 421.575pt>
+File: parts/Identification/img/validation_overall_2dof_khkm_0m2m.png Graphic fi
+le (type png)
+
+<use parts/Identification/img/validation_overall_2dof_khkm_0m2m.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_khkm_
+0m2m.png used on input line 437.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_2dof_khkm_1m1m.png, id=327, 562.1p
+t x 421.575pt>
+File: parts/Identification/img/validation_overall_2dof_khkm_1m1m.png Graphic fi
+le (type png)
+
+<use parts/Identification/img/validation_overall_2dof_khkm_1m1m.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_khkm_
+1m1m.png used on input line 443.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_2dof_klkh_0m0m.png, id=328, 562.1p
+t x 421.575pt>
+File: parts/Identification/img/validation_overall_2dof_klkh_0m0m.png Graphic fi
+le (type png)
+
+<use parts/Identification/img/validation_overall_2dof_klkh_0m0m.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_klkh_
+0m0m.png used on input line 450.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+
+<parts/Identification/img/validation_overall_2dof_klkh_0m2m.png, id=329, 562.1p
+t x 421.575pt>
+File: parts/Identification/img/validation_overall_2dof_klkh_0m2m.png Graphic fi
+le (type png)
+
+<use parts/Identification/img/validation_overall_2dof_klkh_0m2m.png>
+Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_klkh_
+0m2m.png used on input line 456.
+(pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 433--34
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19 <./parts/Identification/img/validation_overall_km_nomass.png (PNG copy)> <.
+/parts/Identification/img/validation_overall_kl_2mass.png (PNG copy)> <./parts/
+Identification/img/validation_overall_kh_2mass.png (PNG copy)> <./parts/Identif
+ication/img/validation_overall_kl_nomass.png (PNG copy)>]
+(parts/Identification/gray_box_identification.tex [20 <./parts/Identification/i
+mg/validation_overall_2dof_khkm_0m2m.png (PNG copy)> <./parts/Identification/im
+g/validation_overall_2dof_khkm_1m1m.png (PNG copy)> <./parts/Identification/img
+/validation_overall_2dof_klkh_0m0m.png (PNG copy)> <./parts/Identification/img/
+validation_overall_2dof_klkh_0m2m.png (PNG copy)>]
+Chapter 2.
+! Undefined control sequence.
+\@tempa ->\width 
+                 
+l.17 ...dth=0.6\textwidth]{img/graybox_scheme.jpg}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+\@tempa ->\width 
+                 
+l.17 ...dth=0.6\textwidth]{img/graybox_scheme.jpg}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Package keyval Error:  undefined.
+
+See the keyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 ...dth=0.6\textwidth]{img/graybox_scheme.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `img/graybox_scheme.jpg' not found on input line 17.
+
+
+! Package pdftex.def Error: File `img/graybox_scheme.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 ...dth=0.6\textwidth]{img/graybox_scheme.jpg}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) [21
+
+] (parts/Identification/non_linearities_identification.tex
+Chapter 3.
+
+LaTeX Warning: Reference `fig:curposvolt' on page 22 undefined on input line 9.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--11
+
+ []
+
+<parts/Identification/img/deadzone1.png, id=351, 562.1pt x 421.575pt>
+File: parts/Identification/img/deadzone1.png Graphic file (type png)
+
+<use parts/Identification/img/deadzone1.png>
+Package pdftex.def Info: parts/Identification/img/deadzone1.png used on input l
+ine 26.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+<parts/Identification/img/deadzone2.png, id=352, 562.1pt x 421.575pt>
+File: parts/Identification/img/deadzone2.png Graphic file (type png)
+
+<use parts/Identification/img/deadzone2.png>
+Package pdftex.def Info: parts/Identification/img/deadzone2.png used on input l
+ine 28.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+
+LaTeX Warning: Reference `fig:deadzone_sim' on page 22 undefined on input line 
+32.
+
+<parts/Identification/img/deadzone3.png, id=353, 562.1pt x 421.575pt>
+File: parts/Identification/img/deadzone3.png Graphic file (type png)
+
+<use parts/Identification/img/deadzone3.png>
+Package pdftex.def Info: parts/Identification/img/deadzone3.png used on input l
+ine 35.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22
+
+]) [23 <./parts/Identification/img/deadzone1.png (PNG copy)> <./parts/Identific
+ation/img/deadzone2.png (PNG copy)> <./parts/Identification/img/deadzone3.png (
+PNG copy)>] (parts/Identification/filtering.tex
+Chapter 4.
+)) [24
+
+] [25
+
+] (parts/Control1dof/main.tex
+Chapter 1.
+(parts/Control1dof/pid.tex
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin{figure}[H]
+                     
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/ls_bode_ol.jpg, id=381, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/ls_bode_ol.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/ls_bode_ol.jpg>
+Package pdftex.def Info: parts/Control1dof/img/ls_bode_ol.jpg used on input lin
+e 5.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+<parts/Control1dof/img/ls_simulink.png, id=382, 966.61125pt x 337.26pt>
+File: parts/Control1dof/img/ls_simulink.png Graphic file (type png)
+
+<use parts/Control1dof/img/ls_simulink.png>
+Package pdftex.def Info: parts/Control1dof/img/ls_simulink.png used on input li
+ne 24.
+(pdftex.def)             Requested size: 496.33032pt x 173.17365pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/ls_bode_shaping.jpg, id=383, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/ls_bode_shaping.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/ls_bode_shaping.jpg>
+Package pdftex.def Info: parts/Control1dof/img/ls_bode_shaping.jpg used on inpu
+t line 31.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.38 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.38 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<parts/Control1dof/img/ls_response_kh.jpg, id=384, 1371.1225pt x 607.26875pt>
+File: parts/Control1dof/img/ls_response_kh.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/ls_response_kh.jpg>
+Package pdftex.def Info: parts/Control1dof/img/ls_response_kh.jpg used on input
+ line 39.
+(pdftex.def)             Requested size: 496.33032pt x 219.82118pt.
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 38--40
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 37 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.43 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.43 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<parts/Control1dof/img/ls_response_kl.jpg, id=385, 1371.1225pt x 654.445pt>
+File: parts/Control1dof/img/ls_response_kl.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/ls_response_kl.jpg>
+Package pdftex.def Info: parts/Control1dof/img/ls_response_kl.jpg used on input
+ line 44.
+(pdftex.def)             Requested size: 496.33032pt x 236.8982pt.
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 43--45
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 37 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) (parts/Control1dof/rhpzeros.tex [26
+
+] [27 <./parts/Control1dof/img/ls_bode_ol.jpg> <./parts/Control1dof/img/ls_simu
+link.png> <./parts/Control1dof/img/ls_bode_shaping.jpg>] [28 <./parts/Control1d
+of/img/ls_response_kh.jpg> <./parts/Control1dof/img/ls_response_kl.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+LaTeX Warning: Citation 'hoagg2006' on page 29 undefined on input line 31.
+
+) (parts/Control1dof/hinfty.tex
+Underfull \hbox (badness 10000) in paragraph at lines 28--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--1
+
+ []
+
+[29]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\infty' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin{figure}[H]
+                     
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/hinf_scheme.png, id=410, 430.60875pt x 219.06844pt>
+File: parts/Control1dof/img/hinf_scheme.png Graphic file (type png)
+
+<use parts/Control1dof/img/hinf_scheme.png>
+Package pdftex.def Info: parts/Control1dof/img/hinf_scheme.png used on input li
+ne 5.
+(pdftex.def)             Requested size: 248.16516pt x 126.25418pt.
+
+! Misplaced alignment tab character &.
+l.9 ...performed by an iteration process of trial&
+                                                  error: given a shape, we t...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/hinf_shapes.jpg, id=411, 1361.085pt x 265.99374pt>
+File: parts/Control1dof/img/hinf_shapes.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_shapes.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_shapes.jpg used on input li
+ne 12.
+(pdftex.def)             Requested size: 248.16516pt x 48.49779pt.
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.20 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.20 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<parts/Control1dof/img/hinf_hankel.jpg, id=412, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/hinf_hankel.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_hankel.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_hankel.jpg used on input li
+ne 21.
+(pdftex.def)             Requested size: 496.33032pt x 372.24794pt.
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 20--22
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 18 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.25 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.25 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+LaTeX Warning: File `img/hinf_reduce.jpg' not found on input line 26.
+
+
+! Package pdftex.def Error: File `img/hinf_reduce.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...ics[width=\textwidth]{img/hinf_reduce.jpg}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 25--27
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 18 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Float too large for page by 169.84554pt on input line 30.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/hinf_integrator.jpg, id=413, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/hinf_integrator.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_integrator.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_integrator.jpg used on inpu
+t line 35.
+(pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+<parts/Control1dof/img/hinf_hankel_int.jpg, id=414, 1371.1225pt x 654.445pt>
+File: parts/Control1dof/img/hinf_hankel_int.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_hankel_int.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_hankel_int.jpg used on inpu
+t line 42.
+(pdftex.def)             Requested size: 248.16516pt x 118.4441pt.
+
+
+! LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.50 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.50 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<parts/Control1dof/img/hinf_ls.jpg, id=415, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/hinf_ls.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_ls.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_ls.jpg used on input line 5
+1.
+(pdftex.def)             Requested size: 496.33032pt x 372.24794pt.
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 50--52
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 48 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 \begin{subfigure}
+                      {0.49\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.55 \begin{subfigure}{0.49\textwidth}
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.55 \begin{subfigure}{0.49\textwidth}
+                                      
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<parts/Control1dof/img/hinf_integrator_ls.jpg, id=416, 562.1pt x 421.575pt>
+File: parts/Control1dof/img/hinf_integrator_ls.jpg Graphic file (type jpg)
+
+<use parts/Control1dof/img/hinf_integrator_ls.jpg>
+Package pdftex.def Info: parts/Control1dof/img/hinf_integrator_ls.jpg used on i
+nput line 56.
+(pdftex.def)             Requested size: 496.33032pt x 372.24794pt.
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 55--57
+[]\OT1/cmr/m/n/10 0.49 [] 
+ []
+
+
+! LaTeX Error: \begin{figure} on input line 48 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \end{subfigure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Float too large for page by 67.62659pt on input line 61.
+
+) (parts/Control1dof/lqg.tex [30] [31 <./parts/Control1dof/img/hinf_scheme.png>
+ <./parts/Control1dof/img/hinf_shapes.jpg>] [32 <./parts/Control1dof/img/hinf_h
+ankel.jpg>] [33 <./parts/Control1dof/img/hinf_integrator.jpg> <./parts/Control1
+dof/img/hinf_hankel_int.jpg>] [34 <./parts/Control1dof/img/hinf_ls.jpg> <./part
+s/Control1dof/img/hinf_integrator_ls.jpg>]) (parts/Control1dof/adaptive.tex))
+[35
+
+] (parts/Control2dof/main.tex
+Chapter 2.
+) [36
+
+] (parts/Control3dof/main.tex
+Chapter 3.
+) [37
+
+] (parts/Conclusions/main.tex) [38
+
+] (parts/Appendix/main.tex)
+
+LaTeX Warning: Empty bibliography on input line 69.
+
+[39
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
+ (report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: 1BD7611A3CFC39F86E47654B1ACC674C;2992
+(rerunfilecheck)             After:  E6D4A4450FD719E028482716F949AB14;2992.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                report
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'report.run.xml'.
+\openout1 = `report.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
+ ) 
 Here is how much of TeX's memory you used:
- 6057 strings out of 493634
- 87609 string characters out of 3134423
- 176055 words of memory out of 3000000
- 9410 multiletter control sequences out of 15000+200000
- 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 45579 strings out of 493634
+ 1032420 string characters out of 3134423
+ 1286498 words of memory out of 3000000
+ 48107 multiletter control sequences out of 15000+200000
+ 17940 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,0n,32p,241b,38s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 55i,22n,83p,10381b,2147s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{chapter*.43} has been referenced but does not exi
+st, replaced by a fixed one
+
+ <C:\Users\GSavaia\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+tcrm1000.pk><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/GSavaia/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/GSavaia/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Use
+rs/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/GSavaia/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/GSavaia/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/GSava
+ia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/GSavaia/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/GSavaia/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/GS
+avaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.p
+fb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmtt10.pfb><C:/Users/GSavaia/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on report.pdf (42 pages, 1305655 bytes).
+PDF statistics:
+ 561 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
+

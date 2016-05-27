@@ -29,6 +29,37 @@ The controller output of the $H_{\infty}$ design has as many poles as the augmen
 
 \end{figure}
 
-%Confronto con loopshaping.
+The downside of this controller is that it does not have any integral action, but this can be easily fixed by moving the slowest pole (of the controller) to zero. This way we are introducing an integral action without affecting the other properties of the designed controller. In Matlab this can be done by converting the state-space model of the controller into a \emph{zpk} model and by literally editing the slowest pole into zero.\\
 
-Test.
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/hinf_integrator.jpg}
+\caption{Introduction of the integral action into the controller.}
+\end{figure}
+
+Again, we can apply a system reduction to the controller by analizing the singular values of the Hankel matrix. This time the minimum order to get a good approximation is 3.\\
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/hinf_hankel_int.jpg}
+\caption{Singular values of the Hankel matrix for the controller with integral action.}
+\end{figure}
+
+The final controller obtained is not much different from the one designed by loopshaping as it is easy to see by plotting the bode diagrams.
+
+\begin{figure}[H]
+
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\textwidth]{img/hinf_ls.jpg}
+\caption{$H_{\infty}$ without integrator.}
+\end{subfigure}
+
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\textwidth]{img/hinf_integrator_ls.jpg}
+\caption{$H_{\infty}$ with integrator.}
+\end{subfigure}
+
+\caption{Comparison between Loopshaping and $H_{\infty}$.}
+\end{figure}
+
+Test con e senza integratore.
+
+SHUTDOWN

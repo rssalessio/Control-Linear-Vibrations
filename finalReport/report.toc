@@ -1,35 +1,51 @@
-\contentsline {chapter}{\numberline {1}Team introduction}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Experience introduction}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Models}{4}{chapter.3}
-\contentsline {section}{\numberline {3.1}Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}{4}{section.3.1}
-\contentsline {section}{\numberline {3.2}Model2 - no friction cart, no friction motor, no backlash}{5}{section.3.2}
-\contentsline {section}{\numberline {3.3}Model 3 - no friction motor, backlash}{5}{section.3.3}
-\contentsline {section}{\numberline {3.4}Model 4 }{5}{section.3.4}
-\contentsline {section}{\numberline {3.5}2 DOF - Model}{6}{section.3.5}
-\contentsline {chapter}{\numberline {4}System Identification}{7}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Validation cost function}{7}{subsection.4.0.1}
-\contentsline {section}{\numberline {4.1}Open vs Closed loop identification}{8}{section.4.1}
-\contentsline {section}{\numberline {4.2}White box identification}{11}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Detached system: cart and springs identification}{11}{subsection.4.2.1}
-\contentsline {subsubsection}{Experiment description}{11}{section*.2}
-\contentsline {subsubsection}{Experiment analysis}{12}{section*.3}
-\contentsline {subsubsection}{Experiment results}{13}{section*.4}
-\contentsline {paragraph}{Pulsation}{13}{section*.5}
-\contentsline {paragraph}{Cart mass and springs stiffness}{13}{section*.6}
-\contentsline {paragraph}{Damping and damping ratio}{14}{section*.7}
-\contentsline {subsubsection}{Validation}{15}{section*.8}
-\contentsline {subsection}{\numberline {4.2.2}Motor identification}{15}{subsection.4.2.2}
-\contentsline {subsubsection}{Experiment description}{15}{section*.9}
-\contentsline {subsubsection}{Experiment analysis}{16}{section*.10}
-\contentsline {subsubsection}{Experiment results}{16}{section*.11}
-\contentsline {subsection}{\numberline {4.2.3}Overall system identification}{17}{subsection.4.2.3}
-\contentsline {subsubsection}{Experiment description}{17}{section*.12}
-\contentsline {subsubsection}{Experiment analysis}{17}{section*.13}
-\contentsline {subsubsection}{Experiment results}{17}{section*.14}
-\contentsline {section}{\numberline {4.3}Gray box identification}{18}{section.4.3}
-\contentsline {section}{\numberline {4.4}Non-linearities identification}{19}{section.4.4}
-\contentsline {chapter}{\numberline {5}Control of 1 Degree of Freedom}{20}{chapter.5}
-\contentsline {chapter}{\numberline {6}Control of 2 Degree of Freedom}{21}{chapter.6}
-\contentsline {chapter}{\numberline {7}Control of 3 Degree of Freedom}{22}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{23}{chapter.8}
-\contentsline {chapter}{\numberline {9}Appendix}{24}{chapter.9}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\contentsline {chapter}{The team}{ii}{chapter*.2}
+\contentsline {chapter}{Project description}{1}{chapter*.3}
+\contentsline {part}{I\hspace {1em}System modelling}{2}{part.1}
+\contentsline {section}{\numberline {0.1}Motor, Pinion and Rack modelling}{3}{section.1.0.1}
+\contentsline {section}{\numberline {0.2}Carts, Springs and Dampers Modelling}{3}{section.1.0.2}
+\contentsline {section}{\numberline {0.3}1 DOF State Space Model}{3}{section.1.0.3}
+\contentsline {section}{\numberline {0.4}2 DOF State Space Model}{4}{section.1.0.4}
+\contentsline {section}{\numberline {0.5}3 DOF State Space Model}{5}{section.1.0.5}
+\contentsline {part}{II\hspace {1em}System Identification and Filtering}{6}{part.2}
+\contentsline {section}{\numberline {0.1}Validation cost function}{7}{section.2.0.1}
+\contentsline {section}{\numberline {0.2}Open vs Closed loop identification}{8}{section.2.0.2}
+\contentsline {chapter}{\numberline {1}White box identification}{10}{chapter.2.1}
+\contentsline {section}{\numberline {1.1}Detached system: cart and springs identification}{10}{section.2.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Experiment description}{10}{subsection.2.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Experiment analysis}{11}{subsection.2.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Experiment results}{11}{subsection.2.1.1.3}
+\contentsline {paragraph}{Pulsation}{11}{section*.6}
+\contentsline {paragraph}{Cart mass and springs stiffness}{12}{section*.9}
+\contentsline {paragraph}{Damping and damping ratio}{12}{section*.11}
+\contentsline {subsection}{\numberline {1.1.4}Validation}{13}{subsection.2.1.1.4}
+\contentsline {section}{\numberline {1.2}Motor identification}{14}{section.2.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Experiment description}{14}{subsection.2.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Experiment analysis}{15}{subsection.2.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Experiment results}{15}{subsection.2.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Validation}{16}{subsection.2.1.2.4}
+\contentsline {section}{\numberline {1.3}Overall system identification}{17}{section.2.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Experiment results}{17}{subsection.2.1.3.1}
+\contentsline {paragraph}{Pulsation}{17}{section*.19}
+\contentsline {paragraph}{System gain, mass and stiffness}{18}{section*.21}
+\contentsline {paragraph}{Damping and damping ratio}{18}{section*.23}
+\contentsline {subsection}{\numberline {1.3.2}Validation}{18}{subsection.2.1.3.2}
+\contentsline {subsubsection}{Validation 1 DOF}{19}{section*.27}
+\contentsline {subsubsection}{Validation 2 DOF}{19}{section*.29}
+\contentsline {chapter}{\numberline {2}Gray box identification}{21}{chapter.2.2}
+\contentsline {chapter}{\numberline {3}Non-linearities identification}{22}{chapter.2.3}
+\contentsline {section}{\numberline {3.1}Motor cogging identification}{22}{section.2.3.1}
+\contentsline {section}{\numberline {3.2}Motor mechanical static friction}{23}{section.2.3.2}
+\contentsline {chapter}{\numberline {4}State filtering}{24}{chapter.2.4}
+\contentsline {part}{III\hspace {1em}System control}{25}{part.3}
+\contentsline {chapter}{\numberline {1}Control of 1 Degree of Freedom}{26}{chapter.3.1}
+\contentsline {section}{\numberline {1.1}Loopshaping}{26}{section.3.1.1}
+\contentsline {section}{\numberline {1.2}RHP-Zeros Control}{29}{section.3.1.2}
+\contentsline {section}{\numberline {1.3}$H_{\infty }$ control}{30}{section.3.1.3}
+\contentsline {section}{\numberline {1.4}LQG Control}{35}{section.3.1.4}
+\contentsline {section}{\numberline {1.5}Adaptive control}{35}{section.3.1.5}
+\contentsline {chapter}{\numberline {2}Control of 2 Degree of Freedom}{36}{chapter.3.2}
+\contentsline {chapter}{\numberline {3}Control of 3 Degree of Freedom}{37}{chapter.3.3}
+\contentsline {chapter}{Conclusions}{38}{chapter*.44}
+\contentsline {chapter}{Appendix}{39}{chapter*.45}
+\contentsline {chapter}{Bibliography}{39}{chapter*.45}

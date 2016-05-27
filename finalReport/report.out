@@ -1,17 +1,42 @@
-\BOOKMARK [0][-]{chapter.1}{Team introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Experience introduction}{}% 2
-\BOOKMARK [0][-]{chapter.3}{Models}{}% 3
-\BOOKMARK [1][-]{section.3.1}{Model1 - no BEMF,no disk inertia, no friction cart, no friction motor, no backlash}{chapter.3}% 4
-\BOOKMARK [1][-]{section.3.2}{Model2 - no friction cart, no friction motor, no backlash}{chapter.3}% 5
-\BOOKMARK [1][-]{section.3.3}{Model 3 - no friction motor, backlash}{chapter.3}% 6
-\BOOKMARK [1][-]{section.3.4}{Model 4 }{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.5}{2 DOF - Model}{chapter.3}% 8
-\BOOKMARK [0][-]{chapter.4}{System Identification}{}% 9
-\BOOKMARK [1][-]{section.4.1}{Open vs Closed loop identification}{chapter.4}% 10
-\BOOKMARK [1][-]{section.4.2}{White box identification}{chapter.4}% 11
-\BOOKMARK [1][-]{section.4.3}{Black box identification}{chapter.4}% 12
-\BOOKMARK [0][-]{chapter.5}{Control of 1 Degree of Freedom}{}% 13
-\BOOKMARK [0][-]{chapter.6}{Control of 2 Degree of Freedom}{}% 14
-\BOOKMARK [0][-]{chapter.7}{Control of 3 Degree of Freedom}{}% 15
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 16
-\BOOKMARK [0][-]{chapter.9}{Appendix}{}% 17
+\BOOKMARK [0][-]{chapter*.2}{The team}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Project description}{}% 2
+\BOOKMARK [-1][-]{part.1}{I System modelling}{}% 3
+\BOOKMARK [0][-]{section.1.0.1}{Motor, Pinion and Rack modelling}{part.1}% 4
+\BOOKMARK [1][-]{section.1.0.2}{Carts, Springs and Dampers Modelling}{section.1.0.1}% 5
+\BOOKMARK [1][-]{section.1.0.3}{1 DOF State Space Model}{section.1.0.1}% 6
+\BOOKMARK [1][-]{section.1.0.4}{2 DOF State Space Model}{section.1.0.1}% 7
+\BOOKMARK [1][-]{section.1.0.5}{3 DOF State Space Model}{section.1.0.1}% 8
+\BOOKMARK [-1][-]{part.2}{II System Identification and Filtering}{}% 9
+\BOOKMARK [0][-]{section.2.0.1}{Validation cost function}{part.2}% 10
+\BOOKMARK [1][-]{section.2.0.2}{Open vs Closed loop identification}{section.2.0.1}% 11
+\BOOKMARK [0][-]{chapter.2.1}{White box identification}{part.2}% 12
+\BOOKMARK [1][-]{section.2.1.1}{Detached system: cart and springs identification}{chapter.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.1.1}{Experiment description}{section.2.1.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.1.2}{Experiment analysis}{section.2.1.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.1.3}{Experiment results}{section.2.1.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.1.4}{Validation}{section.2.1.1}% 17
+\BOOKMARK [1][-]{section.2.1.2}{Motor identification}{chapter.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.2.1}{Experiment description}{section.2.1.2}% 19
+\BOOKMARK [2][-]{subsection.2.1.2.2}{Experiment analysis}{section.2.1.2}% 20
+\BOOKMARK [2][-]{subsection.2.1.2.3}{Experiment results}{section.2.1.2}% 21
+\BOOKMARK [2][-]{subsection.2.1.2.4}{Validation}{section.2.1.2}% 22
+\BOOKMARK [1][-]{section.2.1.3}{Overall system identification}{chapter.2.1}% 23
+\BOOKMARK [2][-]{subsection.2.1.3.1}{Experiment results}{section.2.1.3}% 24
+\BOOKMARK [2][-]{subsection.2.1.3.2}{Validation}{section.2.1.3}% 25
+\BOOKMARK [0][-]{chapter.2.2}{Gray box identification}{part.2}% 26
+\BOOKMARK [0][-]{chapter.2.3}{Non-linearities identification}{part.2}% 27
+\BOOKMARK [1][-]{section.2.3.1}{Motor cogging identification}{chapter.2.3}% 28
+\BOOKMARK [1][-]{section.2.3.2}{Motor mechanical static friction}{chapter.2.3}% 29
+\BOOKMARK [0][-]{chapter.2.4}{State filtering}{part.2}% 30
+\BOOKMARK [-1][-]{part.3}{III System control}{}% 31
+\BOOKMARK [0][-]{chapter.3.1}{Control of 1 Degree of Freedom}{part.3}% 32
+\BOOKMARK [1][-]{section.3.1.1}{Loopshaping}{chapter.3.1}% 33
+\BOOKMARK [1][-]{section.3.1.2}{RHP-Zeros Control}{chapter.3.1}% 34
+\BOOKMARK [1][-]{section.3.1.3}{H control}{chapter.3.1}% 35
+\BOOKMARK [1][-]{section.3.1.4}{LQG Control}{chapter.3.1}% 36
+\BOOKMARK [1][-]{section.3.1.5}{Adaptive control}{chapter.3.1}% 37
+\BOOKMARK [0][-]{chapter.3.2}{Control of 2 Degree of Freedom}{part.3}% 38
+\BOOKMARK [0][-]{chapter.3.3}{Control of 3 Degree of Freedom}{part.3}% 39
+\BOOKMARK [0][-]{chapter*.44}{Conclusions}{part.3}% 40
+\BOOKMARK [0][-]{chapter*.45}{Appendix}{part.3}% 41
+\BOOKMARK [0][-]{chapter*.45}{Bibliography}{part.3}% 42

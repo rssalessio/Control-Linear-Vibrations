@@ -25,3 +25,4 @@ figure;
 plot(d.t, d.i, 'blue');
 hold on;
 plot(d.t, i_sim, 'red');
+legend('Real', 'Simulated');
