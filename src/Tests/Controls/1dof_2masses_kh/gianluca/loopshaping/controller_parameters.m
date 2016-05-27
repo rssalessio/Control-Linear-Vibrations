@@ -46,7 +46,7 @@ gain = -0.02;
 zero1 = -2.5+10i;
 zero2 = -2.5-10i;
 pole1 = -100;
-gain = -0.01; % TO BE FINE TUNED: LOOKOUT FOR OSCILLATIONS
+gain = -0.03; % TO BE FINE TUNED: LOOKOUT FOR OSCILLATIONS
 
 %Controller
 controller = zpk([zero1 zero2],...
