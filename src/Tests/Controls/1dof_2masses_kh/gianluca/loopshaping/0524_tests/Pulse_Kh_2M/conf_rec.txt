@@ -1,0 +1,6 @@
+# Politecnico di Milano
+# PoliScope V1.1
+
++ # Signals: 5
++ Signals names: Ref, V, I, X1, Noise
++ Sampling frequency [Hz]: 200
