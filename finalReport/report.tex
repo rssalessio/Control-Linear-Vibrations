@@ -13,7 +13,7 @@
 \usepackage{tikz}%drawings and diagrams
 \usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
 \usepackage{chngcntr}
-\counterwithin*{chapter}{part}
+\counterwithin*{section}{chapter}
 \usepackage{siunitx}%phyisical quantities typesettings
 
 \usepackage{multirow}
@@ -97,7 +97,7 @@ Alessio
 \newpage
 \subimport*{parts/Identification/}{main.tex}
 \newpage
-\part{System control}
+%\part{System control}
 \subimport*{parts/Control1dof/}	{main.tex}
 \newpage
 \subimport*{parts/Control2dof/}{main.tex}
