@@ -1,0 +1,34 @@
+-Presententazione e modelli
+-Identificazione
+-Controllo
+
+Scrivere 7 slides l'uno.
+Presentazione e modelli:
+1) Foto del sistema e descrizione
+2) Problemi
+3) Protezioni
+4) Motore pignone e rack
+5) Carrelli e molle e damping
+6) 1-2-3 dof
+7) Validation
+
+Identificazione:
+1)
+2)
+3)
+4)
+5)
+6)
+7)
+
+Controllo:
+1)
+2)
+3)
+4)
+5)
+6)
+7)
+
+Tempo 30 secondi a slide 7x3=21 -> 21x30=500= 10,5 minuti
+Tempo 45 secondi a slide 7x3=21 -> 21x45=945= 15,75 minuti
