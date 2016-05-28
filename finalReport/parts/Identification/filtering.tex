@@ -1,1 +1,21 @@
-\chapter{State filtering}
+\chapter{State filtering and Model Observers}
+During the course of the project the development of a state observer was deemed necessary in order to overcome the following problems:
+\begin{enumerate}
+\item Faulty encoder sensors: the first sensor had some problems with  its string, and the third encoder is broken.
+\item Noisy current sensor, as described in the previous chapter.
+\item State feedback: LQ, Pole Placement, $\cdots$.
+\end{enumerate}
+Since the validated model, using white box techniques, has an overall validation fit of over $80\%$, we can make use of a linear observer, such as Luenberger's Observer or the Kalman Filter. In both cases we can model them as:
+\begin{equation}
+\dot{\hat{x}} = A \hat{x}+Bu + L(y-C\hat{x})
+\end{equation}
+Where $L$ in case of the Luenberger Observer is chosen such that $A-LC$ has eigenvalues that are $10$ times faster than the eigenvalues of the system. The Kalman Filter chosen $L$ optimally (in a $L_2$ sense) by solving the Riccati's equation. Notice that $u$ is the input voltage to the motor.\\\\
+Both were tested, though a first implementation issue was the conversion of the observer to a discrete model, because of some problem with the Arduino Board in case we were using the continuous model. The model was formulated in continuous time and then discretised using a zero-order hold.\\ \\
+The following tests were done in order to validate the efficiency of the observer:
+\begin{enumerate}
+\item Estimate of the current using only the first encoder.
+\item Estimate of the carts position (all 3 degree of freedom) using only the current.
+\item Estimate of the carts position (second and third cart) using only the current and the data from the first encoder.
+\item Estimate of the second and third carts position using only the data from the first encoder. This was done with two different settings (different masses, different springs order).
+\end{enumerate}
+Overall the observer works as intended with accurate precision. Again, in table ... results are shown using the distance function defined at the beginning of this part.

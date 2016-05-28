@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt,a4paper,titlepage]{report}
 
 \usepackage[margin=0.7in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \usepackage{chngcntr}
 \counterwithin*{chapter}{part}
 \usepackage{siunitx}%phyisical quantities typesettings
-	\usepackage{blkarray}
+
 \usepackage{multirow}
 \usepackage[section]{placeins}
 \usepackage{subfig}
@@ -25,7 +25,10 @@
 \DeclareMathOperator{\sign}{sign}
 
   
-\titlepic{\vspace{4cm} \includegraphics[width=0.3\textwidth]{img/logo.png}}
+\titlepic{
+Alessio
+\vspace{4cm} \includegraphics[width=0.3\textwidth]{img/logo.png}
+}
 
 
 \author{Alessio Russo, Gianluca Savaia, Alberto Ficicchia}
@@ -37,13 +40,53 @@
 
 
 
-
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\pagestyle{fancy}% Change page style to fancy
+\fancyhf{}% Clear header/footer
+\fancyhead[LE,RO]{\nouppercase{\rightmark}}
+\fancyhead[RE,LO]{\nouppercase{\leftmark}}
+\fancyfoot[CE,CO]{\small{Automation and Control Laboratory - Politecnico di Milano - Alessio R., Gianluca S., Alberto F.}}
+\fancyfoot[LE,RO]{\thepage}
+ 
+\renewcommand{\headrulewidth}{0.7pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.7pt}% Default \footrulewidth is 0pt
 
 
 
 \begin{document}
 \pagenumbering{roman}
-\maketitle
+\begin{titlepage}
+
+\centering		
+\vspace{3cm}
+%\rule{\textwidth}{1pt}
+\begin{figure}[!h]
+\centering
+  \includegraphics[scale=0.7]{img/logo.png} 
+\end{figure}
+\rule{\textwidth}{1pt}
+ \par 
+\vspace{2cm}
+{\Large\bfseries Politecnico di Milano \par}
+{\Large\bfseries Automation and Control Engineering\par}
+\vspace{2cm}
+{\Large\bfseries Automation and Control Laboratory\par}
+{\huge\bfseries Control of Linear Vibrations\par}
+\vspace{0.3cm}
+{\large\scshape Alessio Russo, Gianluca Savaia, Alberto Ficicchia\par}
+\vspace{0.3cm}
+{\scshape Academic Year 2015/2016\par}
+\vspace{3.5cm}
+\hspace{12cm}
+{ Prof. Facchinetti A.\par}
+\hspace{11cm}
+{ Dr. Costa A.\par}
+\hspace{11.5cm}
+{ Dr. Giussani M.\par}
+\hspace{11.1cm}
+{ Dr. Izardi M.\par}
+\rule{\textwidth}{1pt}
+\end{titlepage}
 \tableofcontents
 
 \subimport*{parts/Team/}{main.tex}
