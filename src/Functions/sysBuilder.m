@@ -1,5 +1,22 @@
-function [sysSS] = sysBuilder( nLoad, springType)
-
+function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
+%
+% Eg: sysBuilder([1,2], ['l','h'], {'i','x1'} defines a system with two
+% carts. the first one with1  load of 0.493kg, the second one with a  load
+% of 2*0.493kg. The first spring is Kl. The second one is Kh. The outputs
+% of the system (the sensors) are the current and the position of the first
+% cart
+% sensors available: i, x1, x2
+% not available: x3,v1,v2,v3.
+    
+    for j=1:length(Outputs)
+       if (strcmp(Outputs(j),'v1') | ...
+           strcmp(Outputs(j),'v2') | ...
+           strcmp(Outputs(j),'v3') | ...
+           strcmp(Outputs(j),'x3'))
+           disp('Sensors not available!');
+           return
+       end
+    end
   
     
     R = ureal('R',1.26,'PlusMinus',0.1);
@@ -89,7 +106,7 @@ function [sysSS] = sysBuilder( nLoad, springType)
     %% State space initialization
     B = zeros(1+nDOF*2,1);
     %D= zeros(1+2*nDOF,1);
-    D=zeros(nDOF,1);
+    D=zeros(length(Outputs),1);
     %% C Matrix
 %     Cy(1,1) = 1/L;
 %     for i=1:nDOF
@@ -99,9 +116,38 @@ function [sysSS] = sysBuilder( nLoad, springType)
 %         Cy(i,i)=0;
 %     end
 
-    for i=1:nDOF
+    for i=1:length(Outputs)
         Cy(i,1:1+2*nDOF)=0;
-        Cy(i,i+1)=1;
+        switch char(Outputs(i))
+            case 'i'
+                Cy(i, 1) = 1;
+            case 'x1'
+                if (nDOF >= 1)
+                    Cy(i, 2) = 1;
+                end
+            case 'x2'
+                if (nDOF >= 2)
+                    Cy(i, 3) = 1;
+                end
+            case 'x3'
+                if (nDOF == 3)
+                    Cy(i, 4) = 1;
+                end
+            case 'v1'
+                if (nDOF >= 1)
+                    Cy(i, 1+nDOF+1) = 1;
+                end
+            case 'v2'
+                if (nDOF >= 2)
+                    Cy(i, 1+nDOF+2) = 1;
+                end
+            case 'v3'
+                if (nDOF == 3)
+                    Cy(i, 1+nDOF+3) = 1;
+                end
+            otherwise
+                disp('Outputs error');
+        end
     end
     
     %% B Matrix
