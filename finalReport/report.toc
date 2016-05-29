@@ -37,14 +37,14 @@
 \contentsline {section}{\numberline {5.1}Motor cogging identification}{22}{section.5.1}
 \contentsline {section}{\numberline {5.2}Motor mechanical static friction}{23}{section.5.2}
 \contentsline {chapter}{\numberline {6}State filtering and Model Observers}{24}{chapter.6}
-\contentsline {chapter}{\numberline {7}Control of 1 Degree of Freedom}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Loopshaping}{25}{section.7.1}
-\contentsline {section}{\numberline {7.2}RHP-Zeros Control}{27}{section.7.2}
-\contentsline {section}{\numberline {7.3}$H_{\infty }$ control}{28}{section.7.3}
-\contentsline {section}{\numberline {7.4}LQG Control}{31}{section.7.4}
-\contentsline {section}{\numberline {7.5}Adaptive control}{31}{section.7.5}
-\contentsline {chapter}{\numberline {8}Control of 2 Degree of Freedom}{32}{chapter.8}
-\contentsline {chapter}{\numberline {9}Control of 3 Degree of Freedom}{33}{chapter.9}
-\contentsline {chapter}{Conclusions}{34}{chapter*.49}
-\contentsline {chapter}{Appendix}{35}{chapter*.50}
-\contentsline {chapter}{Bibliography}{35}{chapter*.50}
+\contentsline {chapter}{\numberline {7}Control of 1 Degree of Freedom}{26}{chapter.7}
+\contentsline {section}{\numberline {7.1}Loopshaping}{26}{section.7.1}
+\contentsline {section}{\numberline {7.2}RHP-Zeros Control}{28}{section.7.2}
+\contentsline {section}{\numberline {7.3}$H_{\infty }$ control}{29}{section.7.3}
+\contentsline {section}{\numberline {7.4}LQG Control}{32}{section.7.4}
+\contentsline {section}{\numberline {7.5}Adaptive control}{32}{section.7.5}
+\contentsline {chapter}{\numberline {8}Control of 2 Degree of Freedom}{33}{chapter.8}
+\contentsline {chapter}{\numberline {9}Control of 3 Degree of Freedom}{34}{chapter.9}
+\contentsline {chapter}{Conclusions}{35}{chapter*.50}
+\contentsline {chapter}{Appendix}{36}{chapter*.51}
+\contentsline {chapter}{Bibliography}{36}{chapter*.51}

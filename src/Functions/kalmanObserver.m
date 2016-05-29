@@ -12,7 +12,8 @@ function [Obs,Q,R,P,L] = kalmanObserver(nLoad, springType, inputs)
     Q = eye(1+2*nDOF)*stateNoiseVar;
     R = eye(length(inputs));
     
-    minSVD=min(svd(obsv(Obs.a,Obs.c)));
+    obsM=obsv(Obs.a,Obs.c);
+    minSVD=min(svd(obsM));
     disp(['Minimum singular value of the observability matrix:' , num2str(minSVD)]);
     if( minSVD<1e-4)
         disp('Notice, system nearly not observable!');

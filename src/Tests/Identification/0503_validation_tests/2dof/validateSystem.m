@@ -3,29 +3,29 @@ function [] = validateSystem()
 clc; clear all; close all;
 c=[];
   cd KhKm-1M-1M
-     c=[c;testDirectory(sysBuilder([1,1],['h','m']))];
+     c=[c;testDirectory(sysBuilder([1,1],['h','m'], {'i','x1','x2'}))];
  cd ..
 
 
 cd KhKm-noM-2M
-    c=[c;testDirectory(sysBuilder([0,2],['h','m']))];
+    c=[c;testDirectory(sysBuilder([0,2],['h','m'], {'i','x1','x2'}))];
 cd ..
 
 cd KhKm-noM-noM
-    c=[c;testDirectory(sysBuilder([0,0],['h','m']))];
+    c=[c;testDirectory(sysBuilder([0,0],['h','m'], {'i','x1','x2'}))];
 cd ..
     
  cd KlKh-1M-2M
-    c=[c;testDirectory(sysBuilder([1,2],['l','h']))];
+    c=[c;testDirectory(sysBuilder([1,2],['l','h'], {'i','x1','x2'}))];
  
  cd ..
 
 cd KlKh-noM-2M
-   c=[c;testDirectory(sysBuilder([0,2],['l','h']))];
+   c=[c;testDirectory(sysBuilder([0,2],['l','h'], {'i','x1','x2'}))];
 cd ..
 
 cd KlKh-noM-noM
-    c=[c;testDirectory(sysBuilder([0,0],['l','h']))];
+    c=[c;testDirectory(sysBuilder([0,0],['l','h'], {'i','x1','x2'}))];
 cd ..
     mean(c)
     std(c)

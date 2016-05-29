@@ -19,7 +19,7 @@ function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
     end
   
     
-    R = ureal('R',1.26,'PlusMinus',0.1);
+    R = ureal('R',1.4,'PlusMinus',0.1);
     L = ureal('L', 0.0024, 'Percentage', [-5,5]);
     Gamma=ureal('Gamma',-206.8, 'Percentage', [-10,10]);
     

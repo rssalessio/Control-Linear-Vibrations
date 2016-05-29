@@ -13,9 +13,26 @@ Where $L$ in case of the Luenberger Observer is chosen such that $A-LC$ has eige
 Both were tested, though a first implementation issue was the conversion of the observer to a discrete model, because of some problem with the Arduino Board in case we were using the continuous model. The model was formulated in continuous time and then discretised using a zero-order hold.\\ \\
 The following tests were done in order to validate the efficiency of the observer:
 \begin{enumerate}
-\item Estimate of the current using only the first encoder.
 \item Estimate of the carts position (all 3 degree of freedom) using only the current.
 \item Estimate of the carts position (second and third cart) using only the current and the data from the first encoder.
-\item Estimate of the second and third carts position using only the data from the first encoder. This was done with two different settings (different masses, different springs order).
+\item Estimate of the second and third carts position using only the data from the first encoder. 
 \end{enumerate}
-Overall the observer works as intended with accurate precision. Again, in table ... results are shown using the distance function defined at the beginning of this part.
+Regarding the first tests the first thing to notice is that the system is unobservable. In fact, by measuring only the current we cannot extract the system dynamics, thus results are identical to those extracted by the validation tests. \\ \\
+The second and third tests (figure \ref{fig:kalman_valid}) were done in order to measure how much improves the estimate the fact that we measure the current in the second test. For sure measuring also the current \emph{makes} the system more observable, in fact the minimum singular value of the observability matrix is about $0.16$, whilst if we measure only the position of the first cart the minimum singular value is $0.03$. But, this is not an indication that the current improves the estimate. In fact, as told before, the motor  has dynamics much faster than those of the carts, therefore we can't say much using only the current.\\Because of that the results of the two tests are almost identical, the only benefit of measuring also the current is that the Kalman filter is less ill-conditioned (because the observability matrix is less conditioned).\\ \\
+In the first case we obtain:
+$$d(x_{2,kalman},x_{2,real}) = 0.918, \frac{||x_{2,real}-x_{2,kalman}||_{\infty}}{||x_{2,real}||_{\infty}}=0.181$$
+In the second one:
+$$d(x_{2,kalman},x_{2,real}) = 0.912, \frac{||x_{2,real}-x_{2,kalman}||_{\infty}}{||x_{2,real}||_{\infty}}=0.187$$
+Where $d(x,y)$ is the distance function used in this project, and $\frac{||x_{r}-x_{k}||_{\infty}}{||x_{r}||_{\infty}}$ it's a measure of the relative error. As previously explained, results are almost identical.
+\begin{figure} [!h]
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/filtering_khlm_021m_x1i_to_x2.png}
+\caption{Estimate of the second cart position using $i,x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.}
+\end{minipage}
+\hspace{\fill}
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{img/filtering_khlm_021m_x1_to_x2.png}
+\caption{Estimate of the second cart position using $x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.}
+\end{minipage}
+\label{fig:kalman_valid}
+\end{figure}
