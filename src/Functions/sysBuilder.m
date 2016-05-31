@@ -7,6 +7,8 @@ function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
 % cart
 % sensors available: i, x1, x2
 % not available: x3,v1,v2,v3.
+
+
     
     for j=1:length(Outputs)
        if (strcmp(Outputs(j),'v1') | ...
@@ -19,7 +21,7 @@ function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
     end
   
     
-    R = ureal('R',1.4,'PlusMinus',0.1);
+    R = ureal('R',1.3,'PlusMinus',0.1);
     L = ureal('L', 0.0024, 'Percentage', [-5,5]);
     Gamma=ureal('Gamma',-206.8, 'Percentage', [-10,10]);
     
