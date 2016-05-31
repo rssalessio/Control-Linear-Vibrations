@@ -1,72 +1,49 @@
 clear all, close all
 
-M = 1.35-0.493*2;
+[plant, dof] = sysBuilder([2,2], ['l', 'h'], {'x1', 'x2'});
+plant = ss(plant);
 
-%motor
-R = 1.3;%resistance 
-L = 0.0220; %inductance 
-Ke = -1.0000e+05; %electric stiffness and torque constant
+damp(plant)/2/pi
 
-%spring
-Ch = 9; %spring damping
-Cm = 6; 
-Cl = 8;
+%% Design Controller
+plant_design = plant(2,1);
 
-Kh = 625; %Stiffness high
-Km = 281; %Stiffness Med
-Kl = 162; %Stifness low
+% % MED-LOW
+% w = 0.3;
+% Ws = tf(makeweight(10, 2*pi*w, 0.9));
+% Wt = tf(makeweight(0.9, 2*pi*w, 10));
+% Wk = tf(makeweight(0.9, 2*pi*w, 5));
 
-c1 = Cl;
-c2 = Cm;
-k1 = Kl;
-k2 = Km;
+% LOW-HIGH
+w = 0.5;
+Ws = tf(makeweight(20, 2*pi*w, 0.9));
+Wt = tf(makeweight(0.9, 2*pi*w, 20));
+Wk = tf(makeweight(0.9, 2*pi*w, 20));
 
-A = [0          1          0           0;
-    -(k1+k2)/M  -(c1+c2)/M k2/M        c2/M;
-    0           0          0           1;
-    k2/M        c2/M       -k2/M       -c2/M];
+[Hinf, CL, GAM, INFO] = mixsyn(plant_design, Ws, Wk, Wt);
 
-B = [0; 1; 0; 0];
-C = [1 0 0 0;
-     0 0 1 0];
-D = zeros(2,1);
+figure; margin(series(Hinf, plant_design)); grid;
+figure; bodemag(feedback(series(Hinf,plant_design), 1)); grid; title('T');
+figure; step(feedback(series(Hinf,plant_design), 1))
 
-carts = ss(A,B,C,D);
-carts.StateName = {'x1', 'x1d', 'x2', 'x2d'};
-motor = ss(tf(1, [L R]));
-motor.StateName = {'i'};
+%% Integrator
+Hinf_zpk = zpk(Hinf);
+[min,ind] = min(Hinf_zpk.p{1});
+Hinf_zpk.p{1} = [Hinf_zpk.p{1}(1:ind-1); 0; Hinf_zpk.p{1}(ind+1:8)];
 
-plant = series(motor, carts);
-plant_tf = tf(plant(2,1));
+figure; hold on;
+bode(Hinf); bode(Hinf_zpk); legend('Hinf', 'Hinf_integrator');
 
-%% controller design
-s = tf('s');
-ctrl = 500/s;
-%ctrl = 9.2389*(s^2-19.04*s+100.6)/(s*(s+100));
+Hinf = ss(Hinf_zpk);
 
-ol = ctrl*plant_tf;
-figure; bode(ol); grid;
-pole( feedback(ol,1) );
-%% position loop design
-% High
-Ws = tf(makeweight(10, 2*pi*1, 0.9));
-Wt = tf(makeweight(0.9, 2*pi*1, 10));
-Wk = 100*tf(makeweight(0.9, 2*pi*1, 10));
+%% Reduce
+Hinf_red = reduce(Hinf, 5);
 
-[Hinf, CL, GAM, INFO] = mixsyn(plant, Ws, Wk, Wt);
+figure; hold on;
+bode(Hinf); bode(Hinf_red); legend('Hinf', 'Hinf reduced');
 
-% figure; margin(series(Hinf,plant)); grid;
-% figure; pzplot(Hinf); grid;
-% figure; bodemag(1/(1+series(Hinf,plant))); title('S'), grid;
-% figure; bodemag(Hinf/(1+series(Hinf,plant))); title('K'), grid;
+Hinf = ss(Hinf_red);
+figure; step(feedback(series(Hinf,plant_design), 1))
 
-
-% Hinf_zpk = zpk(Hinf);
-% 
-% Hinf_zpk.p{1} = Hinf_zpk.p{1}(2:5);
-% Hinf_zpk.p{1} = Hinf_zpk.z{1}(1:3);
-% 
-% Hinf_red = reduce(Hinf, 3);
-% figure; pzplot(Hinf_red); grid;
- Hinf = reduce(Hinf, 3);
-
+%% Stabilization Hinf
+figure; rlocus(Hinf);

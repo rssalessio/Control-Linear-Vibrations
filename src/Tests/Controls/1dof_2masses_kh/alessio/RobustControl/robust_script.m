@@ -1,8 +1,8 @@
-G=sysBuilder(2,'l');
+G=sysBuilder(2,'l',{'i','x1'});
 
 C =  ltiblock.pid('C','pid');
 AP = AnalysisPoint('dLoad');
-CL0 = feedback(AP*G*C,1);
+CL0 = feedback(AP*G(2)*C,1);
 CL0.InputName = 'r';
 CL0.OutputName = 'x';
 
@@ -31,6 +31,6 @@ s=tf('s');
 C=Kp+Ki/s+Kd*s/(Tf*s+1);
 
 figure;
-bode(C*sysBuilder(2,'l')); hold on;
-bode(C*sysBuilder(2,'m')); hold on;
-bode(C*sysBuilder(2,'h')); hold on;
+bode(C*sysBuilder(2,'l',{'i','x1'})); hold on;
+bode(C*sysBuilder(2,'m',{'i','x1'})); hold on;
+bode(C*sysBuilder(2,'h',{'i','x1'})); hold on;
