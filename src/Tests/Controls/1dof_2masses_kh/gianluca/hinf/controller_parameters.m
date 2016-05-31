@@ -54,17 +54,17 @@ figure(2); margin(series(Hinf,plant)); grid; title('L(s)');
 
 
 %% Insert Integrator
-% Hinf_zpk = zpk(Hinf);
-% Hinf_zpk.p{1} = [Hinf_zpk.p{1}(1); 0; Hinf_zpk.p{1}(3:6)];
-% Hinf_zpk.k = Hinf_zpk.k;
-% 
-% figure(1); hold on; bode(Hinf_zpk); grid;
-% legend('Hinf', 'Hinf + Integrator');
-% 
-% Hinf = ss(Hinf_zpk);
-% 
-% %% Reduce Controller
-% Hinf = reduce(Hinf, 3);
-% bodemag(Hinf);
-% tf(Hinf)
+Hinf_zpk = zpk(Hinf);
+Hinf_zpk.p{1} = [Hinf_zpk.p{1}(1); 0; Hinf_zpk.p{1}(3:6)];
+Hinf_zpk.k = Hinf_zpk.k;
+
+figure(1); hold on; bode(Hinf_zpk); grid;
+legend('Hinf', 'Hinf + Integrator');
+
+Hinf = ss(Hinf_zpk);
+
+%% Reduce Controller
+Hinf = reduce(Hinf, 3);
+%bodemag(Hinf);
+tf(Hinf)
 
