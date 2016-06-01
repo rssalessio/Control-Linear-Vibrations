@@ -8,26 +8,27 @@ dat = iddata(i,v, 1/200);
 
 sys=tfest(dat,3);
 
-hold on; lsim(sys,v,t);
+hold on; plot(t, lsim(sys,v,t));
 [t,v,i,x]=reads();
 v=v(1:2000);
 i=i(1:2000);
 alpha=1;
 step=1e-2;
-for j = 1: 1000
-    index= abs(v) < alpha;
-   k=isWhite(i(index),0.01, 1,'') 
-   if (k ==1)
-       break;
-   else
-       alpha=alpha-step;
-   end
-end
-alpha
-while(isWhite(i(abs(i)<0.05),0.1, 1,'') ==0)
-    
-    
-end
+
+% for j = 1: 1000
+%     index= abs(v) < alpha;
+%    k=isWhite(i(index),0.01, 1,'') 
+%    if (k ==1)
+%        break;
+%    else
+%        alpha=alpha-step;
+%    end
+% end
+% alpha
+% while(isWhite(i(abs(i)<0.05),0.1, 1,'') ==0)
+%     
+%     
+% end
 alpha=0.06;
 
 index=abs(i) < 0.06;

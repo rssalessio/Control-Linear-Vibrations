@@ -29,7 +29,8 @@ Where $c \in \mathbb{R}$ needs to be identified. For this purpose, notice that i
   \caption{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right  we can see the effect on the position of the cart.}
     \label{fig:curposvolt}
 \end{figure}
-Running this test gives an approximate value of $c \approx 0.35$ \SI{}{\volt}. The simulated current, using the parameters identified for the motor, is shown in figure \ref{fig:deadzone_sim}. Moreover, using the cost function  mentioned at the beginning of this part, we obtain a fit value of $0.89$ on the validation data (done using a different sinusoid).
+Running this test gives an approximate value of $c \approx 0.35$ \SI{}{\volt}. The simulated current, using the parameters identified for the motor, is shown in figure \ref{fig:deadzone_sim}. Moreover, using the cost function  mentioned at the beginning of this part, we obtain a fit value of $0.89$ on the validation data (done using a different sinusoid). \\ \\
+Instead if we minimise a least squares problem $J = \frac{1}{2} \sum_{t=0}^T (i_{sim}(t) -i_{real}(t))^2$, using the \emph{Genetic Algorithm} implemented in Matlab, gives a value of $c =0.4621$.
   \begin{figure}[!h]
   \centering
   \includegraphics[width=0.5\textwidth]{img/deadzone3.png}
