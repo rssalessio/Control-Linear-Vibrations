@@ -10,11 +10,13 @@ close all
 cd Saturazione_dcbus12
     [t,v,i,x]=reads();
     up12 = max(i);
-    sigma_up = var (i);
+    sigma_up = var (i);    
     figure;plot(i);
+    xlabel('Time [s]'); ylabel('Current [A]'); title('Positive maximum current');
     down12 = mean(i(i<-10.5));
     sigma_down = var (i(i<-10.5));
     figure;plot(i(i<-10.5));
+    xlabel('Time [s]'); ylabel('Current [A]'); title('Negative maximum current');
 cd ..
 
 % cd Saturazione_dcbus24

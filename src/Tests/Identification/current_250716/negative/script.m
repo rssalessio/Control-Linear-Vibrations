@@ -1,5 +1,6 @@
 
 [t,i]=reads();
+plot(t,i);
 xlabel('Time [s]'); ylabel('Current [A]'); title('Motor current test');
 index1 = 1:5*200;
 index2 = 10.5*200:14*200;
