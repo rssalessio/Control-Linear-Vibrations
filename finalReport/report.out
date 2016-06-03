@@ -1,41 +1,46 @@
 \BOOKMARK [0][-]{chapter*.3}{The team}{}% 1
-\BOOKMARK [0][-]{chapter*.4}{Project description}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Linear system modelling}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Motor, Pinion and Rack modelling}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Carts, Springs and Dampers Modelling}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{1 DOF State Space Model}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.4}{2 DOF State Space Model}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.5}{3 DOF State Space Model}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Introduction}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Validation cost function}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Open vs Closed loop identification}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{White box identification}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Detached system: cart and springs identification}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.1.1}{Experiment description}{section.3.1}% 14
-\BOOKMARK [2][-]{subsection.3.1.2}{Experiment analysis}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.3}{Experiment results}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.4}{Validation}{section.3.1}% 17
-\BOOKMARK [1][-]{section.3.2}{Motor identification}{chapter.3}% 18
-\BOOKMARK [2][-]{subsection.3.2.1}{Experiment description}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.2}{Experiment analysis}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.3}{Experiment results}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.4}{Validation}{section.3.2}% 22
-\BOOKMARK [1][-]{section.3.3}{Overall system identification}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.1}{Experiment results}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.2}{Validation}{section.3.3}% 25
-\BOOKMARK [0][-]{chapter.4}{Gray box identification}{}% 26
-\BOOKMARK [0][-]{chapter.5}{Non-linearities identification}{}% 27
-\BOOKMARK [1][-]{section.5.1}{Motor cogging identification}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{Motor mechanical static friction}{chapter.5}% 29
-\BOOKMARK [0][-]{chapter.6}{State filtering and Model Observers}{}% 30
-\BOOKMARK [0][-]{chapter.7}{Control of 1 Degree of Freedom}{}% 31
-\BOOKMARK [1][-]{section.7.1}{Loopshaping}{chapter.7}% 32
-\BOOKMARK [1][-]{section.7.2}{RHP-Zeros Control}{chapter.7}% 33
-\BOOKMARK [1][-]{section.7.3}{H control}{chapter.7}% 34
-\BOOKMARK [1][-]{section.7.4}{LQG Control}{chapter.7}% 35
-\BOOKMARK [1][-]{section.7.5}{Adaptive control}{chapter.7}% 36
-\BOOKMARK [0][-]{chapter.8}{Control of 2 Degree of Freedom}{}% 37
-\BOOKMARK [0][-]{chapter.9}{Control of 3 Degree of Freedom}{}% 38
-\BOOKMARK [0][-]{chapter*.50}{Conclusions}{}% 39
-\BOOKMARK [0][-]{chapter*.51}{Appendix}{}% 40
-\BOOKMARK [0][-]{chapter*.51}{Bibliography}{}% 41
+\BOOKMARK [0][-]{chapter.1}{Project description}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Issues}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.1}{Motor saturation}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{Current noise}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{Encoder signal}{section.1.1}% 6
+\BOOKMARK [1][-]{section.1.2}{System protection}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Linear system modelling}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Motor, Pinion and Rack modelling}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Carts, Springs and Dampers Modelling}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{1 DOF State Space Model}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{2 DOF State Space Model}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{3 DOF State Space Model}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Introduction}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Validation cost function}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Open vs Closed loop identification}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{White box identification}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Detached system: cart and springs identification}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.1.1}{Experiment description}{section.4.1}% 19
+\BOOKMARK [2][-]{subsection.4.1.2}{Experiment analysis}{section.4.1}% 20
+\BOOKMARK [2][-]{subsection.4.1.3}{Experiment results}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.4}{Validation}{section.4.1}% 22
+\BOOKMARK [1][-]{section.4.2}{Motor identification}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.2.1}{Experiment description}{section.4.2}% 24
+\BOOKMARK [2][-]{subsection.4.2.2}{Experiment analysis}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.3}{Experiment results}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.4}{Validation}{section.4.2}% 27
+\BOOKMARK [1][-]{section.4.3}{Overall system identification}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Experiment results}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.2}{Validation}{section.4.3}% 30
+\BOOKMARK [0][-]{chapter.5}{Gray box identification}{}% 31
+\BOOKMARK [0][-]{chapter.6}{Non-linearities identification}{}% 32
+\BOOKMARK [1][-]{section.6.1}{Motor cogging identification}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.2}{Motor mechanical static friction}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{State filtering and Model Observers}{}% 35
+\BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 36
+\BOOKMARK [1][-]{section.8.1}{Loopshaping}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.2}{RHP-Zeros Control}{chapter.8}% 38
+\BOOKMARK [1][-]{section.8.3}{H control}{chapter.8}% 39
+\BOOKMARK [1][-]{section.8.4}{LQG Control}{chapter.8}% 40
+\BOOKMARK [1][-]{section.8.5}{Adaptive control}{chapter.8}% 41
+\BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 42
+\BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 43
+\BOOKMARK [0][-]{chapter*.50}{Conclusions}{}% 44
+\BOOKMARK [0][-]{chapter*.51}{Appendix}{}% 45
+\BOOKMARK [0][-]{chapter*.51}{Bibliography}{}% 46
