@@ -1,5 +1,7 @@
 clear all, close all
 
+load kalman;
+
 [plant, dof] = sysBuilder([2,2], ['l', 'h'], {'x1', 'x2'});
 plant = ss(plant);
 
@@ -9,10 +11,10 @@ damp(plant)/2/pi
 plant_design = plant(2,1);
 
 % % MED-LOW
-w = 0.8;
+w = 0.5;
 Ws = tf(makeweight(10, 2*pi*w, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*w, 10));
-Wk = tf(makeweight(0.9, 2*pi*w, 7));
+Wk = tf(makeweight(0.9, 2*pi*w, 5));
 
 % LOW-HIGH
 % w = 0.5;
