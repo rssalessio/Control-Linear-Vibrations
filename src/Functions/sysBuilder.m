@@ -122,7 +122,7 @@ function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
         Cy(i,1:1+2*nDOF)=0;
         switch char(Outputs(i))
             case 'i'
-                Cy(i, 1) = 1;
+                Cy(i, 1) = 1/L;
             case 'x1'
                 if (nDOF >= 1)
                     Cy(i, 2) = 1;
