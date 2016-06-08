@@ -2,12 +2,12 @@
 
 \section{Non-linear gain}
 As previously mentioned the motor has shown its non-linear behaviour in some occasions, especially for the control of 2-DOF. \\
-During the initial identification stage it was observed that the gain of the motor, i.e.: $\frac{1}{R}$ was input-varying, therefore non-linear. This was not seem as a problem, since it is a type of non-linearity whose sector is $[\alpha, \beta]$ with $\alpha > 0, \beta <M < \infty, M \in \mathbb{R}$. Therefore with a high-gain feedback loop, simply with an integrator, it's possible to linearise this effect. Indeed it worked, but for 2 and 3 degree of freedom it was deemed necessary to model this effect to improve performances.\\ \\
-Obviously, since the poles of the motor is not changing  it means that either $\frac{R}{L}$ is a constant, or that $R$ is constant and the motor can be modelled as:
+During the initial identification stage it was observed that the gain of the motor, i.e.: $\frac{1}{R}$ was input-varying, therefore non-linear. This was not seem as a problem, since it is a type of non-linearity whose sector is $[\alpha, \beta]$ with $\alpha > 0, \beta <M < \infty, M \in \mathbb{R}$. Therefore with a high-gain feedback loop, simply with an integrator, it's possible to linearise this effect. Indeed it worked out, but for 2 and 3 degree of freedom it was deemed necessary to model this effect to improve performances.\\ \\
+Obviously, since the poles of the motor is not changing  it means that either $\frac{R}{L}$ is a constant, with $R,L$ varying at the same velocity, which seems improbable, or that there is a non-linear gain that can be modelled as:
 \begin{equation}
 i(s)=M(s)g(v(t))v(t)
 \end{equation}
-Where $g: \mathbb{R} \to \mathbb{R}, \frac{dg}{dv} \in [\alpha, \beta]$.
+Where $M(s)$ is the standard linear form of the motor, as previously presented, and $g: \mathbb{R} \to \mathbb{R}, \frac{dg}{dv} \in [\alpha, \beta]$.
 
 Moreover, it seems to be a function with different behaviour for $v>0,v<0$. blabla...
 
