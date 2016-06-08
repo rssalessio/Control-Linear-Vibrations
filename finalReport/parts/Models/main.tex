@@ -1,14 +1,86 @@
 
 %\part{System modelling}
 \chapter{Linear system modelling}
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[every node/.style={draw,outer sep=0pt,thick}]
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+\tikzstyle{damper}=[thick,decoration={markings,  
+  mark connection node=dmp,
+  mark=at position 0.5 with 
+  {
+    \node (dmp) [thick,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+    \draw [thick] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$);
+    \draw [thick] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);
+  }
+}, decorate]
+\tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=0.75cm,minimum height=0.3cm]
+\begin{scope}[xshift=7cm]
+\node (M) [minimum width=1cm, minimum height=2.5cm] {$M_1$};
+
+\node (ground) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M.south) {};
+\draw (ground.north east) -- (ground.north west);
+\draw [thick] (M.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (M.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+\node (wall) [ground, rotate=-90, minimum width=1cm,yshift=-3cm, xshift=-0.5cm] {};
+\draw (wall.north east) -- (wall.north west);
+
+\draw [spring] (wall.140pt) -- ($(M.north west)!(wall.140pt)!(M.south west)$) node [draw=none,midway,above=0.3cm] {$k_1$};
+\draw [damper] (wall.30pt) -- ($(M.north west)!(wall.30pt)!(M.south west)$) node [draw=none,midway,below=0.3cm] {$c_1$};
+
+
+\draw[->]  (M.north) -- ++ (0,0.5cm) -- +(0.5cm,0) node [draw=none, midway,above=0.1cm](x1){$x_1$};
+
+
+\node (M2) [minimum width=1cm, minimum height=2.5cm, right= 2cm of {$(M)!0.5!(M)$}] {$M_2$};
+\node (ground2) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M2.south) {};
+\draw (ground2.north east) -- (ground2.north west);
+\draw [thick] (M2.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (M2.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+\draw [spring] ($(M.north east)!(wall.140pt)!(M.south east)$) -- ($(M2.north west)!(wall.140pt)!(M2.south west)$) node [draw=none,midway,above=0.3cm] {$k_2$};
+\draw [damper] ($(M.north east)!(wall.30pt)!(M.south east)$) -- ($(M2.north west)!(wall.30pt)!(M2.south west)$) node [draw=none,midway,below=0.3cm] {$c_2$};
+
+
+\node (M3) [minimum width=1cm, minimum height=2.5cm, right= 2cm of {$(M2)!0.5!(M2)$}] {$M_3$};
+\node (ground3) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M3.south) {};
+\draw (ground3.north east) -- (ground3.north west);
+\draw [thick] (M3.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (M3.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+\draw [spring] ($(M2.north east)!(wall.140pt)!(M2.south east)$) -- ($(M3.north west)!(wall.140pt)!(M3.south west)$) node [draw=none,midway,above=0.3cm] {$k_3$};
+\draw [damper] ($(M2.north east)!(wall.30pt)!(M2.south east)$) -- ($(M3.north west)!(wall.30pt)!(M3.south west)$) node [draw=none,midway,below=0.3cm] {$c_3$};
+
+\draw   (-5,0.2) circle[radius=1cm] node (motor)[draw=none] {};
+\draw (-5,-0.8) -- ($(M.south west)!0.45cm!(M.north west)$);
+\draw[pattern=north west lines]   (-5,0.2) circle[radius=0.1cm] node(shaft)[draw=none] {};
+\node (rack) [rectangle, minimum width=2cm, minimum height=0.45cm, anchor=north] at(-5,-0.8) {};
+\node (ground4) [ground,anchor=north,yshift=-0.725cm,minimum width=2.5cm] at (-5,-0.8){};
+\draw (ground4.north east) -- (ground4.north west);
+\draw [thick] (rack.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (rack.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+\draw [->] (-4,1) arc [start angle=30, end angle=120, radius=1.1cm] node[draw=none,anchor=south,xshift=1cm](angle) {$\theta, c(t)$};
+
+\draw[->]  (M2.north) -- ++ (0,0.5cm) -- +(0.5cm,0) node [draw=none, midway,above=0.1cm](x1){$x_2$};
+\draw[->]  (M3.north) -- ++ (0,0.5cm) -- +(0.5cm,0) node [draw=none, midway,above=0.1cm](x1){$x_3$};
+
+
+\draw[->]  (ground4.south) -- ++ (0,-0.5cm) -- +(0.5cm,0) node [draw=none, midway,right=0.3cm](x1){$x_0$};
+\draw[dashed] (rack.south) -- (ground4.south);
+\draw (-5,0.2) -- (-4.5,1.066) node[draw=none,midway,anchor=west] (diam){$\frac{D}{2}$};
+
+\end{scope}
+\end{tikzpicture}
+\end{figure}
 \section{Motor, Pinion and Rack modelling} 
 A DC Brushless motor can be modelled with a simple low-pass filter transfer function. Because of that, only a resistance $R$ and an inductance $L$ are needed to model it. Thus, let $D$ be the diameter of the disk attached to the motor, $\theta$ the the angular position of the disk, $J$ the inertia of the motor, and $c_{l}(t)$ the load torque. We can also assume non-linearities based on the angle and its rate $\dot{\theta}$:  we will denote such non-linearities with $f_{m}(\theta,\dot{\theta})$.\\ \\
  The output torque of the motor, then, is  given by:
-$$c(s) = \frac{K_{e}}{Ls+R} (v(s)-K_{e}s \theta(s))$$
-where $v(s)$ is the Laplace transform of $v(t)$, the input voltage to the motor.\\Notice that the term $K_{e}s \theta(s)$ describes the back-emf effect, though, from experimental results as described \ref{olvscl}, it's not included in our models. Therefore the output current of the motor, is :
-$$i(s) = \frac{1}{Ls+R} v(s)$$
-which can be described with a state space model:
-$$\begin{cases} \dot{x} =-\frac{R}{L}x + v(t)\\ i = \frac{1}{L}x\end{cases}$$
+ \begin{equation}
+ c(s) = K_e i(s)
+ \end{equation}
+and:
+\begin{equation}
+i(s)=\frac{1}{Ls+R} (v(s)-K_{e}s \theta(s))
+\end{equation}
+where $v(s)$ is the Laplace transform of $v(t)$, the input voltage to the motor. Notice that the term $K_{e}s \theta(s)$ describes the back-emf effect. \\
 The differential equation describing the motion of the disk is:
 $$J\ddot{\theta}=c(t)-c_{l}(t) -f_{m}(\theta,\dot{\theta})$$
 In our case, since it's not possible to detach the pinion and the rack from the motor, $J$ includes the inertia of that system, and $c_{l}(t)$ is the torque load attached to the rack. 
@@ -25,11 +97,10 @@ Therefore, because of Newton's First Law, each cart has equation:
 $$M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)$$
 Thus, for each cart 2 states are needed to describe its behaviour.\\ \\
 \section{1 DOF State Space Model}
-Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. The measurable state are the first one and the third one, but the first one needs to be divided by the inductance $L$ as described in the previous section. Therefore the equations to consider are:
+Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. Therefore the equations to consider are:
 \begin{equation}
 \begin{cases}
-\dot{x}_1 = -\frac{R}{L}x_{1}+v(t), \quad i(t) = \frac{1}{L}x_1 \\
-\dot{x}_2 = x_3 \\
+\dot{x}_1 = -\frac{R}{L}x_{1}+\frac{1}{L} v(t)-\frac{\gamma}{L}x_3  \\
 M\dot{x}_3 = -Cx_3 -K x_2 + F(t)
 \end{cases}
 \end{equation}
@@ -40,13 +111,12 @@ By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
 \begin{equation}
 \begin{cases}
 \dot{x}=\begin{bmatrix}
--\frac{R}{L} &0 & 0 \\
+-\frac{R}{L} &0 & -\frac{\gamma}{L} \\
 0 & 0 & 1 \\ 
  \frac{\gamma}{ML} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
 \end{bmatrix}
 +
-\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix} v(t) \\
-y = \begin{bmatrix} \frac{1}{L} & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}x
+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0\end{bmatrix} v(t)
 \end{cases}
 \end{equation}
 where $v(t)$ is the external control input.
@@ -110,17 +180,14 @@ Finally, let $x_1$ be the state of the motor, $x_2$ and $x_3$ the position of th
                 0  & 0 
                 \end{array}&
                 \begin{array}{cc} 
-               0 & 0 \\ 
+               -\frac{\gamma}{L} & 0 \\ 
                 1 & 0 \\
                 0  & 1 
                 \end{array} \\
                 \hline 
                 M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
 \end{array} \right] 
-x+\begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0\end{bmatrix}v(t)\\
-y(t) = \begin{bmatrix} \frac{1}{L} & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 \\
-0 & 0 & 1 & 0 & 0 \end{bmatrix}x
+x+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \\ 0\end{bmatrix}v(t)
 \end{cases}
 \end{equation}
 where $x \in \mathbb{R}^5$.
@@ -194,7 +261,7 @@ Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the 
                 0 & 0 &0
                 \end{array}&
                 \begin{array}{ccc} 
-               0 & 0 &0\\ 
+               -\frac{\gamma}{L} & 0 &0\\ 
                 1 & 0 &0 \\
                 0  & 1  &0 \\
                 0 & 0 & 1
@@ -202,22 +269,18 @@ Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the 
                 \hline 
                 M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
 \end{array} \right] 
-x+\begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0\\0 \\0 \end{bmatrix}v(t)\\
-y(t) = \begin{bmatrix} \frac{1}{L} & 0 & 0 & 0 & 0 & 0 &0\\
-0 & 1 & 0 & 0 & 0 & 0 &0 \\
-0 & 0 & 1 & 0 & 0 &0  &0 \\
-0 & 0 & 0 & 1 & 0 & 0 &0 \end{bmatrix}x
+x+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \\ 0\\0 \\0 \end{bmatrix}v(t)
 \end{cases}
 \end{equation}
 where $x \in \mathbb{R}^7$.
-\section{bemf}
-TF from V to I considering bemf
-$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
-But $\theta = \frac{2}{D}x$, and
-$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
-Therefore:
-$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
-Then:
-$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
-$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
-$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$
+%\section{bemf}
+%TF from V to I considering bemf
+%$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
+%But $\theta = \frac{2}{D}x$, and
+%$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
+%Therefore:
+%$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
+%Then:
+%$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
+%$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
+%$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$

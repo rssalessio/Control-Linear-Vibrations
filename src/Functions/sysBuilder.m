@@ -174,10 +174,10 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
     %%
     
     sysSS = ss(A,B,Cy,D);
-  %  tfM=tf(sysSS.NominalValue);
-    %s=tf('s');
-  %%  bemfTf = 1+Gamma^2*s*tfM(2,2);
-   % bemfTf = tfM(1,1)/bemfTf;
+    tfM=tf(sysSS.NominalValue);
+    s=tf('s');
+    bemfTf = 1+Gamma^2*s*tfM(2,2);
+    bemfTf = tfM(1,1)/bemfTf;
     
     sysSS = ss(A,B(:,1),Cy,D(:,1));
     
