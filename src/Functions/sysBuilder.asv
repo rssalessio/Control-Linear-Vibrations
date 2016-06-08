@@ -1,4 +1,4 @@
-function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
+function [sysSS,nDOF] = sysBuilder( nLoad, springType, Outputs)
 %
 % Eg: sysBuilder([1,2], ['l','h'], {'i','x1'} defines a system with two
 % carts. the first one with1  load of 0.493kg, the second one with a  load
@@ -174,12 +174,9 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
     %%
     
     sysSS = ss(A,B,Cy,D);
-    tfM=tf(sysSS.NominalValue);
+    bemfTf=tf(sysSS.NominalValue);
     s=tf('s');
-    bemfTf = 1+Gamma^2*s*tfM(2,2);
-    bemfTf = tfM(1,1)/bemfTf;
-    
-    sysSS = ss(A,B(:,1),Cy,D(:,1));
+    bemfTf = 1+Gamma^2*s*bemfTf(2,2)
     
 %     
 %     motor = tf([gamma],[L R]);
