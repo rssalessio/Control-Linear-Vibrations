@@ -159,9 +159,8 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs,bemfOn)
     
     %% A Matrix
     A(1,1)= -R/L;
-    if (bemfOn ~=0)
+    if (bemfOn )
         A(1,2+nDOF)= -Gamma/L;
-    end
     
     for i=1:nDOF
        A(i+1,1+nDOF+i)=1; 

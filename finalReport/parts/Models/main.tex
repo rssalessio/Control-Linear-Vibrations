@@ -113,7 +113,7 @@ By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
 \dot{x}=\begin{bmatrix}
 -\frac{R}{L} &0 & -\frac{\gamma}{L} \\
 0 & 0 & 1 \\ 
- \frac{\gamma}{M} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
+ \frac{\gamma}{\hat{M}} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
 \end{bmatrix}
 +
 \begin{bmatrix}\frac{1}{L} \\ 0 \\ 0\end{bmatrix} v(t)
@@ -273,14 +273,14 @@ x+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \\ 0\\0 \\0 \end{bmatrix}v(t)
 \end{cases}
 \end{equation}
 where $x \in \mathbb{R}^7$.
-\section{bemf}
-TF from V to I considering bemf
-$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
-But $\theta = \frac{2}{D}x$, and
-$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
-Therefore:
-$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
-Then:
-$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
-$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
-$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$
+%\section{bemf}
+%TF from V to I considering bemf
+%$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
+%But $\theta = \frac{2}{D}x$, and
+%$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
+%Therefore:
+%$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
+%Then:
+%$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
+%$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
+%$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$
