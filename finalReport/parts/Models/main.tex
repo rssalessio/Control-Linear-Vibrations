@@ -86,8 +86,8 @@ $$J\ddot{\theta}=c(t)-c_{l}(t) -f_{m}(\theta,\dot{\theta})$$
 In our case, since it's not possible to detach the pinion and the rack from the motor, $J$ includes the inertia of that system, and $c_{l}(t)$ is the torque load attached to the rack. 
 \\ \\
 The rack position is given by $x$, which is equal to $0$ when the rack is at the center. Since the rack is attached to the disk, and by neglecting non-lineart effects such as back-lash, we can say that $x=\frac{D}{2}\theta $. Moreover,  the total force transmitted from the motor is:
-$$F(t) =c_l (t) =  \frac{2}{D} (c(t)-J\ddot{\theta}) = \gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
-Where $\gamma = \frac{2K_e}{D}$.
+$$F(t)  =  \frac{2}{D} (c(t)-J\ddot{\theta}) = \gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
+Where $\gamma = \frac{2K_e}{D}$. 
 
 \section{Carts, Springs and Dampers Modelling}
 Each cart has the same shape and mass $M_{c}$. Let $M_{i}$ denote the total mass of the $i$-eth cart including the load, $i \in {1,2,3}$. \\
@@ -97,7 +97,7 @@ Therefore, because of Newton's First Law, each cart has equation:
 $$M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)$$
 Thus, for each cart 2 states are needed to describe its behaviour.\\ \\
 \section{1 DOF State Space Model}
-Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. Therefore the equations to consider are:
+Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. The back-emf term in the motor is given by: $-K_e s \theta = -K_e \frac{2}{D}\dot{x} = -\gamma x_3$. Therefore the equations to consider are:
 \begin{equation}
 \begin{cases}
 \dot{x}_1 = -\frac{R}{L}x_{1}+\frac{1}{L} v(t)-\frac{\gamma}{L}x_3  \\
@@ -113,7 +113,7 @@ By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
 \dot{x}=\begin{bmatrix}
 -\frac{R}{L} &0 & -\frac{\gamma}{L} \\
 0 & 0 & 1 \\ 
- \frac{\gamma}{ML} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
+ \frac{\gamma}{M} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
 \end{bmatrix}
 +
 \begin{bmatrix}\frac{1}{L} \\ 0 \\ 0\end{bmatrix} v(t)
@@ -185,7 +185,7 @@ Finally, let $x_1$ be the state of the motor, $x_2$ and $x_3$ the position of th
                 0  & 1 
                 \end{array} \\
                 \hline 
-                M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
+                M^{-1}B\gamma& -M^{-1}K & -M^{-1}C
 \end{array} \right] 
 x+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \\ 0\end{bmatrix}v(t)
 \end{cases}
@@ -267,20 +267,20 @@ Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the 
                 0 & 0 & 1
                 \end{array} \\
                 \hline 
-                M^{-1}B\frac{\gamma} {L}& -M^{-1}K & -M^{-1}C
+                M^{-1}B\gamma& -M^{-1}K & -M^{-1}C
 \end{array} \right] 
 x+\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \\ 0\\0 \\0 \end{bmatrix}v(t)
 \end{cases}
 \end{equation}
 where $x \in \mathbb{R}^7$.
-%\section{bemf}
-%TF from V to I considering bemf
-%$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
-%But $\theta = \frac{2}{D}x$, and
-%$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
-%Therefore:
-%$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
-%Then:
-%$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
-%$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
-%$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$
+\section{bemf}
+TF from V to I considering bemf
+$$i(s) = \frac{1}{Ls+R}(v-K_e s\theta)$$
+But $\theta = \frac{2}{D}x$, and
+$$X(s) = \frac{\gamma}{Ms^2+Cs+K}i(s)$$
+Therefore:
+$$\theta = \frac{2\gamma}{D}\frac{1}{Ms^2+Cs+K}i(s)$$
+Then:
+$$i(s) = M1(s)(v-s\gamma^2\frac{1}{Ms^2+Cs+K}i(s)$$
+$$i(s) (1+\frac{s\gamma^2}{Ms^2+Cs+K} = M1(s) v$$
+$$i(s) = M1(s) \frac{Ms^2+Cs+K}{Ms^2+Cs+K+s\gamma^2}v$$

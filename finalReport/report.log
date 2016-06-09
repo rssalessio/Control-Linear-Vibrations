@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.23)  9 JUN 2016 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.23)  9 JUN 2016 10:50
 entering extended mode
 **report.tex
 (report.tex
@@ -1802,7 +1802,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count359
 
-<img/logo.png, id=197, 301.125pt x 301.125pt>
+<img/logo.png, id=201, 301.125pt x 301.125pt>
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
 Package pdftex.def Info: img/logo.png used on input line 68.
@@ -1815,7 +1815,7 @@ ng>]
 ge.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.53 ...rol of 2 Degree of Freedom}{34}{chapter.9}
+l.54 ...rol of 2 Degree of Freedom}{35}{chapter.9}
                                                    [1
 
 ])
@@ -1900,7 +1900,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
 
-[3]) [4] (parts/Identification/main.tex
+[3] [4]) [5] (parts/Identification/main.tex
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
@@ -1932,7 +1932,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  []
 
-[5
+[6
 
 ] (parts/Identification/ol_vs_cl_identification.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--7
@@ -1959,7 +1959,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
-[6]) [7] (parts/Identification/white_box_identification.tex
+[7]) [8] (parts/Identification/white_box_identification.tex
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
@@ -1991,7 +1991,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--59
 
  []
 
-[8
+[9
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 67--70
@@ -2022,7 +2022,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--128
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<parts/Identification/img/cart_detached_1.png, id=354, 1057.9525pt x 712.6625pt
+<parts/Identification/img/cart_detached_1.png, id=363, 1057.9525pt x 712.6625pt
 >
 File: parts/Identification/img/cart_detached_1.png Graphic file (type png)
  <use parts/Identification/img/cart_detached_1.png>
@@ -2038,16 +2038,16 @@ Package caption Warning: \label without proper \caption on input line 139.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_springs_mass' on page 9 undefined on inpu
-t line 136.
+LaTeX Warning: Reference `table: cart_springs_mass' on page 10 undefined on inp
+ut line 136.
 
-[9]
+[10]
 
 Package caption Warning: \label without proper \caption on input line 153.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 10 undefin
+LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 11 undefin
 ed on input line 149.
 
 
@@ -2055,7 +2055,7 @@ Package caption Warning: \label without proper \caption on input line 168.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_damping' on page 10 undefined on
+LaTeX Warning: Reference `table: cart_detached_damping' on page 11 undefined on
  input line 164.
 
 
@@ -2063,19 +2063,19 @@ Package caption Warning: \label without proper \caption on input line 168.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_damping' on page 10 undefined on
+LaTeX Warning: Reference `table: cart_detached_damping' on page 11 undefined on
  input line 165.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./parts/Identification/img/cart_detached_1.png (PNG copy)>]
+[11 <./parts/Identification/img/cart_detached_1.png (PNG copy)>]
 
 Package caption Warning: \label without proper \caption on input line 184.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 11 und
+LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 12 und
 efined on input line 180.
 
 
@@ -2084,7 +2084,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--197
  []
 
 
-<parts/Identification/img/validation_m_kh_full.png, id=377, 562.1pt x 421.575pt
+<parts/Identification/img/validation_m_kh_full.png, id=386, 562.1pt x 421.575pt
 >
 File: parts/Identification/img/validation_m_kh_full.png Graphic file (type png)
 
@@ -2093,7 +2093,7 @@ Package pdftex.def Info: parts/Identification/img/validation_m_kh_full.png used
  on input line 201.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_ml_kl_partial.png, id=378, 562.1pt x 421.5
+<parts/Identification/img/validation_ml_kl_partial.png, id=387, 562.1pt x 421.5
 75pt>
 File: parts/Identification/img/validation_ml_kl_partial.png Graphic file (type 
 png)
@@ -2102,7 +2102,7 @@ Package pdftex.def Info: parts/Identification/img/validation_ml_kl_partial.png
 used on input line 207.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_ml_km_full.png, id=379, 562.1pt x 421.575p
+<parts/Identification/img/validation_ml_km_full.png, id=388, 562.1pt x 421.575p
 t>
 File: parts/Identification/img/validation_ml_km_full.png Graphic file (type png
 )
@@ -2111,7 +2111,7 @@ Package pdftex.def Info: parts/Identification/img/validation_ml_km_full.png use
 d on input line 214.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_ml_kh_full.png, id=380, 562.1pt x 421.575p
+<parts/Identification/img/validation_ml_kh_full.png, id=389, 562.1pt x 421.575p
 t>
 File: parts/Identification/img/validation_ml_kh_full.png Graphic file (type png
 )
@@ -2128,7 +2128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--231
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
@@ -2148,7 +2148,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--250
 
  []
 
-[12 <./parts/Identification/img/validation_m_kh_full.png (PNG copy)> <./parts/I
+[13 <./parts/Identification/img/validation_m_kh_full.png (PNG copy)> <./parts/I
 dentification/img/validation_ml_kl_partial.png (PNG copy)> <./parts/Identificat
 ion/img/validation_ml_km_full.png (PNG copy)> <./parts/Identification/img/valid
 ation_ml_kh_full.png (PNG copy)>]
@@ -2176,7 +2176,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--264
 
  []
 
-<parts/Identification/img/motor_id_1.png, id=394, 1028.34187pt x 490.08093pt>
+<parts/Identification/img/motor_id_1.png, id=404, 1028.34187pt x 490.08093pt>
 File: parts/Identification/img/motor_id_1.png Graphic file (type png)
 
 <use parts/Identification/img/motor_id_1.png>
@@ -2202,7 +2202,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--281
 
  []
 
-<parts/Identification/img/motor_id_2.png, id=396, 1028.34187pt x 490.08093pt>
+<parts/Identification/img/motor_id_2.png, id=406, 1028.34187pt x 490.08093pt>
 File: parts/Identification/img/motor_id_2.png Graphic file (type png)
 
 <use parts/Identification/img/motor_id_2.png>
@@ -2217,8 +2217,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--293
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13]
-<parts/Identification/img/motor_validation.png, id=405, 948.54375pt x 780.9175p
+[14]
+<parts/Identification/img/motor_validation.png, id=414, 948.54375pt x 780.9175p
 t>
 File: parts/Identification/img/motor_validation.png Graphic file (type png)
  <use parts/Identification/img/motor_validation.png>
@@ -2233,7 +2233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 298--308
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./parts/Identification/img/motor_id_1.png (PNG copy)> <./parts/Identificat
+[15 <./parts/Identification/img/motor_id_1.png (PNG copy)> <./parts/Identificat
 ion/img/motor_id_2.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 319--332
 
@@ -2244,13 +2244,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 319--332
 
  []
 
-[15 <./parts/Identification/img/motor_validation.png (PNG copy)>]
+[16 <./parts/Identification/img/motor_validation.png (PNG copy)>]
 
 Package caption Warning: \label without proper \caption on input line 139.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_springs_mass' on page 16 undefined on inp
+LaTeX Warning: Reference `table: cart_springs_mass' on page 17 undefined on inp
 ut line 335.
 
 
@@ -2258,7 +2258,7 @@ Package caption Warning: \label without proper \caption on input line 359.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 16 undefin
+LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 17 undefin
 ed on input line 355.
 
 
@@ -2266,7 +2266,7 @@ Package caption Warning: \label without proper \caption on input line 359.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 16 undefin
+LaTeX Warning: Reference `table: cart_attached_dampingratio' on page 17 undefin
 ed on input line 370.
 
 
@@ -2274,7 +2274,7 @@ Package caption Warning: \label without proper \caption on input line 153.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 16 undefin
+LaTeX Warning: Reference `table: cart_detached_dampingratio' on page 17 undefin
 ed on input line 370.
 
 
@@ -2282,7 +2282,7 @@ Package caption Warning: \label without proper \caption on input line 168.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_damping' on page 16 undefined on
+LaTeX Warning: Reference `table: cart_detached_damping' on page 17 undefined on
  input line 371.
 
 
@@ -2290,11 +2290,11 @@ Package caption Warning: \label without proper \caption on input line 184.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 16 und
+LaTeX Warning: Reference `table: cart_detached_damping_quotient' on page 17 und
 efined on input line 386.
 
 
-<parts/Identification/img/validation_overall_km_nomass.png, id=430, 562.1pt x 4
+<parts/Identification/img/validation_overall_km_nomass.png, id=439, 562.1pt x 4
 21.575pt>
 File: parts/Identification/img/validation_overall_km_nomass.png Graphic file (t
 ype png)
@@ -2303,7 +2303,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_km_nomass.
 png used on input line 406.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_kl_2mass.png, id=431, 562.1pt x 42
+<parts/Identification/img/validation_overall_kl_2mass.png, id=440, 562.1pt x 42
 1.575pt>
 File: parts/Identification/img/validation_overall_kl_2mass.png Graphic file (ty
 pe png)
@@ -2312,7 +2312,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_kl_2mass.p
 ng used on input line 412.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_kh_2mass.png, id=432, 562.1pt x 42
+<parts/Identification/img/validation_overall_kh_2mass.png, id=441, 562.1pt x 42
 1.575pt>
 File: parts/Identification/img/validation_overall_kh_2mass.png Graphic file (ty
 pe png)
@@ -2321,7 +2321,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_kh_2mass.p
 ng used on input line 419.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_kl_nomass.png, id=433, 562.1pt x 4
+<parts/Identification/img/validation_overall_kl_nomass.png, id=442, 562.1pt x 4
 21.575pt>
 File: parts/Identification/img/validation_overall_kl_nomass.png Graphic file (t
 ype png)
@@ -2330,8 +2330,8 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_kl_nomass.
 png used on input line 425.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-[16]
-<parts/Identification/img/validation_overall_2dof_khkm_0m2m.png, id=445, 562.1p
+[17]
+<parts/Identification/img/validation_overall_2dof_khkm_0m2m.png, id=454, 562.1p
 t x 421.575pt>
 File: parts/Identification/img/validation_overall_2dof_khkm_0m2m.png Graphic fi
 le (type png)
@@ -2341,7 +2341,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_khkm_
 0m2m.png used on input line 437.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_2dof_khkm_1m1m.png, id=446, 562.1p
+<parts/Identification/img/validation_overall_2dof_khkm_1m1m.png, id=455, 562.1p
 t x 421.575pt>
 File: parts/Identification/img/validation_overall_2dof_khkm_1m1m.png Graphic fi
 le (type png)
@@ -2351,7 +2351,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_khkm_
 1m1m.png used on input line 443.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_2dof_klkh_0m0m.png, id=447, 562.1p
+<parts/Identification/img/validation_overall_2dof_klkh_0m0m.png, id=456, 562.1p
 t x 421.575pt>
 File: parts/Identification/img/validation_overall_2dof_klkh_0m0m.png Graphic fi
 le (type png)
@@ -2361,7 +2361,7 @@ Package pdftex.def Info: parts/Identification/img/validation_overall_2dof_klkh_
 0m0m.png used on input line 450.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/validation_overall_2dof_klkh_0m2m.png, id=448, 562.1p
+<parts/Identification/img/validation_overall_2dof_klkh_0m2m.png, id=457, 562.1p
 t x 421.575pt>
 File: parts/Identification/img/validation_overall_2dof_klkh_0m2m.png Graphic fi
 le (type png)
@@ -2378,18 +2378,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--37
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17 <./parts/Identification/img/validation_overall_km_nomass.png (PNG copy)> <.
+[18 <./parts/Identification/img/validation_overall_km_nomass.png (PNG copy)> <.
 /parts/Identification/img/validation_overall_kl_2mass.png (PNG copy)> <./parts/
 Identification/img/validation_overall_kh_2mass.png (PNG copy)> <./parts/Identif
 ication/img/validation_overall_kl_nomass.png (PNG copy)>]
-(parts/Identification/gray_box_identification.tex [18 <./parts/Identification/i
+(parts/Identification/gray_box_identification.tex [19 <./parts/Identification/i
 mg/validation_overall_2dof_khkm_0m2m.png (PNG copy)> <./parts/Identification/im
 g/validation_overall_2dof_khkm_1m1m.png (PNG copy)> <./parts/Identification/img
 /validation_overall_2dof_klkh_0m0m.png (PNG copy)> <./parts/Identification/img/
 validation_overall_2dof_klkh_0m2m.png (PNG copy)>]
 Chapter 5.
 
-<parts/Identification/img/graybox_scheme.png, id=461, 993.7125pt x 301.8778pt>
+<parts/Identification/img/graybox_scheme.png, id=471, 993.7125pt x 301.8778pt>
 File: parts/Identification/img/graybox_scheme.png Graphic file (type png)
 
 <use parts/Identification/img/graybox_scheme.png>
@@ -2406,7 +2406,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-<parts/Identification/img/graybox_motor.jpg, id=462, 1371.1225pt x 654.445pt>
+<parts/Identification/img/graybox_motor.jpg, id=472, 1371.1225pt x 654.445pt>
 File: parts/Identification/img/graybox_motor.jpg Graphic file (type jpg)
 
 <use parts/Identification/img/graybox_motor.jpg>
@@ -2417,19 +2417,19 @@ ut line 33.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19
+[20
 
  <./parts/Identification/img/graybox_scheme.png>]
-<parts/Identification/img/graybox_cart.jpg, id=474, 562.1pt x 421.575pt>
+<parts/Identification/img/graybox_cart.jpg, id=483, 562.1pt x 421.575pt>
 File: parts/Identification/img/graybox_cart.jpg Graphic file (type jpg)
 
 <use parts/Identification/img/graybox_cart.jpg>
 Package pdftex.def Info: parts/Identification/img/graybox_cart.jpg used on inpu
 t line 57.
 (pdftex.def)             Requested size: 347.4297pt x 260.5697pt.
-) [20 <./parts/Identification/img/graybox_motor.jpg> <./parts/Identification/im
+) [21 <./parts/Identification/img/graybox_motor.jpg> <./parts/Identification/im
 g/graybox_cart.jpg>]
-(parts/Identification/non_linearities_identification.tex [21]
+(parts/Identification/non_linearities_identification.tex [22]
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
@@ -2451,9 +2451,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--33
 
  []
 
-[22
+[23
 
-] <parts/Identification/img/deadzone1.png, id=497, 562.1pt x 421.575pt>
+] <parts/Identification/img/deadzone1.png, id=506, 562.1pt x 421.575pt>
 File: parts/Identification/img/deadzone1.png Graphic file (type png)
 
 <use parts/Identification/img/deadzone1.png>
@@ -2461,7 +2461,7 @@ Package pdftex.def Info: parts/Identification/img/deadzone1.png used on input l
 ine 48.
 (pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
 
-<parts/Identification/img/deadzone2.png, id=498, 562.1pt x 421.575pt>
+<parts/Identification/img/deadzone2.png, id=507, 562.1pt x 421.575pt>
 File: parts/Identification/img/deadzone2.png Graphic file (type png)
 
 <use parts/Identification/img/deadzone2.png>
@@ -2469,7 +2469,7 @@ Package pdftex.def Info: parts/Identification/img/deadzone2.png used on input l
 ine 50.
 (pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
 
-<parts/Identification/img/deadzone3.png, id=500, 562.1pt x 421.575pt>
+<parts/Identification/img/deadzone3.png, id=509, 562.1pt x 421.575pt>
 File: parts/Identification/img/deadzone3.png Graphic file (type png)
 
 <use parts/Identification/img/deadzone3.png>
@@ -2484,8 +2484,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--62
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23 <./parts/Identification/img/deadzone1.png (PNG copy)> <./parts/Identificati
-on/img/deadzone2.png (PNG copy)>]) [24 <./parts/Identification/img/deadzone3.pn
+[24 <./parts/Identification/img/deadzone1.png (PNG copy)> <./parts/Identificati
+on/img/deadzone2.png (PNG copy)>]) [25 <./parts/Identification/img/deadzone3.pn
 g (PNG copy)>] (parts/Identification/filtering.tex
 Chapter 7.
 
@@ -2503,7 +2503,7 @@ Package caption Warning: \label without proper \caption on input line 37.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:kalman_valid' on page 25 undefined on input line 
+LaTeX Warning: Reference `fig:kalman_valid' on page 26 undefined on input line 
 21.
 
 
@@ -2517,7 +2517,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--23
  []
 
 
-<parts/Identification/img/filtering_khlm_021m_x1i_to_x2.png, id=519, 562.1pt x 
+<parts/Identification/img/filtering_khlm_021m_x1i_to_x2.png, id=529, 562.1pt x 
 421.575pt>
 File: parts/Identification/img/filtering_khlm_021m_x1i_to_x2.png Graphic file (
 type png)
@@ -2526,7 +2526,7 @@ Package pdftex.def Info: parts/Identification/img/filtering_khlm_021m_x1i_to_x2
 .png used on input line 29.
 (pdftex.def)             Requested size: 223.34712pt x 167.5077pt.
 
-<parts/Identification/img/filtering_khlm_021m_x1_to_x2.png, id=520, 562.1pt x 4
+<parts/Identification/img/filtering_khlm_021m_x1_to_x2.png, id=530, 562.1pt x 4
 21.575pt>
 File: parts/Identification/img/filtering_khlm_021m_x1_to_x2.png Graphic file (t
 ype png)
@@ -2538,14 +2538,14 @@ png used on input line 34.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25
+[26
 
-] (parts/Control1dof/main.tex [26 <./parts/Identification/img/filtering_khlm_02
+] (parts/Control1dof/main.tex [27 <./parts/Identification/img/filtering_khlm_02
 1m_x1i_to_x2.png (PNG copy)> <./parts/Identification/img/filtering_khlm_021m_x1
 _to_x2.png (PNG copy)>]
 Chapter 8.
 (parts/Control1dof/pid.tex
-<parts/Control1dof/img/ls_bode_ol.jpg, id=539, 562.1pt x 421.575pt>
+<parts/Control1dof/img/ls_bode_ol.jpg, id=548, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/ls_bode_ol.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/ls_bode_ol.jpg>
@@ -2567,10 +2567,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
-[27
+[28
 
  <./parts/Control1dof/img/ls_bode_ol.jpg>]
-<parts/Control1dof/img/ls_simulink.png, id=547, 966.61125pt x 337.26pt>
+<parts/Control1dof/img/ls_simulink.png, id=556, 966.61125pt x 337.26pt>
 File: parts/Control1dof/img/ls_simulink.png Graphic file (type png)
 
 <use parts/Control1dof/img/ls_simulink.png>
@@ -2582,7 +2582,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-<parts/Control1dof/img/ls_bode_shaping.jpg, id=548, 562.1pt x 421.575pt>
+<parts/Control1dof/img/ls_bode_shaping.jpg, id=557, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/ls_bode_shaping.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/ls_bode_shaping.jpg>
@@ -2590,7 +2590,7 @@ Package pdftex.def Info: parts/Control1dof/img/ls_bode_shaping.jpg used on inpu
 t line 34.
 (pdftex.def)             Requested size: 248.16516pt x 186.12396pt.
 
-<parts/Control1dof/img/ls_response_kh.jpg, id=549, 1371.1225pt x 607.26875pt>
+<parts/Control1dof/img/ls_response_kh.jpg, id=558, 1371.1225pt x 607.26875pt>
 File: parts/Control1dof/img/ls_response_kh.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/ls_response_kh.jpg>
@@ -2598,7 +2598,7 @@ Package pdftex.def Info: parts/Control1dof/img/ls_response_kh.jpg used on input
  line 45.
 (pdftex.def)             Requested size: 243.20457pt x 107.70987pt.
 
-<parts/Control1dof/img/ls_response_kl.jpg, id=550, 1371.1225pt x 654.445pt>
+<parts/Control1dof/img/ls_response_kl.jpg, id=559, 1371.1225pt x 654.445pt>
 File: parts/Control1dof/img/ls_response_kl.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/ls_response_kl.jpg>
@@ -2609,7 +2609,7 @@ Package pdftex.def Info: parts/Control1dof/img/ls_response_kl.jpg used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (parts/Control1dof/rhpzeros.tex [28 <./parts/Control1dof/img/ls_simulink.png>
+) (parts/Control1dof/rhpzeros.tex [29 <./parts/Control1dof/img/ls_simulink.png>
  <./parts/Control1dof/img/ls_bode_shaping.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
@@ -2620,7 +2620,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
  []
 
-[29 <./parts/Control1dof/img/ls_response_kh.jpg> <./parts/Control1dof/img/ls_re
+[30 <./parts/Control1dof/img/ls_response_kh.jpg> <./parts/Control1dof/img/ls_re
 sponse_kl.jpg>]) (parts/Control1dof/hinfty.tex
 Underfull \hbox (badness 10000) in paragraph at lines 28--1
 
@@ -2662,7 +2662,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<parts/Control1dof/img/hinf_scheme.png, id=568, 430.60875pt x 219.06844pt>
+<parts/Control1dof/img/hinf_scheme.png, id=577, 430.60875pt x 219.06844pt>
 File: parts/Control1dof/img/hinf_scheme.png Graphic file (type png)
 
 <use parts/Control1dof/img/hinf_scheme.png>
@@ -2674,7 +2674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<parts/Control1dof/img/hinf_shapes.jpg, id=569, 1361.085pt x 265.99374pt>
+<parts/Control1dof/img/hinf_shapes.jpg, id=578, 1361.085pt x 265.99374pt>
 File: parts/Control1dof/img/hinf_shapes.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_shapes.jpg>
@@ -2685,7 +2685,7 @@ ne 13.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<parts/Control1dof/img/hinf_hankel.jpg, id=570, 562.1pt x 421.575pt>
+<parts/Control1dof/img/hinf_hankel.jpg, id=579, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/hinf_hankel.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_hankel.jpg>
@@ -2693,7 +2693,7 @@ Package pdftex.def Info: parts/Control1dof/img/hinf_hankel.jpg used on input li
 ne 21.
 (pdftex.def)             Requested size: 243.20457pt x 182.39943pt.
 
-<parts/Control1dof/img/hinf_reduced.jpg, id=571, 562.1pt x 421.575pt>
+<parts/Control1dof/img/hinf_reduced.jpg, id=580, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/hinf_reduced.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_reduced.jpg>
@@ -2701,7 +2701,7 @@ Package pdftex.def Info: parts/Control1dof/img/hinf_reduced.jpg used on input l
 ine 23.
 (pdftex.def)             Requested size: 243.20457pt x 182.39943pt.
 
-<parts/Control1dof/img/hinf_integrator.jpg, id=572, 562.1pt x 421.575pt>
+<parts/Control1dof/img/hinf_integrator.jpg, id=581, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/hinf_integrator.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_integrator.jpg>
@@ -2713,11 +2713,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--33
 
  []
 
-[30 <./parts/Control1dof/img/hinf_scheme.png>]
+[31 <./parts/Control1dof/img/hinf_scheme.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<parts/Control1dof/img/hinf_hankel_int.jpg, id=580, 1371.1225pt x 654.445pt>
+<parts/Control1dof/img/hinf_hankel_int.jpg, id=590, 1371.1225pt x 654.445pt>
 File: parts/Control1dof/img/hinf_hankel_int.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_hankel_int.jpg>
@@ -2728,7 +2728,7 @@ t line 36.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<parts/Control1dof/img/hinf_ls.jpg, id=581, 562.1pt x 421.575pt>
+<parts/Control1dof/img/hinf_ls.jpg, id=591, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/hinf_ls.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_ls.jpg>
@@ -2736,7 +2736,7 @@ Package pdftex.def Info: parts/Control1dof/img/hinf_ls.jpg used on input line 4
 9.
 (pdftex.def)             Requested size: 243.20457pt x 182.39943pt.
 
-<parts/Control1dof/img/hinf_integrator_ls.jpg, id=582, 562.1pt x 421.575pt>
+<parts/Control1dof/img/hinf_integrator_ls.jpg, id=592, 562.1pt x 421.575pt>
 File: parts/Control1dof/img/hinf_integrator_ls.jpg Graphic file (type jpg)
 
 <use parts/Control1dof/img/hinf_integrator_ls.jpg>
@@ -2747,27 +2747,27 @@ nput line 51.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (parts/Control1dof/lqg.tex [31 <./parts/Control1dof/img/hinf_shapes.jpg> <./p
+) (parts/Control1dof/lqg.tex [32 <./parts/Control1dof/img/hinf_shapes.jpg> <./p
 arts/Control1dof/img/hinf_hankel.jpg> <./parts/Control1dof/img/hinf_reduced.jpg
->] [32 <./parts/Control1dof/img/hinf_integrator.jpg> <./parts/Control1dof/img/h
+>] [33 <./parts/Control1dof/img/hinf_integrator.jpg> <./parts/Control1dof/img/h
 inf_hankel_int.jpg> <./parts/Control1dof/img/hinf_ls.jpg> <./parts/Control1dof/
-img/hinf_integrator_ls.jpg>]) (parts/Control1dof/adaptive.tex)) [33
+img/hinf_integrator_ls.jpg>]) (parts/Control1dof/adaptive.tex)) [34
 
 ]
 (parts/Control2dof/main.tex
 Chapter 9.
-) [34
+) [35
 
 ] (parts/Control3dof/main.tex
 Chapter 10.
-) [35
+) [36
 
-] (parts/Conclusions/main.tex) [36
+] (parts/Conclusions/main.tex) [37
 
-] (parts/Appendix/main.tex) [37
+] (parts/Appendix/main.tex) [38
 
 ]
-[38
+[39
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
@@ -2776,7 +2776,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 39D38BADF90AC32300B0C4460E96A547;3228.
+(rerunfilecheck)             Checksum: 805726757A1327CB1C50EB60182598A8;3280.
 
 
 LaTeX Warning: There were undefined references.
@@ -2785,10 +2785,10 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
  ) 
 Here is how much of TeX's memory you used:
- 44178 strings out of 493673
- 985885 string characters out of 3141533
- 1177781 words of memory out of 3000000
- 46635 multiletter control sequences out of 15000+200000
+ 44181 strings out of 493673
+ 985916 string characters out of 3141533
+ 1177763 words of memory out of 3000000
+ 46636 multiletter control sequences out of 15000+200000
  16819 words of font info for 65 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,22n,83p,10357b,2128s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2814,9 +2814,9 @@ onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (44 pages, 1551053 bytes).
+Output written on report.pdf (45 pages, 1553565 bytes).
 PDF statistics:
- 741 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
- 595 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 751 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 603 words of extra memory for PDF output out of 10000 (max. 10000000)
 

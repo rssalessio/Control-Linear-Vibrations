@@ -106,9 +106,9 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
     
     
     %% State space initialization
-    B = zeros(1+nDOF*2,2);
+    B = zeros(1+nDOF*2,1);
     %D= zeros(1+2*nDOF,1);
-    D=zeros(length(Outputs),2);
+    D=zeros(length(Outputs),1);
     %% C Matrix
 %     Cy(1,1) = 1/L;
 %     for i=1:nDOF
@@ -122,7 +122,7 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
         Cy(i,1:1+2*nDOF)=0;
         switch char(Outputs(i))
             case 'i'
-                Cy(i, 1) = 1/L;
+                Cy(i, 1) = 1;
             case 'x1'
                 if (nDOF >= 1)
                     Cy(i, 2) = 1;
@@ -153,19 +153,20 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
     end
     
     %% B Matrix
-    B(1,1) = 1;
-    B(3,2)= 1;
+    B(1,1) = 1/L;
+    %B(3,2)= 1;
     
     
     %% A Matrix
     A(1,1)= -R/L;
+    A(1,2+nDOF)= -L/(Gamma);
     
     for i=1:nDOF
        A(i+1,1+nDOF+i)=1; 
     end
     Bg = zeros(nDOF, 1);
     Bg(1)=1;
-    temp =[inv(M)*Bg*Gamma/L, -inv(M)*K, -inv(M)*C];
+    temp =[inv(M)*Bg*Gamma*L, -inv(M)*K, -inv(M)*C];
     for i=1+nDOF+1:1+2*nDOF
         A(i, :) = temp(i-1-nDOF,:);
     end
@@ -174,12 +175,12 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs)
     %%
     
     sysSS = ss(A,B,Cy,D);
-    tfM=tf(sysSS.NominalValue);
-    s=tf('s');
-    bemfTf = 1+Gamma^2*s*tfM(2,2);
-    bemfTf = tfM(1,1)/bemfTf;
+    %tfM=tf(sysSS.NominalValue);
+    %s=tf('s');
+    %bemfTf = 1+Gamma^2*s*tfM(2,2);
+    %bemfTf = tfM(1,1)/bemfTf;
     
-    sysSS = ss(A,B(:,1),Cy,D(:,1));
+   % sysSS = ss(A,B(:,1),Cy,D(:,1));
     
 %     
 %     motor = tf([gamma],[L R]);
