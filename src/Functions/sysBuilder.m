@@ -9,16 +9,16 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs,bemfOn)
 % not available: x3,v1,v2,v3.
 
 
-    
-    for j=1:length(Outputs)
-       if (strcmp(Outputs(j),'v1') | ...
-           strcmp(Outputs(j),'v2') | ...
-           strcmp(Outputs(j),'v3') | ...
-           strcmp(Outputs(j),'x3'))
-           disp('Sensors not available!');
-           return
-       end
-    end
+%     
+%     for j=1:length(Outputs)
+%        if (strcmp(Outputs(j),'v1') | ...
+%            strcmp(Outputs(j),'v2') | ...
+%            strcmp(Outputs(j),'v3') | ...
+%            strcmp(Outputs(j),'x3'))
+%            disp('Sensors not available!');
+%            return
+%        end
+%     end
   
     
     R = ureal('R',1.3,'PlusMinus',0.1);
