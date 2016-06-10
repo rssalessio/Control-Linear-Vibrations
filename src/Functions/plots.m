@@ -20,7 +20,7 @@ function plots(data, n)
     ylabel('Current [A]');
     xlabel('Seconds [s]'); xlim(lim);
     
-    subplot 313; plot(data.t,data.x); hold on; grid; hold on;
+    subplot 313; plot(data.t,data.x1); hold on; grid; hold on;
     ylabel('Cart pos. [cm]');
     xlabel('Seconds [s]'); xlim(lim);
     

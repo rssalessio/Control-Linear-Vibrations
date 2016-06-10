@@ -36,3 +36,66 @@ Where $d(x,y)$ is the distance function used in this project, and $\frac{||x_{r}
 \end{minipage}
 \label{fig:kalman_valid}
 \end{figure}
+
+
+\section{Extended Kalman Filter}
+In this section we present the design of a filter which allows to estimate online the stiffness of a spring.\\
+
+The setup is the one degree of freedom open loop model fed by a voltage, where the current and cart position can be sensed. The plant is described by the state-space model
+
+\begin{equation}
+	\dot{x}=\begin{bmatrix}
+		-\frac{R}{L} &0 & 0 \\
+		0 & 0 & 1 \\ 
+		\frac{\gamma}{\hat{M}} & -\frac{K}{\hat{M}} & -\frac{C}{\hat{M}}
+	\end{bmatrix}
+	x
+	+
+	\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0\end{bmatrix} v(t)
+\end{equation}
+
+and we suppose the value for $K$ is unknown and needs to be estimated online. We include $K$ as a state variable which is constant over time. The new system is nonlinear ($K$ multiplies $x_1$)
+
+\begin{equation}
+		\begin{bmatrix}
+			\dot{i} \\
+			\dot{x}_1 \\
+			\ddot{x}_1 \\
+			\dot{K} \\
+		\end{bmatrix}
+		= 
+		\begin{bmatrix}
+			-\frac{R}{L} i(t) \\
+			\dot{x}_1 \\
+			\frac{\gamma}{M} i + \frac{1}{M} Kx_1 - \frac{C}{M} \dot{x}_1 \\
+			0
+		\end{bmatrix}
+		+
+		\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \end{bmatrix} v(t)
+\end{equation}
+
+and we want to observe the state so to obtain the value of spring stiffness $K$, making use of the extended Kalman filter (EKF).\\
+
+\emph{Matlab} does not provide an implementation for EKF and we needed to write it from scratch. We then designed a function which, given the current measurements of input $v(t)$ and output $i(t), x_1(t)$, outputs the state prediction $\hat{x}$. The \emph{Matlab} implementation is listed in the appendix.\\
+
+The verification of the observer was performed on \emph{Simulink} making use of the scheme in figure which allow us to compare the true state with the observed one.
+
+ 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/ekf_scheme}
+\caption{Simulink scheme used for verification.}
+\label{fig:ekfscheme}
+\end{figure}
+
+The results are satisfactory as the unknown parameter is estimated with good accuracy.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/ekf_sin}
+\caption{$K$ estimation by feeding a sinus to the openloop plant.}
+\label{fig:ekfsin}
+\end{figure}
+
+
+TEST SUL SISTEMA VERO

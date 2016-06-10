@@ -35,14 +35,16 @@
 \BOOKMARK [1][-]{section.6.3}{Motor cogging identification}{chapter.6}% 35
 \BOOKMARK [1][-]{section.6.4}{Motor mechanical static friction}{chapter.6}% 36
 \BOOKMARK [0][-]{chapter.7}{State filtering and Model Observers}{}% 37
-\BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 38
-\BOOKMARK [1][-]{section.8.1}{Loopshaping}{chapter.8}% 39
-\BOOKMARK [1][-]{section.8.2}{RHP-Zeros Control}{chapter.8}% 40
-\BOOKMARK [1][-]{section.8.3}{H control}{chapter.8}% 41
-\BOOKMARK [1][-]{section.8.4}{LQG Control}{chapter.8}% 42
-\BOOKMARK [1][-]{section.8.5}{Adaptive control}{chapter.8}% 43
-\BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 44
-\BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 45
-\BOOKMARK [0][-]{chapter*.51}{Conclusions}{}% 46
-\BOOKMARK [0][-]{chapter*.52}{Appendix}{}% 47
-\BOOKMARK [0][-]{chapter*.52}{Bibliography}{}% 48
+\BOOKMARK [1][-]{section.7.1}{Extended Kalman Filter}{chapter.7}% 38
+\BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 39
+\BOOKMARK [1][-]{section.8.1}{Loopshaping}{chapter.8}% 40
+\BOOKMARK [1][-]{section.8.2}{RHP-Zeros Control}{chapter.8}% 41
+\BOOKMARK [1][-]{section.8.3}{H control}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.4}{LQG Control}{chapter.8}% 43
+\BOOKMARK [1][-]{section.8.5}{Adaptive control}{chapter.8}% 44
+\BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 45
+\BOOKMARK [1][-]{section.9.1}{H Control Design}{chapter.9}% 46
+\BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 47
+\BOOKMARK [0][-]{chapter*.58}{Conclusions}{}% 48
+\BOOKMARK [0][-]{chapter*.59}{Appendix}{}% 49
+\BOOKMARK [0][-]{chapter*.59}{Bibliography}{}% 50

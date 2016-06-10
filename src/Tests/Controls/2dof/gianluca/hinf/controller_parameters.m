@@ -2,7 +2,7 @@ clear all, close all
 
 load kalman;
 
-[plant, dof] = sysBuilder([2,2], ['l', 'h'], {'x1', 'x2'});
+[plant, dof] = sysBuilder([2,2], ['m', 'l'], {'x1', 'x2'}, 0);
 plant = ss(plant);
 
 damp(plant)/2/pi
