@@ -1,2 +1,3 @@
 - Validation 3 dof: scrivere che non possiamo farla perchè non funziona e abbiamo usato kalman piu avanti. 
 - Zeri positivi fare vedere come segue bene la sinusoide
+- Spiegare che se saturiamo la corrente a 5 A non possiamo far muovere le cose più di 1.7 cm con la molla dura
