@@ -1,0 +1,9 @@
+- System protection va tutto nell'appendice
+- Capitolo 3.1 Validation cost function. Puramente matematica e di poco interesse. Lasciare la formula usata e buttare giù la spiegazione.
+- Capitolo 3.2 lasciare la conclusione e mettere il ragionamento nell'appendice
+- Figura 4.10 Diminuire
+- Capitolo 6.3: Spostare spiegazione del mototr cogging nell'appendice. Se non sanno cosa è se la leggono
+- Capitolo 8.2 Discorso assurdo sugli zeri positivi
+- Levare adapative control non c'è tempo e spazio
+- Levare tutti gli schemi simulink dei controllori, sono abbastanza ovvi coem sono stati fatti. Contano più le formule
+- Capitolo 9: Lasciare solo la posizione del carrello e fare vedere come segue in reference. Prendere solo le salite migliori. 

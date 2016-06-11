@@ -1,1 +1,2 @@
-- ingresso quantizzato dei potenziometri
+- Validation 3 dof: scrivere che non possiamo farla perchè non funziona e abbiamo usato kalman piu avanti. 
+- Zeri positivi fare vedere come segue bene la sinusoide
