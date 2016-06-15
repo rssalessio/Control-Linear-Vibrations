@@ -1,5 +1,7 @@
 %function J = solveMin(x)
 
+
+
     M = tf([1],[0.0024, 1.3]);
     [t,ir,ik]=reads();
     v=zeros(size(t));
@@ -19,6 +21,12 @@
     end
     v(55*200+1:105*200) = v(5*200+1:55*200);
     v(105*200+1:end) = v(5*200+1:9991);
+    
+   y = lsim(M, gainNonLinear(v), t);
+    
+   figure; plot(t,y); hold on; plot(t,ir);
+    
+    
     close all;
     
     index1=v<0;
@@ -38,16 +46,16 @@
     v1=v(index1);
     id1=id(index1);
     k1=k(index1);
-    X=[(v1).*id1, (v1.^2).*id1,(v1.^3).*id1];
+    X=[id1,(v1).*id1, (v1.^2).*id1,(v1.^3).*id1];
     
-    theta1 = [0;inv(X'*X)*X'*k1];
+    theta1 = [inv(X'*X)*X'*k1];
     
     v1=v(index2);
     id1=id(index2);
     k1=k(index2);
-    X=[(v1).*id1, (v1.^2).*id1,(v1.^3).*id1];
+    X=[id1,(v1).*id1, (v1.^2).*id1,(v1.^3).*id1];
     
-    theta2 = [0;inv(X'*X)*X'*k1];
+    theta2 = [inv(X'*X)*X'*k1];
     
     k1 = theta1(1)+theta1(2).*v(index1)+theta1(3).*(v(index1).^2)+theta1(4).*(v(index1).^3);
     k2 =theta2(1)+theta2(2).*v(index2)+theta2(3).*(v(index2).^2)+theta2(4).*(v(index2).^3);

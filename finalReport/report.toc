@@ -40,8 +40,8 @@
 \contentsline {chapter}{\numberline {5}Gray box identification}{19}{chapter.5}
 \contentsline {chapter}{\numberline {6}Non-linearities identification}{22}{chapter.6}
 \contentsline {section}{\numberline {6.1}Non-linear gain}{22}{section.6.1}
-\contentsline {section}{\numberline {6.2}Static friction}{22}{section.6.2}
-\contentsline {section}{\numberline {6.3}Motor cogging identification}{22}{section.6.3}
+\contentsline {section}{\numberline {6.2}Static friction}{23}{section.6.2}
+\contentsline {section}{\numberline {6.3}Motor cogging identification}{23}{section.6.3}
 \contentsline {section}{\numberline {6.4}Motor mechanical static friction}{24}{section.6.4}
 \contentsline {chapter}{\numberline {7}State filtering and Model Observers}{25}{chapter.7}
 \contentsline {section}{\numberline {7.1}Extended Kalman Filter}{26}{section.7.1}
@@ -54,6 +54,6 @@
 \contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{36}{chapter.9}
 \contentsline {section}{\numberline {9.1}$H_\infty $ Control Design}{36}{section.9.1}
 \contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{39}{chapter.10}
-\contentsline {chapter}{Conclusions}{40}{chapter*.58}
-\contentsline {chapter}{Appendix}{41}{chapter*.59}
-\contentsline {chapter}{Bibliography}{41}{chapter*.59}
+\contentsline {chapter}{Conclusions}{40}{chapter*.59}
+\contentsline {chapter}{Appendix}{41}{chapter*.60}
+\contentsline {chapter}{Bibliography}{41}{chapter*.60}
