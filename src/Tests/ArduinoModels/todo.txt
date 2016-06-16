@@ -1,4 +1,1 @@
 1) BACKSTEPPING per tenerlo fermissimo a zero?
-2) Controllare il secondo leggendo x2 (simile a prima)
-3) Controllare il primo leggendo x2 (e viceversa)
-4) Osservatori (Stimare il primo leggendo il secondo)
