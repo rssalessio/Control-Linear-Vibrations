@@ -56,4 +56,5 @@
 \contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{39}{chapter.10}
 \contentsline {chapter}{Conclusions}{40}{chapter*.58}
 \contentsline {chapter}{Appendix}{41}{chapter*.59}
-\contentsline {chapter}{Bibliography}{41}{chapter*.59}
+\contentsline {section}{\numberline {10.1}Extended Kalman Filtering}{41}{section.10.1}
+\contentsline {chapter}{Bibliography}{42}{lstnumber.-1.65}

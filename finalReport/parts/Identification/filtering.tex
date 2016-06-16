@@ -67,14 +67,14 @@ and we suppose the value for $K$ is unknown and needs to be estimated online. We
 		\begin{bmatrix}
 			-\frac{R}{L} i(t) \\
 			\dot{x}_1 \\
-			\frac{\gamma}{M} i + \frac{1}{M} Kx_1 - \frac{C}{M} \dot{x}_1 \\
+			\frac{\gamma}{M} i - \frac{1}{M} Kx_1 - \frac{C}{M} \dot{x}_1 \\
 			0
 		\end{bmatrix}
 		+
 		\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \end{bmatrix} v(t)
 \end{equation}
 
-and we want to observe the state so to obtain the value of spring stiffness $K$, making use of the extended Kalman filter (EKF).\\
+and we want to observe the state so to obtain the value of spring stiffness $K$, making use of the extended Kalman filter (EKF). The filter has been designed in discrete time, hence the equations above has to be discretized.\\
 
 \emph{Matlab} does not provide an implementation for EKF and we needed to write it from scratch. We then designed a function which, given the current measurements of input $v(t)$ and output $i(t), x_1(t)$, outputs the state prediction $\hat{x}$. The \emph{Matlab} implementation is listed in the appendix.\\
 
