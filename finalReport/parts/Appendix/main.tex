@@ -3,5 +3,13 @@
 
 
 \section{Extended Kalman Filtering}
-
+Because of some problems with the Arduino Board with the continuous Kalman Filter we decided to use the discretized version of the Extended Kalman Filter. The theoretical details can be found at \ref{ekf}. To discretize the system the Forward Euler Method was used, therefore $\dot{x} \approx \frac{1}{t_s}(x_{n+1}-x_{n})$, where $t_s$ is the sampling time. Then, if the system in continuous time is described by the following equation:
+\begin{equation}
+\dot{x}=Ax+Bu
+\end{equation}
+In discrete time is:
+\begin{equation}
+x_{n+1}=(I+At_s)x_n + B t_s u
+\end{equation}
+Below is shown the matlab implementation of the algorithm:
 \lstinputlisting{ekf.m}
