@@ -74,11 +74,16 @@ and we suppose the value for $K$ is unknown and needs to be estimated online. We
 		\begin{bmatrix}\frac{1}{L} \\ 0 \\ 0 \\ 0 \end{bmatrix} v(t)
 \end{equation}
 
-and we want to observe the state so to obtain the value of spring stiffness $K$, making use of the extended Kalman filter (EKF). The filter has been designed in discrete time, hence the equations above has to be discretized.\\
+and we want to observe the state so to obtain the value of spring stiffness $K$, making use of the extended Kalman filter (EKF). The filter has been designed in discrete time, hence the equations above has to be discretized wrt the sample time $T$.
+
+\begin{eqnarray}
+	\dot{x} \approx \frac{x(k+1)-x(k)}{T} = f(x) + Bv(k)
+	\implies x(k+1) = x(k) + Tf(x) + TBv(k)
+\end{eqnarray}
 
 \emph{Matlab} does not provide an implementation for EKF and we needed to write it from scratch. We then designed a function which, given the current measurements of input $v(t)$ and output $i(t), x_1(t)$, outputs the state prediction $\hat{x}$. The \emph{Matlab} implementation is listed in the appendix.\\
 
-The verification of the observer was performed on \emph{Simulink} making use of the scheme in figure which allow us to compare the true state with the observed one.
+The verification of the observer was performed on \emph{Simulink} making use of the scheme in figure which allow us to compare the true state with the observed one.\\
 
  
 \begin{figure}[h]
@@ -92,10 +97,18 @@ The results are satisfactory as the unknown parameter is estimated with good acc
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\linewidth]{img/ekf_sin}
-\caption{$K$ estimation by feeding a sinus to the openloop plant.}
+\includegraphics[width=0.7\linewidth]{img/ekf_sim}
+\caption{$K$ estimation by feeding a train of pulses to the openloop plant.}
 \label{fig:ekfsin}
 \end{figure}
 
+The system has then been ported onto Arduino and we ran the same experiment we performed offline. We expect the filter to converge to the same value as before but the transient might be different due to nonlinearities not included in simulink. The results are very satisfactory also in the online testing and resemble nicely the simulation.\\
 
-TEST SUL SISTEMA VERO
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/ekf_ard}
+	\caption{Online estimation by feeding a train of pulses to the openloop plant.}
+	\label{fig:ekfard}
+\end{figure}
+
+The plot shown in figure \ref{fig:ekfard} has been obtained by measuring the output of the EKF on arduino and, as comparison, the output of the filter on \emph{Simulink} fed by the measured signal on the board in order to compare the outputs using the same data.
