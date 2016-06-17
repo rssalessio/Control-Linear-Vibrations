@@ -8,7 +8,7 @@ plant = ss(plant);
 damp(plant)/2/pi
 
 %% Design Controller
-plant_design = plant(3,1);
+plant_design = plant(2,1);
 
 % % MED-HIGH-LOW
 w = 0.5;
@@ -37,9 +37,9 @@ Hinf_red = reduce(Hinf, 5);
 
 figure; hold on;
 bode(Hinf); bode(Hinf_red); legend('Hinf', 'Hinf reduced');
-
-Hinf = ss(Hinf_red);
-figure; step(feedback(series(Hinf,plant_design), 1))
-
-%% Stabilization Hinf
-figure; rlocus(Hinf);
+% 
+% Hinf = ss(Hinf_red);
+% figure; step(feedback(series(Hinf,plant_design), 1))
+% 
+% %% Stabilization Hinf
+% figure; rlocus(Hinf);
