@@ -1,14 +1,16 @@
 clear all, close all
 
-load kalman;
+%load kalman;
 
-[plant, dof] = sysBuilder([2,2,2], ['m', 'h','l'], {'i','x1','x2'}, 0);
+%[plant, Q,R,P,L] = kalmanObserver([2,2,2], ['m','l','h'], {'i','x1','x2'});
+
+plant = sysBuilder([2,2,2], ['m','l','h'], {'i','x1','x2','x3'},0);
 plant = ss(plant);
 
 damp(plant)/2/pi
 
 %% Design Controller
-plant_design = plant(3,1);
+plant_design = plant(4,1);
 
 % % MED-HIGH-LOW
 w = 0.5;
