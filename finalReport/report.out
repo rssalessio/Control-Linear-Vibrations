@@ -33,7 +33,7 @@
 \BOOKMARK [1][-]{section.6.1}{Non-linear gain}{chapter.6}% 33
 \BOOKMARK [1][-]{section.6.2}{Static friction}{chapter.6}% 34
 \BOOKMARK [1][-]{section.6.3}{Motor cogging identification}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.4}{Motor mechanical static friction}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.4}{Cart static friction}{chapter.6}% 36
 \BOOKMARK [0][-]{chapter.7}{State filtering and Model Observers}{}% 37
 \BOOKMARK [1][-]{section.7.1}{Extended Kalman Filter}{chapter.7}% 38
 \BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 39
@@ -45,13 +45,7 @@
 \BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 45
 \BOOKMARK [1][-]{section.9.1}{H Control Design}{chapter.9}% 46
 \BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 47
-<<<<<<< HEAD
-\BOOKMARK [0][-]{chapter*.58}{Conclusions}{}% 48
-\BOOKMARK [0][-]{chapter*.59}{Appendix}{}% 49
-\BOOKMARK [1][-]{section.10.1}{Extended Kalman Filtering}{chapter*.59}% 50
-\BOOKMARK [0][-]{lstnumber.-1.65}{Bibliography}{}% 51
-=======
 \BOOKMARK [0][-]{chapter*.59}{Conclusions}{}% 48
 \BOOKMARK [0][-]{chapter*.60}{Appendix}{}% 49
-\BOOKMARK [0][-]{chapter*.60}{Bibliography}{}% 50
->>>>>>> origin/master
+\BOOKMARK [1][-]{section.10.1}{Extended Kalman Filtering}{chapter*.60}% 50
+\BOOKMARK [0][-]{lstnumber.-1.65}{Bibliography}{}% 51

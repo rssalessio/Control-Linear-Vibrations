@@ -75,5 +75,29 @@ Instead if we minimise a least squares problem $J = \frac{1}{2} \sum_{t=0}^T (i_
   \caption{Identified model vs real current.}
     \label{fig:deadzone_sim}
 \end{figure}
-\section{Motor mechanical static friction}
+\section{Cart static friction}
+Finally, of the major non-linearities, the static friction of the cart was evaluated. To do so we made use of the information regarding the non-linearities of the motor. \\
+The most basic identification procedure is to linearly increase the voltage input to the motor until the cart moves, but since the motor is an intermediate system, we had to identify first the non-linearities of the motor.\\ \\
+Next we need to know the resolution of the encoder: the resolution is, as specified at the beginning of the report, of $14$ bits. Therefore, since $560$ is the factor we need to consider to convert the number of steps of the encoder to $cm$ the final resolution is $\Delta = 0.0342$ \SI{}{\centi \metre}. The input voltage used is:
+\begin{equation}
+v(t) = 0.03t
+\end{equation}
+The static friction force is defined as:
+\begin{equation}
+f_s = \mu_s  N
+\end{equation}
+Where $N$ is the vertical load and $\mu_s$ the static friction coefficient. The experiment was executed with only 1 cart and no loads, therefore the total load $N$ is just the mass of the cart, which is $0.5685$ \SI{}{\kilo \gram}.\\ \\
+The total force transmitted from the motor is \begin{equation}
+F(t) = \gamma i(t)
+\end{equation}
+Therefore for $t$ such that $F(t)=f_s$ we have:
+\begin{equation}
+\mu_s = \frac{\gamma}{N} i
+\end{equation}
+which is the static friction condition. Therefore we need to have an accurate knowledge of the current in order to estimate $\mu_s$. 
+At $t=30$ the cart moves out of the encoder resolution and starts moving. For such $t$ the current is about $0.3$ \SI{}{\ampere}, therefore we can estimate that the static friction is:
+\begin{equation}
+\mu_s \approx \frac{2.068}{0.5685}0.3 \approx 1.1
+\end{equation}
+In figure is shown the plot of the current and its estimate. In figure the plot of the cart position
 

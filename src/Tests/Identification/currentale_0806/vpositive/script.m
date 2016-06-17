@@ -5,7 +5,7 @@ M = tf([1],[0.0024 1.3]);
   
    y = lsim(M, gainNonLinear(v), t);
     
-   figure; plot(t,y); hold on; plot(t,I_real);
+   figure; plot(t,y); hold on; plot(t,I_real); hold on; plot(t,v);
 
 
 close all;

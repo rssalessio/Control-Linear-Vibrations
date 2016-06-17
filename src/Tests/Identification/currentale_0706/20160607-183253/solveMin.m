@@ -24,7 +24,7 @@
     
    y = lsim(M, gainNonLinear(v), t);
     
-   figure; plot(t,y); hold on; plot(t,ir);
+   figure; plot(t,y); hold on; plot(t,ir); hold on; plot(t,v)
     
     
     close all;

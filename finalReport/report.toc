@@ -42,25 +42,19 @@
 \contentsline {section}{\numberline {6.1}Non-linear gain}{22}{section.6.1}
 \contentsline {section}{\numberline {6.2}Static friction}{23}{section.6.2}
 \contentsline {section}{\numberline {6.3}Motor cogging identification}{23}{section.6.3}
-\contentsline {section}{\numberline {6.4}Motor mechanical static friction}{24}{section.6.4}
-\contentsline {chapter}{\numberline {7}State filtering and Model Observers}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Extended Kalman Filter}{26}{section.7.1}
-\contentsline {chapter}{\numberline {8}Control of 1 Degree of Freedom}{28}{chapter.8}
-\contentsline {section}{\numberline {8.1}Loopshaping}{28}{section.8.1}
-\contentsline {section}{\numberline {8.2}RHP-Zeros Control}{30}{section.8.2}
-\contentsline {section}{\numberline {8.3}$H_{\infty }$ control}{31}{section.8.3}
-\contentsline {section}{\numberline {8.4}LQG Control}{35}{section.8.4}
-\contentsline {section}{\numberline {8.5}Adaptive control}{35}{section.8.5}
-\contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{36}{chapter.9}
-\contentsline {section}{\numberline {9.1}$H_\infty $ Control Design}{36}{section.9.1}
-\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{39}{chapter.10}
-<<<<<<< HEAD
-\contentsline {chapter}{Conclusions}{40}{chapter*.58}
-\contentsline {chapter}{Appendix}{41}{chapter*.59}
-\contentsline {section}{\numberline {10.1}Extended Kalman Filtering}{41}{section.10.1}
-\contentsline {chapter}{Bibliography}{42}{lstnumber.-1.65}
-=======
-\contentsline {chapter}{Conclusions}{40}{chapter*.59}
-\contentsline {chapter}{Appendix}{41}{chapter*.60}
-\contentsline {chapter}{Bibliography}{41}{chapter*.60}
->>>>>>> origin/master
+\contentsline {section}{\numberline {6.4}Cart static friction}{24}{section.6.4}
+\contentsline {chapter}{\numberline {7}State filtering and Model Observers}{26}{chapter.7}
+\contentsline {section}{\numberline {7.1}Extended Kalman Filter}{27}{section.7.1}
+\contentsline {chapter}{\numberline {8}Control of 1 Degree of Freedom}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Loopshaping}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}RHP-Zeros Control}{31}{section.8.2}
+\contentsline {section}{\numberline {8.3}$H_{\infty }$ control}{32}{section.8.3}
+\contentsline {section}{\numberline {8.4}LQG Control}{36}{section.8.4}
+\contentsline {section}{\numberline {8.5}Adaptive control}{36}{section.8.5}
+\contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}$H_\infty $ Control Design}{37}{section.9.1}
+\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{40}{chapter.10}
+\contentsline {chapter}{Conclusions}{41}{chapter*.59}
+\contentsline {chapter}{Appendix}{42}{chapter*.60}
+\contentsline {section}{\numberline {10.1}Extended Kalman Filtering}{42}{section.10.1}
+\contentsline {chapter}{Bibliography}{43}{lstnumber.-1.65}
