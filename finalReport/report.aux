@@ -149,81 +149,101 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {6.1}Non-linear gain}{22}{section.6.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Plot of $g(v),v$.\relax }}{23}{figure.caption.37}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Static friction}{23}{section.6.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Motor cogging identification}{23}{section.6.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right we can see the effect on the position of the cart.\relax }}{24}{figure.caption.38}}
-\newlabel{fig:curposvolt}{{6.2}{24}{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right we can see the effect on the position of the cart.\relax }{figure.caption.38}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Current vs Voltage plot}}}{24}{subfigure.2.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Current vs Position plot}}}{24}{subfigure.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Identified model vs real current.\relax }}{24}{figure.caption.39}}
-\newlabel{fig:deadzone_sim}{{6.3}{24}{Identified model vs real current.\relax }{figure.caption.39}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Cart static friction}{24}{section.6.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}State filtering and Model Observers}{26}{chapter.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Identified model vs real current.\relax }}{23}{figure.caption.38}}
+\newlabel{fig:nlg2}{{6.2}{23}{Identified model vs real current.\relax }{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Motor cogging identification}{23}{section.6.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right we can see the effect on the position of the cart.\relax }}{24}{figure.caption.39}}
+\newlabel{fig:curposvolt}{{6.3}{24}{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right we can see the effect on the position of the cart.\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Current vs Voltage plot}}}{24}{subfigure.3.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Current vs Position plot}}}{24}{subfigure.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Identified model vs real current.\relax }}{24}{figure.caption.40}}
+\newlabel{fig:deadzone_sim}{{6.4}{24}{Identified model vs real current.\relax }{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Cart static friction}{24}{section.6.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{25}{figure.caption.41}}
+\newlabel{fig:sfric1}{{6.5}{25}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{26}{figure.caption.42}}
+\newlabel{fig:sfric2}{{6.6}{26}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.42}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}State filtering and Model Observers}{27}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{kalmanfilt}{{7}{26}{State filtering and Model Observers}{chapter.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Estimate of the second cart position using $i,x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.\relax }}{27}{figure.caption.40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Estimate of the second cart position using $x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.\relax }}{27}{figure.caption.40}}
-\newlabel{fig:kalman_valid}{{\caption@xref {fig:kalman_valid}{ on input line 38}}{27}{State filtering and Model Observers}{figure.caption.40}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Extended Kalman Filter}{27}{section.7.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Simulink scheme used for verification.\relax }}{28}{figure.caption.41}}
-\newlabel{fig:ekfscheme}{{7.3}{28}{Simulink scheme used for verification.\relax }{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces $K$ estimation by feeding a train of pulses to the openloop plant.\relax }}{28}{figure.caption.42}}
-\newlabel{fig:ekfsin}{{7.4}{28}{$K$ estimation by feeding a train of pulses to the openloop plant.\relax }{figure.caption.42}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Online estimation by feeding a train of pulses to the openloop plant.\relax }}{28}{figure.caption.43}}
-\newlabel{fig:ekfard}{{7.5}{28}{Online estimation by feeding a train of pulses to the openloop plant.\relax }{figure.caption.43}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Control of 1 Degree of Freedom}{29}{chapter.8}}
+\newlabel{kalmanfilt}{{7}{27}{State filtering and Model Observers}{chapter.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Estimate of the second cart position using $i,x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.\relax }}{28}{figure.caption.43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Estimate of the second cart position using $x_1$. On the first cart there are 0 masses, on the second one there are two, and on the third one there is only one. The spring setup is $K_h, K_l, K_m$.\relax }}{28}{figure.caption.43}}
+\newlabel{fig:kalman_valid}{{\caption@xref {fig:kalman_valid}{ on input line 38}}{28}{State filtering and Model Observers}{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Extended Kalman Filter}{28}{section.7.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Simulink scheme used for verification.\relax }}{29}{figure.caption.44}}
+\newlabel{fig:ekfscheme}{{7.3}{29}{Simulink scheme used for verification.\relax }{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces $K$ estimation by feeding a train of pulses to the openloop plant.\relax }}{29}{figure.caption.45}}
+\newlabel{fig:ekfsin}{{7.4}{29}{$K$ estimation by feeding a train of pulses to the openloop plant.\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Online estimation by feeding a train of pulses to the openloop plant.\relax }}{29}{figure.caption.46}}
+\newlabel{fig:ekfard}{{7.5}{29}{Online estimation by feeding a train of pulses to the openloop plant.\relax }{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Control of 1 Degree of Freedom}{30}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Loopshaping}{29}{section.8.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Bode diagram of the loop transfer function of the plant (motor and cart).\relax }}{29}{figure.caption.44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Simulink model used for verification of the control design.\relax }}{30}{figure.caption.45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Bode diagram of the loop transfer function after the shaping.\relax }}{30}{figure.caption.46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Comparisons of the step response between the simulated system and the real one.\relax }}{31}{figure.caption.47}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Strongest spring $K_h$.}}}{31}{subfigure.4.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Weakest spring $K_l$.}}}{31}{subfigure.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}RHP-Zeros Control}{31}{section.8.2}}
-\citation{hoagg2006}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}$H_{\infty }$ Control Design}{32}{section.8.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Augmented plant. $G(s)$ represents the transfer function of the actuator and cart described in the previous section.\relax }}{32}{figure.caption.48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Shaping functions.\relax }}{33}{figure.caption.49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.7}{\ignorespaces \relax }}{33}{figure.caption.50}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Singular values of the Hankel matrix.}}}{33}{subfigure.7.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Approximation with only the first order.}}}{33}{subfigure.7.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.8}{\ignorespaces Introduction of the integral action into the controller.\relax }}{34}{figure.caption.51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.9}{\ignorespaces Singular values of the Hankel matrix for the controller with integral action.\relax }}{34}{figure.caption.52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.10}{\ignorespaces Comparison between Loopshaping and $H_{\infty }$.\relax }}{34}{figure.caption.53}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$H_{\infty }$ without integrator}}}{34}{subfigure.10.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$H_{\infty }$ with integrator.}}}{34}{subfigure.10.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.11}{\ignorespaces Comparison between step response of $H_\infty $ controller.\relax }}{35}{figure.caption.54}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$H_{\infty }$ without integrator}}}{35}{subfigure.11.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$H_{\infty }$ with integrator.}}}{35}{subfigure.11.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Loopshaping}{30}{section.8.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Bode diagram of the loop transfer function of the plant (motor and cart).\relax }}{30}{figure.caption.47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Simulink model used for verification of the control design.\relax }}{31}{figure.caption.48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Bode diagram of the loop transfer function after the shaping.\relax }}{31}{figure.caption.49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Comparisons of the step response between the simulated system and the real one.\relax }}{32}{figure.caption.50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Strongest spring $K_h$.}}}{32}{subfigure.4.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Weakest spring $K_l$.}}}{32}{subfigure.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}RHP-Zeros Control}{32}{section.8.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Bode diagram of the loop transfer function of the plant (motor and cart).\relax }}{32}{figure.caption.51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Bode diagram of the loop transfer function of the plant (motor and cart).\relax }}{33}{figure.caption.52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.7}{\ignorespaces On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }}{33}{figure.caption.53}}
+\newlabel{fig:poss}{{8.7}{33}{On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {LQG $K_l$}}}{33}{subfigure.7.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {LQG $K_h$}}}{33}{subfigure.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}$H_{\infty }$ Control Design}{33}{section.8.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.8}{\ignorespaces Augmented plant. $G(s)$ represents the transfer function of the actuator and cart described in the previous section.\relax }}{34}{figure.caption.54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.9}{\ignorespaces Shaping functions.\relax }}{34}{figure.caption.55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.10}{\ignorespaces \relax }}{34}{figure.caption.56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Singular values of the Hankel matrix.}}}{34}{subfigure.10.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Approximation with only the first order.}}}{34}{subfigure.10.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.11}{\ignorespaces Introduction of the integral action into the controller.\relax }}{35}{figure.caption.57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.12}{\ignorespaces Singular values of the Hankel matrix for the controller with integral action.\relax }}{35}{figure.caption.58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.13}{\ignorespaces Comparison between Loopshaping and $H_{\infty }$.\relax }}{36}{figure.caption.59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$H_{\infty }$ without integrator}}}{36}{subfigure.13.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$H_{\infty }$ with integrator.}}}{36}{subfigure.13.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.14}{\ignorespaces Comparison between step response of $H_\infty $ controller.\relax }}{36}{figure.caption.60}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$H_{\infty }$ without integrator}}}{36}{subfigure.14.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$H_{\infty }$ with integrator.}}}{36}{subfigure.14.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.4}LQG Control Design}{36}{section.8.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.12}{\ignorespaces On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }}{36}{figure.caption.55}}
-\newlabel{fig:lqg1dof}{{8.12}{36}{On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }{figure.caption.55}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {LQG $K_l$}}}{36}{subfigure.12.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {LQG $K_h$}}}{36}{subfigure.12.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{37}{chapter.9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.15}{\ignorespaces On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }}{37}{figure.caption.61}}
+\newlabel{fig:lqg1dof}{{8.15}{37}{On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.\relax }{figure.caption.61}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {LQG $K_l$}}}{37}{subfigure.15.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {LQG $K_h$}}}{37}{subfigure.15.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{38}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}LQG Control Design}{37}{section.9.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}$H_\infty $ Control Design}{37}{section.9.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{37}{figure.caption.56}}
-\newlabel{fig:bodeol}{{9.1}{37}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Response to a train of pulses.\relax }}{38}{figure.caption.57}}
-\newlabel{fig:hinfnocurr}{{9.2}{38}{Response to a train of pulses.\relax }{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Response to a train of pulses when the current is controlled.\relax }}{38}{figure.caption.58}}
-\newlabel{fig:hinfnocurr}{{9.3}{38}{Response to a train of pulses when the current is controlled.\relax }{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Step response for the controlled system.\relax }}{39}{figure.caption.59}}
-\newlabel{fig:hinfnocurr}{{9.4}{39}{Step response for the controlled system.\relax }{figure.caption.59}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{40}{chapter.10}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}LQG Control Design}{38}{section.9.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{38}{figure.caption.62}}
+\newlabel{fig:lqg2dof}{{9.1}{38}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.62}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}$H_\infty $ Control Design}{38}{section.9.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{39}{figure.caption.63}}
+\newlabel{fig:bodeol}{{9.2}{39}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.63}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Response to a train of pulses.\relax }}{39}{figure.caption.64}}
+\newlabel{fig:hinfnocurr}{{9.3}{39}{Response to a train of pulses.\relax }{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Response to a train of pulses when the current is controlled.\relax }}{40}{figure.caption.65}}
+\newlabel{fig:hinfnocurr}{{9.4}{40}{Response to a train of pulses when the current is controlled.\relax }{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.5}{\ignorespaces Step response for the controlled system.\relax }}{40}{figure.caption.66}}
+\newlabel{fig:hinfnocurr}{{9.5}{40}{Step response for the controlled system.\relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{41}{chapter.10}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {10.1}LQG Control Design}{40}{section.10.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.2}$H_\infty $ Control Design}{40}{section.10.2}}
-\@writefile{toc}{\contentsline {chapter}{Conclusions}{41}{chapter*.60}}
-\@writefile{toc}{\contentsline {chapter}{The team}{42}{chapter*.61}}
-\@writefile{toc}{\contentsline {chapter}{Appendix}{43}{chapter*.62}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.3}Extended Kalman Filtering}{43}{section.10.3}}
-\@writefile{lol}{\contentsline {lstlisting}{ekf.m}{43}{lstlisting.10.-1}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{44}{lstnumber.-1.65}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.1}LQG Control Design}{41}{section.10.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{41}{figure.caption.67}}
+\newlabel{fig:lqg3dof}{{10.1}{41}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.2}$H_\infty $ Control Design}{41}{section.10.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.2}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{41}{figure.caption.68}}
+\newlabel{fig:hinf13dof}{{10.2}{41}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.3}{\ignorespaces Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }}{42}{figure.caption.69}}
+\newlabel{fig:hinf23dof}{{10.3}{42}{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.\relax }{figure.caption.69}{}}
+\@writefile{toc}{\contentsline {chapter}{Conclusions}{43}{chapter*.70}}
+\@writefile{toc}{\contentsline {chapter}{The team}{44}{chapter*.71}}
+\citation{hoagg2006}
+\@writefile{toc}{\contentsline {chapter}{Appendix}{45}{chapter*.72}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.3}Effect of positive zeros}{45}{section.10.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.4}Extended Kalman Filtering}{46}{section.10.4}}
+\@writefile{lol}{\contentsline {lstlisting}{ekf.m}{46}{lstlisting.10.-1}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{47}{lstnumber.-1.65}}

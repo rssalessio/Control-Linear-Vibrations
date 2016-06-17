@@ -30,24 +30,24 @@
 \BOOKMARK [0][-]{chapter.5}{Gray box identification}{}% 30
 \BOOKMARK [0][-]{chapter.6}{Non-linearities identification}{}% 31
 \BOOKMARK [1][-]{section.6.1}{Non-linear gain}{chapter.6}% 32
-\BOOKMARK [1][-]{section.6.2}{Static friction}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.3}{Motor cogging identification}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.4}{Cart static friction}{chapter.6}% 35
-\BOOKMARK [0][-]{chapter.7}{State filtering and Model Observers}{}% 36
-\BOOKMARK [1][-]{section.7.1}{Extended Kalman Filter}{chapter.7}% 37
-\BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 38
-\BOOKMARK [1][-]{section.8.1}{Loopshaping}{chapter.8}% 39
-\BOOKMARK [1][-]{section.8.2}{RHP-Zeros Control}{chapter.8}% 40
-\BOOKMARK [1][-]{section.8.3}{H Control Design}{chapter.8}% 41
-\BOOKMARK [1][-]{section.8.4}{LQG Control Design}{chapter.8}% 42
-\BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 43
-\BOOKMARK [1][-]{section.9.1}{LQG Control Design}{chapter.9}% 44
-\BOOKMARK [1][-]{section.9.2}{H Control Design}{chapter.9}% 45
-\BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 46
-\BOOKMARK [1][-]{section.10.1}{LQG Control Design}{chapter.10}% 47
-\BOOKMARK [1][-]{section.10.2}{H Control Design}{chapter.10}% 48
-\BOOKMARK [0][-]{chapter*.60}{Conclusions}{}% 49
-\BOOKMARK [0][-]{chapter*.61}{The team}{}% 50
-\BOOKMARK [0][-]{chapter*.62}{Appendix}{}% 51
-\BOOKMARK [1][-]{section.10.3}{Extended Kalman Filtering}{chapter*.62}% 52
+\BOOKMARK [1][-]{section.6.2}{Motor cogging identification}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.3}{Cart static friction}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{State filtering and Model Observers}{}% 35
+\BOOKMARK [1][-]{section.7.1}{Extended Kalman Filter}{chapter.7}% 36
+\BOOKMARK [0][-]{chapter.8}{Control of 1 Degree of Freedom}{}% 37
+\BOOKMARK [1][-]{section.8.1}{Loopshaping}{chapter.8}% 38
+\BOOKMARK [1][-]{section.8.2}{RHP-Zeros Control}{chapter.8}% 39
+\BOOKMARK [1][-]{section.8.3}{H Control Design}{chapter.8}% 40
+\BOOKMARK [1][-]{section.8.4}{LQG Control Design}{chapter.8}% 41
+\BOOKMARK [0][-]{chapter.9}{Control of 2 Degree of Freedom}{}% 42
+\BOOKMARK [1][-]{section.9.1}{LQG Control Design}{chapter.9}% 43
+\BOOKMARK [1][-]{section.9.2}{H Control Design}{chapter.9}% 44
+\BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 45
+\BOOKMARK [1][-]{section.10.1}{LQG Control Design}{chapter.10}% 46
+\BOOKMARK [1][-]{section.10.2}{H Control Design}{chapter.10}% 47
+\BOOKMARK [0][-]{chapter*.70}{Conclusions}{}% 48
+\BOOKMARK [0][-]{chapter*.71}{The team}{}% 49
+\BOOKMARK [0][-]{chapter*.72}{Appendix}{}% 50
+\BOOKMARK [1][-]{section.10.3}{Effect of positive zeros}{chapter*.72}% 51
+\BOOKMARK [1][-]{section.10.4}{Extended Kalman Filtering}{chapter*.72}% 52
 \BOOKMARK [0][-]{lstnumber.-1.65}{Bibliography}{}% 53

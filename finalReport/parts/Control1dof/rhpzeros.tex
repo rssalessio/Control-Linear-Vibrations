@@ -1,31 +1,25 @@
 \section{RHP-Zeros Control}
 During the development of the project it was apparent that using an integrator was necessary to eliminate steady state-error and reduce the effect of non-linearities due to the high-gain linearization effect induced by the integrator. Though, this led to some drawbacks, such as low cut-off frequency. This was induced by the fact that we have 2 complex poles near the imaginary axis, which are the cart natural frequencies. One of the best way to design a controller was to introduce two complex zero in order to cancel the effect of those complex poles. Another way was to use positive zeros in our controller.\\ \\
 It is well known from the root locus technique that zeros \emph{attract} poles for increasing gain. Then it was observed, that, if we place positive zeros sufficiently near to the real axis, and not too far from the complex poles  aforementioned, those poles with a sufficient gain would fall in a zone where the output signal response of the system would have low overshoot. \\ \\
-Now it's briefly described what are the drawbacks of RHP-zeros in the loop. From  a frequency analysis we can get an insight of what happens: RHP-zeros add  $-180$ degree to phase, therefore it's best to have those zeros at high frequency (thus the modulus of the zeros) to have their effect quickly dissipate without any effect. To analyze in time we need to take the partial 	fraction expansion. Let $G(s)$ be our system considered and $C(s)$ our controller. Then:
-$$C(s) = \hat{k}\frac{(s-a)(s-\overline{a})}{s(s+p)}, a \in \mathbb{C}, p \in \mathbb{R}$$
-where $\overline{a}$ is the complex conjugate of $a$, and $\hat{k}=\frac{kp}{|a|^2}$, with $\mathbb{R}(a) > 0$. 
-The closed loop transfer function is:
-$$T(s) = \frac{CG(s)}{1+CG(s)} = \frac{\hat{k}(s-a)(s-\overline{a})\gamma}{s(s+p)(Ls+R)(Ms^2+Cs+K)+\hat{k}(s-a)(s-\overline{a})\gamma}$$
-With output signal $y(t) = \mathcal{L}[T(s)R(s)]^{-1}$.
-For a certain $k$ it's possible to stabilize the system, that can be seen using root locus technique.
-Notice that the motor since has a pole in $s \approx 600$ \SI{}{\radian \per \second} its term $sL$ can be ignored. In closed loop, it is possible to demonstrate that we have 2 complex conjugate poles in the left half plane, and two negative poles on the real axis that if the gain increases more will become complex conjugate poles. Thus we have 4 poles, and the transfer function can be rewritten as:
-$$T(s) = \frac{\hat{k}(s-a)(s-\overline{a})\gamma}{(s+p_{1})(s+p_{2})(s^2+2\alpha s+\beta)}
-$$
-Where $p_2>p_1 >0 $. The partial fraction expansion becomes:
-$$T(s) = \frac{A}{s+p_1} + \frac{B}{s+p_2} +\frac{Cs+D}{s^2+\alpha s+\beta}$$
-and in time it's:
-$$y(t) = Ae^{-p_1 t)}+ Be^{-p_2 t} +Ce^{-\alpha t}\Big (\cos(\theta t)+ \frac{\frac{D}{C}-\alpha}{\theta} \sin(\theta t) \Big)$$
-Where $\theta^2 =  \beta -\alpha^2$. 
-Making use of the fact that for example $A = \lim_{s \to -p_1} (s+p_1)T(s)$ we obtain:
-\begin{align*}A &= \frac{\hat{k}(-p_1-a)(-p_1-\overline{a})\gamma}{(-p_1+p_2)(p_1^2-2\alpha p_1+\beta)}\\
-B &= \frac{\hat{k}(-p_2-a)(-p_2-\overline{a})\gamma}{(-p_2+p_1)(p_2^2-2\alpha p_2+\beta)}
-\end{align*}
-And $$\lim_{t \to 0^{+}} \dot{y}(t) = \lim_{s \to \infty} sT(s) = A+B+C=0 \Rightarrow C=-A-B$$
-$$T(0)= \frac{\hat{k}a^2\gamma}{p_1 p_2 \beta } = \frac{A}{p_1} + \frac{B}{p_2} + \frac{D}{\beta}$$
-It can be proven that $\sign C =  - \sign \mathbb{R}(a)$, whilst $A,B,D$ mantain their sign. In fact $C$ is:
-$$C=\frac{-\hat{k}\gamma}{p_2-p_1} \Big( \frac{(-p_1-a)(-p_1-\overline{a})}{p_1^2-2\alpha p_1+\beta} -\frac{(-p_2-a)(-p_2-\overline{a})}{p_2^2-2\alpha p_2+\beta} \Big) $$
-Notice that the sign of $C$, with the hyphotesis $p_2 > p_1$, depends only on the numerator of the fractions inside the brackets (not the denominators, which are always positive):
-$$C=\frac{-\hat{k}\gamma}{p_2-p_1}\Big ( \frac{p_1^2 -2p_1 \mathbb{R}(a) +a^2}{p_1^2-2\alpha p_1+\beta} -\frac{p_2^2 -2p_2 \mathbb{R}(a) +a^2}{p_2^2-2\alpha p_2+\beta} \Big)$$
-For $\mathbb{R}(a) < 0 \Rightarrow C > 0$ and viceversa. This effects leads to $\dot{y}(t) <0$ for some $t$, causing the \emph{undershoot} effect.  \\ \\ \\
-More in general, by looking at the expression of $T(s)$, it's possible to notice that the effect of $\mathbb{R}(a)$ is visible starting from the $r+1$ time derivative of $y(t)$, where $r$ is the relative degree, thus $\sign y^{r+1}(0)  = \sign \hat{k}\gamma \mathbb{R}(a)$. But derivative up to the $r$-th order are positive, thus for this reason the undershoot effect is delayed and does not appear right at the beginning. \\ \\
-Finally an even number of positive zeros display the undershoot effect  after a small time. On the other hand it can be proven  \cite{hoagg2006}]that an odd number of positive zeros show the undershoot effect right at the start. Obviously the effect of those zeros can be reduced by moving them far away from the origin (i.e. in high frequency), where the gain of the system is very low,  but, then, the root locus would change. \\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{img/pos_zeros_design.png}
+\caption{Bode diagram of the loop transfer function of the plant (motor and cart).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{img/pos_zeros_sin.png}
+\caption{Bode diagram of the loop transfer function of the plant (motor and cart).}
+\end{figure}
+
+
+  \begin{figure}[!tbh]
+  \centering
+  \subfloat[LQG $K_l$]{\includegraphics[width=0.5\textwidth]{img/pos_zeros_kh_1.png}}
+  \hfill
+  \subfloat[LQG $K_h$]{\includegraphics[width=0.5\textwidth]{img/pos_zeros_kh_2.png}}
+  \caption{On the left: plot of the cart position with LQG control and $K_l$. On the right plot of the cart position with $K_h$.}
+    \label{fig:poss}
+\end{figure}

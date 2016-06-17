@@ -37,11 +37,16 @@ And $g(v) =f(v)v$.
   \includegraphics[width=0.5\textwidth]{img/nonlinear_gain.png}
   \caption{Plot of $g(v),v$.}
 \end{figure}
-\section{Static friction}
+  \begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/nonlinear_gain2.png}
+  \caption{Identified model vs real current.}
+    \label{fig:nlg2}
+    \end{figure}
 \section{Motor cogging identification}
 It was found that for low voltage the motor acts as if the voltage is $0$, therefore the current and consequently the torque is $0$.\\
 This is  a type of static friction, though it's not a mechanical one. In fact, if it was a mechanical one we would see the current increase but the shaft of the motor don't rotate until the torque is big enough to counteract the static friction effect. In this case is more an electrical type of static friction, called \emph{cogging} effect. \\ \\
-COPIATO DA WIKI \\
+
 Cogging torque of electrical motors is the torque due to the interaction between the permanent magnets of the rotor and the stator slots of a Permanent Magnet (PM) machine. This torque is position dependent and its periodicity per revolution depends on the number of magnetic poles and the number of teeth on the stator.Cogging torque results in torque as well as speed ripple; however, at high speed the motor moment of inertia filters out the effect of cogging torque.
 \\ \\
 In figure \ref{fig:curposvolt} such effect is shown. On the left plot it's visible that when the input voltage $v(t)$ for $|v(t)|< c$, the output current is $0$. Since the torque is proportional to the current, also the torque is $0$. On the right plot is visible the effect on the cart: when the cart starts to move, after having overcome the static friction, it stops because the torque goes to $0$ because the current is $0$. But this effect does not happen because of mechanical static friction, otherwise we would not see a flat current curve.  \\ \\
@@ -99,5 +104,17 @@ At $t=30$ the cart moves out of the encoder resolution and starts moving. For su
 \begin{equation}
 \mu_s \approx \frac{2.068}{0.5685}0.3 \approx 1.1
 \end{equation}
-In figure is shown the plot of the current and its estimate. In figure the plot of the cart position
+In figure is shown the plot of the current and its estimate. In figure the plot of the cart position.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{img/static_fric_1}
+\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
+\label{fig:sfric1}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{img/static_fric_2}
+\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
+\label{fig:sfric2}
+\end{figure}
 
