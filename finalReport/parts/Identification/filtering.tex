@@ -102,12 +102,11 @@ The system has then been ported onto Arduino and we ran the same experiment we p
 
 \begin{figure}[!tbh]
   \centering
-  \subfloat[$K$ estimation by feeding a train of pulses to the openloop plant.]{\includegraphics[width=0.5\textwidth]{img/ekf_sim}}
+  \subfloat[Estimation by feeding a train of pulses in \emph{Simulink}.]{\includegraphics[width=0.5\textwidth]{img/ekf_sim}}
   \hfill
-  \subfloat[Online estimation by feeding a train of pulses to the openloop plant.]{\includegraphics[width=0.5\textwidth]{img/ekf_ard}}
-  \caption{}
+  \subfloat[Online estimation by feeding a train of pulses. Data measurements are fed to \emph{Simulink} in order to be able to compare the outcome.]{\includegraphics[width=0.5\textwidth]{img/ekf_ard}}
+  \caption{Estimation of the spring stiffness in one degree of freedom.}
     \label{fig:ekfsimard}
 \end{figure}
 
-The plot shown in figure \ref{fig:ekfsimard} has been obtained by measuring the output of the EKF on arduino and, as comparison, the output of the filter on \emph{Simulink} fed by the measured signal on the board in order to compare the outputs using the same data.
-\\
+The plot shown in figure \ref{fig:ekfsimard} has been obtained by measuring the output of the EKF on arduino and, as comparison, the output of the filter on \emph{Simulink} fed by the measured signal on the board in order to compare the outputs using the same data. Although we used the same solver, the results are a little different, probably due to numeric error on the Arduino board.\\

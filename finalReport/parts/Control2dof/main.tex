@@ -30,23 +30,23 @@ As it possible to see, the current has some oscillations which perturb the whole
 We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
 
 \begin{figure}[h]
+	\setlength{\belowcaptionskip}{-10pt}
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_nocurr}
-	\caption{Response to a train of pulses.}
+	\caption{Response to a train of pulses when the current is not controlled. It is hard for the system to maintain the value at steady state.}
 	\label{fig:hinfnocurr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_curr}
-	\caption{Response to a train of pulses when the current is controlled.}
+	\caption{Response to a train of pulses when the current is controlled. Now the response is much smoother.}
 	\label{fig:hinfnocurr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_response}
-	\caption{Carts displacement over time due to a train of pulses.}
+	\caption{Carts displacement over time due to a train of pulses. Both carts do not overshoot.}
 	\label{fig:2dofcarts}
 \end{figure}
-

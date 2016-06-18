@@ -23,21 +23,37 @@ The controller output of the $H_{\infty}$ design has as many poles as the augmen
 
 The downside of this controller is that it does not have any integral action, but this can be easily fixed by moving the slowest pole (of the controller) to zero. This way we are introducing an integral action without affecting the other properties of the designed controller. In Matlab this can be done by converting the state-space model of the controller into a \emph{zpk} model and by literally editing the slowest pole into zero.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{img/hinf_integrator.jpg}
-\caption{Introduction of the integral action into the controller.}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.5\textwidth]{img/hinf_integrator.jpg}
+%\caption{Introduction of the integral action into the controller.}
+%\end{figure}
+
+  \begin{figure}[h]
+  	\centering
+  	\subfloat[Introduction of the integral action into the controller.]
+  	{\includegraphics[width=0.49\textwidth]{img/hinf_integrator.jpg}}
+  	\hfill
+  	\subfloat[Singular values of the Hankel matrix for the controller with integral action.] {\includegraphics[width=0.49\textwidth, height=180pt]{img/hinf_hankel_int.jpg}}
+  	\caption{}
+  \end{figure}
 
 Again, we can apply a system reduction to the controller by analizing the singular values of the Hankel matrix. This time the minimum order to get a good approximation is 3, and the bode diagram perfectly overlaps the original one.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{img/hinf_hankel_int.jpg}
-\caption{Singular values of the Hankel matrix for the controller with integral action.}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.5\textwidth]{img/hinf_hankel_int.jpg}
+%\caption{Singular values of the Hankel matrix for the controller with integral action.}
+%\end{figure}
 
-The final controller obtained is not much different from the one designed by loopshaping as it is easy to see by plotting the bode diagrams; in particular the $H_\infty$ solution gives more attenuation for higher frequencies.\\
+\begin{figure}[h]
+	\centering
+	\subfloat[$H_{\infty}$ without integrator]
+	{\includegraphics[width=0.49\textwidth]{img/hinf_response_noint.jpg}}
+	\hfill
+	\subfloat[$H_{\infty}$ with integrator.]{\includegraphics[width=0.49\textwidth]{img/hinf_response_int.jpg}}
+	\caption{Comparison between step response of $H_\infty$ controller.}
+\end{figure}
 
   \begin{figure}[h]
   \centering
@@ -48,13 +64,5 @@ The final controller obtained is not much different from the one designed by loo
 \caption{Comparison between Loopshaping and $H_{\infty}$.}
 \end{figure}
 
-We now focus on the step responses of the designed controller. It is interesting to see the difference between the design with and without integral action. As it is expected the integrator guarantees zero steady state error and gives better overall performance.
+We now focus on the step responses of the designed controller. It is interesting to see the difference between the design with and without integral action. As it is expected the integrator guarantees zero steady state error and gives better overall performance. The final controller obtained is not much different from the one designed by loopshaping as it is easy to see by plotting the bode diagrams; in particular the $H_\infty$ solution gives more attenuation for higher frequencies.\\
 
-\begin{figure}[h]
-	\centering
-	\subfloat[$H_{\infty}$ without integrator]
-	{\includegraphics[width=0.49\textwidth]{img/hinf_response_noint.jpg}}
-	\hfill
-	\subfloat[$H_{\infty}$ with integrator.]{\includegraphics[width=0.49\textwidth]{img/hinf_response_int.jpg}}
-	\caption{Comparison between step response of $H_\infty$ controller.}
-\end{figure}
