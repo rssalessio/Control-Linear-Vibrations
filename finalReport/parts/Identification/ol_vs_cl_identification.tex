@@ -11,6 +11,17 @@ $$T(s) = \frac{G(s)}{1+\rho G(s)} = \frac{1}{Ms^2+cs+(k+\rho )}$$
 The effect of $\rho$ is to change the length of the poles, i.e. their absolute value, since for polynomial with real coefficients the zero-degree coefficient is the product of all roots. \\
 Just compare with $s^2+2\xi \omega_0 s+ \omega_0^2$, it's easy to see that $\omega_0^2 = \frac{k+\rho}{M}$.
 \\\ \\
+\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{tikzpicture}
+\begin{axis}[domain=0:1, samples=100,grid=major,
+    restrict y to domain=0:90,xlabel=$\xi$,ylabel=$\theta (deg)$, legend pos=north east]
+\addplot [color=blue] {atan( sqrt(1-x^2)/x)};
+\addplot [color=green]{atan(1/x)};
+\legend{$\arctan \Big(\frac{\sqrt{1-\xi^2}}{\xi} \Big)$,$\arctan \Big(\frac{1}{\xi} \Big)$}
+\end{axis}
+\end{tikzpicture}
+\caption{Comparison of the approximated value of $\theta$ with the real one} \label{fig:theta_comparison}
+\end{wrapfigure}
 In our case  back-emf acts on the velocity of the cart, so if we have a feedback loop on the position, on the feedback we have  $\gamma s$, and the  closed loop transfer function is:
 $$T(s) = \frac{1}{Ms^2+cs+k+\gamma s}$$
 So what is the effect of $\gamma s$?
@@ -21,18 +32,7 @@ $$\theta = \arctan \Big(\frac{\sqrt{1-\xi^2}}{\xi} \Big)$$
 So the effect of $\gamma s$ is to rotate the poles, but to which extent is this effect negligible? \\ \\
 From data we are mainly dealing with values of $\xi \in (0, 0.5)$, so we can approximate the value of $\theta$:
 $$\theta \approx \arctan \Big(\frac{1-\frac{\xi^2}{2}}{\xi} \Big) = \arctan \Big(\frac{1}{\xi}-\frac{\xi}{2} \Big) \approx \arctan \Big (\frac{1}{\xi} \Big)$$
-\begin{figure}[ht]
-\centering
-\begin{tikzpicture}
-\begin{axis}[domain=0:1, samples=100,grid=major,
-    restrict y to domain=0:90,xlabel=$\xi$,ylabel=$\theta (deg)$, legend pos=north east]
-\addplot [color=blue] {atan( sqrt(1-x^2)/x)};
-\addplot [color=green]{atan(1/x)};
-\legend{$\arctan \Big(\frac{\sqrt{1-\xi^2}}{\xi} \Big)$,$\arctan \Big(\frac{1}{\xi} \Big)$}
-\end{axis}
-\end{tikzpicture}
-\caption{Comparison of the approximated value of $\theta$ with the real one} \label{fig:theta_comparison}
-\end{figure}
+
 Notice that in the last step we made use of the fact that $\frac{1}{\xi} \gg \frac{\xi}{2}$. Check figure \ref{fig:theta_comparison} to compare the approximation. \\ 
 Then, how much does $\theta$ change for a small variation of $\xi$?
 $$\frac{d\theta}{d\xi} = -\frac{1}{1+\xi^2} = -1 + \frac{\xi^2}{1+\xi^2}$$

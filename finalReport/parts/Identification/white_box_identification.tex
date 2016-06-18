@@ -1,4 +1,4 @@
-\chapter{White box identification}
+{\let\clearpage\relax \chapter{White box identification}}
 \section{Detached system: cart and springs identification}
 \label{sec:cart_detached_id}
 To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
@@ -126,9 +126,9 @@ In the table below are shown the various mean of the pulsation and their relativ
 \end{table} \\ \\
 It's interesting to note that even if we considered to average all the periods by considering the various peaks of the signal, and not only the first two peaks, we would have obtained the same results. This is an hint of the fact that the principal non-linearity, i.e. coloumb friction, is negligible.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=1\textwidth]{img/cart_detached_1.png}
+    \includegraphics[width=0.5\textwidth]{img/cart_detached_1.png}
     \caption{Displacement of the cart with spring $k_h$ and load $0.986$ [\SI{}{\kilo \gram}].}
     \label{fig:cart_detached_figure}
 \end{figure}
@@ -197,26 +197,26 @@ Measurements  were compared with the output smulation of a model constructed fro
 
 
 \begin{figure} [!h]
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_m_kh_full.png}
 \caption{Validation test without load and $K_h$.}
 \label{fig:val1_1}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_ml_kl_partial.png}
 \caption{Validation test without load and $K_l$.}
 \label{fig:val1_2}
 \end{minipage}
 
 \vspace*{0.5cm} % (or whatever vertical separation you prefer)
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_ml_km_full.png}
 \caption{Validation test with  load and $K_m$.}
 \label{fig:val1_3}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_ml_kh_full.png}
 \caption{Validation test with  load and $K_h$.}
 \label{fig:val1_4}
@@ -228,7 +228,6 @@ Measurements  were compared with the output smulation of a model constructed fro
 On average, the cost function, on a scale from $0$ to $1$, gave a fit of $ 0.9449$ with standard deviation $0.0263$.
 The minimum was $0.8778$, and maximum $ 0.9716$. \\ \\ 
 In figure \ref{fig:val1} it is visible that due to unmodelld effects, such as friction and stiffness not being exactly linear, there is a loss of accuracy on the long run, but accuracy is very high in the beginning, where non-linearities are not relevant yet. Thus it is safe to assume that the parameters of the cart are the ones identified by this experiment.
-\newpage
 
 \section{Motor identification}
 \label{sec:motor_id}
@@ -262,12 +261,6 @@ Because of noise sensor the mean value was taken as steady state value, after th
 Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^{-\tau t})$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \second}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
 Ultimately we can use the function \emph{tfest} in matlab to identify a system of the first order given the input and output data.
 \subsection{Experiment results}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\textwidth]{img/motor_id_1.png}
-    \caption{Input voltage and output current of the motor}
-    \label{fig:motor_id_1}
-\end{figure}
 From experiments steady state value of the current seems to change a little, based on the fact whether $v$ is positive or negative.
 Thus let $R_1$ represent mean value of resistance when $v$ is positive, and $R_2$ when $v$ is negative.\\ \\
 From data  mean values are: $R_1 =1.3069	$ [\SI{}{\ohm}], $R_2=1.2330$[\SI{}{\ohm}], with standard deviation $\sigma_1= 0.0984 \Omega, \sigma_2=0.0460 \Omega
@@ -283,12 +276,16 @@ R = 1.2689 \Omega, R_{std} = 0.0562 \Omega$$
 $$
 L = 0.0024 \SI{}{\henry}, L_{std} = 0.0002 \SI{}{\henry}$$
 Using again a weighted average the mean value of $R$ is $R=1.2464 \Omega$ with standard deviation $0.04 \Omega$. \\ \\
-Regarding the inductance, the estimated value fits the nominal value. This can also be seen from figure \ref{fig:motor_id_2} that  steady state is approached in about $2$ steps of the sampling time.\\
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\textwidth]{img/motor_id_2.png}
-    \caption{Rising time of the current, it can be seen that steady state is approached very quickly.}
-    \label{fig:motor_id_2}
+Regarding the inductance, the estimated value fits the nominal value. This can also be seen from figure \ref{fig:motorid} that  steady state is approached in about $2$ steps of the sampling time.\\
+
+
+\begin{figure}[!tbh]
+  \centering
+  \subfloat[Input voltage and output current of the motor]{\includegraphics[width=0.5\textwidth]{img/motor_id_1.png}}
+  \hfill
+  \subfloat[Rising time of the current, it can be seen that steady state is approached very quickly.]{\includegraphics[width=0.5\textwidth]{img/motor_id_2.png}}
+  \caption{}
+    \label{fig:motorid}
 \end{figure}
 \subsection{Validation}
 \label{sec:validation}
@@ -299,7 +296,7 @@ $$G(s) = \frac{1}{Ls+R}$$
 where $R=1.2689 \Omega, L=0.0024 H$, there is an average fit value $d(i_{real},i_{sim})=0.8142$ with standard deviation $0.0364$.
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\textwidth]{img/motor_validation.png}
+    \includegraphics[width=0.5\textwidth]{img/motor_validation.png}
     \caption{Validation of the motor with a random input signal $v(t) \sim N(0,\frac{9}{4})$.}
     \label{fig:motor_validation}
 \end{figure}
@@ -401,26 +398,26 @@ For the validation procedure we used the same input voltage used in the validati
 For each spring we made two tests, one without load and one with a load of about $1$\SI{}{\kilo\gram}, for a total of $6$ tests. \\Validation using only one cart can be summarised in an average fit value of $85.42$ \%, with standard deviation of $1.68$ \%. Because of such high value, there is no need to consider more details in the models such as back-emf or nonlinearities.\\ 
 In figure \ref{fig:val_overall} some validation plots are shown.
 \begin{figure} [!h]
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_km_nomass.png}
 \caption{Validation test without load and $K_m$.}
 \label{fig:valov_1}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_kl_2mass.png}
 \caption{Validation test with load and $K_l$.}
 \label{fig:valov_2}
 \end{minipage}
 
 \vspace*{0.5cm} % (or whatever vertical separation you prefer)
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_kh_2mass.png}
 \caption{Validation test with  load and $K_h$.}
 \label{fig:valov_3}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_kl_nomass.png}
 \caption{Validation test with  no load and $K_l$.}
 \label{fig:valov_4}
@@ -432,26 +429,26 @@ In figure \ref{fig:val_overall} some validation plots are shown.
 Validation for $2$ degree of freedom used the same random distribution of the validation input for $1$ degree of freedom. We tested the combination $K_h,K_m$ and $K_l,K_h$. For each combination we made $3$ tests, one without any load on the two carts, one with half kilogram on  each cart, and one with $1$ kilogram only on the second cart.\\ Since now we have $2$ outputs, the position of the first and second cart, we need to average the results for the first and second cart. \\ \\
 For the first cart we have an average fit of $87.29$ \% with standard deviation $4.5$\%. For the second cart the average fit is $85.79\%$, with standard deviation $4.8$ \%.\\ This results in a mean of $86.54$ \%, and standard deviation $4.68$ \%. Some validation plots are shown in figure \ref{fig:val2dof} for the second cart.
 \begin{figure} [!h]
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_2dof_khkm_0m2m.png}
 \caption{Validation test without load on the first cart, and a load of $0.986$\SI{}{\kilo \gram} on the second one. The configuration $K_h,K_m$ was used.}
 \label{fig:valov_2dof1}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_2dof_khkm_1m1m.png}
 \caption{Validation test a load of about  $0.493$ \SI{}{\kilo \gram} on both the carts. The configuration $K_h,K_m$ was used.}
 \label{fig:valov_2dof2}
 \end{minipage}
 
 \vspace*{0.5cm} % (or whatever vertical separation you prefer)
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_2dof_klkh_0m0m.png}
 \caption{Validation test with no load on both the carts. The configuration $K_l,K_h$ was used.}
 \label{fig:valov_2dof3}
 \end{minipage}
 \hspace{\fill}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \includegraphics[width=\linewidth]{img/validation_overall_2dof_klkh_0m2m.png}
 \caption{Validation test without load on the first cart, and a load of $0.986$\SI{}{\kilo \gram} on the second one. The configuration $K_l,K_h$ was used.}
 \label{fig:valov_2dof4}

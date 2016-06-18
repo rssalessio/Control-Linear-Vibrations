@@ -33,7 +33,7 @@ which is well known in the literature as \emph{nonlinear least squares}. Since t
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{img/graybox_motor.jpg}
+\includegraphics[width=0.35\textwidth]{img/graybox_motor.jpg}
 \caption{Fitting of the model of the motor.}
 \end{figure}
 
@@ -60,20 +60,15 @@ where
 We can actually use either $i(t)$ or $\hat{i}(t)$ in order to have a less noisy signal as input, but the output is not very different in each case. In this scenario, the choice of the starting point of the optimization is more sensitive and needs more start than the previous and the output parameters are more variable, although the poles of the model transfer function are always the same.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{img/graybox_cart.jpg}
+\includegraphics[width=0.35\textwidth]{img/graybox_cart.jpg}
 \caption{Fitting of the model of the cart.}
 \end{figure}
 
 The identified parameters in this stage are listed below.
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 	$\gamma$ & $M$ & $K_h$ & $K_m$ & $K_l$ & $C_h$ & $C_m$ & $C_l$ \\
 	$-178.57$ $\frac{N}{A}$ & 1.3 $Kg$ & 625 $\frac{N}{m}$ & 281 $\frac{N}{m}$ & 162 $\frac{N}{m}$ & 9 $\frac{Ns}{m}$ & 6 $\frac{Ns}{m}$ & 8 $\frac{Ns}{m}$\\
 \end{tabular}
 \end{table}
-
-
-
-
-

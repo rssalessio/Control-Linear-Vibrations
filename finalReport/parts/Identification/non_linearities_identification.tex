@@ -32,17 +32,16 @@ f(v(t)) = \begin{cases}
 \end{cases}
 \end{equation}
 And $g(v) =f(v)v$.
-  \begin{figure}[!h]
+
+    
+    \begin{figure}[!tbh]
   \centering
-  \includegraphics[width=0.5\textwidth]{img/nonlinear_gain.png}
-  \caption{Plot of $g(v),v$.}
+  \subfloat[Plot of $g(v),v$.]{\includegraphics[width=0.35\textwidth]{img/nonlinear_gain.png}}
+  \hfill
+  \subfloat[Identified model vs real current.]{\includegraphics[width=0.65\textwidth]{img/nonlinear_gain2.png}}
+  \caption{}
+     \label{fig:nlg2}
 \end{figure}
-  \begin{figure}[!h]
-  \centering
-  \includegraphics[width=0.5\textwidth]{img/nonlinear_gain2.png}
-  \caption{Identified model vs real current.}
-    \label{fig:nlg2}
-    \end{figure}
 \section{Motor cogging identification}
 It was found that for low voltage the motor acts as if the voltage is $0$, therefore the current and consequently the torque is $0$.\\
 This is  a type of static friction, though it's not a mechanical one. In fact, if it was a mechanical one we would see the current increase but the shaft of the motor don't rotate until the torque is big enough to counteract the static friction effect. In this case is more an electrical type of static friction, called \emph{cogging} effect. \\ \\
@@ -105,16 +104,11 @@ At $t=30$ the cart moves out of the encoder resolution and starts moving. For su
 \mu_s \approx \frac{2.068}{0.5685}0.3 \approx 1.1
 \end{equation}
 In figure is shown the plot of the current and its estimate. In figure the plot of the cart position.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\linewidth]{img/static_fric_1}
-\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
-\label{fig:sfric1}
+    \begin{figure}[!tbh]
+  \centering
+  \subfloat[Plot of $g(v),v$.]{\includegraphics[width=0.5\textwidth]{img/static_fric_1.png}}
+  \hfill
+  \subfloat[Identified model vs real current.]{\includegraphics[width=0.5\textwidth]{img/static_fric_2.png}}
+  \caption{}
+     \label{fig:sfric}
 \end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\linewidth]{img/static_fric_2}
-\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
-\label{fig:sfric2}
-\end{figure}
-
