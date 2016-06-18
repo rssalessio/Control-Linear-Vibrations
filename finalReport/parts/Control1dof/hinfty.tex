@@ -1,11 +1,6 @@
 \section{$H_{\infty}$ Control Design}
-In this section we show how to design a $H_{\infty}$ controller for this system. The augmented plant consists in three shaping functions which are in charge of designing the desired closed loop sensitivities.\\
+In this section we show how to design a $H_{\infty}$ controller for this system. The augmented plant consists in three shaping functions which are in charge of designing the closed loop sensitivity, complementary sensitivity and effort sensitivity; look at Appendix for further details on $H_\infty$.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{img/hinf_scheme.png}
-\caption{Augmented plant. $G(s)$ represents the transfer function of the actuator and cart described in the previous section.}
-\end{figure}
 Each function has three degrees of freedom: low frequency gain, cross-over frequency and high frequency gain. The most important one is the cross-over frequency which defines the closed loop bandwidth of the system; in our case, we are aiming at a response time of about one second which corresponds to a cross-over frequency of 1 Hz ($\omega =2\pi $ \SI{}{\radian \per \second}). The gains are tuned so to obtained the desired static error at regime, since we are not including any integral action; the higher the gain the smaller the static error will be. The crucial function in our application is the sensitivity wrt the control input because our actuator constrains us to work in the range $\pm 5V$; hence, we need to give more weight to penalize the control effort and obtain a feasible action; this last process is performed by an iteration process of trial and error: given a shape, we test the correspondant controller on simulink and check how the control input behaves; if the input saturate then we need to weight more the effort.\\
 
 \begin{figure}[h]

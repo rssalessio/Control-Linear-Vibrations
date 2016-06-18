@@ -1,5 +1,38 @@
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendix}
+
+\section{$H_\infty$ Control Design} \label{app:hinf}
+This control strategy consists in an optimization problem where the designer can specify a performance output to minimize; this minimization problem may be constructed in many possible ways by augmenting the plant with as many shaping function as the designer is willing to include.\\
+
+In this scenario we decided to use the most common set-up given in the scheme depicted in figure \ref{fig:hinfscheme}. This scheme is valid for every scenario (number of degrees of freedom) described in this report, where $G(s)$ is the transfer function of the focus plant.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/hinf_scheme.png}
+	\caption{Augmented plant. $G(s)$ represents the transfer function of the actuator and cart. $K(s)$ is the output controller of the $H_\infty$ minimization problem wrt the shaping functions $W_1(s), W_2(s), W_3(s)$.}
+	\label{fig:hinfscheme}
+\end{figure}
+
+The minimization problem is stated as:
+\begin{equation}
+	\min_{W_1, W_2, W_3} 
+		\begin{Vmatrix}
+			z_1 \\ z_2 \\ z_3
+		\end{Vmatrix}_\infty
+	=
+	\min_{W_1, W_2, W_3} 
+		\begin{Vmatrix}
+			S(s) W_1(s) \\ K(s) W_2(s) \\ T(s) W_3
+		\end{Vmatrix}_\infty
+\end{equation}
+where, by letting $L(s) = K(s)G(s)$ be the openloop transfer function, the transfer functions $S, K, T$ are defined as
+\begin{gather}
+	S(s) = \frac{1}{1+L(s)} \\
+	K(s)=\frac{K(s)}{1+L(s)} \\
+	T(s)=\frac{L(s)}{1+L(s)}
+\end{gather} 
+
+
 \section{Effect of positive zeros}
 Now it's briefly described what are the drawbacks of RHP-zeros in the loop. From  a frequency analysis we can get an insight of what happens: RHP-zeros add  $-180$ degree to phase, therefore it's best to have those zeros at high frequency (thus the modulus of the zeros) to have their effect quickly dissipate without any effect. To analyze in time we need to take the partial 	fraction expansion. Let $G(s)$ be our system considered and $C(s)$ our controller. Then:
 $$C(s) = \hat{k}\frac{(s-a)(s-\overline{a})}{s(s+p)}, a \in \mathbb{C}, p \in \mathbb{R}$$
