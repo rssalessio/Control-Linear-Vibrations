@@ -25,17 +25,16 @@ The plant, defined as the series of actuator followed by two carts is a 5th orde
 
 The controller design is exactly the same as the one presented in the previous chapter, hence we won't replicate it here but will only show the results.\\
 
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\linewidth]{img/hinf_nocurr}
-\caption{Response to a train of pulses.}
-\label{fig:hinfnocurr}
-\end{figure}
-
 As it possible to see, the current has some oscillations which perturb the whole system and gives very poor performance. The first attempt was to reduce te bandwidth of the controller but the output, although deprived from oscillations, resulted too slow (over two seconds in order to get to steady state) and therefore not acceptable.\\
 
 We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/hinf_nocurr}
+	\caption{Response to a train of pulses.}
+	\label{fig:hinfnocurr}
+\end{figure}
 
 \begin{figure}[h]
 	\centering
@@ -47,14 +46,7 @@ We decided to make use of a Kalman filter in order to insert an inner loop contr
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_response}
-<<<<<<< HEAD
 	\caption{Carts displacement over time due to a train of pulses.}
 	\label{fig:2dofcarts}
 \end{figure}
 
-
-=======
-	\caption{Step response for the controlled system.}
-	\label{fig:hinfnocurr}
-\end{figure}
->>>>>>> 42ae583301d3f9a674e9425a2a1d4ffef9a8a27e

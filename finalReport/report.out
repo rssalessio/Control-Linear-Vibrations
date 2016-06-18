@@ -45,9 +45,10 @@
 \BOOKMARK [0][-]{chapter.10}{Control of 3 Degree of Freedom}{}% 45
 \BOOKMARK [1][-]{section.10.1}{LQG Control Design}{chapter.10}% 46
 \BOOKMARK [1][-]{section.10.2}{H Control Design}{chapter.10}% 47
-\BOOKMARK [0][-]{chapter*.66}{Conclusions}{}% 48
-\BOOKMARK [0][-]{chapter*.67}{The team}{}% 49
-\BOOKMARK [0][-]{chapter*.68}{Appendix}{}% 50
-\BOOKMARK [1][-]{section.10.3}{Effect of positive zeros}{chapter*.68}% 51
-\BOOKMARK [1][-]{section.10.4}{Extended Kalman Filtering}{chapter*.68}% 52
-\BOOKMARK [0][-]{lstnumber.-1.65}{Bibliography}{}% 53
+\BOOKMARK [0][-]{chapter*.64}{Conclusions}{}% 48
+\BOOKMARK [0][-]{chapter*.65}{The team}{}% 49
+\BOOKMARK [0][-]{chapter*.66}{Appendix}{}% 50
+\BOOKMARK [1][-]{section.10.3}{H Control Design}{chapter*.66}% 51
+\BOOKMARK [1][-]{section.10.4}{Effect of positive zeros}{chapter*.66}% 52
+\BOOKMARK [1][-]{section.10.5}{Extended Kalman Filtering}{chapter*.66}% 53
+\BOOKMARK [0][-]{lstnumber.-1.65}{Bibliography}{}% 54
