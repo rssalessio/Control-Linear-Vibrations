@@ -1,4 +1,4 @@
-\chapter{State filtering and Model Observers}
+{\let\clearpage\relax \chapter{State filtering and Model Observers}}
 \label{kalmanfilt}
 During the course of the project the development of a state observer was deemed necessary in order to overcome the following problems:
 \begin{enumerate}
@@ -96,20 +96,18 @@ The verification of the observer was performed on \emph{Simulink} making use of 
 
 The results are satisfactory as the unknown parameter is estimated with good accuracy.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.7\linewidth]{img/ekf_sim}
-\caption{$K$ estimation by feeding a train of pulses to the openloop plant.}
-\label{fig:ekfsin}
-\end{figure}
 
 The system has then been ported onto Arduino and we ran the same experiment we performed offline. We expect the filter to converge to the same value as before but the transient might be different due to nonlinearities not included in simulink. The results are very satisfactory also in the online testing and resemble nicely the simulation.\\
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/ekf_ard}
-	\caption{Online estimation by feeding a train of pulses to the openloop plant.}
-	\label{fig:ekfard}
+
+\begin{figure}[!tbh]
+  \centering
+  \subfloat[$K$ estimation by feeding a train of pulses to the openloop plant.]{\includegraphics[width=0.5\textwidth]{img/ekf_sim}}
+  \hfill
+  \subfloat[Online estimation by feeding a train of pulses to the openloop plant.]{\includegraphics[width=0.5\textwidth]{img/ekf_ard}}
+  \caption{}
+    \label{fig:ekfsimard}
 \end{figure}
 
-The plot shown in figure \ref{fig:ekfard} has been obtained by measuring the output of the EKF on arduino and, as comparison, the output of the filter on \emph{Simulink} fed by the measured signal on the board in order to compare the outputs using the same data.
+The plot shown in figure \ref{fig:ekfsimard} has been obtained by measuring the output of the EKF on arduino and, as comparison, the output of the filter on \emph{Simulink} fed by the measured signal on the board in order to compare the outputs using the same data.
+\\
