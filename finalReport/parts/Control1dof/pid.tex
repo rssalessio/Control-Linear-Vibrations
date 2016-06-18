@@ -11,7 +11,7 @@ We consider the simplest model in order to perform the tuning of the controller.
 \begin{equation}
 F(s) = \frac{K_e}{Ls+R} \qquad X(s) = \frac{1}{Ms^2+Cs+K}
 \end{equation}
-connected in series, where $F(s)$ represents the linear force exerted by the motor and $X(s)$ the position of the cart. The parameters have been identified as explained in detail in the previous section. It is important to remind that the identification has been performed without scaling the encoder values into centimeters; this means that the conversion tofro centimeters must be performed outside the control loop.\\
+connected in series, where $F(s)$ represents the linear force exerted by the motor and $X(s)$ the position of the cart. The parameters have been identified as explained in detail in the previous section. It is important to remind that the identification has been performed without scaling the encoder values into centimeters; this means that the conversion to and fro centimeters must be performed outside the control loop.\\
 
 The openloop plant described by the equations above has three poles: one high frequency pole coming from the motor dynamic, and two complex conjugate poles placed nearby the imaginary axis. The latters are responsible from the oscillatory behaviour of the cart and need to be canceled out from the openloop. Furthermore, the dynamic does not contain any integral action, so we need to introduce it in the controller if we want to achieve zero static error at regime (namely, a perfect positioning of the cart).\\
 
