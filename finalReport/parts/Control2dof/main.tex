@@ -9,22 +9,20 @@
 \label{fig:lqg2dof}
 \end{figure}
 \section{$H_\infty$ Control Design}
-This control strategy gave the best result for one degree of freedom, hence we choose it among the others to be implemented with two carts. The setup is shown in the scheme below, where both cart positions can be sensed.\\
-
-INSERIRE SCHEMA 2DOF\\
+This control strategy gave good results for one degree of freedom, hence we choose it again to be implemented with two carts.\\
 
 One important aspect is worth pointing out. The critical aspect in this scenario is which output feedback to the control input. If we feedback the first cart position, the control strategy won't be much different from the 1 degree of freedom, since the second cart is just equivalent to a heavier mass placed onto the first cart. This statement is confirmed by the fact that the controller designed in the previous chapter works fine in this scenario, meaning it is robust enough to uncertainties on the model.\\
 
 Controlling the second output is instead more challenging since we have two springs in between the control action and the output to be controlled. In this case the controller must take into account both cart dynamics, and this is what we will discuss in this chapter.\\
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\linewidth]{img/bode_ol}
-\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
-\label{fig:bodeol}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.5\linewidth]{img/bode_ol}
+%\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
+%\label{fig:bodeol}
+%\end{figure}
 
-The plant, defined as the series of actuator followed by two carts, presents the bode diagram shown in figure \ref{fig:bodeol}. It is a 5th order system, where two complex conjugate poles come from the first cart, two from the second cart and one high frequency pole from the motor.\\
+The plant, defined as the series of actuator followed by two carts is a 5th order system, where two complex conjugate poles come from the first cart, two from the second cart and one high frequency pole from the motor.\\
 
 The controller design is exactly the same as the one presented in the previous chapter, hence we won't replicate it here but will only show the results.\\
 
@@ -38,9 +36,7 @@ The controller design is exactly the same as the one presented in the previous c
 
 As it possible to see, the current has some oscillations which perturb the whole system and gives very poor performance. The first attempt was to reduce te bandwidth of the controller but the output, although deprived from oscillations, resulted too slow (over two seconds in order to get to steady state) and therefore not acceptable.\\
 
-We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. IMMAGINI SCHEMA E DETTAGLI IMPLEMENTAZIONE. \\
-
-The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
+We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
 
 \begin{figure}[h]
 	\centering
@@ -52,8 +48,8 @@ The result showed an important boost in performance. The rising time is now sati
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_response}
-	\caption{Step response for the controlled system.}
-	\label{fig:hinfnocurr}
+	\caption{Carts displacement over time due to a train of pulses.}
+	\label{fig:2dofcarts}
 \end{figure}
 
 
