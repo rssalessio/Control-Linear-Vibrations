@@ -4,7 +4,7 @@ clear all, close all
 
 %[plant, Q,R,P,L] = kalmanObserver([2,2,2], ['m','l','h'], {'i','x1','x2'});
 
-plant = sysBuilder([2,2,2], ['m','l','h'], {'i','x1','x2','x3'},1);
+plant = sysBuilder([2,2,2], ['m','l','h'], {'i','x1','x2','x3'},0);
 plant = ss(plant);
 
 %damp(plant)/2/pi
@@ -19,10 +19,10 @@ plant = ss(plant);
 % R=diag([0.00127,10e-9,10e-9]);
 
 %% Design Controller
-plant_design = plant(2,1);
+plant_design = plant(3,1);
 
 % % MED-HIGH-LOW
-w = 0.5;
+w = ;
 Ws = tf(makeweight(10, 2*pi*w, 0.9));
 Wt = tf(makeweight(0.9, 2*pi*w, 10));
 Wk = tf(makeweight(0.9, 2*pi*w, 5));

@@ -99,7 +99,9 @@ function [sysSS,nDOF,bemfTf] = sysBuilder( nLoad, springType, Outputs,bemfOn)
         C = [c(1)+c(2),-c(2); -c(2),c(2)];
     else 
         K = [k(1)+k(2),-k(2),0;-k(2),k(2)+k(3),-k(3); 0,-k(3),k(3)];
-        C = [c(1)+c(2),-c(2),0;-c(2),c(2)+c(3),-c(3); 0,-c(3),c(3)];
+        C = [c(1)+c(2),-c(2),0;
+            -c(2),c(2)+c(3),-c(3);
+            0,-c(3),c(3)];
     end
 
      
