@@ -1,5 +1,28 @@
 {\let\clearpage\relax \chapter{Control of 3 Degree of Freedom}}
 \section{LQG Control Design}
+
+The structure of this control scheme is the same as the 1 degree of freedom scenario and it is discussed in the previous chapter. In this section we only show the tuning and final results.\\
+
+Obviously the state matrix includes also the other two carts and we must take that into account when tuning the weights on $Q$, whilst the weight on the control input $R$ is again scalar. The final tuning was output of a trial and error approach which led to the matrices
+\begin{equation}
+\renewcommand{\arraystretch}{1}
+Q = 
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0.1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0.1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{bmatrix}
+\qquad
+R=1
+\end{equation}
+which weights the positions of the second and third carts, being the state vector defined as $x = \left[ i,\, x_1,\, x_2,\, x_3,\, \dot{x}_1,\, \dot{x}_2,\, \dot{x}_3 \right] $. We needed to weight also $x_2$ because the cart was presenting some oscillations in the transient which were due to the too strong control action.\\
+
+Since we are not including any integral action, we need to consider a compensator on the reference which can guarantee zero error at steady state. This gain is computed as the inverse of the dc gain of the controlled plant.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{img/lqg.png}

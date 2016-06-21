@@ -51,13 +51,13 @@
 \contentsline {chapter}{\numberline {9}Control of 2 Degree of Freedom}{35}{chapter.9}
 \contentsline {section}{\numberline {9.1}LQG Control Design}{35}{section.9.1}
 \contentsline {section}{\numberline {9.2}$H_\infty $ Control Design}{36}{section.9.2}
-\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{36}{chapter.10}
+\contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{37}{chapter.10}
 \contentsline {section}{\numberline {10.1}LQG Control Design}{38}{section.10.1}
 \contentsline {section}{\numberline {10.2}$H_\infty $ Control Design}{38}{section.10.2}
-\contentsline {chapter}{Conclusions}{i}{chapter*.63}
-\contentsline {chapter}{The team}{ii}{chapter*.64}
-\contentsline {chapter}{Appendix}{iii}{chapter*.65}
-\contentsline {section}{\numberline {10.3}$H_\infty $ Control Design}{iii}{section.10.3}
-\contentsline {section}{\numberline {10.4}Effect of positive zeros}{iii}{section.10.4}
-\contentsline {section}{\numberline {10.5}Extended Kalman Filtering}{v}{section.10.5}
-\contentsline {chapter}{Bibliography}{vi}{lstnumber.-1.65}
+\contentsline {chapter}{Conclusions}{ii}{chapter*.63}
+\contentsline {chapter}{The team}{iii}{chapter*.64}
+\contentsline {chapter}{Appendix}{iv}{chapter*.65}
+\contentsline {section}{\numberline {10.3}$H_\infty $ Control Design}{iv}{section.10.3}
+\contentsline {section}{\numberline {10.4}Effect of positive zeros}{iv}{section.10.4}
+\contentsline {section}{\numberline {10.5}Extended Kalman Filtering}{vi}{section.10.5}
+\contentsline {chapter}{Bibliography}{vii}{lstnumber.-1.65}

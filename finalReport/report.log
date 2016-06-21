@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.10)  18 JUN 2016 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.10)  21 JUN 2016 16:46
 entering extended mode
 **./report.tex
 (report.tex
@@ -1979,7 +1979,7 @@ tocpdfTeX warning (ext4): destination with the same identifier (name{page.i}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.54 ...ol of 3 Degree of Freedom}{36}{chapter.10}
+l.54 ...ol of 3 Degree of Freedom}{37}{chapter.10}
                                                    [1
 
 ])
@@ -3069,12 +3069,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
 ) (parts/Control1dof/lqg.tex [33 <./parts/Control1dof/img/hinf_hankel.jpg> <./p
 arts/Control1dof/img/hinf_reduced.jpg> <./parts/Control1dof/img/hinf_integrator
 .jpg> <./parts/Control1dof/img/hinf_hankel_int.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
@@ -3086,12 +3081,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--18
 [34 <./parts/Control1dof/img/hinf_response_noint.jpg> <./parts/Control1dof/img/
 hinf_response_int.jpg> <./parts/Control1dof/img/hinf_ls.jpg> <./parts/Control1d
 of/img/hinf_integrator_ls.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
 <parts/Control1dof/img/lqg_1dof_klow.png, id=673, 1028.34187pt x 490.08093pt>
 File: parts/Control1dof/img/lqg_1dof_klow.png Graphic file (type png)
 
 <use parts/Control1dof/img/lqg_1dof_klow.png>
 Package pdftex.def Info: parts/Control1dof/img/lqg_1dof_klow.png used on input 
-line 36.
+line 40.
 (pdftex.def)             Requested size: 297.80121pt x 141.9254pt.
 
 <parts/Control1dof/img/lqg_1dof_khigh.png, id=674, 421.575pt x 316.18124pt>
@@ -3099,71 +3098,77 @@ File: parts/Control1dof/img/lqg_1dof_khigh.png Graphic file (type png)
 
 <use parts/Control1dof/img/lqg_1dof_khigh.png>
 Package pdftex.def Info: parts/Control1dof/img/lqg_1dof_khigh.png used on input
- line 38.
+ line 42.
 (pdftex.def)             Requested size: 198.5291pt x 148.89949pt.
 )) (parts/Control2dof/main.tex
 Chapter 9.
-<parts/Control2dof/img/lqg_2dof.png, id=675, 1028.34187pt x 490.08093pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+[35 <./parts/Control1dof/img/lqg_1dof_klow.png (PNG copy)> <./parts/Control1dof
+/img/lqg_1dof_khigh.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+<parts/Control2dof/img/lqg_2dof.png, id=685, 1028.34187pt x 490.08093pt>
 File: parts/Control2dof/img/lqg_2dof.png Graphic file (type png)
 
 <use parts/Control2dof/img/lqg_2dof.png>
 Package pdftex.def Info: parts/Control2dof/img/lqg_2dof.png used on input line 
-6.
+26.
 (pdftex.def)             Requested size: 248.16516pt x 118.26494pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[35 <./parts/Control1dof/img/lqg_1dof_klow.png (PNG copy)> <./parts/Control1dof
-/img/lqg_1dof_khigh.png (PNG copy)>]
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10.
+(hyperref)                removing `math shift' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 10.
+(hyperref)                removing `subscript' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 10.
+(hyperref)                removing `\infty' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10.
+(hyperref)                removing `math shift' on input line 38.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -3172,7 +3177,7 @@ File: parts/Control2dof/img/hinf_nocurr.jpg Graphic file (type jpg)
 
 <use parts/Control2dof/img/hinf_nocurr.jpg>
 Package pdftex.def Info: parts/Control2dof/img/hinf_nocurr.jpg used on input li
-ne 35.
+ne 63.
 (pdftex.def)             Requested size: 446.69426pt x 217.76004pt.
 
 
@@ -3183,7 +3188,7 @@ File: parts/Control2dof/img/hinf_curr.jpg Graphic file (type jpg)
 
 <use parts/Control2dof/img/hinf_curr.jpg>
 Package pdftex.def Info: parts/Control2dof/img/hinf_curr.jpg used on input line
- 42.
+ 70.
 (pdftex.def)             Requested size: 446.69426pt x 217.76004pt.
 
 
@@ -3194,7 +3199,7 @@ File: parts/Control2dof/img/hinf_response.jpg Graphic file (type jpg)
 
 <use parts/Control2dof/img/hinf_response.jpg>
 Package pdftex.def Info: parts/Control2dof/img/hinf_response.jpg used on input 
-line 49.
+line 77.
 (pdftex.def)             Requested size: 446.69426pt x 217.76004pt.
 
 
@@ -3203,64 +3208,84 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ) (parts/Control3dof/main.tex
 Chapter 10.
 [36 <./parts/Control2dof/img/lqg_2dof.png (PNG copy)>] [37 <./parts/Control2dof
-/img/hinf_nocurr.jpg> <./parts/Control2dof/img/hinf_curr.jpg> <./parts/Control2
-dof/img/hinf_response.jpg>]
+/img/hinf_nocurr.jpg> <./parts/Control2dof/img/hinf_curr.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Overfull \hbox (16.39964pt too wide) in paragraph at lines 21--23
+\OT1/cmr/m/n/10 which weights the po-si-tions of the sec-ond and third carts, b
+e-ing the state vec-tor de-fined as $\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 = []$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+
+ []
+
 <parts/Control3dof/img/lqg.png, id=701, 1028.34187pt x 490.08093pt>
 File: parts/Control3dof/img/lqg.png Graphic file (type png)
 
 <use parts/Control3dof/img/lqg.png>
-Package pdftex.def Info: parts/Control3dof/img/lqg.png used on input line 5.
+Package pdftex.def Info: parts/Control3dof/img/lqg.png used on input line 28.
 (pdftex.def)             Requested size: 248.16516pt x 118.26494pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9.
+(hyperref)                removing `math shift' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 9.
+(hyperref)                removing `subscript' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 9.
+(hyperref)                removing `\infty' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9.
+(hyperref)                removing `math shift' on input line 32.
 
 <parts/Control3dof/img/hinf1.png, id=702, 421.575pt x 316.18124pt>
 File: parts/Control3dof/img/hinf1.png Graphic file (type png)
 
 <use parts/Control3dof/img/hinf1.png>
-Package pdftex.def Info: parts/Control3dof/img/hinf1.png used on input line 12.
+Package pdftex.def Info: parts/Control3dof/img/hinf1.png used on input line 35.
 
 (pdftex.def)             Requested size: 248.16516pt x 186.12558pt.
 
-<parts/Control3dof/img/hinf2.png, id=703, 1028.34187pt x 490.08093pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<parts/Control3dof/img/hinf2.png, id=703, 1445.4pt x 724.95844pt>
 File: parts/Control3dof/img/hinf2.png Graphic file (type png)
 
 <use parts/Control3dof/img/hinf2.png>
-Package pdftex.def Info: parts/Control3dof/img/hinf2.png used on input line 18.
+Package pdftex.def Info: parts/Control3dof/img/hinf2.png used on input line 41.
 
-(pdftex.def)             Requested size: 248.16516pt x 118.26494pt.
-) [38
+(pdftex.def)             Requested size: 248.16516pt x 124.46918pt.
 
- <./parts/Control3dof/img/lqg.png (PNG copy)> <./parts/Control3dof/img/hinf1.pn
-g (PNG copy)> <./parts/Control3dof/img/hinf2.png (PNG copy)>] (parts/Conclusion
-s/main.tex)pdfTeX warning (ext4): destination with the same identifier (name{pa
-ge.i}) has been already used, duplicate ignored
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [38 <./parts/Control2dof/img/hinf_response.jpg> <./parts/Control3dof/img/lqg.
+png (PNG copy)>] (parts/Conclusions/main.texpdfTeX warning (ext4): destination 
+with the same identifier (name{page.i}) has been already used, duplicate ignore
+d
+<to be read again> 
+                   \relax 
+l.2 \chapter
+            *{Conclusions} [1 <./parts/Control3dof/img/hinf1.png (PNG copy)> <.
+/parts/Control3dof/img/hinf2.png (PNG copy)>])pdfTeX warning (ext4): destinatio
+n with the same identifier (name{page.ii}) has been already used, duplicate ign
+ored
 <to be read again> 
                    \relax 
 l.109 \newpage
-               [1
+               [2
 
-] (parts/Team/main.tex) (parts/Appendix/main.texpdfTeX warning (ext4): destinat
-ion with the same identifier (name{page.ii}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            *{Appendix} [2
+] (parts/Team/main.tex) (parts/Appendix/main.tex [3
 
 ]
 
@@ -3289,14 +3314,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-<parts/Appendix/img/hinf_scheme.png, id=722, 430.60875pt x 219.06844pt>
+<parts/Appendix/img/hinf_scheme.png, id=728, 430.60875pt x 219.06844pt>
 File: parts/Appendix/img/hinf_scheme.png Graphic file (type png)
 
 <use parts/Appendix/img/hinf_scheme.png>
 Package pdftex.def Info: parts/Appendix/img/hinf_scheme.png used on input line 
 11.
 (pdftex.def)             Requested size: 248.16516pt x 126.25418pt.
- [3
+ [4
 
  <./parts/Appendix/img/hinf_scheme.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 61--65
@@ -3319,9 +3344,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--65
  []
 
 
-LaTeX Warning: Reference `ekf' on page iv undefined on input line 67.
+LaTeX Warning: Reference `ekf' on page v undefined on input line 67.
 
-[4]
+[5]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 76.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 76.
@@ -3340,7 +3365,7 @@ LaTeX Font Warning: Font shape `TS1/pcr/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textasteriskcentered' on input line 17.
 
-[5])) [6] [7
+[6])) [7] [8
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 116.
@@ -3366,9 +3391,9 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 116.
  ) 
 Here is how much of TeX's memory you used:
- 46586 strings out of 493335
- 1041030 string characters out of 3136680
- 1327623 words of memory out of 3000000
+ 46589 strings out of 493335
+ 1041068 string characters out of 3136680
+ 1327619 words of memory out of 3000000
  49031 multiletter control sequences out of 15000+200000
  17508 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3397,9 +3422,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (48 pages, 2386202 bytes).
+Output written on report.pdf (49 pages, 2441854 bytes).
 PDF statistics:
- 967 PDF objects out of 1000 (max. 8388607)
- 319 named destinations out of 1000 (max. 500000)
+ 974 PDF objects out of 1000 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
  753 words of extra memory for PDF output out of 10000 (max. 10000000)
 

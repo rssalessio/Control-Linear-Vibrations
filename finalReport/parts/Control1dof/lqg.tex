@@ -1,6 +1,6 @@
 \section{LQG Control Design}
-Of the feedback schemes, such as \emph{Pole-Placement}, we decided to choose the \emph{LQR} control design. Unfortunately, because of noise in the current sensor, a Kalman Filter was needed. In fact a simple low pass filter on the current feedback was not adequate enough, since it would make the system too slow.\\ \\
-The Kalman Filter made use of all the available inputs, and only for the case of $2,3$ degree of freedom the non-linearities of the motor were considered in order to improve the performances. \\ \\
+We decided to implement the \emph{LQR} controller as representative of state-feedback schemes. Unfortunately, because of noise in the current sensor, a Kalman Filter was needed. In fact a simple low pass filter on the current feedback was not adequate enough, since it would make the system too slow. The Kalman Filter has been fed with the reference voltage, current flowing in the motor and the cart position.\\
+
 Remember that LQR solves the optimal problem:
 \begin{equation}
 min J = \int_0^{\infty} x^T Q x + u^T R u dt
@@ -23,14 +23,18 @@ Where $K_{r}$ is:
 K_{r} = \frac{1}{C(-(A-BK))^{-1}B}
 \end{equation}
 With $C$ selecting the appropriate output, in this case $x_1$, thus $C=\begin{bmatrix}0 & 100 & 0\end{bmatrix}$. This $K_r$ makes sure the system has unitary gain. \\
-The weight matrix was selected in order to let $x_1 \to 0$ quickly with acceptable performances. After some iterations the matrix $Q$ was chosen as:
+The weight matrix was selected in order to let $x_1 \to 0$ quickly with acceptable performances. After some iterations the matrices $Q$ and $R$ were chosen as:
 \begin{equation}
 Q = \begin{bmatrix}
 0 & 0 & 0 \\ 0 & 0.5 & 0 \\ 0 & 0 &0 
 \end{bmatrix}
+\qquad
+R=1
 \end{equation}
-And $R=1$. Moreover, the LTR procedure was not considered since there is no noise in the control input channel.
-Results are shown below for $K_l$ and $K_h$. Notice the static error, induced by the fact that the non-linearities of the motor were not considered (such as the dead-zone, which changes the gain of the system).
+
+Moreover, the LTR procedure was not considered since there is no noise in the control input channel.
+Results are shown below for $K_l$ and $K_h$. Notice the static error, induced by the fact that the non-linearities of the motor were not considered (such as the dead-zone, which changes the gain of the system).\\
+
   \begin{figure}[!tbh]
   \centering
   \subfloat[LQG $K_l$]{\includegraphics[width=0.6\textwidth]{img/lqg_1dof_klow.png}}
