@@ -83,19 +83,23 @@ i(s)=\frac{1}{Ls+R} (v(s)-K_{e}s \theta(s))
 \end{equation}
 where $v(s)$ is the Laplace transform of $v(t)$, the input voltage to the motor. Notice that the term $K_{e}s \theta(s)$ describes the back-emf effect. \\
 The differential equation describing the motion of the disk is:
-$$J\ddot{\theta}=c(t)-c_{l}(t) -f_{m}(\theta,\dot{\theta})$$
+\begin{equation}J\ddot{\theta}=c(t)-c_{l}(t) -f_{m}(\theta,\dot{\theta})
+\end{equation}
 In our case, since it's not possible to detach the pinion and the rack from the motor, $J$ includes the inertia of that system, and $c_{l}(t)$ is the torque load attached to the rack. 
 \\ \\
 The rack position is given by $x$, which is equal to $0$ when the rack is at the center. Since the rack is attached to the disk, and by neglecting non-lineart effects such as back-lash, we can say that $x=\frac{D}{2}\theta $. Moreover,  the total force transmitted from the motor is:
-$$F(t)  =  \frac{2}{D} (c(t)-J\ddot{\theta}) = \gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
-Where $\gamma = \frac{2K_e}{D}$. 
+\begin{equation}F(t)  =  \frac{2}{D} (c(t)-J\ddot{\theta}) = \gamma i(t) - \frac{4}{D^2}J \ddot{x}
+\end{equation}
+Where 
+\begin{equation}\gamma = \frac{2K_e}{D}\end{equation}
 
 \section{Carts, Springs and Dampers Modelling}
 Each cart has the same shape and mass $M_{c}$. Let $M_{i}$ denote the total mass of the $i$-eth cart including the load, $i \in {1,2,3}$. \\
 Let $x_{i}$ be the position of each cart, in \SI{}{\cm}. The small friction coefficient of the sliding guide can be approximated with a viscous friction $C_{s}(M)$ which depends on the mass of the cart plus the load. \\ \\
 Finally, each spring is modeled as linear spring. Since we have 3 springs, we have labeled their stiffness as $K_l, K_m, K_h$ where $l,m,h$ stand for low, medium and high. The damping contribute given by each spring is labeled as $C_l, C_m, C_h$. Therefore let $C_{i}$ denote the total damping contribution for the $i$-eth cart.\\ \\
 Therefore, because of Newton's First Law, each cart has equation:
-$$M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)$$
+\begin{equation}M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)
+\end{equation}
 Thus, for each cart 2 states are needed to describe its behaviour.\\ \\
 \section{1 DOF State Space Model}
 Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor (i.e. the current), $x_{2}$ the position of the cart and $x_{3}$ its velocity. The back-emf term in the motor is given by: $-K_e s \theta = -K_e \frac{2}{D}\dot{x} = -\gamma x_3$. Therefore the equations to consider are:
@@ -106,7 +110,7 @@ M\dot{x}_3 = -Cx_3 -K x_2 + F(t)
 \end{cases}
 \end{equation}
 Since:
-$$F(t)=\gamma i(t) - \frac{4}{D^2}J \ddot{x}$$
+\begin{equation}F(t)=\gamma i(t) - \frac{4}{D^2}J \ddot{x}\end{equation}
 By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
 
 \begin{equation}
@@ -123,19 +127,20 @@ By letting $\hat{M} = (M+\frac{4}{D^2}J)$, we have:
 where $v(t)$ is the external control input.
 \section{2 DOF State Space Model}
 To derive the equations of motion for the carts we can use the Lagrangian approach.\\ Let $T,V,D$ be the kinetic, potential and dissipated energy. Then:
-\begin{align*}
+\begin{align}
 T  &= \frac{1}{2} \Big(M_1 + \frac{4}{D^2}J \Big) \dot{x_1}^2 + \frac{1}{2}M_2 \dot{x_2}^2 \\
 V &= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2 \\
 D &= \frac{1}{2}c_1\dot{x_1}^2 + \frac{1}{2}c_2(\dot{x_2}-\dot{x_1})^2
-\end{align*}
+\end{align}
 Let $Q$ be the external forces acting on the systems:
-\begin{align*}
+\begin{align}
 Q =\begin{bmatrix} 1 \\ 0 \end{bmatrix} \gamma i(t)
-\end{align*}
+\end{align}
 The equations of motion are given by:
-$$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
+\begin{equation}
+\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i\end{equation}
 Thus we can write:
-$$
+\begin{equation}
 \begin{bmatrix}
 \hat{M}_1 & 0 \\
 0 & M_2
@@ -150,11 +155,11 @@ c_1+c_2 & -c_2 \\
 k_1+k_2 & -k_2 \\
 -k_2 & k_2
 \end{bmatrix}
-x = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\gamma i(t)$$
+x = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\gamma i(t)\end{equation}
 Then:
-$$\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)$$
+\begin{equation}\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)\end{equation}
 where:
-$$M=\begin{bmatrix}
+\begin{equation}M=\begin{bmatrix}
 \hat{M}_1 & 0 \\
 0 && M_2
 \end{bmatrix}, C=\begin{bmatrix}
@@ -163,7 +168,7 @@ c_1+c_2 & -c_2 \\
 \end{bmatrix}, K=\begin{bmatrix}
 k_1+k_2 & -k_2 \\
 -k_2 & k_2
-\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \end{bmatrix}$$
+\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \end{bmatrix}\end{equation}
 Finally, let $x_1$ be the state of the motor, $x_2$ and $x_3$ the position of the first and second cart, and $x_4$, $x_5$ their velocities, then the stace space model, is:
 
 \begin{equation}
@@ -195,20 +200,20 @@ where $x \in \mathbb{R}^5$.
 
 \section{3 DOF State Space Model}
 As for 2 degree of freedom we can make use again of the Lagrangian Approach:
-\begin{align*}
+\begin{align}
 T &= \frac{1}{2} (M_1 + \frac{4}{D^2}J)\dot{x}_1^2+\frac{1}{2}M_2\dot{x}_2^2 + \frac{1}{2}M_3 \dot{x}_3^2 \\
 V &= \frac{1}{2}k_1x_1^2 + \frac{1}{2}k_2(x_2-x_1)^2 +\frac{1}{2}k_3 (x_3-x_2)^2\\
 D &= \frac{1}{2}c_1\dot{x_1}^2 + \frac{1}{2}c_2(\dot{x_2}-\dot{x_1})^2 +\frac{1}{2}c_3(\dot{x}_3-\dot{x}_2)^2
-\end{align*}
+\end{align}
 
 Let $Q$ be the external forces acting on the systems:
-\begin{align*}
+\begin{align}
 Q =\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \gamma i(t)
-\end{align*}
+\end{align}
 The equations of motion are given by:
-$$\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i$$
+\begin{equation}\frac{d}{dt}\Big(\frac{\partial T}{\partial x_i} \Big) -\frac{\partial T}{\partial \dot{x}_i} + \frac{\partial V}{\partial x_i} + \frac{\partial D}{\partial \dot{x}_i} = Q_i\end{equation}
 Thus we can write:
-$$
+\begin{equation}
 \begin{bmatrix}
 \hat{M}_1 & 0 & 0 \\
 0 & M_2 & 0 \\
@@ -226,11 +231,11 @@ k_1+k_2 & -k_2  &0\\
 -k_2 & k_2+k_3 & -k_3 \\
 0 & -k_3 & k_3
 \end{bmatrix}
-x = \begin{bmatrix} 1 \\ 0 \\ 0\end{bmatrix}\gamma i(t)$$
+x = \begin{bmatrix} 1 \\ 0 \\ 0\end{bmatrix}\gamma i(t)\end{equation}
 Then:
-$$\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)$$
+\begin{equation}\ddot{x} = M^{-1}C\dot{x}+M^{-1}Kx+ M^{-1}B\gamma i(t)\end{equation}
 where:
-$$M=\begin{bmatrix}
+\begin{equation}M=\begin{bmatrix}
 \hat{M}_1 & 0 & 0 \\
 0 & M_2 & 0 \\
 0 & 0 & M_3
@@ -242,8 +247,8 @@ c_1+c_2 & -c_2 &0 \\
 k_1+k_2 & -k_2  &0\\
 -k_2 & k_2+k_3 & -k_3 \\
 0 & -k_3 & k_3
-\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \\0 \end{bmatrix}$$
-Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the first, second cart and third cart, and $x_5$, $x_6$, $x_7$ their velocities, then the stace space model, is:
+\end{bmatrix}, B=\begin{bmatrix}1\\ 0 \\0 \end{bmatrix}\end{equation}
+Finally, let $x_1$ be the state of the motor, $x_2,x_3,x_4$ the position of the first, second cart and third cart, and $x_5$, $x_6$, $x_7$ their velocities, then the state space model, is:
 
 \begin{equation}
 \begin{cases}

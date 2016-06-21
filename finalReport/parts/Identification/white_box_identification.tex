@@ -1,7 +1,7 @@
 {\let\clearpage\relax \chapter{White box identification}}
 \section{Detached system: cart and springs identification}
 \label{sec:cart_detached_id}
-To accurately identify the mass of the cart and the stiffness/damping of the spring ,the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
+To accurately identify the mass of the cart and the stiffness/damping of the spring , the motor was detached from the cart, in order to reduce influence of friction due to the pinion and rack. \\ \\
 So we obtain a system like the one considered in figure \ref{fig:cart_detached_motor}.
 
 \begin{figure}[!h]
@@ -41,7 +41,7 @@ So we obtain a system like the one considered in figure \ref{fig:cart_detached_m
 \end{figure}
 
 The differential equation governing this system is given by:
-$$M\ddot{x}+c_i\dot{x}+k_i x = f(t)$$
+\begin{equation}M\ddot{x}+c_i\dot{x}+k_i x = f(t)\end{equation}
 where $M$ [\SI{}{\kilo \gram}] is the total mass of the system  , $c_i$ [\SI{}{\newton \second \per \meter }] comprehends the damping of the $i$-eth spring and the viscous damping of the sliding guide. Finally $k_i$ [\SI{}{\newton \per \meter}] is the stiffness of the $i$-eth spring, and $f(t)$ represents external forces acting on the system (such as non-linear friction components). 
 \\ \\
 \subsection{Experiment description}
@@ -60,14 +60,14 @@ Then data regarding the position of the cart is collected, and from that data th
 
 \subsection{Experiment analysis}
 Using \ref{eq:cart_detached_motor} the response in time can be obtained by using the Laplace transform. Let $X(s)$ be the Laplace transform of $x(t)$, then:
-$$mX(s)(s^2-x(0)s) +c X(s) (s-x(0)) +kX(s)=0$$
+\begin{equation}mX(s)(s^2-x(0)s) +c X(s) (s-x(0)) +kX(s)=0\end{equation}
 and:
-$$X(s) = x(0) \frac{(ms+c)}{ms^2+cs+k}$$
+\begin{equation}X(s) = x(0) \frac{(ms+c)}{ms^2+cs+k}\end{equation}
 If we solve in $X(s)$ and then apply the inverse Laplace transform, we obtain the response in time:
-$$x(t) = e^{-\xi \omega_0 t}(A\cos(\omega t)+B\sin(\omega t))$$
+\begin{equation}x(t) = e^{-\xi \omega_0 t}(A\cos(\omega t)+B\sin(\omega t))\end{equation}
 where $\xi = \frac{c}{2\sqrt{Mk}}, \omega_0 = \sqrt{\frac{k}{M}}, \omega = \omega_0 \sqrt{1-\xi^2}$, and $A,B$ depend on $x(0), \xi$. \\ \\
 Since the pulsation is the same for both sinusoidal components we have:
-$$x(t) = C e^{-\xi \omega_0 t} \sin(\omega t+ \phi)$$
+\begin{equation}x(t) = C e^{-\xi \omega_0 t} \sin(\omega t+ \phi)\end{equation}
 Where  $C= \sqrt{A^2+B^2}, \phi = \arctan(A/B)$.
 \\ \\
 Knowing those equations we  are able to extract data from the response in the following way:
@@ -77,20 +77,20 @@ Knowing those equations we  are able to extract data from the response in the fo
 
 \item {To measure $\xi$ also the first and second peak are considered. Let $t_0, t_1$ be the times at which there is the first and second peak. Notice that $t_0=0, t_1=T$, and $x(T)= Ae^{-\xi \omega_0 T}$.\\
 Then, consider:
-$$\log \Big(\frac{x(0)}{x(T)}\Big) =  \log(e^{\xi \omega_0 T}) = \xi \omega_0 T = \frac{\xi}{\sqrt{1-\xi^2}} 2\pi$$
-Then $$\xi = \frac{a}{\sqrt{a^2+1}}, \quad a = \frac{1}{2\pi}\log \Big(\frac{x(0)}{x(T)}\Big)$$
+\begin{equation}\log \Big(\frac{x(0)}{x(T)}\Big) =  \log(e^{\xi \omega_0 T}) = \xi \omega_0 T = \frac{\xi}{\sqrt{1-\xi^2}} 2\pi\end{equation}
+Then \begin{equation}\xi = \frac{a}{\sqrt{a^2+1}}, \quad a = \frac{1}{2\pi}\log \Big(\frac{x(0)}{x(T)}\Big)\end{equation}
 Once $M,k$ are known we can calculate the damping from $c= 2\xi \sqrt{Mk}$. Observe that for $a \sim 0 \Rightarrow \xi \sim a$.
 }
 
 \item {To identify each spring and the mass of the cart we made use of the fact that the we have two type of experiments for each spring: one without any load, and one with a load of  $0.986$ \SI{}{\kilo\gram}. We obtain a system of linear equations:
-$$
+\begin{equation}
 \begin{cases}
 \frac{k_i}{m_c+m_l} = \omega_l^2 \\
 \frac{k_i}{m_c} = \omega_{nl}^2 \\
 \end{cases}
-$$
+\end{equation}
 Where $m_c$ is the mass of the cart, $m_l$ the mass of the load, $\omega_l$ the pulsation of the system with the load, $\omega_{nl}$ the pulsation of the system without the load. It's a system with two unknowns ($k_i, m_c$) and two equations, so we can solve it. We can rewrite it in matrix form:
-$$\begin{bmatrix}
+\begin{equation}\begin{bmatrix}
 1  && - \omega_l^2 \\
 1 && -\omega_{nl}^2
 \end{bmatrix}  
@@ -101,7 +101,7 @@ k_i \\ m_c
 w_l^2 m_l \\
 0
 \end{bmatrix}  
-$$
+\end{equation}
 and solve for ($k_i, m_c$).
 }
 
@@ -182,7 +182,7 @@ From the values shown in table \ref{table:cart_detached_damping} it seems that t
 \end{table}
 
 We can therefore linearly characterize the damping value as function of the mass centered in $m_c$, for each spring:
-$$C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c}) = C_{nl} +\alpha (m-m_{c})$$
+\begin{equation}C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c}) = C_{nl} +\alpha (m-m_{c})\end{equation}
 The different values of $\alpha$, the difference quotient, are shown in table \ref{table:cart_detached_damping_quotient}
 
 \begin{table}[!h]
@@ -246,7 +246,7 @@ The motor can be modelled as a first order low pass filter, and the main paramet
 \item Torque constant, $K_e$ [\SI{}{\newton \metre \per \ampere}].
 \end{itemize}
 From motor specifications the nominal values, which are identified with \emph{n} as subscript, are:
-$$R_n = 1.4 [\Omega], L_n = 0.0021 [H], K_{en} =0.118 [\SI{}{\newton\metre \per\ampere}]$$
+\begin{equation}R_n = 1.4 [\Omega], L_n = 0.0021 [H], K_{en} =0.118 [\SI{}{\newton\metre \per\ampere}]\end{equation}
 
 The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the Nyquist frequency of the system $100$ [\SI{}{\hertz}], therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only inductance may have a biased value. \\ \\Finally, $K_e$ is identified in the next section, in the overall system identification.
 
@@ -254,13 +254,13 @@ The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$
 For each spring $K_i$, two experiments were done, with the motor attached to the cart,  one with a load of $0.986$ \SI{}{\kilo\gram}, and one without any load (just the cart itself). \\ \\
 Since we can measure the current and because of our assumption that back-emf can be ignored (hence the system is open-loop), we can directly identify the motor from the input voltage and the output current. Moreover, back-emf doesn't influence the steady state value of the current (since it acts on the velocity of the cart, which is $0$ at steady state), therefore resistance of the motor can be accurately identified. Regarding the inductance, we can not accurately identify it, since because of our sampling time the motor can almost considered like a gain system. Therefore rising time and the use of estimation techniques will be used. \\ \\ 
 The input voltage  is a square wave with period $10$:
-$$v(t) = \begin{cases}
+\begin{equation}v(t) = \begin{cases}
 a, \quad t \in [t_0, t_0+5] \\
 -a, \quad t \in [t_0+5,t_0+10]
 \end{cases}
-$$
+\end{equation}
 where $t_0$ is the beginning time of the square wave, and $a=3$ for $K_h, K_m$ and $a=2$ for $K_l$. In fact the current is proportional to the output torque of the motor, which ultimately acts on the cart which is attached with a spring to a wall, therefore less voltage is needed for springs with low stiffness to move the cart. \\ \\ The system to be considered is:
-$$L\dot{i}(t)+Ri(t) = v(t)$$
+\begin{equation}L\dot{i}(t)+Ri(t) = v(t)\end{equation}
 Where $i(t)$ is the current measured from the motor. \\ \\
 Finally, each experiment was run for a period of time of about $\approx 40$ [\SI{}{\second }].
 \subsection{Experiment analysis}
@@ -274,15 +274,15 @@ Thus let $R_1$ represent mean value of resistance when $v$ is positive, and $R_2
 From data  mean values are: $R_1 =1.3069	$ [\SI{}{\ohm}], $R_2=1.2330$[\SI{}{\ohm}], with standard deviation $\sigma_1= 0.0984 \Omega, \sigma_2=0.0460 \Omega
 $. \\ \\
 $R$ then can be computed using a weighted average:
-$$R = \frac{\sigma_2^2 R_1 + \sigma_1^2 R_2}{\sigma_1^2+\sigma_2^2} = 1.2462 \Omega$$
+\begin{equation}R = \frac{\sigma_2^2 R_1 + \sigma_1^2 R_2}{\sigma_1^2+\sigma_2^2} = 1.2462 \Omega\end{equation}
 And standard deviation:
-$$R_{std} = \sqrt{\frac{\sigma_1^2+\sigma_2^2}{2} }=0.0059 \Omega$$
+\begin{equation}R_{std} = \sqrt{\frac{\sigma_1^2+\sigma_2^2}{2} }=0.0059 \Omega\end{equation}
 \\ \\
 Using the \emph{tfest} command the average and standard deviation values for $R,L$ are:
-$$
-R = 1.2689 \Omega, R_{std} = 0.0562 \Omega$$
-$$
-L = 0.0024 \SI{}{\henry}, L_{std} = 0.0002 \SI{}{\henry}$$
+\begin{equation}
+R = 1.2689 \Omega, R_{std} = 0.0562 \Omega\end{equation}
+\begin{equation}
+L = 0.0024 \SI{}{\henry}, L_{std} = 0.0002 \SI{}{\henry}\end{equation}
 Using again a weighted average the mean value of $R$ is $R=1.2464 \Omega$ with standard deviation $0.04 \Omega$. \\ \\
 Regarding the inductance, the estimated value fits the nominal value. This can also be seen from figure \ref{fig:motorid} that  steady state is approached in about $2$ steps of the sampling time.\\
 
@@ -300,7 +300,7 @@ Regarding the inductance, the estimated value fits the nominal value. This can a
 Validation was done using a random input with normal distribution $N(0,\frac{9}{4})$ (Check figure \ref{fig:motor_validation} ). Notice that we couldn't have used that input as source for identification because we already know a model of the system, and so we are not interested in black box modeling. 
 
 On average, using the cost function defined in \ref{sec:validation_cost_function}, with a first order system of the type:
-$$G(s) = \frac{1}{Ls+R}$$
+\begin{equation}G(s) = \frac{1}{Ls+R}\end{equation}
 where $R=1.2689 \Omega, L=0.0024 H$, there is an average fit value $d(i_{real},i_{sim})=0.8142$ with standard deviation $0.0364$.
 \begin{figure}[!h]
     \centering
@@ -314,7 +314,7 @@ In case black box identification is used, with a $3$rd order system we would obt
 The system was modelled as an open loop system as specified in section \ref{sec:validation_cost_function}.
 We have mainly  a series connection of two systems: the motor and the cart, which are identified by the following transfer functions:
 
-$$G_1(s) = \frac{1}{Ls+R} \quad G_2(s) = \frac{\gamma}{Ms^2+Cs+K}$$
+\begin{equation}G_1(s) = \frac{1}{Ls+R} \quad G_2(s) = \frac{\gamma}{Ms^2+Cs+K}\end{equation}
 
 Since we are using the same tests used to identify the motor (section \ref{sec:motor_id}), and the same techniques used to identify the cart detached from the motor (section \ref{sec:cart_detached_id}), the information presented in those two sections are not repeated.
 \subsection{Experiment results}
@@ -352,10 +352,10 @@ By using   mean pulsation the resultant average mass of the system, including th
 \label{table:cart_attached_springs_mass_fl}
 \end{table}
 Therefore it results that the mass contribution of the motor is:
-$$M_{motor} = 0.8906 -0.5685=0.3221 \text{Kg}$$.
+\begin{equation}M_{motor} = 0.8906 -0.5685=0.3221 \text{Kg}\end{equation}
 
 The identified gain of the motor, based on the fact that at steady state we have:
-$$x(\infty) = \frac{\gamma}{k} i(\infty)$$
+\begin{equation}x(\infty) = \frac{\gamma}{k} i(\infty)\end{equation}
 gives an average value of $\gamma=  -2.0680$ \SI{}{\newton \per \ampere} and standard deviation $\gamma_{std}= 0.2935$ \SI{}{\newton \per \ampere}. Notice that $x(\infty), i(\infty)$ refers to the corresponding value at steady state.
 
 
@@ -394,7 +394,7 @@ From the values shown in table \ref{table:cart_attached_dampingratio_fl} it seem
 \end{table}
 
 We can therefore linearly characterize the damping value as function of the mass centered in $m_c$, for each spring:
-$$C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c}) = C_{nl} +\alpha (m-m_{c})$$
+\begin{equation}C(m)=C_{nl}+ \frac{C_{l}-C_{nl}}{m_{l}}(m -m_{c}) = C_{nl} +\alpha (m-m_{c})\end{equation}
 The different values of $\alpha$, the difference quotient, are shown in table \ref{table:cart_attached_damping_quotient_fl}
 
 \begin{table}[!h]

@@ -1,4 +1,4 @@
-{\let\clearpage\relax \chapter{State filtering and Model Observers}}
+ \chapter{State filtering and Model Observers}
 \label{kalmanfilt}
 During the course of the project the development of a state observer was deemed necessary in order to overcome the following problems:
 \begin{enumerate}
@@ -6,6 +6,7 @@ During the course of the project the development of a state observer was deemed 
 \item Noisy current sensor, as described in the previous chapter.
 \item State feedback: LQ, Pole Placement, $\cdots$.
 \end{enumerate}
+Notice that we mainly made use of an observer in order to filter che output of the current sensor. In fact, using a low pass filter was performance-killing: it required a very-low frequency of cut (such as $1Hz$) to filter the  sensor's noise (shown in the first chapter), leading to a reduction of the usable frequency-band of the motor, and ultimately of the entire system. Next, we made sure the deterministic components of the sensor's noise were neglectable in order to make use of the Kalman Filter: this can be seen from the FFT plot of the current shown in the first chapter, since it is almost flat. \\ \\
 Since the validated model, using white box techniques, has an overall validation fit of over $80\%$, we can make use of a linear observer, such as Luenberger's Observer or the Kalman Filter. In both cases we can model them as:
 \begin{equation}
 \dot{\hat{x}} = A \hat{x}+Bu + L(y-C\hat{x})
@@ -19,7 +20,7 @@ The following tests were done in order to validate the efficiency of the observe
 \item Estimate of the carts position (second and third cart) using only the data from the first encoder.
 \end{enumerate}
 Regarding the first test the first thing to notice is that the system is unobservable. In fact, by measuring only the current we cannot extract the system dynamics, thus results are identical to those extracted by the validation tests. \\ \\
-The second and third tests (figure \ref{fig:kalman_valid}) were done in order to measure how much improves the estimate the fact that we measure the current in the second test. For sure measuring also the current \emph{makes} the system more observable, in fact the minimum singular value of the observability matrix is about $0.16$ for the second test, whilst if we measure only the position of the first cart the minimum singular value is $0.03$ (third test). But, this is not an indication that the current improves the estimate. In fact, as told before, the motor  has dynamics much faster than those of the carts, therefore we can't say much using only the current.\\Because of that the results of the two tests are almost identical, the only benefit of measuring also the current is that the Kalman filter is less ill-conditioned (because the observability matrix is less conditioned).\\ \\
+The second and third tests (figure \ref{fig:kalman_valid}) were done in order to measure how much improves the estimate the fact that we measure the current in the second test. For sure measuring also the current \emph{makes} the system more observable, in fact the minimum singular value of the observability matrix is about $0.16$ for the second test, whilst if we measure only the position of the first cart the minimum singular value is $0.03$ (third test). But, this is not an indication that the current improves the estimate. In fact, as told before, the motor  has dynamics much faster than those of the carts, therefore we can't say much using only the current.\\Because of that the results of the two tests are almost identical, the only benefit of measuring also the current is that the Kalman filter is less ill-conditioned (because the observability matrix is less conditioned).\\ \\ \\
 In the first case we obtain:
 $$d(x_{2,kalman},x_{2,real}) = 0.918, \frac{||x_{2,real}-x_{2,kalman}||_{\infty}}{||x_{2,real}||_{\infty}}=0.181$$
 In the second one:

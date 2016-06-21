@@ -19,6 +19,8 @@ The encoder type is CP-850-4000-ECP: it is an optical incremental digital rotary
 The 24 Volt DC motor has a case diameter of 63 mm and 194 Watts of output power. It has a nominal speed of 3700 rpm and a nominal Torque of 270 \SI{}{\milli\newton \meter}. The DC motor has nominally a resistance of 2 $\cdot$ 0.7 \SI{}{\ohm} and an inductance of $2\cdot$ 1.05 \SI{}{\milli \henry}.\\
 
 The poliArd board mounts an Arduino Due board. The board has a 24 \SI{}{\volt} power supply and it’s capable of measuring up to 5 \SI{}{\ampere} current. It has two motor drivers and four encoder interfaces. The board is programmable and the control strategy can be implemented using Matlab 2015a. To power on the board the user has to flip the first lever from the left. The other two levers can be programmed freely.
+\subsection{Sampling frequency}
+During the course of the project the chosen sampling frequency was $f_s = 200 Hz$.  This allowed us not to worry about issues such as: the additional phase due to sampling, identification, etc...
 \section{Issues}
 \subsection{Motor saturation}
 From simple test it’s easy to see that measured current saturates. What can be observed is that even though the current reaches a maximum value, the cart continues to move so this means that the sensor is not able to measure above a given current. In particular, it can be seen from Figure \ref{fig:sensorsaturation} that the sensor saturates to $4.42$ \SI{}{\ampere} and to $-10$ \SI{}{\ampere}.\\
@@ -32,7 +34,17 @@ In any case the Arduino Due cannot reliably measure more than 5 \SI{}{\ampere} c
   \end{figure}
 \subsection{Current noise}
 After applying the protector to the system we measured the current noise at different current levels.\\ \\
-We applied a ladder type signal to measure the noise when the current was constant at different current levels. From the values obtained it can be seen that the variance of the negative current increases as the current increases in modulus instead if the current is positive the variance is small and almost constant. The fault of this behaviour for negative current is probably of the current measurement system.\\
+First of all we noticed that the current has a Gaussian distribution, with some deterministic components. This was done by using a step signal equal to $1$ as input voltage to the motor and taking an histogram of the current at steady state and its Fast Fourier Transform (after detrending). This is seen in figure \ref{fig:currnoise1}. 
+  \begin{figure}[!h]
+  	\centering
+  	\subfloat[Current at steady state]{\includegraphics[width=0.3\textwidth]{img/cur1.png}}
+  	\subfloat[Histogram of the current]{\includegraphics[width=0.3\textwidth]{img/cur2.png}}
+  	\subfloat[FFT Plot]{\includegraphics[width=0.3\textwidth]{img/cur3.png}}
+  	\caption{On the left: the current sensor signal at steady state. On the center its histogram plot after detrending. On the right its FFT after detrending.}
+  	\label{fig:currnoise1}
+  \end{figure}
+This is an important step, since a current control loop was necessary for $2$ and $3$ degree of freedom. Therefore we needed a filtered output of the current signal. And we needed to understand how to filter the output of the sensor.
+ \\Later we applied a ladder type signal to measure the noise when the current was constant at different current levels. In fact we noticed that the noise variance increased for increasing values of $v$. From the measurements obtained it can be seen that the variance of the negative current increases as the current increases in modulus instead if the current is positive the variance is small and almost constant. The fault of this behaviour for negative current is probably of the current measurement system.\\
 \def\arraystretch{1.2}
 \begin{table}[]
 \centering
@@ -85,7 +97,7 @@ The system is composed by four macroblocks: Input Manager, Protector, System, Co
 	\caption{Overall protection scheme}
 \end{figure}
 
-\section{Input Manager}
+\subsection{Input Manager}
 With a manual switch we can choose between potentiometers and reference signals. With the two levers we can decides instead the function of those potentiometers. 
 If the second switch of the Arduino board is enabled then one potentiometer is a disturb for the control input instead the other one is used as variable reference signal. 
 If the third switch of the Arduino board is enabled then both the potentiometers are used as reference but one is positive and one is negative. 
@@ -98,7 +110,7 @@ If the third switch of the Arduino board is enabled then both the potentiometers
  	\caption{State machines used for startup of the system and alert signaling.}
  	
  \end{figure}
-\section{Protector}
+\subsection{Protector}
 This part of the system is in turn composed by five protective blocks. One for the Voltage, one for the reference, three for the displacement. 
 The voltage protector simply saturates the voltage to avoid damage to the Arduino board.
 The position protectors give an alert message if the displacement of any cart is more than ±3cm.
@@ -111,11 +123,11 @@ Finally, there’s a sixth block that contains two finite states machines:
 The first one is simply used to delay the start of the signals by 3 seconds when the board is turned on. This is done because, as said above, if the signals and the board switch on at the same time then the board behaves badly. 
 The second one processes all the signals and decides when to enable or disable the alert status. In particular, if the alert signal is on, the motor will be disabled and it won’t be enabled again until the voltage goes under ±0.3 V. 
 
-\section{System}
+\subsection{System}
 Inside the system the reference signal is subtracted to the value measured by the position encoder and this error will be used to stabilize the system. Prior to the tests, either encoder 1 or 2 can be selected as feedback.
 The last block is the motor whose logic status is controlled by the motor disabler signal and whose continuous value is changed by the reference.
 The eventual controller of the motor will be placed inside this block.
 
-\section{Controller}
+\subsection{Controller}
 This block changes depending on which controller we want to use. When the motor disable signal is enabled there is a loop which rapidly pulls the voltage to 0 V in order to ready the system quickly. This exploit is used in order to avoid that the voltage inside the motor saturates for some reason and thus avoiding a total block of the system and the need of a manual intervention.
 
