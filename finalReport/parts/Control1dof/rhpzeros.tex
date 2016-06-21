@@ -1,17 +1,20 @@
 \section{RHP-Zeros Control}
 During the development of the project it was apparent that using an integrator was necessary to eliminate steady state-error and reduce the effect of non-linearities thanks to the high-gain linearization effect induced by the integrator. Although, this led to some drawbacks, such as low cut-off frequency. This was induced by the fact that we have 2 complex poles near the imaginary axis, which are the cart natural frequencies. One of the best way to design a controller was to introduce two complex zero in order to cancel the effect of those complex poles. Another way was to use positive zeros in our controller.\\ \\
-It is well known from the root locus technique that zeros \emph{attract} poles for increasing gain. Then it was observed, that, if we place positive zeros sufficiently near to the real axis, and not too far from the complex poles  aforementioned, those poles with a sufficient gain would fall in a zone where the output signal response of the system would have low overshoot. \\ \\
+It is well known from the root locus technique that zeros \emph{attract} poles for increasing gain. Then it was observed, that, if we place positive zeros sufficiently near to the real axis, and not too far from the complex poles  aforementioned, those poles with a sufficient gain would fall in a zone where the output signal response of the system would have low overshoot. \\ \\ This can be seen from figure \ref{fig:rlocusrhp}, where a controller with two poles and two complex positive zeros is used: from the root locus plot it is possible to see that the poles fall into a zone with low overshoot and fast response.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{img/pos_zeros_design.png}
 \caption{Root locus and bode plot of the plant with the controller.}
+\label{fig:rlocusrhp}
 \end{figure}
 
+In figure \ref{fig:possrhp} it is possible to see the control of a cart with two massed for $K_h$ and $K_l$. Notice the effect of the positive zeros, which is the undershoot effect, visible at the beginning and at the end of the step. Such effect is explained in the appendix. The overshoot is still present because of modelling errors/gain sensitivity. In figure \ref{fig:rhpsin} tracking of a sinusoid is shown, at high frequency.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{img/pos_zeros_sin.png}
 \caption{Sinusoidal reference tracking. Though the gain is lower that $1$, the phase is almost $0$.}
+\label{fig:rhpsin}
 \end{figure}
 
 
@@ -21,5 +24,5 @@ It is well known from the root locus technique that zeros \emph{attract} poles f
   \hfill
   \subfloat[ $K_h$]{\includegraphics[width=0.5\textwidth]{img/pos_zeros_kh_2.png}}
   \caption{On the left: plot of the cart position with  $K_l$. On the right plot of the cart position with $K_h$.}
-    \label{fig:poss}
+    \label{fig:possrhp}
 \end{figure}

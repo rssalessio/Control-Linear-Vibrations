@@ -39,5 +39,5 @@ $$\frac{d\theta}{d\xi} = -\frac{1}{1+\xi^2} = -1 + \frac{\xi^2}{1+\xi^2}$$
 For $\xi < 0.5$ the change is almost linear, as seen from figure \ref{fig:theta_comparison}. Moreover $\frac{d\theta}{d\xi} \approx -1$ for $0 < \xi < 0.5$, so the slope of the curve is almost $-1$.
 
 In our case $\xi = \frac{c+\gamma}{2\omega_0}= \frac{c}{2\omega_0}+ \frac{\gamma}{2\omega_0}$, so the contribution of the backemf is $\frac{\gamma}{2\omega_0}$. \\ \\
-From the motor datasheet $\gamma \ll 1$ and from experiments $\omega_0$ is always greater than $10 \frac{rad}{sec}$, therefore the contribution is small, less than $1$ and since the contribution to $\theta$ is linear with proportion $\sim -1$ also the change in $\theta$ is less than $1$ degree, therefore backemf can be ignored and open-loop identification can be applied.
+From the motor datasheet $| \gamma | \sim 2$ and from experiments $\omega_0$ is always greater than $10 \frac{rad}{sec}$, therefore the contribution is small, less than $0.1$ and since the contribution to $\theta$ is linear with proportion $\sim -1$ also the change in $\theta$ is less than $10$ degree, therefore we can say backemf can be ignored and open-loop identification can be applied.
 

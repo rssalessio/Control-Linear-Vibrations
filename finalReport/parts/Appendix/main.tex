@@ -64,7 +64,7 @@ More in general, by looking at the expression of $T(s)$, it's possible to notice
 Finally an even number of positive zeros display the undershoot effect  after a small time. On the other hand it can be proven  \cite{hoagg2006}]that an odd number of positive zeros show the undershoot effect right at the start. Obviously the effect of those zeros can be reduced by moving them far away from the origin (i.e. in high frequency), where the gain of the system is very low,  but, then, the root locus would change. \\
 
 \section{Extended Kalman Filtering}
-Because of some problems with the Arduino Board with the continuous Kalman Filter we decided to use the discretized version of the Extended Kalman Filter. The theoretical details can be found at \ref{ekf}. To discretize the system the Forward Euler Method was used, therefore $\dot{x} \approx \frac{1}{t_s}(x_{n+1}-x_{n})$, where $t_s$ is the sampling time. Then, if the system in continuous time is described by the following equation:
+Because of some problems with the Arduino Board with the continuous Kalman Filter we decided to use the discretized version of the Extended Kalman Filter.  To discretize the system the Forward Euler Method was used, therefore $\dot{x} \approx \frac{1}{t_s}(x_{n+1}-x_{n})$, where $t_s$ is the sampling time. Then, if the system in continuous time is described by the following equation:
 \begin{equation}
 \dot{x}=Ax+Bu
 \end{equation}
