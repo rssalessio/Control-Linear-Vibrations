@@ -5,6 +5,10 @@
 \contentsline {subsection}{\numberline {1.1.2}Current noise}{2}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Encoder signal}{2}{subsection.1.1.3}
 \contentsline {section}{\numberline {1.2}System protection}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Input Manager}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Protector}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}System}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}Controller}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}Linear system modelling}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Motor, Pinion and Rack modelling}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Carts, Springs and Dampers Modelling}{6}{section.2.2}
@@ -19,9 +23,9 @@
 \contentsline {subsection}{\numberline {4.1.1}Experiment description}{10}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Experiment analysis}{11}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Experiment results}{12}{subsection.4.1.3}
-\contentsline {paragraph}{Pulsation}{12}{section*.10}
-\contentsline {paragraph}{Cart mass and springs stiffness}{12}{section*.13}
-\contentsline {paragraph}{Damping and damping ratio}{12}{section*.15}
+\contentsline {paragraph}{Pulsation}{12}{section*.11}
+\contentsline {paragraph}{Cart mass and springs stiffness}{12}{section*.14}
+\contentsline {paragraph}{Damping and damping ratio}{12}{section*.16}
 \contentsline {subsection}{\numberline {4.1.4}Validation}{13}{subsection.4.1.4}
 \contentsline {section}{\numberline {4.2}Motor identification}{14}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Experiment description}{14}{subsection.4.2.1}
@@ -30,12 +34,12 @@
 \contentsline {subsection}{\numberline {4.2.4}Validation}{16}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Overall system identification}{17}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Experiment results}{17}{subsection.4.3.1}
-\contentsline {paragraph}{Pulsation}{17}{section*.22}
-\contentsline {paragraph}{System gain, mass and stiffness}{17}{section*.24}
-\contentsline {paragraph}{Damping and damping ratio}{17}{section*.26}
+\contentsline {paragraph}{Pulsation}{17}{section*.23}
+\contentsline {paragraph}{System gain, mass and stiffness}{17}{section*.25}
+\contentsline {paragraph}{Damping and damping ratio}{17}{section*.27}
 \contentsline {subsection}{\numberline {4.3.2}Validation}{18}{subsection.4.3.2}
-\contentsline {subsubsection}{Validation 1 DOF}{18}{section*.30}
-\contentsline {subsubsection}{Validation 2 DOF}{18}{section*.32}
+\contentsline {subsubsection}{Validation 1 DOF}{18}{section*.31}
+\contentsline {subsubsection}{Validation 2 DOF}{18}{section*.33}
 \contentsline {chapter}{\numberline {5}Gray box identification}{21}{chapter.5}
 \contentsline {chapter}{\numberline {6}Non-linearities identification}{23}{chapter.6}
 \contentsline {section}{\numberline {6.1}Non-linear gain}{23}{section.6.1}
@@ -54,9 +58,9 @@
 \contentsline {chapter}{\numberline {10}Control of 3 Degree of Freedom}{37}{chapter.10}
 \contentsline {section}{\numberline {10.1}LQG Control Design}{39}{section.10.1}
 \contentsline {section}{\numberline {10.2}$H_\infty $ Control Design}{39}{section.10.2}
-\contentsline {chapter}{Conclusions}{i}{chapter*.66}
-\contentsline {chapter}{The team}{ii}{chapter*.67}
-\contentsline {chapter}{Appendix}{iii}{chapter*.68}
+\contentsline {chapter}{Conclusions}{i}{chapter*.67}
+\contentsline {chapter}{The team}{ii}{chapter*.68}
+\contentsline {chapter}{Appendix}{iii}{chapter*.69}
 \contentsline {section}{\numberline {10.3}$H_\infty $ Control Design}{iii}{section.10.3}
 \contentsline {section}{\numberline {10.4}Effect of positive zeros}{iii}{section.10.4}
 \contentsline {section}{\numberline {10.5}Extended Kalman Filtering}{v}{section.10.5}

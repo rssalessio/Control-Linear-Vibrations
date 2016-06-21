@@ -23,11 +23,10 @@ The poliArd board mounts an Arduino Due board. The board has a 24 \SI{}{\volt} p
 \subsection{Motor saturation}
 From simple test it’s easy to see that measured current saturates. What can be observed is that even though the current reaches a maximum value, the cart continues to move so this means that the sensor is not able to measure above a given current. In particular, it can be seen from Figure \ref{fig:sensorsaturation} that the sensor saturates to $4.42$ \SI{}{\ampere} and to $-10$ \SI{}{\ampere}.\\
 In any case the Arduino Due cannot reliably measure more than 5 \SI{}{\ampere} current as the data-sheet specifies, so from this point onward we will limit all test currents to 5 \SI{}{\ampere} in both directions. Even in this way a difference remains between positive and negative measured current.  
-  \begin{figure}[!tbh]
+  \begin{figure}[!h]
   	\centering
-  	\subfloat[Negative maximum current]{\includegraphics[width=0.5\textwidth]{img/neg_max_current.jpg}}
-  	\hfill
-  	\subfloat[Positive maximum current]{\includegraphics[width=0.5\textwidth]{img/pos_max_current.jpg}}
+  	\subfloat[Negative maximum current]{\includegraphics[width=0.3\textwidth]{img/neg_max_current.jpg}}
+  	\subfloat[Positive maximum current]{\includegraphics[width=0.3\textwidth]{img/pos_max_current.jpg}}
   	\caption{Sensor saturation effect}
   	\label{fig:sensorsaturation}
   \end{figure}
@@ -51,7 +50,7 @@ We applied a ladder type signal to measure the noise when the current was consta
 \end{tabular}
 \end{table}
 
-From the variance values of the current for $v(t)<0$ it can be seen that the variance grows linearly with the modulus of the current, whilst for $v(t)>0$ is almost constant. Therefore for $v(t)<0$ we decided to estimate the variance by simple linear interpolation:
+From the variance values of the current for $v(t)<0$ it can be seen that the variance grows linearly with the modulus of the current, whilst for $v(t)>0$ is almost constant, with average value $0.0016$. Therefore for $v(t)<0$ we decided to estimate the variance by simple linear interpolation:
 \begin{equation}
 \text{var}(i(t)) = a + b \mathbb{E}[i(t)]
 \end{equation}
@@ -62,48 +61,61 @@ Y  = \begin{bmatrix} \text{var}(i_1)\\ \vdots \\ \text{var}(i_n) \end{bmatrix},
 X = \begin{bmatrix} 1 & \mathbb{E}[i_1]\\ \vdots \\ 1 & \mathbb{E}[i_n] \end{bmatrix},
 \theta = \begin{bmatrix} a\\ b\end{bmatrix}
 \end{equation}
-where $i_j$ represents the $j$-eth segment of current data taken from the ladder experiment. The results can be seen in figure(number!!!).\\
+where $i_j$ represents the $j$-eth segment of current data taken from the ladder experiment. The result can be seen below.\\
 
 All these experiment were done in order to estimate the variance of the current sensor and to have enough information to build the variance matrixes for the Kalman filter.
-  \begin{figure}[!tbh]
+  \begin{figure}[!h]
   	\centering
-  	\subfloat[]{\includegraphics[width=0.5\textwidth]{img/neg_ladder.jpg}}
-  	\hfill
-  	\subfloat[ ]{\includegraphics[width=0.5\textwidth]{img/pos_ladder.jpg}}
-  	\caption{Ladder signal used for variance identification}
+  	\subfloat[]{\includegraphics[width=0.3\textwidth]{img/neg_ladder.jpg}}
+  	\subfloat[ ]{\includegraphics[width=0.3\textwidth]{img/pos_ladder.jpg}}
+  	\subfloat[ ]{\includegraphics[width=0.3\textwidth]{img/current_variance_estimated.png}}
+  	\caption{Ladder signal used for variance identification, and estimation of the current noise variance for $v<0$.}
  
   \end{figure}
-  \begin{figure}[h]
-  	\centering
-  	\includegraphics[width=0.5\textwidth]{img/current_variance_estimated.png}
-  	\caption{Estimated noise variance of the sensor}
-  \end{figure}
+
 \subsection{Encoder signal}
-Another problem is the one of the signal given by the encoders. This signal is a voltage impulse given to the Arduino. Unfortunately, the measure showed by Poliscope is not in centimetres so a conversion was in order. The idea was to give a reference signal in an open loop configuration. Once the transient is passed both Poliscope value and the real displacement of the cart were measured. The Tables (!!!numero) show the values of the various measurements. The final column shows the ratio between the Poliscope value and the displacement. This ratio has a mean value of about 560 and this is the value that has been used to convert all the measurements of the experiments.
+Another problem is the one of the signal given by the encoders. This signal is a voltage impulse given to the Arduino. Unfortunately, the measure showed by Poliscope is not in centimetres so a conversion was in order. The idea was to give a reference signal in an open loop configuration. Once the transient is passed both Poliscope value and the real displacement of the cart were measured. The average value  of the conversion gain is $559$ (steps to cm), with standard deviation $20$ (steps-to-cm). Tables with data are not shown in this report, but can be found at the GitHub directory of the project.
 \section{System protection}
 To avoid undesired behaviour of the system, a Simulink protection of the system has been designed. The system monitors current, voltage and displacement and if they overshoot a given value an alert is triggered that switches off the system to prevent any damage. 
 Moreover, Arduino Due doesn’t behave very well when the reference signal starts at the same time of its power on. For this reason, the system has been designed in order to start the signal only after 3 seconds the user pushed the lever number 2. This logic has been implemented using a finite state machine through the library Stateflow in Matlab.
-The third lever instead it’s used to change from a reference signal to the potentiometer of the board.
-The system is composed by four macroblocks:
--	Input Manager
--	Protector
--	System
--	Controller
-Input manager
-Decides which input to use between potentiometers and signals. If the third switch of the Arduino board is enabled then the input switches from the signals to the manual potentiometers. One of the potentiometer is used to insert a disturbance in the control variable and the other one is used to give a variable and constant reference signal.
-Protector
+The system is composed by four macroblocks: Input Manager, Protector, System, Controller.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/overall_condom.jpg}
+	\caption{Overall protection scheme}
+\end{figure}
+
+\section{Input Manager}
+With a manual switch we can choose between potentiometers and reference signals. With the two levers we can decides instead the function of those potentiometers. 
+If the second switch of the Arduino board is enabled then one potentiometer is a disturb for the control input instead the other one is used as variable reference signal. 
+If the third switch of the Arduino board is enabled then both the potentiometers are used as reference but one is positive and one is negative. 
+ \begin{figure}[!h]
+ 	\centering
+ 	\subfloat[Startup state machine]{\includegraphics[width=0.3\textwidth]{img/init_manager.jpg}}
+ 	\hspace{1cm}
+ 	\subfloat[Alert state machine]{\includegraphics[width=0.33\textwidth]{img/alert_manager.jpg}}
+ 	
+ 	\caption{State machines used for startup of the system and alert signaling.}
+ 	
+ \end{figure}
+\section{Protector}
 This part of the system is in turn composed by five protective blocks. One for the Voltage, one for the reference, three for the displacement. 
 The voltage protector simply saturates the voltage to avoid damage to the Arduino board.
 The position protectors give an alert message if the displacement of any cart is more than ±3cm.
 The reference protection saturates the reference to ±3 and a parallel circuit disables the input if the alert is active.
 Finally, there’s a sixth block that contains two finite states machines: 
--	Init Manager
--	Alert Manager
+\begin{itemize}
+	\item Init Manager
+	\item Alert Manager
+\end{itemize}
 The first one is simply used to delay the start of the signals by 3 seconds when the board is turned on. This is done because, as said above, if the signals and the board switch on at the same time then the board behaves badly. 
 The second one processes all the signals and decides when to enable or disable the alert status. In particular, if the alert signal is on, the motor will be disabled and it won’t be enabled again until the voltage goes under ±0.3 V. 
-System
+
+\section{System}
 Inside the system the reference signal is subtracted to the value measured by the position encoder and this error will be used to stabilize the system. Prior to the tests, either encoder 1 or 2 can be selected as feedback.
 The last block is the motor whose logic status is controlled by the motor disabler signal and whose continuous value is changed by the reference.
-Controller
+The eventual controller of the motor will be placed inside this block.
+
+\section{Controller}
 This block changes depending on which controller we want to use. When the motor disable signal is enabled there is a loop which rapidly pulls the voltage to 0 V in order to ready the system quickly. This exploit is used in order to avoid that the voltage inside the motor saturates for some reason and thus avoiding a total block of the system and the need of a manual intervention.
 
