@@ -58,6 +58,7 @@ As it possible to see, the current has some oscillations which perturb the whole
 We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
 
 \begin{figure}[h]
+	\setlength{\abovecaptionskip}{-10pt}
 	\setlength{\belowcaptionskip}{-10pt}
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_nocurr}
@@ -66,6 +67,8 @@ We decided to make use of a Kalman filter in order to insert an inner loop contr
 \end{figure}
 
 \begin{figure}[h]
+	\setlength{\abovecaptionskip}{-10pt}
+	\setlength{\belowcaptionskip}{-10pt}	
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_curr}
 	\caption{Response to a train of pulses when the current is controlled. Now the response is much smoother.}
@@ -73,6 +76,8 @@ We decided to make use of a Kalman filter in order to insert an inner loop contr
 \end{figure}
 
 \begin{figure}[h]
+	\setlength{\abovecaptionskip}{-10pt}
+	\setlength{\belowcaptionskip}{-10pt}
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/hinf_response}
 	\caption{Carts displacement over time due to a train of pulses. Both carts do not overshoot.}
