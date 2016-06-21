@@ -12,7 +12,7 @@ Last, identification of non-linearities are considered.
 \label{sec:validation_cost_function}
 An important aspect of the identification process is validation of results and this can be done in many ways. \\ \\
 We will mainly compare two signals, thus effectiveness in capturing the shape of  a signal is essential for the type of validation function that we will use. \\  \\
-For this purpose we can make use of a distance function $d(x,y): \mathbb{R}^n \times \mathbb{R}^n]\to [0,1]$ induced by a generic norm $n(x) : \mathbb{R}^n \to [0,\infty)$. In this case we can construct $d$ in the following way:
+For this purpose we can make use of a distance function $d(x,y): \mathbb{R}^n \times \mathbb{R}^n\to [0,1]$ induced by a generic norm $n(x) : \mathbb{R}^n \to [0,\infty)$. In this case we can construct $d$ in the following way:
 $$d(x,y) = \frac{1}{1+n(x-y)}$$
  The problem, then, is to find a norm capable of capturing the essential information of a signal. \\ \\Usually the $L_2$ norm is used, since it's related to the signal energy, and from a statistical point of view it corresponds to the variance of the difference of two signals. It's called \emph{MSE}-\emph{Mean Square Error}: an estimator of the overall deviations between prediction and measurements. Mathematically:
 $$\text{MSE} =  \mathbb{E}[(x-y)^2]$$
