@@ -3,7 +3,7 @@ We decided to implement the \emph{LQR} controller as representative of state-fee
 
 Remember that LQR solves the optimal problem:
 \begin{equation}
-min J = \int_0^{\infty} x^T Q x + u^T R u dt
+min J = \int_0^{\infty} [x^T Q x + u^T R u] dt
 \end{equation}
 which gives an optimal solution in the form of feedback control:
 \begin{equation}
@@ -20,7 +20,7 @@ u=-K_{x} x+ K_{r} r
 \end{equation}
 Where $K_{r}$ is:
 \begin{equation}
-K_{r} = \frac{1}{C(-(A-BK))^{-1}B}
+K_{r} = \frac{1}{C(-(A-BK_x))^{-1}B}
 \end{equation}
 With $C$ selecting the appropriate output, in this case $x_1$, thus $C=\begin{bmatrix}0 & 100 & 0\end{bmatrix}$. This $K_r$ makes sure the system has unitary gain. \\
 The weight matrix was selected in order to let $x_1 \to 0$ quickly with acceptable performances. After some iterations the matrices $Q$ and $R$ were chosen as:

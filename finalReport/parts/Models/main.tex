@@ -76,7 +76,8 @@ A DC Brushless motor can be modelled with a simple low-pass filter transfer func
  \begin{equation}
  c(s) = K_e i(s)
  \end{equation}
-and:
+ where $K_e$ \SI{}{\newton \metre \per \ampere} is the electrical torque constant.
+And
 \begin{equation}
 i(s)=\frac{1}{Ls+R} (v(s)-K_{e}s \theta(s))
 \end{equation}
@@ -97,7 +98,7 @@ Therefore, because of Newton's First Law, each cart has equation:
 $$M_i \ddot{x}_i + C_{i} \dot{x}_i + K_{i}x_{i}=F(t)$$
 Thus, for each cart 2 states are needed to describe its behaviour.\\ \\
 \section{1 DOF State Space Model}
-Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor, $x_{2}$ the position of the cart and $x_{3}$ its velocity. The back-emf term in the motor is given by: $-K_e s \theta = -K_e \frac{2}{D}\dot{x} = -\gamma x_3$. Therefore the equations to consider are:
+Including the motor 3 states are needed to describe the behaviour of the system. Let $x_{1}$ be the state of the motor (i.e. the current), $x_{2}$ the position of the cart and $x_{3}$ its velocity. The back-emf term in the motor is given by: $-K_e s \theta = -K_e \frac{2}{D}\dot{x} = -\gamma x_3$. Therefore the equations to consider are:
 \begin{equation}
 \begin{cases}
 \dot{x}_1 = -\frac{R}{L}x_{1}+\frac{1}{L} v(t)-\frac{\gamma}{L}x_3  \\

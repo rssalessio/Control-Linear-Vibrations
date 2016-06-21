@@ -21,15 +21,23 @@ The 24 Volt DC motor has a case diameter of 63 mm and 194 Watts of output power.
 The poliArd board mounts an Arduino Due board. The board has a 24 \SI{}{\volt} power supply and it’s capable of measuring up to 5 \SI{}{\ampere} current. It has two motor drivers and four encoder interfaces. The board is programmable and the control strategy can be implemented using Matlab 2015a. To power on the board the user has to flip the first lever from the left. The other two levers can be programmed freely.
 \section{Issues}
 \subsection{Motor saturation}
-From simple test it’s easy to see that measured current saturates. What can be observed is that even though the current reaches a maximum value, the cart continues to move so this means that the sensor is not able to measure above a given current. In particular, it can be seen from Figures (specificare numero!!!) that the sensor saturates to $4.42$ \SI{}{\ampere} and to $-10$ \SI{}{\ampere}.\\
+From simple test it’s easy to see that measured current saturates. What can be observed is that even though the current reaches a maximum value, the cart continues to move so this means that the sensor is not able to measure above a given current. In particular, it can be seen from Figure \ref{fig:sensorsaturation} that the sensor saturates to $4.42$ \SI{}{\ampere} and to $-10$ \SI{}{\ampere}.\\
 In any case the Arduino Due cannot reliably measure more than 5 \SI{}{\ampere} current as the data-sheet specifies, so from this point onward we will limit all test currents to 5 \SI{}{\ampere} in both directions. Even in this way a difference remains between positive and negative measured current.  
+  \begin{figure}[!tbh]
+  	\centering
+  	\subfloat[Negative maximum current]{\includegraphics[width=0.5\textwidth]{img/neg_max_current.jpg}}
+  	\hfill
+  	\subfloat[Positive maximum current]{\includegraphics[width=0.5\textwidth]{img/pos_max_current.jpg}}
+  	\caption{Sensor saturation effect}
+  	\label{fig:sensorsaturation}
+  \end{figure}
 \subsection{Current noise}
 After applying the protector to the system we measured the current noise at different current levels.\\ \\
 We applied a ladder type signal to measure the noise when the current was constant at different current levels. From the values obtained it can be seen that the variance of the negative current increases as the current increases in modulus instead if the current is positive the variance is small and almost constant. The fault of this behaviour for negative current is probably of the current measurement system.\\
 \def\arraystretch{1.2}
 \begin{table}[]
 \centering
-\caption{My caption}
+\caption{Variance and mean of the current sensor for different voltage inputs.}
 \label{my-label}
 \begin{tabular}{lllll}
 \cline{1-2} \cline{4-5}
@@ -57,7 +65,19 @@ X = \begin{bmatrix} 1 & \mathbb{E}[i_1]\\ \vdots \\ 1 & \mathbb{E}[i_n] \end{bma
 where $i_j$ represents the $j$-eth segment of current data taken from the ladder experiment. The results can be seen in figure(number!!!).\\
 
 All these experiment were done in order to estimate the variance of the current sensor and to have enough information to build the variance matrixes for the Kalman filter.
-
+  \begin{figure}[!tbh]
+  	\centering
+  	\subfloat[]{\includegraphics[width=0.5\textwidth]{img/neg_ladder.jpg}}
+  	\hfill
+  	\subfloat[ ]{\includegraphics[width=0.5\textwidth]{img/pos_ladder.jpg}}
+  	\caption{Ladder signal used for variance identification}
+ 
+  \end{figure}
+  \begin{figure}[h]
+  	\centering
+  	\includegraphics[width=0.5\textwidth]{img/current_variance_estimated.png}
+  	\caption{Estimated noise variance of the sensor}
+  \end{figure}
 \subsection{Encoder signal}
 Another problem is the one of the signal given by the encoders. This signal is a voltage impulse given to the Arduino. Unfortunately, the measure showed by Poliscope is not in centimetres so a conversion was in order. The idea was to give a reference signal in an open loop configuration. Once the transient is passed both Poliscope value and the real displacement of the cart were measured. The Tables (!!!numero) show the values of the various measurements. The final column shows the ratio between the Poliscope value and the displacement. This ratio has a mean value of about 560 and this is the value that has been used to convert all the measurements of the experiments.
 \section{System protection}
