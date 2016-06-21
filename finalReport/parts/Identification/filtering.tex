@@ -10,16 +10,16 @@ Since the validated model, using white box techniques, has an overall validation
 \begin{equation}
 \dot{\hat{x}} = A \hat{x}+Bu + L(y-C\hat{x})
 \end{equation}
-Where $L$ in case of the Luenberger Observer is chosen such that $A-LC$ has eigenvalues that are $10$ times faster than the eigenvalues of the system. The Kalman Filter chosen $L$ optimally (in a $L_2$ sense) by solving the Riccati's equation. Notice that $u$ is the input voltage to the motor.\\\\
-Both were tested, though a first implementation issue was the conversion of the observer to a discrete model, because of some problem with the Arduino Board in case we were using the continuous model. The model was formulated in continuous time and then discretised using a zero-order hold.\\ \\
+Where $L$ in case of the Luenberger Observer is chosen such that $A-LC$ has eigenvalues that are $10$ times faster than the eigenvalues of the system. The Kalman Filter choses $L$ optimally (in a $L_2$ sense) by solving the Riccati's equation. Notice that $u$ is the input voltage to the motor.\\\\
+Both filters were tested, though a first implementation issue was the conversion of the observer to a discrete model, because of some problem with the Arduino Board in case we were using the continuous model. The model was formulated in continuous time and then discretised using a zero-order hold.\\ \\
 The following tests were done in order to validate the efficiency of the observer:
 \begin{enumerate}
 \item Estimate of the carts position (all 3 degree of freedom) using only the current.
-\item Estimate of the carts position (second and third cart) using only the current and the data from the first encoder.
-\item Estimate of the second and third carts position using only the data from the first encoder. 
+\item Estimate of the carts position (second and third cart) using the current and the data from the first encoder.
+\item Estimate of the carts position (second and third cart) using only the data from the first encoder.
 \end{enumerate}
-Regarding the first tests the first thing to notice is that the system is unobservable. In fact, by measuring only the current we cannot extract the system dynamics, thus results are identical to those extracted by the validation tests. \\ \\
-The second and third tests (figure \ref{fig:kalman_valid}) were done in order to measure how much improves the estimate the fact that we measure the current in the second test. For sure measuring also the current \emph{makes} the system more observable, in fact the minimum singular value of the observability matrix is about $0.16$, whilst if we measure only the position of the first cart the minimum singular value is $0.03$. But, this is not an indication that the current improves the estimate. In fact, as told before, the motor  has dynamics much faster than those of the carts, therefore we can't say much using only the current.\\Because of that the results of the two tests are almost identical, the only benefit of measuring also the current is that the Kalman filter is less ill-conditioned (because the observability matrix is less conditioned).\\ \\
+Regarding the first test the first thing to notice is that the system is unobservable. In fact, by measuring only the current we cannot extract the system dynamics, thus results are identical to those extracted by the validation tests. \\ \\
+The second and third tests (figure \ref{fig:kalman_valid}) were done in order to measure how much improves the estimate the fact that we measure the current in the second test. For sure measuring also the current \emph{makes} the system more observable, in fact the minimum singular value of the observability matrix is about $0.16$ for the second test, whilst if we measure only the position of the first cart the minimum singular value is $0.03$ (third test). But, this is not an indication that the current improves the estimate. In fact, as told before, the motor  has dynamics much faster than those of the carts, therefore we can't say much using only the current.\\Because of that the results of the two tests are almost identical, the only benefit of measuring also the current is that the Kalman filter is less ill-conditioned (because the observability matrix is less conditioned).\\ \\
 In the first case we obtain:
 $$d(x_{2,kalman},x_{2,real}) = 0.918, \frac{||x_{2,real}-x_{2,kalman}||_{\infty}}{||x_{2,real}||_{\infty}}=0.181$$
 In the second one:

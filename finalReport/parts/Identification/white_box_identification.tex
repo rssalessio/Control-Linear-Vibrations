@@ -79,7 +79,7 @@ Knowing those equations we  are able to extract data from the response in the fo
 Then, consider:
 $$\log \Big(\frac{x(0)}{x(T)}\Big) =  \log(e^{\xi \omega_0 T}) = \xi \omega_0 T = \frac{\xi}{\sqrt{1-\xi^2}} 2\pi$$
 Then $$\xi = \frac{a}{\sqrt{a^2+1}}, \quad a = \frac{1}{2\pi}\log \Big(\frac{x(0)}{x(T)}\Big)$$
-Once $M,k$ are known we can calculate the damping from $c= 2\xi \sqrt{Mk}$. Observe that for $a \sim 0 \Rightarrow \xi \sim a$. \\ Since damping
+Once $M,k$ are known we can calculate the damping from $c= 2\xi \sqrt{Mk}$. Observe that for $a \sim 0 \Rightarrow \xi \sim a$.
 }
 
 \item {To identify each spring and the mass of the cart we made use of the fact that the we have two type of experiments for each spring: one without any load, and one with a load of  $0.986$ \SI{}{\kilo\gram}. We obtain a system of linear equations:
@@ -111,7 +111,7 @@ and solve for ($k_i, m_c$).
 Since there are $3$ springs let's denote the set of springs as $K=\{k_l, k_m, k_h\}$ where \emph{l} stands for low, \emph{m} for medium and \emph{h} for high. In a similar manner we define the various pulsation: for example $\omega_{m-nl}$ is the pulsation for the system with spring $k_m$ and no load.
 \\ \\ 
 \paragraph{Pulsation}
-In the table below are shown the various mean of the pulsation and their relative standard deviation:
+In the table below are shown the average values of the pulsation and their relative standard deviations:
 \begin{table}[!h]
 \centering
 
@@ -124,7 +124,7 @@ In the table below are shown the various mean of the pulsation and their relativ
 \end{tabular}
 \caption{Pulsation of the cart detached from the motor. Various configuration are shown (with a load of $0.986$ [\SI{}{\kilo \gram}] and no load) for the various springs. }
 \end{table} \\ \\
-It's interesting to note that even if we considered to average all the periods by considering the various peaks of the signal, and not only the first two peaks, we would have obtained the same results. This is an hint of the fact that the principal non-linearity, i.e. coloumb friction, is negligible.
+It's interesting to note that even if we  had considered to average all the periods by considering the various peaks of the signal, and not only the first two peaks, we would have obtained the same results. This is an hint of the fact that the principal non-linearity, i.e. coloumb friction, is negligible.
 
 \begin{figure}[!ht]
     \centering
@@ -161,7 +161,7 @@ The mean values for the damping ratio, including their standard deviation, are s
 \end{table}
 
 
-From the values shown in table \ref{table: cart_detached_damping} it seems that the damping $C$ is function of the mass, in fact we don't obtain the same dampingif we consider the damping ratio with no load or with load. For example consider $k_h$: with a load we obtain $C= 0.0128\cdot2\cdot\sqrt{k_h M}=0.8520$ [\SI{}{\newton \second \per \metre}], without load: $C=0.0179\cdot2\cdot\sqrt{k_h m_c}=0.7206$ [\SI{}{\newton \second \per \metre}]. This is most likely an effect due to friction, and the various damping values are shown in table 
+From the values shown in table \ref{table: cart_detached_damping} it seems that the damping $C$ is function of the mass, in fact we don't obtain the same damping if we consider the damping ratio with no load or with load. For example consider $k_h$: with a load we obtain $C= 0.0128\cdot2\cdot\sqrt{k_h M}=0.8520$ [\SI{}{\newton \second \per \metre}], without load: $C=0.0179\cdot2\cdot\sqrt{k_h m_c}=0.7206$ [\SI{}{\newton \second \per \metre}]. This is most likely an effect due to friction, and the various damping values are shown in table 
 \ref{table: cart_detached_damping}.
 \begin{table}[!h]
 \centering
@@ -192,7 +192,7 @@ $\frac{C_{l}-C_{nl}}{m_{l}}$ [\SI{}{\newton \second \per \metre \per \kilo\gram}
 
 
 \subsection{Validation}
-Validation was done in a similar fashion as the experiments conducted to identify the system parameters. The cart was released from a random initial condition $x_0$  and then released. \\ \\ 
+Validation was done in a similar fashion as the experiments conducted to identify the system parameters: the cart was released from a random initial condition $x_0$. \\ \\ 
 Measurements  were compared with the output smulation of a model constructed from the identified parameters, and results were compared with the cost function defined in \ref{sec:validation_cost_function}.
 
 
@@ -227,7 +227,7 @@ Measurements  were compared with the output smulation of a model constructed fro
 
 On average, the cost function, on a scale from $0$ to $1$, gave a fit of $ 0.9449$ with standard deviation $0.0263$.
 The minimum was $0.8778$, and maximum $ 0.9716$. \\ \\ 
-In figure \ref{fig:val1} it is visible that due to unmodelld effects, such as friction and stiffness not being exactly linear, there is a loss of accuracy on the long run, but accuracy is very high in the beginning, where non-linearities are not relevant yet. Thus it is safe to assume that the parameters of the cart are the ones identified by this experiment.
+In figure \ref{fig:val1} it is visible that due to unmodelled effects, such as friction and stiffness not being exactly linear, there is a loss of accuracy on the long run, but accuracy is very high in the beginning, where non-linearities are not relevant yet. Thus it is safe to assume that the parameters of the cart are the ones identified by this experiment.
 
 \section{Motor identification}
 \label{sec:motor_id}
@@ -240,7 +240,7 @@ The motor can be modelled as a first order low pass filter, and the main paramet
 From motor specifications the nominal values, which are identified with \emph{n} as subscript, are:
 $$R_n = 1.4 [\Omega], L_n = 0.0021 [H], K_{en} =0.118 [\SI{}{\newton\metre \per\ampere}]$$
 
-The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the Nyquist frequency of the system $100$ [\SI{}{\hertz}], therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only inductance may have a biased value. \\ \\
+The nominal cut-off frequency of the motor  is $f_n = 	\frac{R_n}{L_n} = 106.10$ [\SI{}{\hertz}], which is slightly above the Nyquist frequency of the system $100$ [\SI{}{\hertz}], therefore accurate identification by means of grey or black box identification may give a bias on the identification of the cut-off frequency. \\ Since resistance of the motor can be identified by  steady state value of the current, only inductance may have a biased value. \\ \\Finally, $K_e$ is identified in the next section, in the overall system identification.
 
 \subsection{Experiment description}
 For each spring $K_i$, two experiments were done, with the motor attached to the cart,  one with a load of $0.986$ \SI{}{\kilo\gram}, and one without any load (just the cart itself). \\ \\
@@ -257,11 +257,11 @@ Where $i(t)$ is the current measured from the motor. \\ \\
 Finally, each experiment was run for a period of time of about $\approx 40$ [\SI{}{\second }].
 \subsection{Experiment analysis}
 The system considered is a stable system, therefore at steady state $\dot{i}(t) = 0$ and $R = \frac{v(t)}{i(t)}$. \\ \\
-Because of noise sensor the mean value was taken as steady state value, after the transient due to back-emf. Since we know the input voltage we can then calculate $R$. \\ \\
+Because of the sensor's noise the mean value was taken as steady state value, after the transient due to back-emf. Since we know the input voltage we can then calculate $R$. \\ \\
 Regarding the inductance, since the motor can be modelled as a low pass filter of the first order, its response in time has the form $i(t) = v (1-e^{-\tau t})$, where $\tau = \frac{R}{L}$.  When $t=\frac{3}{\tau}$, which is about our sampling time since $\frac{3}{\tau_n}=\frac{3}{2\pi f_n} \approx 0.0045$ [\SI{}{\radian \per \second}],we have $i(\frac{3}{\tau}) \approx 0.95v$. Therefore we can check if after one time step the value is approximately $0.95$ times the value of the input voltage. \\ \\ 
 Ultimately we can use the function \emph{tfest} in matlab to identify a system of the first order given the input and output data.
 \subsection{Experiment results}
-From experiments steady state value of the current seems to change a little, based on the fact whether $v$ is positive or negative.
+From the experiments, steady state value of the current seems to change a little, based on the fact whether $v$ is positive or negative.
 Thus let $R_1$ represent mean value of resistance when $v$ is positive, and $R_2$ when $v$ is negative.\\ \\
 From data  mean values are: $R_1 =1.3069	$ [\SI{}{\ohm}], $R_2=1.2330$[\SI{}{\ohm}], with standard deviation $\sigma_1= 0.0984 \Omega, \sigma_2=0.0460 \Omega
 $. \\ \\
@@ -308,11 +308,11 @@ We have mainly  a series connection of two systems: the motor and the cart, whic
 
 $$G_1(s) = \frac{1}{Ls+R} \quad G_2(s) = \frac{\gamma}{Ms^2+Cs+K}$$
 
-Since we are using the same tests used to identify the motor (section \ref{sec:motor_id}), and the same techniques used to identify the cart detached from the motor (section \ref{sec:cart_detached_id}), those two sections are not presented.
+Since we are using the same tests used to identify the motor (section \ref{sec:motor_id}), and the same techniques used to identify the cart detached from the motor (section \ref{sec:cart_detached_id}), the information presented in those two sections are not repeated.
 \subsection{Experiment results}
 Results are summarized in a similar fashion to section \ref{sec:cart_detached_id}:
 \paragraph{Pulsation}
-In the table below are shown the various mean of the pulsation of the cart and their relative standard deviation:
+In the table below are shown the average values of the pulsation of the cart and their relative standard deviations:
 \begin{table}[!h]
 \centering
 

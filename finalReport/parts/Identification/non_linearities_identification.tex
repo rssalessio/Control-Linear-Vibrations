@@ -2,12 +2,12 @@
 
 \section{Non-linear gain}
 As previously mentioned the motor has shown its non-linear behaviour in some occasions, especially for the control of 2-DOF. \\
-During the initial identification stage it was observed that the gain of the motor, i.e.: $\frac{1}{R}$ was input-varying, therefore non-linear. This was not seem as a problem, since it is a type of non-linearity whose sector is $[\alpha, \beta]$ with $\alpha > 0, \beta <M < \infty, M \in \mathbb{R}$. Therefore with a high-gain feedback loop, simply with an integrator, it's possible to linearise this effect. \\ \\
-Obviously, since the poles of the motor is not changing  it means that either $\frac{R}{L}$ is a constant, with $R,L$ varying at the same velocity, which seems improbable, or that there is a non-linear gain that can be modelled as:
+During the initial identification stage it was observed that the gain of the motor, i.e.: $\frac{1}{R}$ was input-varying, therefore non-linear. This was not seen as a problem, since it is a type of non-linearity whose sector is $[\alpha, \beta]$ with $\alpha > 0, \beta <M < \infty, M \in \mathbb{R}$. Therefore with a high-gain feedback loop, simply with an integrator, it's possible to linearise this effect. \\ \\
+Obviously, since the poles of the motor are not changing  it means that either $\frac{R}{L}$ is a constant, with $R,L$ varying at the same velocity, which seems improbable, or that there is a non-linear gain that can be modelled as:
 \begin{equation}
 i(t)=\frac{1}{Ls+R} f(v)v = \frac{1}{Ls+R} g(v)
 \end{equation}
-Where $M(s)$ is the standard linear form of the motor, as previously presented, and $g: \mathbb{R} \to \mathbb{R}, \frac{dg}{dv} \in [\alpha, \beta]$.
+Where $M(s)$ is the linear transfer function of the motor, as previously presented, and $g: \mathbb{R} \to \mathbb{R}$.
 Moreover, it seems to be a function with different behaviour for $v>0, v<0$. \\ \\Because of this, an identification process for both $v$ negative and positive was conducted.
 
 Let the ideal current given by the following expression, where $R=1.3 \Omega, L=0.0024 H$.
@@ -22,7 +22,7 @@ Next we modelled $f(v)$ as a cubic function:
 \begin{equation}
 f(v) = \alpha+\beta v + \gamma v^2+\delta v^3
 \end{equation}
-And used a least squares procedure to identify $(\alpha, \beta, \gamma)$.
+And we  used a least squares procedure to identify $(\alpha, \beta, \gamma,\delta)$.
 As a reference signal a step generator signal $r(t)$ was used with increasing voltage and period $5$ seconds, with $r(t) \in [-5,5]$. Next we used the procedure aforementioned only on the steady state portion  of the  measured current $i(t)$.\\ \\
 Finally we can model $f(v)$ in the following way:
 \begin{equation}
@@ -44,11 +44,8 @@ And $g(v) =f(v)v$.
 \end{figure}
 \section{Motor cogging identification}
 It was found that for low voltage the motor acts as if the voltage is $0$, therefore the current and consequently the torque is $0$.\\
-This is  a type of static friction, though it's not a mechanical one. In fact, if it was a mechanical one we would see the current increase but the shaft of the motor don't rotate until the torque is big enough to counteract the static friction effect. In this case is more an electrical type of static friction, called \emph{cogging} effect. \\ \\
-
-Cogging torque of electrical motors is the torque due to the interaction between the permanent magnets of the rotor and the stator slots of a Permanent Magnet (PM) machine. This torque is position dependent and its periodicity per revolution depends on the number of magnetic poles and the number of teeth on the stator.Cogging torque results in torque as well as speed ripple; however, at high speed the motor moment of inertia filters out the effect of cogging torque.
-\\ \\
-In figure \ref{fig:curposvolt} such effect is shown. On the left plot it's visible that when the input voltage $v(t)$ for $|v(t)|< c$, the output current is $0$. Since the torque is proportional to the current, also the torque is $0$. On the right plot is visible the effect on the cart: when the cart starts to move, after having overcome the static friction, it stops because the torque goes to $0$ because the current is $0$. But this effect does not happen because of mechanical static friction, otherwise we would not see a flat current curve.  \\ \\
+This is  a type of static friction, though it's not a mechanical one. In fact, if it was a mechanical one we would see the current increase but the shaft of the motor don't rotate until the torque is big enough to counteract the static friction effect. In this case is more an electrical type of static friction.\\ \\
+In figure \ref{fig:curposvolt} such effect is shown. On the left plot it's visible that when the input voltage $v(t)$ in absolute value is less than $c$, i.e. $|v(t)|< c$, the output current is $0$. Since the torque is proportional to the current, also the torque is $0$. On the right plot is visible the effect on the cart: when the cart starts to move, after having overcome the static friction, it stops because the torque goes to $0$ because the current is $0$. But this effect does not happen because of mechanical static friction, otherwise we would not see a flat current curve.  \\ \\
 How can we model such effect? It's some kind of dead-zone effect, and we can model it such that the real voltage entering the motor is:
 \begin{equation}
 v_{real}(t) = \begin{cases}
@@ -68,7 +65,7 @@ Where $c \in \mathbb{R}$ needs to be identified. For this purpose, notice that i
   \subfloat[Current vs Voltage plot]{\includegraphics[width=0.5\textwidth]{img/deadzone1.png}}
   \hfill
   \subfloat[Current vs Position plot]{\includegraphics[width=0.5\textwidth]{img/deadzone2.png}}
-  \caption{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right  we can see the effect on the position of the cart.}
+  \caption{On the left: plot of the input voltage and output current. The deadzone effect on the current sets the current to 0 for small $v$. On the right  we can see the effect on the position of the cart. Notice that the position of the cart does not follow the current because of a non-linearity that we didn't deal with, that happens for very low frequencies and low mass (it was not important to us since we obtained satisfactory control results).}
     \label{fig:curposvolt}
 \end{figure}
 Running this test gives an approximate value of $c \approx 0.35$ \SI{}{\volt}. The simulated current, using the parameters identified for the motor, is shown in figure \ref{fig:deadzone_sim}. Moreover, using the cost function  mentioned at the beginning of this part, we obtain a fit value of $0.89$ on the validation data (done using a different sinusoid). \\ \\
@@ -82,7 +79,7 @@ Instead if we minimise a least squares problem $J = \frac{1}{2} \sum_{t=0}^T (i_
 \section{Cart static friction}
 Finally, of the major non-linearities, the static friction of the cart was evaluated. To do so we made use of the information regarding the non-linearities of the motor. \\
 The most basic identification procedure is to linearly increase the voltage input to the motor until the cart moves, but since the motor is an intermediate system, we had to identify first the non-linearities of the motor.\\ \\
-Next we need to know the resolution of the encoder: the resolution is, as specified at the beginning of the report, of $14$ bits. Therefore, since $560$ is the factor we need to consider to convert the number of steps of the encoder to $cm$ the final resolution is $\Delta = 0.0342$ \SI{}{\centi \metre}. The input voltage used is:
+Next we need to know the resolution of the encoder: the resolution is, as specified at the beginning of the report, of $14$ bits. Therefore, since $560$ is the factor we need to consider to convert the number of steps of the encoder to $cm$, the final resolution is $\Delta = 0.0342$ \SI{}{\centi \metre}. The input voltage used is:
 \begin{equation}
 v(t) = 0.03t
 \end{equation}
@@ -99,16 +96,16 @@ Therefore for $t$ such that $F(t)=f_s$ we have:
 \mu_s = \frac{\gamma}{N} i
 \end{equation}
 which is the static friction condition. Therefore we need to have an accurate knowledge of the current in order to estimate $\mu_s$. 
-At $t=30$ the cart moves out of the encoder resolution and starts moving. For such $t$ the current is about $0.3$ \SI{}{\ampere}, therefore we can estimate that the static friction is:
+At $t=30$ the cart exits the encoder resolution region, and starts moving. For such $t$ the current is about $0.3$ \SI{}{\ampere}, therefore we can estimate that the static friction is:
 \begin{equation}
 \mu_s \approx \frac{2.068}{0.5685}0.3 \approx 1.1
 \end{equation}
-In figure is shown the plot of the current and its estimate. In figure the plot of the cart position.
+In figure \ref{fig:sfric} is shown the plot of the current and its estimate. It is also shown the plot of the cart position for the first $30$ seconds. 
     \begin{figure}[!tbh]
   \centering
-  \subfloat[Plot of $g(v),v$.]{\includegraphics[width=0.5\textwidth]{img/static_fric_1.png}}
+  \subfloat[Plot of $i(t)$ and its Kalman estimate]{\includegraphics[width=0.5\textwidth]{img/static_fric_1.png}}
   \hfill
-  \subfloat[Identified model vs real current.]{\includegraphics[width=0.5\textwidth]{img/static_fric_2.png}}
+  \subfloat[Plot of the cart position whilst inside the encoder resolution]{\includegraphics[width=0.5\textwidth]{img/static_fric_2.png}}
   \caption{}
      \label{fig:sfric}
 \end{figure}
