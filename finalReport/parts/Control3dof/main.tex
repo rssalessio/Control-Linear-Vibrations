@@ -30,16 +30,29 @@ Since we are not including any integral action, we need to consider a compensato
 \caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
 \label{fig:lqg3dof}
 \end{figure}
+
+\newpage
+
 \section{$H_\infty$ Control Design}
+
+The control scheme is no different from the one presented in the previous chapter; we then refer to those wrt the theoretical aspects.\\
+
+This scenario, though, has been particularly challenging since we could not find a tuning which would yield to satisfactory results. As it is possible to see in figure \ref{fig:hinf13dof} the performance is very poor and far from being acceptable. Therefore, we had to make use of the internal current loop (as in the previous chapter) in order to achieve a more stable response.\\
+
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{img/hinf1.png}
-\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
+\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed. The absence of the current loop yields an unacceptable response.}
 \label{fig:hinf13dof}
 \end{figure}
+
+The regulator consists in a simple integrator $R(s)=\frac{50}{s}$, which is enough to stabilize the output current and achieve acceptable performance as shown in figure \ref{fig:hinf23dof}.
+
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{img/hinf2.png}
-\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
+\caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed. The current loop gives a significant boost in performance.}
 \label{fig:hinf23dof}
 \end{figure}

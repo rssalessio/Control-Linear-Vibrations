@@ -1,4 +1,4 @@
-{\let\clearpage\relax \chapter{Control of 2 Degree of Freedom}}
+ \chapter{Control of 2 Degree of Freedom}
 \section{LQG Control Design}
 
 The structure of this control scheme is the same as the 1 degree of freedom scenario and it is discussed in the previous chapter. In this section we only show the tuning and final results.\\
@@ -55,13 +55,13 @@ The controller design is exactly the same as the one presented in the previous c
 
 As it possible to see, the current has some oscillations which perturb the whole system and gives very poor performance. The first attempt was to reduce te bandwidth of the controller but the output, although deprived from oscillations, resulted too slow (over two seconds in order to get to steady state) and therefore not acceptable.\\
 
-We decided to make use of a Kalman filter in order to insert an inner loop controlling the current. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
+We decided to make use of a Kalman filter in order to insert an inner loop controlling the current which consists in a simple integrator $R(s)=\frac{50}{s}$. The result showed an important boost in performance. The rising time is now satisfactory and the current does not show any oscillation.\\
 
 \begin{figure}[h]
 	\setlength{\abovecaptionskip}{-10pt}
 	\setlength{\belowcaptionskip}{-10pt}
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/hinf_nocurr}
+	\includegraphics[width=0.7\linewidth]{img/hinf_nocurr}
 	\caption{Response to a train of pulses when the current is not controlled. It is hard for the system to maintain the value at steady state.}
 	\label{fig:hinfnocurr}
 \end{figure}
@@ -70,7 +70,7 @@ We decided to make use of a Kalman filter in order to insert an inner loop contr
 	\setlength{\abovecaptionskip}{-10pt}
 	\setlength{\belowcaptionskip}{-10pt}	
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/hinf_curr}
+	\includegraphics[width=0.7\linewidth]{img/hinf_curr}
 	\caption{Response to a train of pulses when the current is controlled. Now the response is much smoother.}
 	\label{fig:hinfnocurr}
 \end{figure}
@@ -79,7 +79,7 @@ We decided to make use of a Kalman filter in order to insert an inner loop contr
 	\setlength{\abovecaptionskip}{-10pt}
 	\setlength{\belowcaptionskip}{-10pt}
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/hinf_response}
+	\includegraphics[width=0.7\linewidth]{img/hinf_response}
 	\caption{Carts displacement over time due to a train of pulses. Both carts do not overshoot.}
 	\label{fig:2dofcarts}
 \end{figure}
