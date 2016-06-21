@@ -1,12 +1,40 @@
 {\let\clearpage\relax \chapter{Control of 2 Degree of Freedom}}
 \section{LQG Control Design}
 
+The structure of this control scheme is the same as the 1 degree of freedom scenario and it is discussed in the previous chapter. In this section we only show the tuning and final results.\\
+
+Obviously the state matrix includes also the second cart and we must take that into account when tuning the weights on $Q$, whilst the weight on the control input $R$ is again scalar. The final tuning was output of a trial and error approach which led to the matrices
+\begin{equation}
+\renewcommand{\arraystretch}{1}
+	Q = 
+	\begin{bmatrix}
+		0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0.1 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 \\
+	\end{bmatrix}
+	\qquad
+	R=1
+\end{equation}
+which only weights the position of the second cart (the one we want to control), being the state vector defined as $x = \left[ i,\, x_1,\, x_2,\, \dot{x}_1,\, \dot{x}_2 \right] $.\\
+
+Since we are not including any integral action, we need to consider a compensator on the reference which can guarantee zero error at steady state. This gain is computed as the inverse of the dc gain of the controlled plant.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{img/lqg_2dof.png}
 \caption{Openloop frequency response from the motor input to the position of the second cart in the case of low and medium springs employed.}
 \label{fig:lqg2dof}
 \end{figure}
+
+
+
+
+
+
+
+
 \section{$H_\infty$ Control Design}
 This control strategy gave good results for one degree of freedom, hence we choose it again to be implemented with two carts.\\
 
