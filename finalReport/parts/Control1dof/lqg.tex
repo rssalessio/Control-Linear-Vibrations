@@ -3,7 +3,7 @@ Of the feedback schemes, such as \emph{Pole-Placement}, we decided to choose the
 The Kalman Filter made use of all the available inputs, and only for the case of $2,3$ degree of freedom the non-linearities of the motor were considered in order to improve the performances. \\ \\
 Remember that LQR solves the optimal problem:
 \begin{equation}
-min J = \int_0^{\infty} x^T Q x + u^T R u dt
+min J = \int_0^{\infty} [x^T Q x + u^T R u] dt
 \end{equation}
 which gives an optimal solution in the form of feedback control:
 \begin{equation}
@@ -20,7 +20,7 @@ u=-K_{x} x+ K_{r} r
 \end{equation}
 Where $K_{r}$ is:
 \begin{equation}
-K_{r} = \frac{1}{C(-(A-BK))^{-1}B}
+K_{r} = \frac{1}{C(-(A-BK_x))^{-1}B}
 \end{equation}
 With $C$ selecting the appropriate output, in this case $x_1$, thus $C=\begin{bmatrix}0 & 100 & 0\end{bmatrix}$. This $K_r$ makes sure the system has unitary gain. \\
 The weight matrix was selected in order to let $x_1 \to 0$ quickly with acceptable performances. After some iterations the matrix $Q$ was chosen as:
