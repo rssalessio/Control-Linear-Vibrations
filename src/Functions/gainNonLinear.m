@@ -1,4 +1,4 @@
-function y = gainNonLinear(v)
+function [y,z] = gainNonLinear(v)
 
     i1= v<0;
     i2 = v>= 0;
@@ -8,6 +8,9 @@ function y = gainNonLinear(v)
     
     v(i1)= v(i1).*g1;
     v(i2)=v(i2).*g2;
+    z=ones(size(v));
+    z(i1) = z(i1).*g1;
+    z(i2)=z(i2).*g2;
     y=v;
 %v>0 0.6564 + 0.1712v ? 0.0317v 2 + 0.0044v 
 %v<0 ?0.21 ? 1.1397v ? 0.2756v 2 ? 0.0226v 
